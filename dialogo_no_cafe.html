@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<!-- Chosen Palette: Calm Neutrals (Tailwind 'stone') with Warm Accents (Tailwind 'emerald' and 'cyan') -->
+<!-- Application Structure Plan: Foi utilizada uma estrutura de SPA (Single Page Application) com abas (tabs) para segmentar a experiência de aprendizagem. A arquitetura de informação escolhida é: 1) "Diálogo Interativo", 2) "Revisão Gramatical", 3) "Quiz". Esta estrutura foi escolhida porque guia o aluno numa progressão pedagógica lógica: primeiro, rever/praticar o conteúdo principal (o Diálogo Interativo); segundo, consolidar o conhecimento (Revisão dos Verbos e Estruturas); e terceiro, testar o conhecimento (Quiz). Esta segmentação evita sobrecarga de informação e facilita o foco do utilizador. -->
+<!-- Visualization & Content Choices: [Relatório: Script do diálogo com traduções -> Meta: Engajar/Praticar -> Viz: Layout de "Chat" (HTML/Tailwind) -> Interação: Botão "Mostrar/Ocultar Traduções" (JS) que alterna a visibilidade de *todas* as traduções em inglês. -> Justificação: Transforma texto estático numa ferramenta de prática ativa. -> Biblioteca: Vanilla JS]; [Relatório: Foco Gramatical e Estruturas Úteis -> Meta: Organizar/Informar -> Viz: Cartões de Tópicos (HTML/Tailwind Grid) -> Interação: Estático -> Justificação: Destaca visualmente as estruturas gramaticais. -> Biblioteca: HTML/Tailwind]; [Relatório: Diálogo A1/A2 No Café -> Meta: Avaliar Compreensão -> Viz: Perguntas Interativas (HTML Forms) -> Interação: Seleção de Respostas (Radio Buttons), Botão "Verificar Respostas" (JS), Feedback (JS) -> Justificação: Permite ao aluno testar ativamente a sua compreensão do diálogo e da gramática relacionada. -> Biblioteca: Vanilla JS] -->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diálogo Interativo A1/A2: No Café</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f4; /* stone-100 */
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .nav-tab {
+            padding: 0.75rem 1.25rem;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            color: #57534e; /* stone-600 */
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-tab:hover {
+            color: #0c4a6e; /* cyan-900 */
+        }
+        .tab-active {
+            color: #10b981; /* emerald-500 */
+            border-bottom-color: #10b981; /* emerald-500 */
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content-active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .chat-bubble-empregado {
+            background-color: #f5f5f4; /* stone-100 */
+            color: #1c1917; /* stone-900 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 1.25rem 0.25rem;
+            max-width: 80%;
+            align-self: flex-start;
+        }
+        .chat-bubble-cliente {
+            background-color: #d1fae5; /* emerald-100 */
+            color: #065f46; /* emerald-900 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 0.25rem 1.25rem;
+            max-width: 80%;
+            align-self: flex-end;
+        }
+        .translation-text {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.9em;
+            font-style: italic;
+            border-top: 1px dashed rgba(0, 0, 0, 0.1);
+            padding-top: 0.5rem;
+            color: #57534e; /* stone-600 */
+        }
+        .quiz-question {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #fafaf9; /* stone-50 */
+            border-radius: 0.5rem;
+            border: 1px solid #e7e5e4; /* stone-200 */
+        }
+        .quiz-options label {
+            display: block;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+         .quiz-options input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+        .quiz-options label:hover {
+            background-color: #e0f2fe; /* light-blue-100 */
+        }
+        .feedback {
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        .correct { color: #15803d; /* green-700 */}
+        .incorrect { color: #b91c1c; /* red-700 */ }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header class="text-center pb-6 border-b border-stone-200">
+            <h1 class="text-4xl font-bold text-cyan-900">Diálogo: No Café</h1>
+            <p class="text-xl text-stone-600 mt-2">Prática: Fazer Pedidos (A1/A2)</p>
+            <a href="index.html" class="text-sky-600 hover:text-sky-800 mt-4 inline-block">&larr; Voltar ao Menu Principal</a>
+        </header>
+
+        <!-- Navegação por Abas -->
+        <nav class="mt-6 border-b border-stone-200">
+            <ul class="flex flex-wrap -mb-px">
+                <li><button class="nav-tab tab-active" data-tab="dialogo">Diálogo Interativo</button></li>
+                <li><button class="nav-tab" data-tab="revisao">Revisão Gramatical</button></li>
+                <li><button class="nav-tab" data-tab="quiz">Quiz</button></li>
+            </ul>
+        </nav>
+
+        <!-- Conteúdo Principal -->
+        <main class="mt-8">
+
+            <!-- Aba 1: Diálogo Interativo -->
+            <section id="dialogo" class="tab-content tab-content-active">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Diálogo Interativo</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-4">
+                    Pratique a conversa. Tente ler o diálogo em português primeiro. Use o botão abaixo para mostrar ou ocultar as traduções em inglês e testar a sua compreensão.
+                </p>
+                <button id="toggleTranslations" class="mb-6 px-5 py-2 bg-sky-600 text-white rounded-lg shadow hover:bg-sky-700 transition-all duration-200">
+                    Ocultar Traduções
+                </button>
+
+                <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
+                    <!-- Empregado/a 1 -->
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-empregado">
+                            <span class="font-bold block">Empregado/a</span>
+                            Bom dia! O que deseja?
+                            <span class="translation-text">(Good morning! What would you like?)</span>
+                        </div>
+                    </div>
+                    <!-- Cliente 1 -->
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-cliente">
+                            <span class="font-bold block">Cliente</span>
+                            Bom dia. Queria um café, se faz favor.
+                            <span class="translation-text">(Good morning. I'd like a coffee, please.)</span>
+                        </div>
+                    </div>
+                    <!-- Empregado/a 2 -->
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-empregado">
+                            <span class="font-bold block">Empregado/a</span>
+                            Uma bica?
+                            <span class="translation-text">(An espresso?)</span>
+                        </div>
+                    </div>
+                    <!-- Cliente 2 -->
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-cliente">
+                            <span class="font-bold block">Cliente</span>
+                            Sim, uma bica. E queria também um pastel de nata.
+                            <span class="translation-text">(Yes, an espresso. And I'd also like a pastel de nata.)</span>
+                        </div>
+                    </div>
+                    <!-- Empregado/a 3 -->
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-empregado">
+                            <span class="font-bold block">Empregado/a</span>
+                            Muito bem. É mais alguma coisa?
+                            <span class="translation-text">(Very well. Anything else?)</span>
+                        </div>
+                    </div>
+                    <!-- Cliente 3 -->
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-cliente">
+                            <span class="font-bold block">Cliente</span>
+                            Hum... sim. Queria uma água, por favor.
+                            <span class="translation-text">(Hmm... yes. I'd like water, please.)</span>
+                        </div>
+                    </div>
+                    <!-- Empregado/a 4 -->
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-empregado">
+                            <span class="font-bold block">Empregado/a</span>
+                            Com gás ou sem gás? Natural ou fresca?
+                            <span class="translation-text">(Sparkling or still? Room temperature or cold?)</span>
+                        </div>
+                    </div>
+                    <!-- Cliente 4 -->
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-cliente">
+                            <span class="font-bold block">Cliente</span>
+                            Sem gás e fresca, faz favor.
+                            <span class="translation-text">(Still and cold, please.)</span>
+                        </div>
+                    </div>
+                    <!-- Empregado/a 5 -->
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-empregado">
+                            <span class="font-bold block">Empregado/a</span>
+                            Certo. Então, é uma bica, um pastel de nata e uma água fresca sem gás.
+                            <span class="translation-text">(Right. So, it's an espresso, a pastel de nata, and cold still water.)</span>
+                        </div>
+                    </div>
+                    <!-- Cliente 5 -->
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-cliente">
+                            <span class="font-bold block">Cliente</span>
+                            Isso mesmo. Obrigado/a.
+                            <span class="translation-text">(That's right. Thank you.)</span>
+                        </div>
+                    </div>
+
+                    <p class="text-center text-stone-500 italic pt-4 pb-2">(... Mais tarde ...)</p>
+
+                    <!-- Cliente 6 -->
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-cliente">
+                            <span class="font-bold block">Cliente</span>
+                            Desculpe, pode trazer a conta, faz favor?
+                            <span class="translation-text">(Excuse me, can you bring the bill, please?)</span>
+                        </div>
+                    </div>
+                    <!-- Empregado/a 6 -->
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-empregado">
+                            <span class="font-bold block">Empregado/a</span>
+                            Sim, claro. Aqui está. São três euros e vinte (3,20 €).
+                            <span class="translation-text">(Yes, of course. Here it is. It's three euros and twenty cents.)</span>
+                        </div>
+                    </div>
+                    <!-- Cliente 7 -->
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-cliente">
+                            <span class="font-bold block">Cliente</span>
+                            (Paga) Obrigado/a. Tenha um bom dia!
+                            <span class="translation-text">(Pays) Thank you. Have a good day!</span>
+                        </div>
+                    </div>
+                    <!-- Empregado/a 7 -->
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-empregado">
+                            <span class="font-bold block">Empregado/a</span>
+                            Obrigado/a e igualmente! Volte sempre.
+                            <span class="translation-text">(Thank you, likewise! Come back anytime.)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aba 2: Revisão -->
+            <section id="revisao" class="tab-content">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Revisão Gramatical</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-6">
+                    Esta secção ajuda a consolidar o que aprendeu. Reveja as estruturas de pedidos e o vocabulário usado no diálogo.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Card de Foco Gramatical -->
+                    <div class="bg-stone-50 p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: Como Fazer Pedidos</h3>
+                        <p class="text-stone-700 mb-4">A forma mais educada de pedir algo em português é usando o verbo <strong>Querer</strong> no Imperfeito:</p>
+                        
+                        <h4 class="font-bold text-lg text-stone-800">Queria... (I would like...)</h4>
+                        <ul class="list-disc list-inside ml-2 space-y-1 mb-4">
+                            <li><strong>Queria</strong> um café, se faz favor.</li>
+                            <li><strong>Queria</strong> também um pastel de nata.</li>
+                            <li><strong>Queria</strong> uma água, por favor.</li>
+                        </ul>
+
+                        <h4 class="font-bold text-lg text-stone-800 mt-6">Outras Formas</h4>
+                        <p class="text-stone-700 mb-4">Para perguntar pela conta, pode usar:</p>
+                        <ul class="list-disc list-inside ml-2 space-y-1">
+                            <li>Pode trazer a conta, faz favor?</li>
+                            <li>A conta, por favor.</li>
+                            <li>Quanto é? (Mais direto)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card de Estruturas Úteis -->
+                    <div class="bg-stone-50 p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Vocabulário Essencial</h3>
+                        <p class="text-stone-700 mb-4">Palavras e perguntas chave do diálogo:</p>
+                        <ul class="list-disc list-inside ml-2 space-y-3 text-stone-800">
+                            <li>O que deseja?</li>
+                            <li>É mais alguma coisa?</li>
+                            <li>Uma bica (Café espresso)</li>
+                            <li>Um pastel de nata</li>
+                            <li>Com gás (Sparkling)</li>
+                            <li>Sem gás (Still)</li>
+                            <li>Natural (Room temperature)</li>
+                            <li>Fresca (Cold)</li>
+                            <li>Isso mesmo. (That's right.)</li>
+                            <li>Igualmente! (Likewise!)</li>
+                            <li>Volte sempre! (Come back anytime!)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+             <!-- Aba 3: Quiz -->
+            <section id="quiz" class="tab-content">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Quick Quiz</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-6">
+                    Test your understanding of the dialogue and vocabulary. Choose the best answer for each question.
+                </p>
+
+                <form id="quizForm">
+                    <!-- Pergunta 1 -->
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">1. What is the most polite way to order a coffee shown in the dialogue?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> a) Eu quero um café.</label>
+                            <label><input type="radio" name="q1" value="b"> b) Dê-me um café.</label>
+                            <label><input type="radio" name="q1" value="c"> c) Queria um café, se faz favor.</label>
+                        </div>
+                        <div class="feedback" id="feedback-q1"></div>
+                    </div>
+
+                    <!-- Pergunta 2 -->
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">2. What does the waiter ask after the customer orders water?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q2" value="a"> a) Com gás ou sem gás?</label>
+                            <label><input type="radio" name="q2" value="b"> b) Com açúcar ou sem açúcar?</label>
+                            <label><input type="radio" name="q2" value="c"> c) Para aqui ou para levar?</label>
+                        </div>
+                         <div class="feedback" id="feedback-q2"></div>
+                    </div>
+
+                    <!-- Pergunta 3 -->
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">3. What is the common name for an espresso in Lisbon mentioned in the dialogue?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q3" value="a"> a) Um galão</label>
+                            <label><input type="radio" name="q3" value="b"> b) Uma bica</label>
+                            <label><input type="radio" name="q3" value="c"> c) Um cimbalino</label>
+                        </div>
+                         <div class="feedback" id="feedback-q3"></div>
+                    </div>
+                     <!-- Pergunta 4 -->
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">4. How does the customer ask for the bill?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q4" value="a"> a) Quanto é?</label>
+                            <label><input type="radio" name="q4" value="b"> b) Onde está a conta?</label>
+                            <label><input type="radio" name="q4" value="c"> c) Pode trazer a conta, faz favor?</label>
+                        </div>
+                         <div class="feedback" id="feedback-q4"></div>
+                    </div>
+
+                    <button type="button" id="checkQuiz" class="mt-4 px-6 py-2 bg-emerald-500 text-white rounded-lg shadow hover:bg-emerald-600 transition-all duration-200">
+                        Check Answers
+                    </button>
+                    <p id="quizScore" class="mt-4 font-bold text-lg"></p>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- LÓGICA DAS ABAS (TABS) ---
+            const tabs = document.querySelectorAll('.nav-tab');
+            const contents = document.querySelectorAll('.tab-content');
+            const defaultTab = 'dialogo'; // Definir a aba Diálogo como padrão
+
+            // Função para ativar uma aba
+            function activateTab(tabId) {
+                 tabs.forEach(t => {
+                    t.classList.remove('tab-active');
+                    if (t.dataset.tab === tabId) {
+                        t.classList.add('tab-active');
+                    }
+                });
+                contents.forEach(c => {
+                    c.classList.remove('tab-content-active');
+                    if (c.id === tabId) {
+                        c.classList.add('tab-content-active');
+                    }
+                });
+            }
+
+            // Ativar a aba padrão no carregamento
+            activateTab(defaultTab);
+
+            // Adicionar event listeners às abas
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    activateTab(tab.dataset.tab);
+                });
+            });
+
+
+            // --- LÓGICA DO BOTÃO DE TRADUÇÃO ---
+            const toggleButton = document.getElementById('toggleTranslations');
+            const translations = document.querySelectorAll('#dialogo .translation-text'); // Selecionar apenas as traduções dentro da aba diálogo
+            let translationsVisible = true;
+
+            // Inicialmente esconde as traduções se o botão diz 'Mostrar'
+            if (toggleButton.textContent.includes('Mostrar')) {
+                translationsVisible = false;
+                translations.forEach(span => { span.style.display = 'none'; });
+            } else {
+                 translationsVisible = true;
+                translations.forEach(span => { span.style.display = 'block'; });
+            }
+
+
+            toggleButton.addEventListener('click', () => {
+                translationsVisible = !translationsVisible; // Inverte o estado
+
+                translations.forEach(span => {
+                    span.style.display = translationsVisible ? 'block' : 'none';
+                });
+
+                toggleButton.textContent = translationsVisible ? 'Ocultar Traduções' : 'Mostrar Traduções';
+            });
+
+             // --- LÓGICA DO QUIZ ---
+            const checkQuizButton = document.getElementById('checkQuiz');
+            const quizForm = document.getElementById('quizForm');
+            const quizScoreDisplay = document.getElementById('quizScore');
+
+            const correctAnswers = {
+                q1: 'c',
+                q2: 'a',
+                q3: 'b',
+                q4: 'c'
+            };
+
+            checkQuizButton.addEventListener('click', () => {
+                let score = 0;
+                const totalQuestions = Object.keys(correctAnswers).length;
+                let answeredAll = true;
+
+                for (const question in correctAnswers) {
+                    const feedbackEl = document.getElementById(`feedback-${question}`);
+                    const selectedOptionInput = quizForm.querySelector(`input[name="${question}"]:checked`); // Find the checked radio button
+
+                    if (selectedOptionInput) {
+                        const selectedValue = selectedOptionInput.value;
+                        if (selectedValue === correctAnswers[question]) {
+                            feedbackEl.textContent = 'Correct!';
+                            feedbackEl.className = 'feedback correct';
+                            score++;
+                        } else {
+                            feedbackEl.textContent = 'Incorrect.';
+                            feedbackEl.className = 'feedback incorrect';
+                        }
+                    } else {
+                        feedbackEl.textContent = 'Please select an answer.';
+                         feedbackEl.className = 'feedback incorrect';
+                         answeredAll = false; // Mark that not all questions were answered
+                    }
+                }
+                 if(answeredAll){
+                    quizScoreDisplay.textContent = `Your score: ${score} out of ${totalQuestions}`;
+                 } else {
+                    quizScoreDisplay.textContent = `Please answer all questions.`;
+                 }
+            });
+
+        });
+    </SCript>
+
+</body>
+</html>

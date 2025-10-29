@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<!-- Chosen Palette: Calm Neutrals (Tailwind 'stone') with Warm Accents (Tailwind 'amber' and 'cyan') -->
+<!-- Application Structure Plan: Foi utilizada uma estrutura de SPA (Single Page Application) com abas (tabs) para segmentar a experiência de aprendizagem. A arquitetura de informação escolhida é: 1) "Diálogo Interativo", 2) "Revisão Gramatical", 3) "Quiz". Esta estrutura foi escolhida porque guia o aluno numa progressão pedagógica lógica: primeiro, rever/praticar o conteúdo principal (o Diálogo Interativo); segundo, consolidar o conhecimento (Revisão dos Verbos e Estruturas); e terceiro, testar o conhecimento (Quiz). Esta segmentação evita sobrecarga de informação e facilita o foco do utilizador. -->
+<!-- Visualization & Content Choices: [Relatório: Script do diálogo com traduções -> Meta: Engajar/Praticar -> Viz: Layout de "Chat" (HTML/Tailwind) -> Interação: Botão "Mostrar/Ocultar Traduções" (JS) que alterna a visibilidade de *todas* as traduções em inglês. -> Justificação: Transforma texto estático numa ferramenta de prática ativa. -> Biblioteca: Vanilla JS]; [Relatório: Foco Gramatical e Estruturas Úteis -> Meta: Organizar/Informar -> Viz: Cartões de Tópicos (HTML/Tailwind Grid) -> Interação: Estático -> Justificação: Destaca visualmente as estruturas gramaticais. -> Biblioteca: HTML/Tailwind]; [Relatório: Diálogo A2 Conhecer Alguém -> Meta: Avaliar Compreensão -> Viz: Perguntas Interativas (HTML Forms) -> Interação: Seleção de Respostas (Radio Buttons), Botão "Verificar Respostas" (JS), Feedback (JS) -> Justificação: Permite ao aluno testar ativamente a sua compreensão do diálogo e da gramática relacionada. -> Biblioteca: Vanilla JS] -->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diálogo Interativo A2: Conhecer Alguém</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f4; /* stone-100 */
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .nav-tab {
+            padding: 0.75rem 1.25rem;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            color: #57534e; /* stone-600 */
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-tab:hover {
+            color: #0c4a6e; /* cyan-900 */
+        }
+        .tab-active {
+            color: #fbbf24; /* amber-400 */
+            border-bottom-color: #fbbf24; /* amber-400 */
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content-active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .chat-bubble-david {
+            background-color: #f5f5f4; /* stone-100 */
+            color: #1c1917; /* stone-900 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 1.25rem 0.25rem;
+            max-width: 80%;
+            align-self: flex-start;
+        }
+        .chat-bubble-sofia {
+            background-color: #fef3c7; /* amber-100 */
+            color: #78350f; /* amber-900 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 0.25rem 1.25rem;
+            max-width: 80%;
+            align-self: flex-end;
+        }
+        .translation-text {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.9em;
+            font-style: italic;
+            border-top: 1px dashed rgba(0, 0, 0, 0.1);
+            padding-top: 0.5rem;
+            color: #57534e; /* stone-600 */
+        }
+        .quiz-question {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #fafaf9; /* stone-50 */
+            border-radius: 0.5rem;
+            border: 1px solid #e7e5e4; /* stone-200 */
+        }
+        .quiz-options label {
+            display: block;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+         .quiz-options input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+        .quiz-options label:hover {
+            background-color: #e0f2fe; /* light-blue-100 */
+        }
+        .feedback {
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        .correct { color: #15803d; /* green-700 */}
+        .incorrect { color: #b91c1c; /* red-700 */ }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Cabeçalho -->
+        <header class="text-center pb-6 border-b border-stone-200">
+            <h1 class="text-4xl font-bold text-cyan-900">Diálogo: Conhecer Alguém</h1>
+            <p class="text-xl text-stone-600 mt-2">Prática: Apresentações</p>
+            <a href="index.html" class="text-sky-600 hover:text-sky-800 mt-4 inline-block">&larr; Voltar ao Menu Principal</a>
+        </header>
+
+        <!-- Navegação por Abas -->
+        <nav class="mt-6 border-b border-stone-200">
+            <ul class="flex flex-wrap -mb-px">
+                <li><button class="nav-tab tab-active" data-tab="dialogo">Diálogo Interativo</button></li>
+                <li><button class="nav-tab" data-tab="revisao">Revisão Gramatical</button></li>
+                <li><button class="nav-tab" data-tab="quiz">Quiz</button></li>
+            </ul>
+        </nav>
+
+        <!-- Conteúdo Principal -->
+        <main class="mt-8">
+
+            <!-- Aba 1: Diálogo Interativo -->
+            <section id="dialogo" class="tab-content tab-content-active">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Diálogo Interativo</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-4">
+                    Pratique a conversa. Tente ler o diálogo em português primeiro. Use o botão abaixo para mostrar ou ocultar as traduções em inglês e testar a sua compreensão.
+                </p>
+                <button id="toggleTranslations" class="mb-6 px-5 py-2 bg-sky-600 text-white rounded-lg shadow hover:bg-sky-700 transition-all duration-200">
+                    Ocultar Traduções
+                </button>
+
+                <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
+                    <!-- David 1 -->
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-david">
+                            <span class="font-bold block">David</span>
+                            Olá! Desculpe, esta cadeira está livre?
+                            <span class="translation-text">(Hello! Excuse me, is this chair free?)</span>
+                        </div>
+                    </div>
+                    <!-- Sofia 1 -->
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-sofia">
+                            <span class="font-bold block">Sofia</span>
+                            Olá! Sim, está. Por favor, sente-se.
+                            <span class="translation-text">(Hello! Yes, it is. Please, sit down.)</span>
+                        </div>
+                    </div>
+                    <!-- David 2 -->
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-david">
+                            <span class="font-bold block">David</span>
+                            Obrigado. Eu chamo-me David.
+                            <span class="translation-text">(Thank you. My name is David.)</span>
+                        </div>
+                    </div>
+                    <!-- Sofia 2 -->
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-sofia">
+                            <span class="font-bold block">Sofia</span>
+                            Muito prazer, David. Eu sou a Sofia.
+                            <span class="translation-text">(Nice to meet you, David. I'm Sofia.)</span>
+                        </div>
+                    </div>
+                    <!-- David 3 -->
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-david">
+                            <span class="font-bold block">David</span>
+                            Igualmente. Você não é daqui, pois não? O seu sotaque é diferente.
+                            <span class="translation-text">(Likewise. You're not from here, are you? Your accent is different.)</span>
+                        </div>
+                    </div>
+                    <!-- Sofia 3 -->
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-sofia">
+                            <span class="font-bold block">Sofia</span>
+                            Não, não sou. Eu sou alemã, de Berlim. E você, é de cá?
+                            <span class="translation-text">(No, I'm not. I'm German, from Berlin. And you, are you from here?)</span>
+                        </div>
+                    </div>
+                    <!-- David 4 -->
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-david">
+                            <span class="font-bold block">David</span>
+                            Não, eu sou americano, de Chicago. Mas moro cá em Lisboa há quase um ano.
+                            <span class="translation-text">(No, I'm American, from Chicago. But I've been living here in Lisbon for almost a year.)</span>
+                        </div>
+                    </div>
+                    <!-- Sofia 4 -->
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-sofia">
+                            <span class="font-bold block">Sofia</span>
+                            Ah, que interessante! Eu mudei-me para o Porto há dois meses.
+                            <span class="translation-text">(Ah, how interesting! I moved to Porto two months ago.)</span>
+                        </div>
+                    </div>
+                    <!-- David 5 -->
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-david">
+                            <span class="font-bold block">David</span>
+                            E o que é que faz cá em Portugal? Trabalha ou estuda?
+                            <span class="translation-text">(And what do you do here in Portugal? Do you work or study?)</span>
+                        </div>
+                    </div>
+                    <!-- Sofia 5 -->
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-sofia">
+                            <span class="font-bold block">Sofia</span>
+                            Eu sou designer gráfica. Encontrei trabalho numa empresa no Porto. E você? O que faz?
+                            <span class="translation-text">(I'm a graphic designer. I found a job at a company in Porto. And you? What do you do?)</span>
+                        </div>
+                    </div>
+                    <!-- David 6 -->
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-david">
+                            <span class="font-bold block">David</span>
+                            Eu sou professor de inglês. Dou aulas numa escola de línguas aqui em Lisboa.
+                            <span class="translation-text">(I'm an English teacher. I teach at a language school here in Lisbon.)</span>
+                        </div>
+                    </div>
+                    <!-- Sofia 6 -->
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-sofia">
+                            <span class="font-bold block">Sofia</span>
+                            Que giro! Então, é professor de inglês e mora em Lisboa. E eu sou designer e moro no Porto.
+                            <span class="translation-text">(How cool! So, you're an English teacher and you live in Lisbon. And I'm a designer and I live in Porto.)</span>
+                        </div>
+                    </div>
+                     <!-- David 7 -->
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-david">
+                            <span class="font-bold block">David</span>
+                            Exatamente!
+                            <span class="translation-text">(Exactly!)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Aba 2: Revisão -->
+            <section id="revisao" class="tab-content">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Revisão Gramatical</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-6">
+                    Esta secção ajuda a consolidar o que aprendeu. Reveja os verbos e as estruturas de perguntas usados no diálogo.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Card de Foco Gramatical -->
+                    <div class="bg-stone-50 p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: Verbos Essenciais</h3>
+                        <p class="text-stone-700 mb-3">Repare como estes verbos são usados no presente:</p>
+                        
+                        <h4 class="font-bold text-lg text-stone-800">Ser (to be - permanent)</h4>
+                        <ul class="list-disc list-inside ml-2 space-y-1 mb-4">
+                            <li>Eu <strong>sou</strong> a Sofia.</li>
+                            <li>Eu <strong>sou</strong> alemã.</li>
+                            <li>Eu <strong>sou</strong> designer gráfica.</li>
+                            <li>Você <strong>é</strong> de cá?</li>
+                        </ul>
+
+                        <h4 class="font-bold text-lg text-stone-800">Estar (to be - temporary)</h4>
+                        <ul class="list-disc list-inside ml-2 space-y-1 mb-4">
+                            <li>Esta cadeira <strong>está</strong> livre?</li>
+                        </ul>
+                        
+                        <h4 class="font-bold text-lg text-stone-800">Morar (to live)</h4>
+                         <ul class="list-disc list-inside ml-2 space-y-1 mb-4">
+                            <li>Eu <strong>moro</strong> cá em Lisboa.</li>
+                            <li>Eu <strong>moro</strong> no Porto.</li>
+                        </ul>
+
+                        <h4 class="font-bold text-lg text-stone-800">Fazer (to do)</h4>
+                         <ul class="list-disc list-inside ml-2 space-y-1">
+                            <li>O que é que <strong>faz</strong> cá?</li>
+                            <li>O que <strong>faz</strong>?</li>
+                        </ul>
+                    </div>
+
+                    <!-- Card de Estruturas Úteis -->
+                    <div class="bg-stone-50 p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Estruturas Úteis</h3>
+                        <p class="text-stone-700 mb-4">Frases chave do diálogo para conhecer alguém:</p>
+                        <ul class="list-disc list-inside ml-2 space-y-3 text-stone-800">
+                            <li>Eu chamo-me...</li>
+                            <li>Muito prazer. / Igualmente.</li>
+                            <li>Você não é daqui, pois não?</li>
+                            <li>Eu sou [nacionalidade], de [cidade].</li>
+                            <li>E você, é de cá?</li>
+                            <li>Eu moro cá em...</li>
+                            <li>Mudei-me para... há [tempo].</li>
+                            <li>O que é que faz? (Qual é a sua profissão?)</li>
+                            <li>Eu sou [profissão].</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+             <!-- Aba 3: Quiz -->
+            <section id="quiz" class="tab-content">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Quick Quiz</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-6">
+                    Test your understanding of the dialogue and vocabulary. Choose the best answer for each question.
+                </p>
+
+                <form id="quizForm">
+                    <!-- Pergunta 1 -->
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">1. Where is Sofia from?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> a) Chicago</label>
+                            <label><input type="radio" name="q1" value="b"> b) Lisboa</label>
+                            <label><input type="radio" name="q1" value="c"> c) Berlim</label>
+                        </div>
+                        <div class="feedback" id="feedback-q1"></div>
+                    </div>
+
+                    <!-- Pergunta 2 -->
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">2. What is David's job?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q2" value="a"> a) Designer gráfico</label>
+                            <label><input type="radio" name="q2" value="b"> b) Professor de inglês</label>
+                            <label><input type="radio" name="q2" value="c"> c) Estudante</label>
+                        </div>
+                         <div class="feedback" id="feedback-q2"></div>
+                    </div>
+
+                    <!-- Pergunta 3 -->
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">3. Where does Sofia live now?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q3" value="a"> a) Em Lisboa</label>
+                            <label><input type="radio" name="q3" value="b"> b) Em Berlim</label>
+                            <label><input type="radio" name="q3" value="c"> c) No Porto</label>
+                        </div>
+                         <div class="feedback" id="feedback-q3"></div>
+                    </div>
+                     <!-- Pergunta 4 -->
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">4. Which verb do you use to talk about your profession?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q4" value="a"> a) Eu moro...</label>
+                            <label><input type="radio" name="q4" value="b"> b) Eu estou...</label>
+                            <label><input type="radio" name="q4" value="c"> c) Eu sou...</label>
+                        </div>
+                         <div class="feedback" id="feedback-q4"></div>
+                    </div>
+
+                    <button type="button" id="checkQuiz" class="mt-4 px-6 py-2 bg-amber-500 text-white rounded-lg shadow hover:bg-amber-600 transition-all duration-200">
+                        Check Answers
+                    </button>
+                    <p id="quizScore" class="mt-4 font-bold text-lg"></p>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- LÓGICA DAS ABAS (TABS) ---
+            const tabs = document.querySelectorAll('.nav-tab');
+            const contents = document.querySelectorAll('.tab-content');
+            const defaultTab = 'dialogo'; // Definir a aba Diálogo como padrão
+
+            // Função para ativar uma aba
+            function activateTab(tabId) {
+                 tabs.forEach(t => {
+                    t.classList.remove('tab-active');
+                    if (t.dataset.tab === tabId) {
+                        t.classList.add('tab-active');
+                    }
+                });
+                contents.forEach(c => {
+                    c.classList.remove('tab-content-active');
+                    if (c.id === tabId) {
+                        c.classList.add('tab-content-active');
+                    }
+                });
+            }
+
+            // Ativar a aba padrão no carregamento
+            activateTab(defaultTab);
+
+            // Adicionar event listeners às abas
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    activateTab(tab.dataset.tab);
+                });
+            });
+
+
+            // --- LÓGICA DO BOTÃO DE TRADUÇÃO ---
+            const toggleButton = document.getElementById('toggleTranslations');
+            const translations = document.querySelectorAll('#dialogo .translation-text'); // Selecionar apenas as traduções dentro da aba diálogo
+            let translationsVisible = true;
+
+            // Inicialmente esconde as traduções se o botão diz 'Mostrar'
+            if (toggleButton.textContent.includes('Mostrar')) {
+                translationsVisible = false;
+                translations.forEach(span => { span.style.display = 'none'; });
+            } else {
+                 translationsVisible = true;
+                translations.forEach(span => { span.style.display = 'block'; });
+            }
+
+
+            toggleButton.addEventListener('click', () => {
+                translationsVisible = !translationsVisible; // Inverte o estado
+
+                translations.forEach(span => {
+                    span.style.display = translationsVisible ? 'block' : 'none';
+                });
+
+                toggleButton.textContent = translationsVisible ? 'Ocultar Traduções' : 'Mostrar Traduções';
+            });
+
+             // --- LÓGICA DO QUIZ ---
+            const checkQuizButton = document.getElementById('checkQuiz');
+            const quizForm = document.getElementById('quizForm');
+            const quizScoreDisplay = document.getElementById('quizScore');
+
+            const correctAnswers = {
+                q1: 'c',
+                q2: 'b',
+                q3: 'c',
+                q4: 'c'
+            };
+
+            checkQuizButton.addEventListener('click', () => {
+                let score = 0;
+                const totalQuestions = Object.keys(correctAnswers).length;
+                let answeredAll = true;
+
+                for (const question in correctAnswers) {
+                    const feedbackEl = document.getElementById(`feedback-${question}`);
+                    const selectedOptionInput = quizForm.querySelector(`input[name="${question}"]:checked`); // Find the checked radio button
+
+                    if (selectedOptionInput) {
+                        const selectedValue = selectedOptionInput.value;
+                        if (selectedValue === correctAnswers[question]) {
+                            feedbackEl.textContent = 'Correct!';
+                            feedbackEl.className = 'feedback correct';
+                            score++;
+                        } else {
+                            feedbackEl.textContent = 'Incorrect.';
+                            feedbackEl.className = 'feedback incorrect';
+                        }
+                    } else {
+                        feedbackEl.textContent = 'Please select an answer.';
+                         feedbackEl.className = 'feedback incorrect';
+                         answeredAll = false; // Mark that not all questions were answered
+                    }
+                }
+                 if(answeredAll){
+                    quizScoreDisplay.textContent = `Your score: ${score} out of ${totalQuestions}`;
+                 } else {
+                    quizScoreDisplay.textContent = `Please answer all questions.`;
+                 }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
