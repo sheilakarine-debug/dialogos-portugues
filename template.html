@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Praticar: [apresentar a família]</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hidden { display: none; }
+    </style>
+</head>
+<body class="bg-gray-100 p-6 md:p-12">
+
+    <div class="container mx-auto max-w-3xl">
+
+        <header class="bg-purple-500 text-white p-6 rounded-lg shadow-md mb-6">
+            
+            <h1 class="text-3xl font-bold">[TÍTULO PRINCIPAL DA PÁGINA]</h1>
+            <p class="mt-2 text-lg">[Subtítulo ou descrição do diálogo]</p>
+            
+            <a href="index.html" class="text-white hover:text-gray-200 mt-4 inline-block">&larr; Voltar ao Menu Principal</a>
+        </header>
+
+        <main>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                
+                <div id="dialogue-line" class="mb-4 text-xl md:text-2xl text-gray-800 min-h-[60px]">
+                    </div>
+
+                <input type="text" id="user-input" class="hidden w-full p-3 border border-gray-300 rounded-lg text-xl" placeholder="Escreva a sua resposta...">
+
+                <div id="feedback-area" class="hidden mt-4 p-3 rounded-lg">
+                    </div>
+
+                <div class="mt-6 flex justify-between">
+                    <button id="check-button" 
+                            class="hidden bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-6 rounded-lg shadow transition duration-300">
+                        Verificar
+                    </button>
+                    
+                    <button id="next-button" 
+                            class="bg-purple-500 hover:bg-purple-600 text-white font-bold py-2 px-6 rounded-lg shadow transition duration-300">
+                        Começar
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const dialogueLines = [
+            // Exemplo de uma linha de "locutor":
+            { type: 'narrator', text: '[Instrução inicial para o aluno.]' },
+            
+            // Exemplo de uma linha de "áudio":
+            { type: 'audio', text: '[Fala da pessoa A]', audioSrc: 'audio/ficheiro_01.mp3' },
+            
+            // Exemplo de uma linha de "input" (o aluno tem de escrever):
+            { type: 'input', prompt: '[Instrução para o aluno responder.]', correctAnswers: ['resposta correta 1', 'resposta correta 2'] },
+            
+            // Adicione mais linhas...
+            // { type: 'audio', text: '[Fala da pessoa B]', audioSrc: 'audio/ficheiro_02.mp3' },
+            // { type: 'input', prompt: '[Instrução...]', correctAnswers: ['...'] },
+
+            { type: 'narrator', text: 'Fim do diálogo.' }
+        ];
+
+        // --- LÓGICA DO DIÁLOGO (Não precisa de editar abaixo disto) ---
+        // (O código JavaScript que faz o diálogo funcionar)
+        
+        let currentLine = 0;
+        const dialogueElement = document.getElementById('dialogue-line');
+        const inputElement = document.getElementById('user-input');
+        const feedbackElement = document.getElementById('feedback-area');
+        const checkButton = document.getElementById('check-button');
+        const nextButton = document.getElementById('next-button');
+
+        function displayLine() {
+            if (currentLine >= dialogueLines.length) {
+                dialogueElement.innerText = 'Diálogo concluído! Pode voltar ao menu.';
+                inputElement.classList.add('hidden');
+                checkButton.classList.add('hidden');
+                nextButton.classList.add('hidden');
+                return;
+            }
+
+            const line = dialogueLines[currentLine];
+            dialogueElement.innerText = '';
+            inputElement.classList.add('hidden');
+            checkButton.classList.add('hidden');
+            feedbackElement.classList.add('hidden');
+            inputElement.value = '';
+
+            if (line.type === 'narrator') {
+                dialogueElement.innerText = line.text;
+                dialogueElement.classList.add('italic', 'text-gray-600');
+                nextButton.classList.remove('hidden');
+                nextButton.innerText = (currentLine === 0) ? 'Começar' : 'Próximo';
+            } else if (line.type === 'audio') {
+                dialogueElement.innerText = line.text;
+                dialogueElement.classList.remove('italic', 'text-gray-600');
+                
+                if (line.audioSrc) {
+                    const audio = new Audio(line.audioSrc);
+                    audio.play();
+                }
+                
+                nextButton.classList.remove('hidden');
+                nextButton.innerText = 'Próximo';
+            } else if (line.type === 'input') {
+                dialogueElement.innerText = line.prompt;
+                dialogueElement.classList.add('italic', 'text-gray-600');
+                inputElement.classList.remove('hidden');
+                checkButton.classList.remove('hidden');
+                nextButton.classList.add('hidden');
+            }
+        }
+
+        function checkAnswer() {
+            const line = dialogueLines[currentLine];
+            const userAnswer = inputElement.value.toLowerCase().trim();
+            
+            let isCorrect = false;
+            if (line.correctAnswers) {
+                 isCorrect = line.correctAnswers.some(answer => userAnswer.includes(answer.toLowerCase()));
+            }
+
+            if (isCorrect) {
+                feedbackElement.innerText = 'Correto!';
+                feedbackElement.classList.remove('hidden', 'bg-red-100', 'text-red-700');
+                feedbackElement.classList.add('bg-green-100', 'text-green-700');
+                
+                currentLine++;
+                setTimeout(displayLine, 1500); 
+            } else {
+                feedbackElement.innerText = 'Tente outra vez. (Dica: use as palavras-chave do pedido)';
+                feedbackElement.classList.remove('hidden', 'bg-green-100', 'text-green-700');
+                feedbackElement.classList.add('bg-red-100', 'text-red-700');
+            }
+        }
+
+        nextButton.addEventListener('click', () => {
+            currentLine++;
+            displayLine();
+        });
+
+        checkButton.addEventListener('click', checkAnswer);
+        
+        inputElement.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                checkAnswer();
+            }
+        });
+
+        // Inicia a primeira linha
+        displayLine();
+        
+    </script>
+
+</body>
+</html>

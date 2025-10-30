@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diálogo Interativo A1/A2: A Família</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f4; /* stone-100 */
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .nav-tab {
+            padding: 0.75rem 1.25rem;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            color: #57534e; /* stone-600 */
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-tab:hover {
+            color: #0c4a6e; /* cyan-900 */
+        }
+        .tab-active {
+            color: #fbbf24; /* amber-400 */
+            border-bottom-color: #fbbf24; /* amber-400 */
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content-active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Cor 1: Tiago (Neutro) */
+        .chat-bubble-tiago {
+            background-color: #f5f5f4; /* stone-100 */
+            color: #1c1917; /* stone-900 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 1.25rem 0.25rem;
+            max-width: 80%;
+            align-self: flex-start;
+        }
+        /* Cor 2: Ana (Destaque Âmbar) */
+        .chat-bubble-ana {
+            background-color: #fef3c7; /* amber-100 */
+            color: #78350f; /* amber-900 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 0.25rem 1.25rem;
+            max-width: 80%;
+            align-self: flex-end;
+        }
+        .translation-text {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.9em;
+            font-style: italic;
+            border-top: 1px dashed rgba(0, 0, 0, 0.1);
+            padding-top: 0.5rem;
+            color: #57534e; /* stone-600 */
+        }
+        .quiz-question {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #fafaf9; /* stone-50 */
+            border-radius: 0.5rem;
+            border: 1px solid #e7e5e4; /* stone-200 */
+        }
+        .quiz-options label {
+            display: block;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+         .quiz-options input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+        .quiz-options label:hover {
+            background-color: #e0f2fe; /* light-blue-100 */
+        }
+        .feedback {
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        .correct { color: #15803d; /* green-700 */}
+        .incorrect { color: #b91c1c; /* red-700 */ }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="text-center pb-6 border-b border-stone-200">
+            <h1 class="text-4xl font-bold text-cyan-900">Diálogo: Falar sobre a Família</h1>
+            <p class="text-xl text-stone-600 mt-2">Prática: Vocabulário da Família e Possessivos</p>
+            <a href="index.html" class="text-sky-600 hover:text-sky-800 mt-4 inline-block">&larr; Voltar ao Menu Principal</a>
+        </header>
+
+        <nav class="mt-6 border-b border-stone-200">
+            <ul class="flex flex-wrap -mb-px">
+                <li><button class="nav-tab tab-active" data-tab="dialogo">Diálogo Interativo</button></li>
+                <li><button class="nav-tab" data-tab="revisao">Revisão Gramatical</button></li>
+                <li><button class="nav-tab" data-tab="quiz">Quiz</button></li>
+            </ul>
+        </nav>
+
+        <main class="mt-8">
+
+            <section id="dialogo" class="tab-content tab-content-active">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Diálogo Interativo</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-4">
+                    Pratique a conversa. Tente ler o diálogo em português primeiro. Use o botão abaixo para mostrar ou ocultar as traduções em inglês e testar a sua compreensão.
+                </p>
+                <button id="toggleTranslations" class="mb-6 px-5 py-2 bg-sky-600 text-white rounded-lg shadow hover:bg-sky-700 transition-all duration-200">
+                    Ocultar Traduções
+                </button>
+
+                <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-ana">
+                            <span class="font-bold block">Ana</span>
+                            Olá Tiago! Estás bom?
+                            <span class="translation-text">(Hi Tiago! Are you well?)</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-tiago">
+                            <span class="font-bold block">Tiago</span>
+                            Olá Ana! Sim, tudo bem. E tu? O que estás a ver nesse telemóvel?
+                            <span class="translation-text">(Hi Ana! Yes, all good. And you? What are you looking at on that phone?)</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-ana">
+                            <span class="font-bold block">Ana</span>
+                            Estou a ver uma fotografia da <strong>minha</strong> família. Queres ver?
+                            <span class="translation-text">(I'm looking at a photo of <strong>my</strong> family. Want to see?)</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-tiago">
+                            <span class="font-bold block">Tiago</span>
+                            Claro! Deixa-me ver. Quem são?
+                            <span class="translation-text">(Sure! Let me see. Who are they?)</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-ana">
+                            <span class="font-bold block">Ana</span>
+                            Estes são os <strong>meus</strong> pais, o Rui e a Clara. E este é o <strong>meu</strong> irmão mais velho, o Pedro.
+                            <span class="translation-text">(These are <strong>my</strong> parents, Rui and Clara. And this is <strong>my</strong> older brother, Pedro.)</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-tiago">
+                            <span class="font-bold block">Tiago</span>
+                            O <strong>teu</strong> irmão é muito parecido contigo! Ele é casado?
+                            <span class="translation-text">(<strong>Your</strong> brother looks a lot like you! Is he married?)</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-ana">
+                            <span class="font-bold block">Ana</span>
+                            Sim, é. A <strong>mulher</strong> dele chama-se Sofia, e eles <strong>têm</strong> dois <strong>filhos</strong>.
+                            <span class="translation-text">(Yes, he is. His <strong>wife</strong> is named Sofia, and they <strong>have</strong> two <strong>children</strong>.)</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-tiago">
+                            <span class="font-bold block">Tiago</span>
+                            Que giro! E esta senhora mais velha, quem é?
+                            <span class="translation-text">(How cool! And this older lady, who is she?)</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-ana">
+                            <span class="font-bold block">Ana</span>
+                            É a <strong>minha</strong> avó, a <strong>mãe</strong> da <strong>minha</strong> mãe. Ela chama-se Beatriz.
+                            <span class="translation-text">(That's <strong>my</strong> grandmother, <strong>my</strong> mother's <strong>mom</strong>. Her name is Beatriz.)</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-tiago">
+                            <span class="font-bold block">Tiago</span>
+                            Tens uma família bonita, Ana!
+                            <span class="translation-text">(You have a beautiful family, Ana!)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="revisao" class="tab-content">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Revisão Gramatical</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-6">
+                    Esta secção ajuda a consolidar o que aprendeu. Reveja os possessivos e o vocabulário da família.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-stone-50 p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: Possessivos e Verbo 'Ter'</h3>
+                        <p class="text-stone-700 mb-4">Repare como usamos possessivos para falar da família:</p>
+                        
+                        <h4 class="font-bold text-lg text-stone-800">Meu / Minha / Meus / Minhas (My)</h4>
+                        <ul class="list-disc list-inside ml-2 space-y-1 mb-4">
+                            <li>A <strong>minha</strong> família. (fem. singular)</li>
+                            <li>O <strong>meu</strong> irmão. (masc. singular)</li>
+                            <li>Os <strong>meus</strong> pais. (masc. plural)</li>
+                        </ul>
+
+                        <h4 class="font-bold text-lg text-stone-800">Teu / Tua (Your, informal)</h4>
+                        <ul class="list-disc list-inside ml-2 space-y-1 mb-4">
+                            <li>O <strong>teu</strong> irmão. (masc. singular)</li>
+                        </ul>
+                        
+                        <h4 class="font-bold text-lg text-stone-800">Verbo 'Ter' (To Have)</h4>
+                         <ul class="list-disc list-inside ml-2 space-y-1 mb-4">
+                            <li>Eu <strong>tenho</strong>... (I have...)</li>
+                            <li>Tu <strong>tens</strong>... (You have...)</li>
+                            <li>Ele / Ela <strong>tem</strong>... (He / She has...)</li>
+                            <li>Eles <strong>têm</strong> dois filhos. (They have two children.)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-stone-50 p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Vocabulário Essencial: A Família</h3>
+                        <p class="text-stone-700 mb-4">Palavras chave do diálogo:</p>
+                        <ul class="list-disc list-inside ml-2 space-y-3 text-stone-800">
+                            <li>A família (The family)</li>
+                            <li>Os pais (The parents)</li>
+                            <li>A mãe (The mother)</li>
+                            <li>O pai (The father)</li>
+                            <li>O irmão / A irmã (The brother / The sister)</li>
+                            <li>Os filhos (The children / The sons)</li>
+                            <li>O marido / A mulher (The husband / The wife)</li>
+                            <li>A avó / O avô (The grandmother / The grandfather)</li>
+                            <li>Casado / Casada (Married)</li>
+                            <li>Mais velho (Older)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+             <section id="quiz" class="tab-content">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Quick Quiz</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-6">
+                    Test your understanding of the dialogue and vocabulary. Choose the best answer for each question.
+                </p>
+
+                <form id="quizForm">
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">1. Quem são o Rui e a Clara?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> a) Os avós da Ana</label>
+                            <label><input type="radio" name="q1" value="b"> b) Os pais da Ana</label>
+                            <label><input type="radio" name="q1" value="c"> c) Os filhos do Pedro</label>
+                        </div>
+                        <div class="feedback" id="feedback-q1"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">2. Como se chama a mulher do irmão da Ana?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q2" value="a"> a) Beatriz</label>
+                            <label><input type="radio" name="q2" value="b"> b) Clara</label>
+                            <label><input type="radio" name="q2" value="c"> c) Sofia</label>
+                        </div>
+                         <div class="feedback" id="feedback-q2"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">3. Como se diz "My mother" em português?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q3" value="a"> a) A tua mãe</label>
+                            <label><input type="radio" name="q3" value="b"> b) A minha mãe</label>
+                            <label><input type="radio" name="q3" value="c"> c) A minha avó</label>
+                        </div>
+                         <div class="feedback" id="feedback-q3"></div>
+                    </div>
+                     <div class="quiz-question">
+                        <p class="font-semibold mb-2">4. Como se diz "He has two children"?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q4" value="a"> a) Ele é dois filhos.</label>
+                            <label><input type="radio" name="q4" value="b"> b) Ele tem dois filhos.</label>
+                            <label><input type="radio" name="q4" value="c"> c) Ele quer dois filhos.</label>
+                        </div>
+                         <div class="feedback" id="feedback-q4"></div>
+                    </div>
+
+                    <button type="button" id="checkQuiz" class="mt-4 px-6 py-2 bg-amber-500 text-white rounded-lg shadow hover:bg-amber-600 transition-all duration-200">
+                        Check Answers
+                    </button>
+                    <p id="quizScore" class="mt-4 font-bold text-lg"></p>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- LÓGICA DAS ABAS (TABS) ---
+            const tabs = document.querySelectorAll('.nav-tab');
+            const contents = document.querySelectorAll('.tab-content');
+            const defaultTab = 'dialogo'; // Definir a aba Diálogo como padrão
+
+            // Função para ativar uma aba
+            function activateTab(tabId) {
+                 tabs.forEach(t => {
+                    t.classList.remove('tab-active');
+                    if (t.dataset.tab === tabId) {
+                        t.classList.add('tab-active');
+                    }
+                });
+                contents.forEach(c => {
+                    c.classList.remove('tab-content-active');
+                    if (c.id === tabId) {
+                        c.classList.add('tab-content-active');
+                    }
+                });
+            }
+
+            // Ativar a aba padrão no carregamento
+            activateTab(defaultTab);
+
+            // Adicionar event listeners às abas
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    activateTab(tab.dataset.tab);
+                });
+            });
+
+
+            // --- LÓGICA DO BOTÃO DE TRADUÇÃO ---
+            const toggleButton = document.getElementById('toggleTranslations');
+            const translations = document.querySelectorAll('#dialogo .translation-text'); // Selecionar apenas as traduções dentro da aba diálogo
+            let translationsVisible = true;
+
+            // Inicialmente esconde as traduções se o botão diz 'Mostrar'
+            if (toggleButton.textContent.includes('Mostrar')) {
+                translationsVisible = false;
+                translations.forEach(span => { span.style.display = 'none'; });
+            } else {
+                 translationsVisible = true;
+                translations.forEach(span => { span.style.display = 'block'; });
+            }
+
+
+            toggleButton.addEventListener('click', () => {
+                translationsVisible = !translationsVisible; // Inverte o estado
+
+                translations.forEach(span => {
+                    span.style.display = translationsVisible ? 'block' : 'none';
+                });
+
+                toggleButton.textContent = translationsVisible ? 'Ocultar Traduções' : 'Mostrar Traduções';
+            });
+
+             // --- LÓGICA DO QUIZ (Respostas Novas) ---
+            const checkQuizButton = document.getElementById('checkQuiz');
+            const quizForm = document.getElementById('quizForm');
+            const quizScoreDisplay = document.getElementById('quizScore');
+
+            // Novas respostas corretas
+            const correctAnswers = {
+                q1: 'b',
+                q2: 'c',
+                q3: 'b',
+                q4: 'b'
+            };
+
+            checkQuizButton.addEventListener('click', () => {
+                let score = 0;
+                const totalQuestions = Object.keys(correctAnswers).length;
+                let answeredAll = true;
+
+                for (const question in correctAnswers) {
+                    const feedbackEl = document.getElementById(`feedback-${question}`);
+                    const selectedOptionInput = quizForm.querySelector(`input[name="${question}"]:checked`); // Find the checked radio button
+
+                    if (selectedOptionInput) {
+                        const selectedValue = selectedOptionInput.value;
+                        if (selectedValue === correctAnswers[question]) {
+                            feedbackEl.textContent = 'Correcto!';
+                            feedbackEl.className = 'feedback correct';
+                            score++;
+                        } else {
+                            feedbackEl.textContent = 'Incorreto.';
+                            feedbackEl.className = 'feedback incorrect';
+                        }
+                    } else {
+                        feedbackEl.textContent = 'Por favor, selecione uma resposta.';
+                         feedbackEl.className = 'feedback incorrect';
+                         answeredAll = false; // Mark that not all questions were answered
+                    }
+                }
+                 if(answeredAll){
+                    quizScoreDisplay.textContent = `A sua pontuação: ${score} em ${totalQuestions}`;
+                 } else {
+                    quizScoreDisplay.textContent = `Por favor, responda a todas as perguntas.`;
+                 }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
