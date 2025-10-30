@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diálogo Interativo A1/A2: Na Farmácia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f4; /* stone-100 */
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .nav-tab {
+            padding: 0.75rem 1.25rem;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            color: #57534e; /* stone-600 */
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-tab:hover {
+            color: #0c4a6e; /* cyan-900 */
+        }
+        .tab-active {
+            color: #06b6d4; /* cyan-500 */
+            border-bottom-color: #06b6d4; /* cyan-500 */
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content-active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1, transform: translateY(0); }
+        }
+        /* Cor 1: Farmacêutica (Neutro) */
+        .chat-bubble-farmaceutica {
+            background-color: #f5f5f4; /* stone-100 */
+            color: #1c1917; /* stone-900 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 1.25rem 0.25rem;
+            max-width: 80%;
+            align-self: flex-start;
+        }
+        /* Cor 2: Cliente (Destaque Ciano) */
+        .chat-bubble-cliente {
+            background-color: #ecfeff; /* cyan-100 */
+            color: #155e75; /* cyan-900 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 0.25rem 1.25rem;
+            max-width: 80%;
+            align-self: flex-end;
+        }
+        .translation-text {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.9em;
+            font-style: italic;
+            border-top: 1px dashed rgba(0, 0, 0, 0.1);
+            padding-top: 0.5rem;
+            color: #57534e; /* stone-600 */
+        }
+        .quiz-question {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #fafaf9; /* stone-50 */
+            border-radius: 0.5rem;
+            border: 1px solid #e7e5e4; /* stone-200 */
+        }
+        .quiz-options label {
+            display: block;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+         .quiz-options input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+        .quiz-options label:hover {
+            background-color: #e0f2fe; /* light-blue-100 */
+        }
+        .feedback {
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        .correct { color: #15803d; /* green-700 */}
+        .incorrect { color: #b91c1c; /* red-700 */ }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="text-center pb-6 border-b border-stone-200">
+            <h1 class="text-4xl font-bold text-cyan-900">Diálogo: Na Farmácia</h1>
+            <p class="text-xl text-stone-600 mt-2">Prática: Pedir Medicamentos</p>
+            <a href="index.html" class="text-sky-600 hover:text-sky-800 mt-4 inline-block">&larr; Voltar ao Menu Principal</a>
+        </header>
+
+        <nav class="mt-6 border-b border-stone-200">
+            <ul class="flex flex-wrap -mb-px">
+                <li><button class="nav-tab tab-active" data-tab="dialogo">Diálogo Interativo</button></li>
+                <li><button class="nav-tab" data-tab="revisao">Revisão Gramatical</button></li>
+                <li><button class="nav-tab" data-tab="quiz">Quiz</button></li>
+            </ul>
+        </nav>
+
+        <main class="mt-8">
+
+            <section id="dialogo" class="tab-content tab-content-active">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Diálogo Interativo</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-4">
+                    Practice the conversation. Try to read the dialogue in Portuguese first. Use the button below to show or hide the English translations and test your understanding.
+                </p>
+                <button id="toggleTranslations" class="mb-6 px-5 py-2 bg-sky-600 text-white rounded-lg shadow hover:bg-sky-700 transition-all duration-200">
+                    Ocultar Traduções
+                </button>
+
+                <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-cliente">
+                            <span class="font-bold block">Cliente</span>
+                            Boa tarde. Tem algo para a dor de cabeça?
+                            <span class="translation-text">(Good afternoon. Do you have something for a headache?)</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-farmaceutica">
+                            <span class="font-bold block">Farmacêutica</span>
+                            Sim, pode tomar paracetamol. Quer em comprimidos ou em saquetas?
+                            <span class="translation-text">(Yes, you can take paracetamol. Do you want it in tablets or sachets?)</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-cliente">
+                            <span class="font-bold block">Cliente</span>
+                            Em comprimidos, por favor.
+                            <span class="translation-text">(In tablets, please.)</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-farmaceutica">
+                            <span class="font-bold block">Farmacêutica</span>
+                            Aqui tem. Tome um de 8 em 8 horas, depois das refeições.
+                            <span class="translation-text">(Here you go. Take one every 8 hours, after meals.)</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-cliente">
+                            <span class="font-bold block">Cliente</span>
+                            Obrigado. Preciso de receita médica?
+                            <span class="translation-text">(Thank you. Do I need a prescription?)</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-farmaceutica">
+                            <span class="font-bold block">Farmacêutica</span>
+                            Não, é venda livre.
+                            <span class="translation-text">(No, it's over-the-counter.)</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-cliente">
+                            <span class="font-bold block">Cliente</span>
+                            Perfeito. Boa tarde.
+                            <span class="translation-text">(Perfect. Good afternoon.)</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-farmaceutica">
+                            <span class="font-bold block">Farmacêutica</span>
+                            Boa tarde e as melhoras!
+                            <span class="translation-text">(Good afternoon and get well soon!)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="revisao" class="tab-content">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Revisão Gramatical</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-6">
+                    Esta secção foca-se em como pedir ajuda na farmácia e no vocabulário de saúde.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-stone-50 p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: Fazer Pedidos</h3>
+                        <p class="text-stone-700 mb-4">Frases-chave para pedir ajuda ou medicação:</p>
+                        
+                        <h4 class="font-bold text-lg text-stone-800">Pedir ajuda (Asking for help)</h4>
+                        <ul class="list-disc list-inside ml-2 space-y-2 mb-4">
+                            <li><strong>Tem algo para...</strong> (Do you have something for...)
+                                <ul class="list-['-_'] ml-6">
+                                    <li>... a dor de cabeça?</li>
+                                    <li>... a tosse? (cough)</li>
+                                    <li>... a dor de garganta? (sore throat)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Preciso de...</strong> (I need...)</li>
+                        </ul>
+
+                        <h4 class="font-bold text-lg text-stone-800 mt-6">Dar conselhos (Giving advice)</h4>
+                        <ul class="list-disc list-inside ml-2 space-y-2">
+                            <li><strong>Pode tomar...</strong> (You can take...)</li>
+                            <li><strong>Tome...</strong> (Take... - Imperativo)
+                                <ul class="list-['-_'] ml-6">
+                                    <li>Tome um de 8 em 8 horas.</li>
+                                    <li>Tome depois das refeições.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-stone-50 p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Vocabulário Essencial</h3>
+                        <p class="text-stone-700 mb-4">Palavras chave do diálogo:</p>
+                        <ul class="list-disc list-inside ml-2 space-y-3 text-stone-800">
+                            <li>A farmácia (The pharmacy)</li>
+                            <li>A dor de cabeça (Headache)</li>
+                            <li>Comprimidos (Tablets / Pills)</li>
+                            <li>Saquetas (Sachets)</li>
+                            <li>Depois das refeições (After meals)</li>
+                            <li>Receita médica (Prescription)</li>
+                            <li>Venda livre (Over-the-counter)</li>
+                            <li>As melhoras! (Get well soon!)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+             <section id="quiz" class="tab-content">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Quick Quiz</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-6">
+                    Test your understanding of the dialogue and vocabulary. Choose the best answer for each question.
+                </p>
+
+                <form id="quizForm">
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">1. Qual é o problema do cliente?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> a) Tem uma dor de cabeça.</label>
+                            <label><input type="radio" name="q1" value="b"> b) Tem uma receita médica.</label>
+                            <label><input type="radio" name="q1" value="c"> c) Quer saquetas.</label>
+                        </div>
+                        <div class="feedback" id="feedback-q1"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">2. O que é que o cliente prefere tomar?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q2" value="a"> a) Paracetamol em saquetas.</label>
+                            <label><input type="radio" name="q2" value="b"> b) Paracetamol em comprimidos.</label>
+                            <label><input type="radio" name="q2" value="c"> c) Um xarope (syrup).</label>
+                        </div>
+                         <div class="feedback" id="feedback-q2"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">3. Como é que o cliente deve tomar o medicamento?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q3" value="a"> a) Um de 8 em 8 horas.</label>
+                            <label><input type="radio" name="q3" value="b"> b) Oito comprimidos.</label>
+                            <label><input type="radio" name="q3" value="c"> c) Antes das refeições.</label>
+                        </div>
+                         <div class="feedback" id="feedback-q3"></div>
+                    </div>
+                     <div class="quiz-question">
+                        <p class="font-semibold mb-2">4. O que significa "venda livre"?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q4" value="a"> a) Que é grátis (free).</label>
+                            <label><input type="radio" name="q4" value="b"> b) Que não precisa de receita médica.</label>
+                            <label><input type="radio" name="q4" value="c"> c) Que precisa de receita médica.</label>
+                        </div>
+                         <div class="feedback" id="feedback-q4"></div>
+                    </div>
+
+                    <button type="button" id="checkQuiz" class="mt-4 px-6 py-2 bg-cyan-500 text-white rounded-lg shadow hover:bg-cyan-600 transition-all duration-200">
+                        Check Answers
+                    </button>
+                    <p id="quizScore" class="mt-4 font-bold text-lg"></p>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- LÓGICA DAS ABAS (TABS) ---
+            const tabs = document.querySelectorAll('.nav-tab');
+            const contents = document.querySelectorAll('.tab-content');
+            const defaultTab = 'dialogo'; // Definir a aba Diálogo como padrão
+
+            // Função para ativar uma aba
+            function activateTab(tabId) {
+                 tabs.forEach(t => {
+                    t.classList.remove('tab-active');
+                    if (t.dataset.tab === tabId) {
+                        t.classList.add('tab-active');
+                    }
+                });
+                contents.forEach(c => {
+                    c.classList.remove('tab-content-active');
+                    if (c.id === tabId) {
+                        c.classList.add('tab-content-active');
+                    }
+                });
+            }
+
+            // Ativar a aba padrão no carregamento
+            activateTab(defaultTab);
+
+            // Adicionar event listeners às abas
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    activateTab(tab.dataset.tab);
+                });
+            });
+
+
+            // --- LÓGICA DO BOTÃO DE TRADUÇÃO ---
+            const toggleButton = document.getElementById('toggleTranslations');
+            const translations = document.querySelectorAll('#dialogo .translation-text'); // Selecionar apenas as traduções dentro da aba diálogo
+            let translationsVisible = true;
+
+            // Inicialmente esconde as traduções se o botão diz 'Mostrar'
+            if (toggleButton.textContent.includes('Mostrar')) {
+                translationsVisible = false;
+                translations.forEach(span => { span.style.display = 'none'; });
+            } else {
+                 translationsVisible = true;
+                translations.forEach(span => { span.style.display = 'block'; });
+            }
+
+
+            toggleButton.addEventListener('click', () => {
+                translationsVisible = !translationsVisible; // Inverte o estado
+
+                translations.forEach(span => {
+                    span.style.display = translationsVisible ? 'block' : 'none';
+                });
+
+                toggleButton.textContent = translationsVisible ? 'Ocultar Traduções' : 'Mostrar Traduções';
+            });
+
+             // --- LÓGICA DO QUIZ (Respostas Novas) ---
+            const checkQuizButton = document.getElementById('checkQuiz');
+            const quizForm = document.getElementById('quizForm');
+            const quizScoreDisplay = document.getElementById('quizScore');
+
+            // Novas respostas corretas
+            const correctAnswers = {
+                q1: 'a',
+                q2: 'b',
+                q3: 'a',
+                q4: 'b'
+            };
+
+            checkQuizButton.addEventListener('click', () => {
+                let score = 0;
+                const totalQuestions = Object.keys(correctAnswers).length;
+                let answeredAll = true;
+
+                for (const question in correctAnswers) {
+                    const feedbackEl = document.getElementById(`feedback-${question}`);
+                    const selectedOptionInput = quizForm.querySelector(`input[name="${question}"]:checked`); // Find the checked radio button
+
+                    if (selectedOptionInput) {
+                        const selectedValue = selectedOptionInput.value;
+                        if (selectedValue === correctAnswers[question]) {
+                            feedbackEl.textContent = 'Correcto!';
+                            feedbackEl.className = 'feedback correct';
+                            score++;
+                        } else {
+                            feedbackEl.textContent = 'Incorreto.';
+                            feedbackEl.className = 'feedback incorrect';
+                        }
+                    } else {
+                        feedbackEl.textContent = 'Por favor, selecione uma resposta.';
+                         feedbackEl.className = 'feedback incorrect';
+                         answeredAll = false; // Mark that not all questions were answered
+                    }
+                }
+                 if(answeredAll){
+                    quizScoreDisplay.textContent = `A sua pontuação: ${score} em ${totalQuestions}`;
+                 } else {
+                    quizScoreDisplay.textContent = `Por favor, responda a todas as perguntas.`;
+                 }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
