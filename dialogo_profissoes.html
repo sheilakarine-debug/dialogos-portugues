@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<!-- Chosen Palette: Calm Neutral & Muted Blue (Tailwind 'stone' for neutrals, 'blue' for accents, 'amber' for highlights) -->
+<!-- Application Structure Plan: Using the established 3-tab SPA structure (Dialogue, Grammar Review, Quiz). This architecture allows the student to focus on one learning task at a time, moving from passively consuming the dialogue, to actively reviewing the key grammar/vocabulary, and finally testing their knowledge in the quiz. All instructions are in English for clarity, as requested. -->
+<!-- Visualization & Content Choices: [Report: Dialogue "Profissões e Locais de Trabalho" -> Goal: Inform/Engage -> Viz: Chat-style layout (HTML/Tailwind) -> Interaction: "Toggle Translations" button. -> Justification: Encourages active recall by allowing students to hide/show English translations. -> Library: Vanilla JS (DOM)]; [Report: Key phrases & Vocabulary -> Goal: Organize/Inform -> Viz: Structured lists and tables (HTML/Tailwind) -> Interaction: None. -> Justification: Clear, scannable format for grammar and vocabulary review. -> Library: N/A]; [Report: Dialogue content comprehension -> Goal: Test Knowledge -> Viz: Multiple-choice quiz (HTML forms) -> Interaction: Radio buttons and a "Check Answers" button. -> Justification: Interactive self-assessment to consolidate learning. -> Library: Vanilla JS (DOM)] -->
+<!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2 Lesson: Professions and Workplaces</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f4; /* stone-100 */
+        }
+        .main-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        .nav-tab {
+            padding: 0.75rem 1.25rem;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            color: #57534e; /* stone-600 */
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+        .nav-tab:hover {
+            color: #1e3a8a; /* blue-900 */
+        }
+        .tab-active {
+            border-bottom-color: #2563eb; /* blue-600 */
+            color: #1e3a8a; /* blue-900 */
+        }
+        .tab-content {
+            display: none;
+            padding: 1.5rem 2rem;
+            animation: fadeIn 0.5s ease;
+        }
+        .tab-content-active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .translation {
+            color: #57534e; /* stone-600 */
+            font-style: italic;
+            font-size: 0.9em;
+            margin-top: 0.25rem;
+            display: block;
+        }
+        .quiz-question {
+            background-color: #fafaf9; /* stone-50 */
+            border: 1px solid #e7e5e4; /* stone-200 */
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .quiz-option {
+            display: block;
+            padding: 0.75rem;
+            border-radius: 0.375rem;
+            margin-top: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .quiz-option:hover {
+            background-color: #e0f2fe; /* sky-100 */
+        }
+        .quiz-option input {
+            margin-right: 0.75rem;
+        }
+    </style>
+</head>
+<body class="bg-stone-100">
+
+    <div class="main-container">
+        
+        <header class="text-center p-6 bg-white border-b border-stone-200">
+            <h1 class="text-3xl md:text-4xl font-bold text-cyan-900">Lesson: Professions and Workplaces</h1>
+            <p class="text-lg text-stone-600 mt-2">Level A2 - Learn to ask and answer about jobs.</p>
+        </header>
+
+        <!-- Tab Navigation -->
+        <nav class="border-b border-stone-200 bg-white sticky top-0 z-10">
+            <ul class="flex flex-wrap -mb-px justify-center">
+                <li><button class="nav-tab tab-active" data-tab="dialogue">Interactive Dialogue</button></li>
+                <li><button class="nav-tab" data-tab="review">Grammar & Vocab Review</button></li>
+                <li><button class="nav-tab" data-tab="quiz">Quiz</button></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main>
+
+            <!-- Interactive Dialogue Section -->
+            <section id="dialogue" class="tab-content tab-content-active">
+                <h2 class="text-2xl font-semibold text-stone-800 mb-4">Instructions</h2>
+                <p class="text-stone-700 leading-relaxed mb-4">
+                    Read the dialogue between Beatriz and Carlos. Click the button below to show or hide the English translations to test your understanding.
+                </p>
+                <button id="toggleTranslation" class="mb-6 px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition-all duration-200">Hide Translations</button>
+
+                <!-- Dialogue Container -->
+                <div class="space-y-4 max-w-3xl mx-auto">
+                    
+                    <div class="flex">
+                        <div class="p-4 bg-gray-100 text-gray-800 rounded-lg shadow-sm">
+                            <span class="font-bold block">Beatriz:</span> Olá, Carlos! Tudo bem?
+                            <span class="translation">(Hello, Carlos! How are you?)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-end">
+                        <div class="p-4 bg-blue-100 text-blue-900 rounded-lg shadow-sm">
+                            <span class="font-bold block">Carlos:</span> Olá, Beatriz! Tudo ótimo. Olha, este é o meu amigo, o Lars.
+                            <span class="translation">(Hi, Beatriz! All great. Look, this is my friend, Lars.)</span>
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <div class="p-4 bg-gray-100 text-gray-800 rounded-lg shadow-sm">
+                            <span class="font-bold block">Beatriz:</span> Muito prazer, Lars. Bem-vindo. Então, Lars, **o que é que faz**?
+                            <span class="translation">(Nice to meet you, Lars. Welcome. So, Lars, what do you do?)</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                         <div class="p-4 bg-green-100 text-green-900 rounded-lg shadow-sm">
+                            <span class="font-bold block">Lars:</span> Olá! Eu **sou engenheiro** de software.
+                            <span class="translation">(Hello! I'm a software engineer.)</span>
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <div class="p-4 bg-gray-100 text-gray-800 rounded-lg shadow-sm">
+                            <span class="font-bold block">Beatriz:</span> Que interessante! E **onde é que trabalha**?
+                            <span class="translation">(How interesting! And where do you work?)</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                         <div class="p-4 bg-green-100 text-green-900 rounded-lg shadow-sm">
+                            <span class="font-bold block">Lars:</span> Eu **trabalho num escritório** grande no centro da cidade. Mas às vezes trabalho em casa. E a Beatriz, qual é a sua **profissão**?
+                            <span class="translation">(I work in a big office in the city center. But sometimes I work from home. And you, Beatriz, what is your profession?)</span>
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <div class="p-4 bg-gray-100 text-gray-800 rounded-lg shadow-sm">
+                            <span class="font-bold block">Beatriz:</span> Eu **sou médica**.
+                            <span class="translation">(I'm a doctor.)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-end">
+                        <div class="p-4 bg-blue-100 text-blue-900 rounded-lg shadow-sm">
+                            <span class="font-bold block">Carlos:</span> A Beatriz trabalha no hospital novo. **É um bom emprego**?
+                            <span class="translation">(Beatriz works at the new hospital. Is it a good job?)</span>
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <div class="p-4 bg-gray-100 text-gray-800 rounded-lg shadow-sm">
+                            <span class="font-bold block">Beatriz:</span> Sim, gosto muito, mas trabalho muitas horas. E tu, Carlos? Continuas a ser **professor**?
+                            <span class="translation">(Yes, I like it a lot, but I work many hours. And you, Carlos? Are you still a teacher?)</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="p-4 bg-blue-100 text-blue-900 rounded-lg shadow-sm">
+                            <span class="font-bold block">Carlos:</span> Sim, **dou aulas** numa escola secundária.
+                            <span class="translation">(Yes, I teach at a secondary school.)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Grammar & Vocab Review Section -->
+            <section id="review" class="tab-content">
+                <h2 class="text-2xl font-semibold text-stone-800 mb-4">Lesson Review</h2>
+                <p class="text-stone-700 leading-relaxed mb-6">
+                    This section helps to consolidate what you learned. Review the key question structures and vocabulary used in the dialogue.
+                </p>
+
+                <h3 class="text-xl font-semibold text-stone-700 mb-4">Key phrases for asking about jobs</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                    <div class="bg-stone-100 p-5 rounded-lg shadow-sm">
+                        <h4 class="text-lg font-bold text-cyan-900">1. Asking "What do you do?"</h4>
+                        <p class="mt-2 text-stone-800">O que é que (tu) fazes?</p>
+                        <p class="mt-2 text-stone-800">O que é que (o senhor / a senhora) faz?</p>
+                        <p class="mt-2 text-stone-800">Qual é a tua / sua profissão?</p>
+                    </div>
+                    <div class="bg-stone-100 p-5 rounded-lg shadow-sm">
+                        <h4 class="text-lg font-bold text-cyan-900">2. Asking "Where do you work?"</h4>
+                        <p class="mt-2 text-stone-800">Onde é que (tu) trabalhas?</p>
+                        <p class="mt-2 text-stone-800">Onde é que (o senhor / a senhora) trabalha?</p>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-semibold text-stone-700 mb-4">Vocabulary: Answering about your job</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-max text-left border-collapse">
+                        <thead class="bg-stone-100">
+                            <tr>
+                                <th class="p-3 border border-stone-200">Profissão (Profession)</th>
+                                <th class="p-3 border border-stone-200">Local de Trabalho (Workplace)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="p-3 border border-stone-200">Eu sou <strong>engenheiro/a</strong>. (I am an engineer.)</td>
+                                <td class="p-3 border border-stone-200">Eu trabalho <strong>num escritório</strong>. (I work in an office.)</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 border border-stone-200">Eu sou <strong>médico/a</strong>. (I am a doctor.)</td>
+                                <td class="p-3 border border-stone-200">Eu trabalho <strong>num hospital</strong>. (I work in a hospital.)</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 border border-stone-200">Eu sou <strong>professor/a</strong>. (I am a teacher.)</td>
+                                <td class="p-3 border border-stone-200">Eu trabalho <strong>numa escola</strong>. (I work in a school.)</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 border border-stone-200">Eu sou <strong>empregado/a de mesa</strong>. (I am a waiter.)</td>
+                                <td class="p-3 border border-stone-200">Eu trabalho <strong>num restaurante</strong>. (I work in a restaurant.)</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 border border-stone-200">Eu sou <strong>advogado/a</strong>. (I am a lawyer.)</td>
+                                <td class="p-3 border border-stone-200">Eu trabalho <strong>num escritório</strong>. (I work in an office.)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Quiz Section -->
+            <section id="quiz" class="tab-content">
+                <h2 class="text-2xl font-semibold text-stone-800 mb-4">Check your understanding!</h2>
+                <p class="text-stone-700 leading-relaxed mb-6">
+                    Read the questions in English and choose the best Portuguese answer based on the dialogue.
+                </p>
+                <div id="quiz-container">
+                    
+                    <div class="quiz-question">
+                        <p class="font-semibold text-lg mb-2">1. How does Beatriz ask Lars for his profession?</p>
+                        <label class="quiz-option"><input type="radio" name="q1" value="a">O que é que faz?</label>
+                        <label class="quiz-option"><input type="radio" name="q1" value="b">Onde é que mora?</label>
+                        <label class="quiz-option"><input type="radio" name="q1" value="c">Qual é o seu nome?</label>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <p class="font-semibold text-lg mb-2">2. What is Lars's profession?</p>
+                        <label class="quiz-option"><input type="radio" name="q2" value="a">É médico.</label>
+                        <label class="quiz-option"><input type="radio" name="q2" value="b">É professor.</label>
+                        <label class="quiz-option"><input type="radio" name="q2" value="c">É engenheiro de software.</label>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p class="font-semibold text-lg mb-2">3. Where does Beatriz work?</p>
+                        <label class="quiz-option"><input type="radio" name="q3" value="a">Trabalha numa escola.</label>
+                        <label class="quiz-option"><input type="radio" name="q3" value="b">Trabalha num hospital novo.</label>
+                        <label class="quiz-option"><input type="radio" name="q3" value="c">Trabalha num escritório.</label>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p class="font-semibold text-lg mb-2">4. What does Carlos do?</p>
+                        <label class="quiz-option"><input type="radio" name="q4" value="a">É médico.</label>
+                        <label class="quiz-option"><input type="radio" name="q4" value="b">É professor.</label>
+                        <label class="quiz-option"><input type="radio" name="q4" value="c">É engenheiro.</label>
+                    </div>
+
+                </div>
+                <button id="checkQuiz" class="mt-6 px-5 py-2 bg-green-600 text-white rounded-lg shadow hover:bg-green-700 transition-all duration-200">Check Answers</button>
+                <div id="quiz-results" class="mt-4 text-lg font-semibold"></div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- Tab Navigation Logic ---
+            const tabs = document.querySelectorAll('.nav-tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const target = this.getAttribute('data-tab');
+
+                    // Update tab active state
+                    tabs.forEach(t => t.classList.remove('tab-active'));
+                    this.classList.add('tab-active');
+
+                    // Update content active state
+                    tabContents.forEach(content => {
+                        if (content.id === target) {
+                            content.classList.add('tab-content-active');
+                        } else {
+                            content.classList.remove('tab-content-active');
+                        }
+                    });
+                });
+            });
+
+            // --- Dialogue Translation Toggle Logic ---
+            const toggleButton = document.getElementById('toggleTranslation');
+            if (toggleButton) {
+                toggleButton.addEventListener('click', function() {
+                    const translations = document.querySelectorAll('#dialogue .translation');
+                    const isHiding = this.textContent.includes('Hide');
+                    
+                    translations.forEach(t => {
+                        t.style.display = isHiding ? 'none' : 'block';
+                    });
+                    
+                    this.textContent = isHiding ? 'Show Translations' : 'Hide Translations';
+                });
+                // Initial state: Show translations
+                toggleButton.click(); 
+                toggleButton.click(); // Click twice to set to "Hide" by default but keep translations visible
+            }
+
+            // --- Quiz Logic ---
+            const checkQuizButton = document.getElementById('checkQuiz');
+            if (checkQuizButton) {
+                checkQuizButton.addEventListener('click', function() {
+                    const answers = {
+                        q1: 'a',
+                        q2: 'c',
+                        q3: 'b',
+                        q4: 'b'
+                    };
+                    let score = 0;
+                    const total = Object.keys(answers).length;
+                    const resultsContainer = document.getElementById('quiz-results');
+                    
+                    for (const q in answers) {
+                        const selected = document.querySelector(`input[name="${q}"]:checked`);
+                        if (selected) {
+                            const parentLabel = selected.parentElement;
+                            parentLabel.style.backgroundColor = ''; // Reset
+                            if (selected.value === answers[q]) {
+                                score++;
+                                parentLabel.style.backgroundColor = '#dcfce7'; // green-100
+                                parentLabel.style.borderColor = '#22c55e'; // green-500
+                            } else {
+                                parentLabel.style.backgroundColor = '#fee2e2'; // red-100
+                                parentLabel.style.borderColor = '#ef4444'; // red-500
+                            }
+                        }
+                    }
+                    
+                    let resultText = `You scored ${score} out of ${total}. `;
+                    if (score === total) {
+                        resultText += "Excelente! (Excellent!)";
+                        resultsContainer.style.color = '#166534'; // green-800
+                    } else {
+                        resultText += "Continue studying. (Continue a estudar.)";
+                        resultsContainer.style.color = '#991b1b'; // red-800
+                    }
+                    resultsContainer.textContent = resultText;
+                });
+            }
+
+        });
+    </script>
+
+</body>
+</html>
+
