@@ -313,6 +313,15 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // --- NOVO: TRUQUE PARA ESCONDER O MENU ---
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('modo') === 'aula') {
+                const backButton = document.querySelector('header a[href="index.html"]');
+                if (backButton) {
+                    backButton.style.display = 'none';
+                }
+            }
+            // -----------------------------------------
             // --- LÓGICA DAS ABAS (TABS) ---
             const tabs = document.querySelectorAll('.nav-tab');
             const contents = document.querySelectorAll('.tab-content');
