@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast A2: Unidade 1 (Fundamentos)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f4; /* stone-100 */
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .nav-tab {
+            padding: 0.75rem 1.25rem;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            color: #57534e; /* stone-600 */
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-tab:hover {
+            color: #1f2937; /* gray-800 */
+        }
+        .tab-active {
+            color: #374151; /* gray-700 */
+            border-bottom-color: #374151; /* gray-700 */
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content-active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1, transform: translateY(0); }
+        }
+        /* Cor 1: Mulher (Neutro) */
+        .chat-bubble-mulher {
+            background-color: #f5f5f4; /* stone-100 */
+            color: #1c1917; /* stone-900 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 1.25rem 0.25rem;
+            max-width: 80%;
+            align-self: flex-start;
+        }
+        /* Cor 2: Homem (Destaque Cinza) */
+        .chat-bubble-homem {
+            background-color: #e5e7eb; /* gray-200 */
+            color: #1f2937; /* gray-800 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 0.25rem 1.25rem;
+            max-width: 80%;
+            align-self: flex-end;
+        }
+        .translation-text { /* Re-utilizado para notas */
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.9em;
+            font-style: italic;
+            border-top: 1px dashed rgba(0, 0, 0, 0.1);
+            padding-top: 0.5rem;
+            color: #57534e; /* stone-600 */
+        }
+        .quiz-question {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #fafaf9; /* stone-50 */
+            border-radius: 0.5rem;
+            border: 1px solid #e7e5e4; /* stone-200 */
+        }
+        .quiz-options label {
+            display: block;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+         .quiz-options input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+        .quiz-options label:hover {
+            background-color: #e0f2fe; /* light-blue-100 */
+        }
+        .feedback {
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        .correct { color: #15803d; /* green-700 */}
+        .incorrect { color: #b91c1c; /* red-700 */ }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="text-center pb-6 border-b border-stone-200">
+            <h1 class="text-4xl font-bold text-cyan-900">Unidade 1: Fundamentos (Ser vs. Chamar-se)</h1>
+            <p class="text-xl text-stone-600 mt-2">Prática: Apresentações, Formalidade e Dias da Semana</p>
+            <a href="index.html" class="text-sky-600 hover:text-sky-800 mt-4 inline-block">&larr; Voltar ao Menu de Podcasts</a>
+        </header>
+
+        <nav class="mt-6 border-b border-stone-200">
+            <ul class="flex flex-wrap -mb-px">
+                <li><button class="nav-tab tab-active" data-tab="transcricao">Transcrição e Áudio</button></li>
+                <li><button class="nav-tab" data-tab="revisao">Revisão Gramatical</button></li>
+                <li><button class="nav-tab" data-tab="quiz">Quiz</button></li>
+            </ul>
+        </nav>
+
+        <main class="mt-8">
+
+            <section id="transcricao" class="tab-content tab-content-active">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Áudio da Lição</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-4">
+                    Practice your listening. Listen to the audio and follow along with the transcription below.
+                </p>
+                
+                <audio controls class="w-full mb-6">
+                    <source src="unidade01.m4a" type="audio/x-m4a">
+                    O seu browser não suporta o elemento de áudio.
+                </audio>
+
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4 mt-8">Transcrição</h2>
+                <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Olá. Bem-vindos a esta nossa análise um pouco mais a fundo.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Olá.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Hoje vamos, eh, espreitar os fundamentos do português A2. Especificamente a primeira unidade do CIPLE Master, da professora Sheila Meneses. Temos aqui os slides da aula e também alguns artigos de apoio que, pronto, resumem os pontos-chave.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Correto. E a ideia é mesmo essa, é extrair o sumo, digamos assim, desta unidade inicial. Vamos falar de saudações, apresentações, eh, os primeiros números, dias da semana.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            O básico do básico.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente. E vamos focar-nos naquelas regras gramaticais essenciais, eh, especialmente as que podem ser um bocadinho diferentes para quem vem do inglês.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Perfeito. Então, vamos lá desconstruir isto. Pode ser que ajude a clarificar algumas coisas da lógica do português, que às vezes parece um bocadinho inesperada. Ora bem, comecemos pelo início: cumprimentar. Temos o "Olá", claro, que dá para quase tudo. Mas depois temos as saudações que mudam com a hora, não é? "Bom dia", "Boa tarde", "Boa noite". Parece simples.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Parece, sim. Mas, eh, tem uma precisão temporal interessante que as fontes destacam. É mais definido que em inglês, se calhar.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Como assim?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Bem, em inglês "good day" quase não se usa. E "good evening" e "good night" às vezes confundem-se um pouco. Em português, as janelas de tempo são, vá lá, mais estabelecidas.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            OK.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            "Bom dia" usa-se, digamos, desde as 7h da manhã até ao meio-dia. (Good morning, roughly 7:00 a.m. until noon).
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Uhum.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Depois, "boa tarde" entra ao meio-dia e vai até ao pôr do sol. (Good afternoon, noon to sunset).
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Hum.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            "Boa noite", bem, isso é depois do sol se pôr. Muitas vezes fala-se das 20h, mas a referência principal é mesmo o anoitecer. E serve tanto para quando se chega (good evening) como para quando se sai (good night).
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ah, OK. Portanto, acabou aquela dúvida das 6 ou 7 da tarde. Se ainda há sol, é boa tarde. Escureceu, boa noite. Prático.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente. E se calhar reflete um bocadinho essa atenção ao ciclo do dia na própria língua, não é? É um pormenor, mas interessante.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Faz sentido. E para dizer adeus?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Também há formal e informal, certo?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sim.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            A questão da formalidade aparece logo aqui. Temos o "adeus", que soa talvez um pouco mais formal ou mais final.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            OK.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E depois o "tchau", que toda a gente usa, super informal, super descontraído. Vem do italiano, "ciao", claro.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E aqueles super úteis, tipo "Até logo", se for no mesmo dia.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Isso. "Até amanhã" para o dia seguinte, e o "Até já", que é ótimo para quando voltamos dali a bocadinho.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            (See you later. See you in a bit.) Percebo. A escolha já diz muito sobre a conversa. Lá está.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Precisamente. A formalidade é um fio condutor importante no português.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            OK. Agora, uma parte que, pelo que percebi das fontes, baralha muita gente no início: dizer o nome. Em inglês é simples: "I am" or "My name is". Mas em português, eh, parece que temos dois verbos principais: "ser" e "chamar-se". E a escolha não é indiferente.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            É, é um ponto crucial. E uma das primeiras grandes diferenças em relação ao inglês. As fontes, como aquele artigo "Ser vs. Chamar-se", explicam bem. "Chamar-se" é um verbo reflexo. Literalmente quer dizer "chamar a si mesmo", não é? Usa-se mesmo para dizer o nome.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Tipo, "Eu chamo-me Sheila". O "me" é a parte reflexa.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente. Agora, o verbo "ser" (to be) é mais geral. Indica identidade, nacionalidade, profissão, características mais permanentes. Quando usamos para o nome, é mais uma afirmação de identidade. Eu sou esta pessoa.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Por exemplo, "Eu sou a Sheila".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            "Eu sou a Sheila". E é aqui que entra a tal regra de ouro que as fontes mencionam, a questão dos artigos, o "o" e o "a".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Precisamente. E esta regra, que aparece nos slides da aula 2 e no artigo, é mesmo chave para soar natural. Funciona assim:
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Diz lá.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Com o verbo "chamar-se", nunca se usa artigo definido "o" ou "a" antes do nome. Diz-se "Chamo-me Pedro" ou "Ela chama-se Ana". Nunca, mas nunca, "Chamo-me o Pedro" ou "Ela chama-se a Ana". Os exercícios deixam esse claro.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            OK. Com "chamar-se", sem artigo. E com "ser"?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Com "ser", a regra de ouro em português europeu é usar o artigo definido, "o" para masculino, "a" para feminino, antes do nome. Tem de ser "Eu sou o Pedro" ou "Ela é a Ana". Nunca "Sou Pedro" ou "Ela é Ana". Os exemplos mostram isso: "Ele é o Jorge Viegas".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Uau. OK, isto é mesmo diferente. A minha tendência seria tirar o artigo com "ser", como em inglês, "I am John". Porque é que em português se põe esse "o" ou "a"? Qual é a lógica?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            É uma boa pergunta. Eh, não há uma resposta única, mas uma interpretação possível é que usar "ser" mais o artigo ("Sou a Maria") identifica a pessoa de uma forma mais definida. Quase como se dissesse: "Eu sou *aquela* Maria específica". Individualiza mais.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Hum.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Enquanto que "chamar-se" ("Chamo-me Maria") foca-se só no ato de dizer o nome, não tanto em definir quem és perante o outro. É subtil, mas a gramática marca a diferença. Dominar isto, este pequeno artigo, ajuda imenso a não soar a tradução.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Percebo. É como se "ser" apontasse para a identidade e "chamar-se" só informasse o nome. Fascinante como uma palavrinha tão pequena faz diferença. E isto leva-nos a como perguntar o nome, que também muda com a formalidade, não é?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Exatamente. E aqui a formalidade mexe mesmo com o verbo, o que é muito claro em Portugal, de Portugal.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Como assim?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Para um tratamento informal, com amigos, família, usamos a segunda pessoa, o "tu". A pergunta é: "Olá! Como te chamas?" (What's your name? - informal you). O verbo está na segunda pessoa ("chamas") e leva o pronome "te".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Certo.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Para um tratamento formal, com pessoas mais velhas, desconhecidos, no trabalho, usamos a terceira pessoa, associada a "você", "o senhor", "a senhora". A pergunta é: "Bom dia. Como se chama?". O verbo vai para a terceira pessoa ("chama") e leva o pronome "se".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            A terminação do verbo e o pronome mudam. Claríssimo. E para devolver a pergunta, tipo "and you"?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Segue a mesma lógica. Se te trataram por "tu" ("Como te chamas?"), devolves com "E tu?".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            OK.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Se a pergunta foi formal ("Como se chama?"), tens de devolver de forma igualmente formal. As fontes indicam: "E o senhor?" (para homem), "E a senhora?" (para uma mulher), ou "E você?".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E esse "você", usa-se muito?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Usa-se. Mas em Portugal, atenção, às vezes pode soar um pouco direto demais em situações muito formais, ou até menos respeitoso do que "o senhor" ou "a senhora", especialmente com pessoas mais velhas ou numa hierarquia. Ir por "o senhor" ou "a senhora" é geralmente mais seguro.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Uau. Isto da formalidade é quase uma arte. Imagino que no início uma pessoa possa cometer umas gafes.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Acontece, claro. Mas as pessoas normalmente percebem. O importante é ter a noção que a língua tem estas ferramentas para marcar respeito e distância, e a conjugação é uma delas. Ah, e outro ponto gramatical que os artigos referem: a ordem das palavras na pergunta.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sim.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Com palavras como "como", "onde", "quem", o pronome reflexo ("me", "te", "se") costuma vir *antes* do verbo. Por isso é "Como se chama?" e não "Chama-se como?".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Ah, OK. A segunda forma soaria esquisita.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Soaria menos natural na pergunta direta, sim. A ordem normal é essa: palavra interrogativa + pronome + verbo. E já que falamos de pronomes, reparaste como nos exemplos dos slides muitas vezes não aparece o "eu", o "tu"?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Reparei. Diz-se "Chamo-me Pedro", não "Eu chamo-me Pedro". Porquê?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Porque a terminação do verbo em português já diz tudo. "Chamo", só pode ser "eu". "Chamas", só "tu". "Chama", "ele", "ela" ou "você". O pronome sujeito acaba por ser redundante na maioria das vezes. Omite-se para a conversa fluir melhor. Só se usa mais para dar ênfase ou evitar confusão.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Entendido. A informação está no fim do verbo. Bem, vamos mudar de assunto. Vocabulário essencial desta unidade: números de 0 a 20. Temos a lista no slide: 0, 1, 2, 3... 10. E depois: 11, 12, 13, 14, 15, 16, 17, 18, 19, 20.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Essenciais, claro. E a aplicação prática imediata que os materiais sugerem é para os números de telefone.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Como é que se pergunta, mesmo?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            As fontes dizem: "Qual é o teu número de telemóvel?" (What is your mobile phone number?) ou só "Qual é o teu número de telefone?" (What is your phone number?).
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E para responder, dizemos os números um a um?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Normalmente sim, é o mais simples. Por exemplo, 912 345 678 seria "nove, um, dois, três, quatro, cinco, seis, sete, oito". Às vezes agrupam-se, mas um a um funciona perfeitamente. Ah, e uma nota importante: em Portugal, o número 6 lê-se mesmo "seis". Aquela forma "meia" que se ouve às vezes, é mais do Brasil.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Boa dica. Manter o "seis" em Portugal. Agora, algo que os artigos dizem que é mesmo contra-intuitivo para quem fala inglês: os dias da semana. Tirando sábado e domingo, os outros têm números.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            É isso. É exatamente isso. E é um sistema bem peculiar. Enquanto o inglês usa nomes de deuses e planetas (Thursday, dia de Thor; Saturday, dia de Saturno), o português, como as fontes explicam, usa um sistema com números para os dias úteis.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Como é que isso funciona?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Bem, a semana tradicionalmente começa ao domingo, o "dia do Senhor". O dia a seguir, que seria o primeiro dia de trabalho ou de feira (mercado, negócios), era contado como o *segundo* dia dessa semana litúrgica. Então, "segunda-feira". É literalmente o segundo dia útil.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Faz sentido.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            "Terça-feira", o terceiro dia útil. "Quarta-feira", o quarto. "Quinta-feira", o quinto. "Sexta-feira", o sexto dia útil. E depois temos "Sábado" (vem do Shabat hebraico) e "Domingo".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Que lógico, visto assim. Mas tão diferente. E como é que usamos isto? Para perguntar "Que dia é hoje?", a resposta é direta.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Direta. Por exemplo, "Hoje é segunda-feira" ou "Hoje é sábado". E para falar de coisas que acontecem regularmente, como no exemplo: "Temos aulas à segunda e à quarta". Notei esse "à" antes dos dias.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Bem visto. Esse "à" é a contração da preposição "a" (que aqui significa "em" ou "on") com o artigo definido feminino "a". Porque "segunda-feira", "terça-feira", etc., são palavras femininas. Basicamente, quer dizer "na segunda-feira", "na quarta-feira". É a crase.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            OK.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Usa-se para indicar o dia específico em que algo acontece. Para "sábado" e "domingo", que são masculinos, usamos "ao", que é "a + o". "Vou ao cinema ao sábado".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ah, então "à" (com crase) para os dias de feira femininos, e "ao" para o fim de semana masculino, quando queremos dizer "nesse dia". Percebido. Outra regrinha ligada a isto.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exato. Mostra como o género das palavras influencia até as preposições que usamos.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Bem, fazendo aqui um resumo desta primeira unidade. Mesmo sendo só o início (saudações, apresentações, números, dias), já vimos várias regras e conceitos que são bem diferentes do inglês. Mas, pronto, essenciais para comunicar.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sem dúvida. A distinção "ser" vs. "chamar-se" com a regra do artigo, a forma como o verbo muda para mostrar formalidade ("chamas" vs. "chama"), a lógica dos dias da semana, a precisão das saudações... São peças importantes do puzzle.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            O que acho mais interessante nisto tudo não são só as regras por si, mas o que elas podem sugerir. Esta necessidade de marcar a formalidade na gramática, a importância do artigo com "ser" para a identidade, a estrutura dos dias... Parece que a língua pede uma certa atenção a detalhes sociais, contextuais.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            É uma ótima observação. Aprender estas regras não é só decorar, é começar a assimilar uma forma diferente de organizar a comunicação. A gramática, no fundo, reflete um pouco a forma como uma cultura vê o mundo e as relações. Cada detalhe faz parte de um sistema.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E para terminar, talvez deixar uma ideia no ar que se liga a esta conversa do "ser" e "chamar-se": identidade versus nome. Falámos que "ser" é para coisas permanentes, essenciais. "Sou a Ana", "Ele é português". Mas o português tem outro verbo "to be" fundamental: o "estar".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente. E o "estar", ao contrário do "ser", usa-se para estados temporários, local
