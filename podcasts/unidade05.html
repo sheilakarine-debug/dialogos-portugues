@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast A2: Unidade 5 (Locais e Pronúncia)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f4; /* stone-100 */
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .nav-tab {
+            padding: 0.75rem 1.25rem;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            color: #57534e; /* stone-600 */
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-tab:hover {
+            color: #0c4a6e; /* sky-900 */
+        }
+        .tab-active {
+            color: #0369a1; /* sky-700 */
+            border-bottom-color: #0369a1; /* sky-700 */
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content-active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1, transform: translateY(0); }
+        }
+        /* Cor 1: Mulher (Neutro) */
+        .chat-bubble-mulher {
+            background-color: #f5f5f4; /* stone-100 */
+            color: #1c1917; /* stone-900 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 1.25rem 0.25rem;
+            max-width: 80%;
+            align-self: flex-start;
+        }
+        /* Cor 2: Homem (Destaque Céu) */
+        .chat-bubble-homem {
+            background-color: #e0f2fe; /* sky-100 */
+            color: #0c4a6e; /* sky-900 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 0.25rem 1.25rem;
+            max-width: 80%;
+            align-self: flex-end;
+        }
+        .translation-text { /* Re-utilizado para notas */
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.9em;
+            font-style: italic;
+            border-top: 1px dashed rgba(0, 0, 0, 0.1);
+            padding-top: 0.5rem;
+            color: #57534e; /* stone-600 */
+        }
+        .quiz-question {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #fafaf9; /* stone-50 */
+            border-radius: 0.5rem;
+            border: 1px solid #e7e5e4; /* stone-200 */
+        }
+        .quiz-options label {
+            display: block;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+         .quiz-options input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+        .quiz-options label:hover {
+            background-color: #e0f2fe; /* light-blue-100 */
+        }
+        .feedback {
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        .correct { color: #15803d; /* green-700 */}
+        .incorrect { color: #b91c1c; /* red-700 */ }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="text-center pb-6 border-b border-stone-200">
+            <h1 class="text-4xl font-bold text-cyan-900">Unidade 5: Locais, Possessivos e Pronúncia</h1>
+            <p class="text-xl text-stone-600 mt-2">Revisão de contrações (no, na), possessivos (meu, dele) e os sons do R.</p>
+            <a href="index.html" class="text-sky-600 hover:text-sky-800 mt-4 inline-block">&larr; Voltar ao Menu de Podcasts</a>
+        </header>
+
+        <nav class="mt-6 border-b border-stone-200">
+            <ul class="flex flex-wrap -mb-px">
+                <li><button class="nav-tab tab-active" data-tab="transcricao">Transcrição e Áudio</button></li>
+                <li><button class="nav-tab" data-tab="revisao">Revisão Gramatical</button></li>
+                <li><button class="nav-tab" data-tab="quiz">Quiz</button></li>
+            </ul>
+        </nav>
+
+        <main class="mt-8">
+
+            <section id="transcricao" class="tab-content tab-content-active">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Áudio da Lição</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-4">
+                    Practice your listening. Listen to the audio and follow along with the transcription below.
+                </p>
+                
+                <audio controls class="w-full mb-6">
+                    <source src="unidade05.m4a" type="audio/x-m4a">
+                    O seu browser não suporta o elemento de áudio.
+                </audio>
+
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4 mt-8">Transcrição</h2>
+                <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Olá e bem-vindos a mais uma análise detalhada. Hoje temos aqui connosco, ah, uns materiais. Parecem ser de uma lição de português nível A2 do CIPLE Master. Alguém anda a estudar, pelos vistos.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente. E a nossa tarefa, pronto, é pegar nisto e revisitar alguns pontos-chave. Vamos focar-nos em três coisinhas que são sempre, tipo, essenciais nesta fase: locais, possessivos e uns detalhes de pronúncia.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Hum-hum. A ideia é mesmo essa: pegar nos materiais, sejam slides, notas, o que for, e tirar o essencial, organizar as ideias, sabes? Clarificar as regras e, pronto, tentar que isto fique bem arrumadinho na cabeça. Tudo em português, claro, mas vamos usando as traduções para inglês que estão nos materiais para ajudar.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            A missão é essa mesma. Fazer com que a gramática não pareça um bicho de sete cabeças, mas sim algo útil para o dia a dia. Sem muitas voltas, vamos diretos ao que interessa.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Perfeito. Então, por onde é que a gente começa? Hum, que tal pelo básico? Onde estamos? A pergunta "Onde estás?" (em inglês "Where are you?") parece o ponto de partida, não é?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sim, é fundamental. E a base para responder a isso em português é a preposição "em", geralmente quer dizer "in" ou "at". Só que, na maioria das vezes, o "em" não anda sozinho. Gosta de companhia. Junta-se ao artigo definido "o" ou "a" que vem com o nome do sítio.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ah, as famosas contrações. É quase uma dança, não é? O "em" mais o "o" dá "no". E o "em" mais o "a" dá "na". Parece simples, mas, epá, faz toda a diferença para soar natural.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Precisamente. E os materiais que temos aqui, olha, estão cheios de exemplos. Para nomes masculinos, temos o "no". Coisas como "no supermercado" (in the supermarket), "no restaurante" (in the restaurant), ou "no hotel" (in the hotel), "no aeroporto" (in the airport). E outros que também aparecem muito: "no escritório", "no quarto", "no centro comercial", "no bar", pronto, imensos.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E a mesma lógica para os femininos com o "na". Os exemplos são tipo "na biblioteca" (in the library), "na rua" (on the street)...
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Yeah.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            ... "na escola", "na praia" (on the beach). Coisas comuns: "na cozinha", "na sala". Cobre bastante.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Mas claro, o português gosta sempre de ter ali uma exceçãozinha para animar, não é? E esta é daquelas mesmo importantes: a palavra "casa" (home).
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ah, essa. Lembro-me de ver nos materiais, tipo, um carimbo a dizer "Importante!" ao lado de "Estou em casa".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Yeah.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Portanto, quando falamos da nossa casa, o nosso lar, a contração desaparece.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            É isso mesmo. Não se diz "na casa" nesse sentido, diz-se simplesmente "em casa". É uma forma fixa. E é interessante pensar porquê, não é? Talvez porque "casa", no sentido de lar, seja um conceito tão, tão básico, tão pessoal que nem precisa do artigo. É "casa", pronto.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Pois, faz sentido. Quase como se tivesse um estatuto especial. E os materiais até comparam, não é? Como naquele exemplo: "O Ricardo está em casa", mas logo a seguir, "O Ricardo está no carro". Vê-se logo a diferença.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente. "Carro" é masculino, regra geral, pimba, "no". "Casa" como lar, é a exceção, fica só "em". Portanto, para resumir os locais: regra geral, "no" para masculino, "na" para feminino. Exceção do dia a dia: "em casa". Já ajuda imenso.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E para completar, os materiais também falavam daqueles indicadores: "aqui", "aí" e "ali". Essenciais para situar coisas no espaço, não é? Em relação a nós.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sim, sim. O "aqui", perto de quem fala; o "aí", perto de quem ouve; e o "ali", quando está longe dos dois. Advérbios de lugar, muito úteis.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E vemos isso nas perguntas dos exercícios, tipo: "O que é isso aí?". Usamos "aí" porque está perto da outra pessoa. Ou então: "O que é aquilo ali?" para algo mais longe. São ferramentas mesmo práticas.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sem dúvida. Pequenas palavras, grande impacto na clareza.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Muito bem. Acho que os locais estão despachados. Podemos ir para outro tópico que às vezes, epá, dá nós na cabeça: os possessivos. O "my" or "his", "her"... como é que isso funciona em português?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Ah, os possessivos. É um clássico. A diferença principal com o inglês e outras línguas é esta, e isto é a regra de ouro mesmo: em português, o possessivo concorda em género e número com a *coisa possuída*, não com o *dono*.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Epá, isto é mesmo contrário do inglês. Dá a volta à cabeça no início. Os exemplos dos materiais são chave aqui. "O meu telemóvel" (my phone). Não interessa se sou eu ou tu, homem ou mulher. "Telemóvel" é masculino, por isso é "meu".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente. E o contrário: "A minha carteira" (my wallet). Lá está, não interessa o dono. "Carteira" é palavra feminina, logo o possessivo tem de ser feminino: "minha". Concorda sempre com o objeto.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            OK, pronto. A concordância está percebida. Mas depois há a questão de onde pôr a palavra e se precisa de mais alguma coisa. Os materiais falavam de duas regras, não era?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sim. A primeira, e a mais comum, aplica-se à maioria: "meu", "minha", "teu", "tua", "seu", "sua", "nosso", "nossa", "vosso", "vossa". Aqui a regra é dupla: normalmente vêm *antes* do nome e quase sempre precisam do artigo definido "o", "a", "os", "as" *antes* deles.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Certo. A estrutura fica: artigo + possessivo + nome. Os exercícios mostravam isso bem. "O seu país é Espanha." "País" é masculino, logo "o seu". Mas "A sua cidade é Sevilha." "Cidade" é feminino, então "a sua".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Hum-hum. E outros exemplos que estavam lá: "A minha cidade é Berlim." "Minha" porque "cidade" é feminino. "O nosso país é a Rússia." "Nosso" porque "país" é masculino. Sempre com o artigo antes. E no plural, a mesma coisa: "os meus livros", "as tuas chaves". A lógica é a mesma.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            OK. Regra principal entendida. Mas depois vem a segunda maneira, a
