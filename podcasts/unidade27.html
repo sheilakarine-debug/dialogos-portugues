@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast A2: Unidade 27 (Verbo 'Dever')</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f4; /* stone-100 */
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .nav-tab {
+            padding: 0.75rem 1.25rem;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            color: #57534e; /* stone-600 */
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-tab:hover {
+            color: #5b21b6; /* purple-900 */
+        }
+        .tab-active {
+            color: #7c3aed; /* purple-600 */
+            border-bottom-color: #7c3aed; /* purple-600 */
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content-active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Ordem dos Oradores: Homem (1) / Mulher (2) */
+        
+        /* Cor 1: Homem (Orador 1) - Neutro, Esquerda */
+        .chat-bubble-homem {
+            background-color: #f5f5f4; /* stone-100 */
+            color: #1c1917; /* stone-900 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 1.25rem 0.25rem;
+            max-width: 80%;
+            align-self: flex-start;
+        }
+        /* Cor 2: Mulher (Oradora 2) - Destaque Roxo, Direita */
+        .chat-bubble-mulher {
+            background-color: #f5f3ff; /* purple-100 */
+            color: #5b21b6; /* purple-900 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 0.25rem 1.25rem;
+            max-width: 80%;
+            align-self: flex-end;
+        }
+        .translation-text { /* Re-utilizado para notas */
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.9em;
+            font-style: italic;
+            border-top: 1px dashed rgba(0, 0, 0, 0.1);
+            padding-top: 0.5rem;
+            color: #57534e; /* stone-600 */
+        }
+        .quiz-question {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #fafaf9; /* stone-50 */
+            border-radius: 0.5rem;
+            border: 1px solid #e7e5e4; /* stone-200 */
+        }
+        .quiz-options label {
+            display: block;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+         .quiz-options input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+        .quiz-options label:hover {
+            background-color: #e0f2fe; /* light-blue-100 */
+        }
+        .feedback {
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        .correct { color: #15803d; /* green-700 */}
+        .incorrect { color: #b91c1c; /* red-700 */ }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="text-center pb-6 border-b border-stone-200">
+            <h1 class="text-4xl font-bold text-cyan-900">Unidade 27: O Verbo 'Dever' (Conselhos/Suposições)</h1>
+            <p class="text-xl text-stone-600 mt-2">Revisão de "dever" (should/must be), "sentir-se" vs "sentar-se" e dicas culturais.</p>
+            <a href="index.html" class="text-sky-600 hover:text-sky-800 mt-4 inline-block">&larr; Voltar ao Menu de Podcasts</a>
+        </header>
+
+        <nav class="mt-6 border-b border-stone-200">
+            <ul class="flex flex-wrap -mb-px">
+                <li><button class="nav-tab tab-active" data-tab="transcricao">Transcrição e Áudio</button></li>
+                <li><button class="nav-tab" data-tab="revisao">Revisão Gramatical</button></li>
+                <li><button class="nav-tab" data-tab="quiz">Quiz</button></li>
+            </ul>
+        </nav>
+
+        <main class="mt-8">
+
+            <section id="transcricao" class="tab-content tab-content-active">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Áudio da Lição</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-4">
+                    Practice your listening. Listen to the audio and follow along with the transcription below.
+                </p>
+                
+                <audio controls class="w-full mb-6">
+                    <source src="unidade27.m4a" type="audio/x-m4a">
+                    O seu browser não suporta o elemento de áudio.
+                </audio>
+
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4 mt-8">Transcrição</h2>
+                <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Bem-vindos a esta análise mais a fundo. Hoje vamos, vamos mergulhar nuns materiais que me pareceram muito interessantes de um curso de português A2. Vamos focar-nos, pronto, nos pontos chave de uma lição em particular, a unidade 27.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Exatamente. São materiais, eh, do curso CIPLE Master, que foi criado pela professora Sheila Meneses. E esta unidade, a 27, aborda não só gramática essencial, mas também aspetos de comunicação e até, hum, algumas práticas culturais importantes cá em Portugal.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Basicamente, a nossa ideia aqui é extrair o essencial, de forma clara e, esperamos nós, útil para quem está a aprender.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            É isso mesmo, precisamente. Vamos tentar desmistificar alguns verbos que, bem, às vezes dão umas dores de cabeça. Tipo o "dever", quando o usamos para dar conselhos ou para fazer suposições.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Certo. E também vamos espreitar umas dicas culturais que, olha, podem mesmo fazer a diferença no dia a dia. Tudo isto com exemplos práticos, tirados diretamente dos materiais. OK. Então, vamos a isto.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Talvez pudéssemos começar por um ponto que, hum, que gera muitas vezes confusão para quem aprende português. Aqueles verbos reflexos que são muito parecidos na forma, mas têm significados completamente diferentes. Estou a pensar no "sentir-se" e no "sentar-se".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Ah, sim. Esses dois. Parecem quase gémeos, não é? Mas um fala de como estamos, das emoções, e o outro, bem, o outro tem a ver com cadeiras.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Exatamente isso. O "sentir-se" tem a ver com "to feel", como nos sentimos, seja emocionalmente ou fisicamente. Já o "sentar-se" é mesmo a ação física, "to sit down", ocupar um lugar, um assento.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Hum-hum. Ambos são verbos reflexos, é verdade. E nos exemplos que temos aqui no material, estão conjugados no presente do indicativo. Mas é mesmo crucial não os confundir.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Como seria?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Aí já usamos o "sentar-se". Por exemplo, "Eu sento-me nesta cadeira". Ou, se estivermos em grupo e quisermos saber onde podemos ficar, "Onde é que nos sentamos?" (para nós), não é?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Exato.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E para descrever um hábito de outras pessoas, "Eles sentam-se sempre no sofá". O ato de se sentarem.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E se quisesses perguntar diretamente a um amigo como é que ele está, como se está a sentir?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Ah, aí voltamos ao "sentir-se", claro. Seria "Como te sentes?", usando o "tu". E também podemos usar para falar de outra pessoa, tipo, "Acho que o Carlos não se sente bem".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Perfeito. Acho que essa distinção entre sentir uma emoção e sentar o corpo ficou clara. É um passo importante. E agora, que tal passarmos para aquele verbo que mencionaste, o tal canivete suíço?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Agora sim. Vamos a ele. O verbo "dever" é mesmo super útil. Dá para imensas coisas na gramática portuguesa.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sem dúvida. E os materiais da unidade 27 destacam, hum, duas funções principais para este verbo. A primeira função é a de dar conselhos ou indicar uma obrigação, uma recomendação forte. É algo parecido com o "should" em inglês.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exato. O próprio título da unidade já o mostra: "Deves estudar mais". É um conselho direto.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Precisamente. Vamos ver como isto funciona nos cenários que eles apresentam. Temos aqui uma pessoa a queixar-se: "Ganho muito pouco. Os meus colegas ganham muito mais, mas não trabalham tanto como eu." Pronto, um desabafo. Qual seria o conselho aqui?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Hum, o material sugere: "Deve mudar de emprego." É direto ao ponto. Parece um conselho bastante lógico, de facto.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E numa situação um bocadinho mais, ah, complexa? Também temos. Alguém com problemas para chegar a horas: "Chego sempre atrasado ao escritório. Saio de casa cedo, mas depois perco muito tempo no trânsito. O trânsito de manhã é horrível."
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Uma situação comum, infelizmente.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Pois é. E o conselho aqui é mais detalhado: "Deve usar transportes alternativos ao carro, por exemplo, ir de metro ou de bicicleta para o trabalho." É uma sugestão prática para resolver o problema.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E vemos que este uso do "dever" também se aplica quando o conselho não é para a pessoa com quem falamos, mas para terceiros, como no caso dos pais preocupados com a filha.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sim, exatamente. Eh, nesse exercício, os pais dizem algo como: "A nossa filha tem problemas na escola. Não é boa aluna. Diz que os professores não gostam dela. O que devemos fazer?" Hum-hum. E o conselho dado é duplo: "Deve falar com os professores" e "Deve ajudar a sua filha a estudar". Claro que também podemos usar na negativa, não é? "Não deves trabalhar tanto", falando para "tu".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Certo.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ou para um grupo: "Nós devemos esperar por ele". E aquela forma tão nossa, "a gente". "A gente deve falar com o chefe". É sempre bom lembrar que "a gente", embora signifique "nós", leva o verbo na terceira pessoa do singular, como "ele" ou "ela". "A gente deve", não "a gente devemos".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Muito bem lembrado. Pronto, essa função de conselho ou obrigação parece clara. Mas qual é então a segunda grande utilização do "dever" que a unidade explora? É aqui que a coisa fica ainda mais interessante, não é?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E como fica. Esta segunda função é quase detetive.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            É um bocadinho, sim. A segunda função chave é a de expressar probabilidade. Ou seja, fazer uma suposição lógica baseada em alguma evidência que temos ou no contexto. Em inglês, seria algo como "must be" ou "probably".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Hum-hum.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Usamos o "dever" quando não temos a certeza absoluta, 100%, mas temos fortes razões para acreditar que algo é verdade. É fazer uma dedução lógica.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            É isso mesmo. Vamos às pistas e conclusões que os materiais nos dão, que são ótimas. Pista: "São 10 da noite e o Miguel ainda está a trabalhar." Qual é a conclusão óbvia?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Hum, "Deve estar muito cansado."
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Parece lógico, certo?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Faz todo o sentido. Que outras pistas temos por aí?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Olha esta. Pista: "O Manuel tem um Porsche." Uau! A conclusão imediata de quase toda a gente seria: "Deve ter muito dinheiro." É uma suposição razoável, vá.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Bem razoável.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Outra. Pista: "O telefone está a tocar." E a informação extra é que só a mãe costuma ligar àquela hora. Conclusão: "Deve ser a tua mãe." Ou uma mais doméstica. Pista: "O cão está na cozinha a olhar para o frigorífico."
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Coitadinho.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            A conclusão: "Deve estar com fome."
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Claro.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            É curioso como isto funciona até quando a evidência é, na verdade, uma ausência, algo que não está a acontecer.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Precisamente. Vê só este exemplo. Pista: "A Joana não está no escritório." "Está de férias?" A resposta é: "Não, ela nunca tira férias." Então a conclusão lógica é: "Deve estar doente."
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Hum-hum.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Ou baseada apenas no nome. Pista: "Aquele rapaz chama-se Christos. Sabes de onde é?" A dedução mais provável: "Deve ser grego."
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            O que é interessante aqui, e que os materiais do CIPLE Master também referem, é a ligação forte entre usar o "dever" para indicar probabilidade e o advérbio "provavelmente". Muitas vezes, uma frase com "provavelmente" pode ser dita de forma mais natural, ou talvez um pouco mais, ah, assertiva, usando o "dever".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sim, os exercícios até mostram essa transformação. Por exemplo, a frase "Ela provavelmente está na praia" pode ser dita como "Ela deve estar na praia".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Exato.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Ou "O Afonso probably está no trabalho" transforma-se em "O Afonso deve estar no trabalho".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Soa mais direto, de facto. Mais conversacional, talvez.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E a boa notícia nisto tudo é que para usar o "dever" nestas duas funções, seja para dar conselhos, seja para indicar probabilidade, só precisamos de saber conjugar o verbo no presente do indicativo. E é uma conjugação bastante regular, felizmente.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            É verdade. A conjugação não tem grandes segredos. Vamos só rever rapidamente: Eu devo, tu deves, ele, ela ou a gente deve, nós devemos, eles ou elas devem.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Certo.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E a estrutura é sempre, sempre a mesma: o verbo "dever" conjugado e logo a seguir o verbo principal no infinitivo. Como vimos nos exemplos: "deve estar", "devemos falar", "deve mudar". Simples e muito eficaz.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Um verbo extremamente útil, sem dúvida nenhuma. Agora, mudando um bocadinho de registo gramatical, vamos falar de como dar ordens ou instruções, especificamente o imperativo informal, aquela forma que usamos para falar diretamente com "tu".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Hum-hum.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E a unidade 27 usa um contexto muito específico para praticar isto: as tarefas domésticas.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ah, as famosas tarefas domésticas. O exercício com o pobre do Nuno é um clássico do A2, não é? Basicamente, são ordens diretas para ele fazer coisas em casa. Por exemplo, para mandar limpar: "Nuno, limpa o pó das estantes e da secretária."
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E para outras tarefas comuns em casa? Como seria?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Para arrumar o quarto: "Nuno, arruma o quarto!" Para passar a ferro: "Nuno, passa a roupa a ferro!" Para levar o lixo para fora: "Nuno, põe o lixo na rua!" E atenção aqui, o verbo "pôr" é irregular no imperativo, fica "põe", não é "põe".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Bem notada essa irregularidade do "pôr", é importante. E para aspirar ou lavar?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Para aspirar: "Nuno, aspira os tapetes!" E para lavar a roupa: "Nuno, lava a roupa!" Geralmente, a forma do imperativo informal para "tu" é igual à forma da terceira pessoa do singular do presente do indicativo. Por exemplo, "ele limpa", imperativo "limpa tu". Mas temos que ter atenção a esses irregulares como o "pôr", o "ter" (tem), o "ser" (sê), o "ir" (vai).
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Certo. É o comando direto, muito comum em casa, entre amigos, em contextos mais informais.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Alto da gramática para a cultura.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Ótima transição, sim. Vamos a isso.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Vamos então falar um pouco de etiqueta, de costumes sociais. As fontes dão-nos algumas dicas importantes sobre coisas que, hum, que não devemos fazer em Portugal. São aquelas pequenas regras, às vezes não ditas, que conhecer pode fazer a diferença no dia a dia.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente. O material do curso até sublinha isso mesmo, a importância de percebermos os costumes locais. Lembram que aquilo que é perfeitamente normal numa cultura pode ser estranho ou até indelicado noutra.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Hum-hum.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Estar ciente destas regras não escritas mostra respeito e, claro, ajuda a evitar aquelas situações um bocadinho embaraçosas, as chamadas gafes. A lista que temos foca-se em coisas a evitar em Portugal.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Então, vamos lá ver essa lista. As cinco regras que, segundo estas fontes que estamos a usar, se aplicam mesmo a Portugal. Número um: não tire os sapatos na casa de alguém.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Hum.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            A não ser, claro, que o dono da casa insista muito ou peça especificamente. Mas a norma geral, ao contrário de outros países, é manter os sapatos calçados quando se visita alguém.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Interessante essa diferença cultural. E a segunda regra?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Não escreva a vermelho. Parece que, tradicionalmente, usar caneta vermelha podia ter associações negativas, talvez ligadas a correções escolares ou algo de mau presságio. Por via das dúvidas, talvez seja melhor usar outra cor para notas ou cartas mais pessoais.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Percebido. A terceira regra tem a ver com a pontualidade, mas em contextos sociais, quando somos convidados.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sim, não chegue à casa de alguém antes da hora marcada. Em Portugal, para um convite em casa de alguém, um jantar, por exemplo, chegar exatamente à hora marcada ou até com uns 10, 15 minutos de atraso é considerado perfeitamente normal e até preferível a chegar adiantado.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Ah, sim.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sim. Chegar cedo pode apanhar os anfitriões ainda nos preparativos, meio desprevenidos.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Ah, isso é uma nuance importante da pontualidade social portuguesa. Não é bem como no trabalho. E a quarta regra, envolve um ritual muito comum.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            É verdade. Não brinde com água. Ao fazer um brinde, ao dizer "saúde", o costume é usar uma bebida alcoólica, ou pelo menos um sumo, um refrigerante. Brindar só com um copo de água é visto por muita gente como dando azar. É uma superstição bastante comum.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Curioso. E a regra final desta lista de coisas a evitar?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Não feche a porta sem dizer "com licença". Isto aplica-se a se estiver numa sala com outras pessoas e precisar de fechar a porta, talvez por causa do barulho ou do frio. Considera-se mais educado pedir permissão antes. Um simples "Com licença, posso fechar a porta?" ou algo do género.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Entendido. Agora, o material do CIPLE Master faz aqui uma coisa inteligente. Depois de apresentar esta lista, revela que algumas das regras que estavam lá misturadas são, na verdade, equívocos. Não se aplicam especificamente a Portugal. São as chamadas regras falsas.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Exatamente.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E isso também é uma lição importante. Ensina a ter um olhar crítico sobre a informação cultural que recebemos.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sem dúvida. E agora vamos às armadilhas. São duas regras que estavam na lista inicial, mas que, segundo as fontes que estamos a usar, não são costumes portugueses. Podem existir noutras culturas, mas não aqui. A primeira é: não dê flores amarelas a uma amiga ou namorada.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E qual é a realidade por trás disso? Porque é que isso não se aplica cá?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            A fonte esclarece que essa ideia de associar flores amarelas a sentimentos negativos, tipo ciúme ou separação, é um costume mais comum noutros países, como na Rússia ou na Ucrânia. Em Portugal não há problema nenhum em oferecer flores amarelas. Podem simbolizar alegria, amizade, luz.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Fica esclarecido. Não há azar com as flores amarelas em Portugal. E a segunda ideia errada que estava na lista?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            É a regra "não coma com a mão esquerda". O material explica bem que esta restrição está ligada a algumas culturas, nomeadamente islâmicas, onde a mão esquerda pode ser considerada impura para certas atividades, como comer ou cumprimentar. Mas isto não faz parte da etiqueta portuguesa. Come-se com talheres, usando ambas as mãos conforme necessário.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            O interessante nisto tudo é como nos leva a pensar sobre a origem da informação cultural. É mesmo fundamental tentar basearmo-nos em fontes locais, autênticas, e não em generalizações ou estereótipos que ouvimos por aí.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Pois é. E o objetivo ao aprender estas regras não é tornarmo-nos robôs perfeitos da etiqueta, mas sim demonstrar respeito e abertura para com a cultura. Cometer uma pequena gafe é humano e compreensível. O que conta mais é a intenção de respeitar e de aprender, não acha?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sem dúvida nenhuma. A intenção e o esforço são quase sempre muito bem recebidos.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E só para termos a visão completa da unidade 27, vale a pena referir brevemente, como as fontes também fazem, que a unidade também aborda outros pontos gramaticais. Mencionam o verbo "dar" e os conceitos de complemento direto e complemento indireto.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Ah, sim.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            São outras peças importantes do puzzle da gramática neste nível A2.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Certo.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Perceber a quem se dá algo (o complemento indireto) e o que se dá (o complemento direto) é mesmo fundamental para construir frases corretamente com imensos verbos comuns em português.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente. Ajuda a organizar a frase, a responder às perguntas "o quê?" e "a quem?".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Por exemplo, na frase "Eu dou o livro à Maria", "o livro" é o complemento direto (responde a "o quê?") e "à Maria" é o complemento indireto (responde "a quem?"). Dominar isto abre muitas portas para uma comunicação mais clara e mais precisa.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Boa nota. Fica a referência para quem estiver a seguir o curso ou quiser aprofundar essa parte. Então, fazendo aqui um balanço rápido desta nossa exploração da unidade 27. Vimos a versatilidade incrível do verbo "dever", essa ferramenta multifunções para dar conselhos e fazer suposições.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Uhum.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Desfizemos aquela confusão clássica entre "sentir-se", que é para emoções, e "sentar-se", que é para cadeiras. Revisitámos o imperativo informal, o "tu" que manda fazer as tarefas lá em casa. E, por fim, navegámos um pouco pelas águas, por vezes subtis, da etiqueta portuguesa, separando o que são regras úteis dos mitos culturais.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            O que me parece fascinante nisto tudo é precisely essa ligação, essa dança entre a língua e a cultura. Dominar as nuances de um verbo como o "dever" não só nos permite expressar ideias mais complexas – pensa na diferença entre uma obrigação forte e uma mera probabilidade –, mas também aproxima a nossa forma de falar da naturalidade dos falantes nativos.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Certo.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Da mesma forma, conhecer as regras de etiqueta, como não brindar com água ou pedir licença para fechar uma porta, são pequenos gestos, mas são gestos que demonstram um conhecimento e um respeito pela cultura que facilitam imenso a integração social. Tornam as interações muito mais fluidas, mais agradáveis para todos.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Deixa-nos a pensar, não é? Até que ponto é que conhecer estas pequenas regras não escritas, seja a subtileza de usar o "dever" corretamente numa conversa, seja saber se deve ou não tirar os sapatos ao entrar na casa de alguém, até que ponto é que isto transforma a nossa experiência num país estrangeiro ou mesmo a nossa aprendizagem da língua.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Hum.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Será que o domínio destas nuances, tanto na gramática como na cultura, é a verdadeira chave para passarmos de ser apenas um comunicador que funciona, para sermos alguém que realmente se conecta e compreende a cultura a um nível mais, mais profundo?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Fica a reflexão para a próxima viagem, ou talvez já para a próxima conversa em português. E com esta nota final, terminamos a nossa análise de hoje. Muito obrigado e até à próxima.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="revisao" class="tab-content">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Revisão Gramatical</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-6">
+                    Review the key grammar points from the podcast, focusing on the verb "dever".
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-stone-50 p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: Verbo 'Dever' (Dois Usos)</h3>
+                        <p class="text-stone-700 mb-3">A estrutura é sempre <span class="font-bold">DEVER + Infinitivo</span>.</p>
+
+                        <h4 class="font-bold text-lg text-stone-800">1. Conselho / Obrigação (Should)</h4>
+                        <p class="text-stone-700 mb-4">Para dar um conselho ou recomendação forte.</p>
+                        <ul class="list-disc list-inside ml-2 space-y-1">
+                            <li>"Chego sempre atrasado." &rarr; "<strong>Deve usar</strong> o metro."</li>
+                            <li>"A minha filha tem problemas." &rarr; "<strong>Deve falar</strong> com os professores."</li>
+                            <li>"A gente <strong>deve falar</strong> com o chefe."</li>
+                        </ul>
+
+                        <h4 class="font-bold text-lg text-stone-800 mt-6">2. Probabilidade / Suposição (Must be)</h4>
+                        <p class="text-stone-700 mb-4">Para fazer uma dedução lógica.</p>
+                        <ul class="list-disc list-inside ml-2 space-y-1">
+                            <li>"O Miguel ainda está a trabalhar." &rarr; "Ele <strong>deve estar</strong> cansado."</li>
+                            <li>"O Manuel tem um Porsche." &rarr; "Ele <strong>deve ter</strong> muito dinheiro."</li>
+                            <li>"A Joana não está." &rarr; "Ela <strong>deve estar</strong> doente."</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-stone-50 p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: Verbos e Dicas Culturais</h3>
+                        
+                        <h4 class="font-bold text-lg text-stone-800">'Sentir-se' vs. 'Sentar-se'</h4>
+                        <ul class="list-disc list-inside ml-2 space-y-3 text-stone-800 mb-6">
+                            <li><strong>Sentir-se</strong> = To feel (emoção/estado)
+                                <ul class="list-['-_'] ml-6"><li>"Eu <strong>sinto-me</strong> cansado."</li></ul>
+                            </li>
+                            <li><strong>Sentar-se</strong> = To sit down (ação física)
+                                <ul class="list-['-_'] ml-6"><li>"Eu <strong>sento-me</strong> nesta cadeira."</li></ul>
+                            </li>
+                        </ul>
+
+                        <h4 class="font-bold text-lg text-stone-800">Dicas Culturais (O que EVITAR)</h4>
+                        <ul class="list-disc list-inside ml-2 space-y-3 text-stone-800">
+                            <li>Não tire os sapatos em casa de alguém (regra geral).</li>
+                            <li>Não chegue antes da hora a um jantar.</li>
+                            <li>Não brinde com água (dá azar).</li>
+                            <li>Não feche a porta sem pedir "Com licença".</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+             <section id="quiz" class="tab-content">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Quick Quiz</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-6">
+                    Test your understanding of the lesson. Choose the best answer for each question.
+                </p>
+
+                <form id="quizForm">
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">1. "O Manuel tem um Porsche. Ele ____ ter muito dinheiro." Qual verbo completa a suposição?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> a) deve</label>
+                            <label><input type="radio" name="q1" value="b"> b) tem</label>
+                            <label><input type="radio" name="q1" value="c"> c) sente-se</label>
+                        </div>
+                        <div class="feedback" id="feedback-q1"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">2. "Eu _____ cansado hoje." (To feel tired)</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q2" value="a"> a) sento-me</label>
+                            <label><input type="radio" name="q2" value="b"> b) sinto-me</label>
+                            <label><input type="radio" name="q2" value="c"> c) devo</label>
+                        </div>
+                         <div class="feedback" id="feedback-q2"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">3. "Chego sempre atrasado." Qual é o conselho mais lógico usando o verbo "dever"?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q3" value="a"> a) Deve usar o metro.</label>
+                            <label><input type="radio" name="q3" value="b"> b) Deve estar doente.</label>
+                            <label><input type="radio" name="q3" value="c"> c) Deve ter muito dinheiro.</label>
+                        </div>
+                         <div class="feedback" id="feedback-q3"></div>
+                    </div>
+                     <div class="quiz-question">
+                        <p class="font-semibold mb-2">4. Qual é a forma correta de dizer "We should talk to the boss" (usando "A gente")?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q4" value="a"> a) A gente devemos falar com o chefe.</label>
+                            <label><input type="radio" name="q4" value="b"> b) A gente deve falar com o chefe.</label>
+                            <label><input type="radio" name="q4" value="c"> c) A gente deve falamos com o chefe.</label>
+                        </div>
+                         <div class="feedback" id="feedback-q4"></div>
+                    </div>
+
+                    <button type="button" id="checkQuiz" class="mt-4 px-6 py-2 bg-purple-600 text-white rounded-lg shadow hover:bg-purple-700 transition-all duration-200">
+                        Check Answers
+                    </button>
+                    <p id="quizScore" class="mt-4 font-bold text-lg"></p>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- CÓDIGO PARA ESCONDER O MENU (se ?modo=aula) ---
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('modo') === 'aula') {
+                const backButton = document.querySelector('header a[href="index.html"]');
+                if (backButton) {
+                    backButton.style.display = 'none';
+                }
+            }
+            // -----------------------------------------
+
+            // --- LÓGICA DAS ABAS (TABS) ---
+            const tabs = document.querySelectorAll('.nav-tab');
+            const contents = document.querySelectorAll('.tab-content');
+            const defaultTab = 'transcricao'; 
+
+            function activateTab(tabId) {
+                 tabs.forEach(t => {
+                    t.classList.remove('tab-active');
+                    if (t.dataset.tab === tabId) {
+                        t.classList.add('tab-active');
+                    }
+                });
+                contents.forEach(c => {
+                    c.classList.remove('tab-content-active');
+                    if (c.id === tabId) {
+                        c.classList.add('tab-content-active');
+                    }
+                });
+            }
+
+            activateTab(defaultTab);
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    activateTab(tab.dataset.tab);
+                });
+            });
+
+
+            // --- LÓGICA DO QUIZ ---
+            const checkQuizButton = document.getElementById('checkQuiz');
+            const quizForm = document.getElementById('quizForm');
+            const quizScoreDisplay = document.getElementById('quizScore');
+
+            const correctAnswers = {
+                q1: 'a', // Suposição = deve
+                q2: 'b', // Sentir-se = to feel
+                q3: 'a', // Conselho = deve usar
+                q4: 'b'  // A gente + 3ª pessoa do singular (deve)
+            };
+
+            checkQuizButton.addEventListener('click', () => {
+                let score = 0;
+                const totalQuestions = Object.keys(correctAnswers).length;
+                let answeredAll = true;
+
+                for (const question in correctAnswers) {
+                    const feedbackEl = document.getElementById(`feedback-${question}`);
+                    const selectedOptionInput = quizForm.querySelector(`input[name="${question}"]:checked`); 
+
+                    if (selectedOptionInput) {
+                        const selectedValue = selectedOptionInput.value;
+                        if (selectedValue === correctAnswers[question]) {
+                            feedbackEl.textContent = 'Correcto!';
+                            feedbackEl.className = 'feedback correct';
+                            score++;
+                        } else {
+                            feedbackEl.textContent = 'Incorreto.';
+                            feedbackEl.className = 'feedback incorrect';
+                        }
+                    } else {
+                        feedbackEl.textContent = 'Por favor, selecione uma resposta.';
+                         feedbackEl.className = 'feedback incorrect';
+                         answeredAll = false; 
+                    }
+                }
+                 if(answeredAll){
+                    quizScoreDisplay.textContent = `A sua pontuação: ${score} em ${totalQuestions}`;
+                 } else {
+                    quizScoreDisplay.textContent = `Por favor, responda a todas as perguntas.`;
+                 }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
