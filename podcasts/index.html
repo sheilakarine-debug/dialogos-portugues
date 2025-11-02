@@ -3,12 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Podcasts Interativos - Português A2</title>
+    <title>Menu Principal: Podcasts Português A2</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #f5f5f4; /* stone-100 */
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+        .podcast-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .podcast-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -17,9 +33,12 @@
     <div class="container max-w-3xl mx-auto p-6 md:p-10 my-10 bg-white shadow-xl rounded-lg">
         
         <header class="text-center pb-6 border-b border-stone-200">
-            <h1 class="text-4xl font-bold text-cyan-900">Podcasts Interativos</h1>
-            <p class="text-xl text-stone-600 mt-2">Aulas de Português A2</p>
-            <a href="../index.html" class="text-sky-600 hover:text-sky-800 mt-4 inline-block">&larr; Voltar ao Menu Principal (Diálogos)</a>
+            <h1 class="text-4xl font-bold text-cyan-900">🎙️ Podcasts Interativos</h1>
+            <p class="text-xl text-stone-600 mt-2">11 Aulas de Português A2 com Transcrições e Traduções</p>
+            
+            <a href="../index.html" class="inline-block mt-4 px-6 py-2 bg-gray-700 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors">
+                &larr; Voltar ao Menu Principal
+            </a>
         </header>
 
         <main class="mt-8">
@@ -28,59 +47,62 @@
             </p>
 
             <div class="space-y-5">
-                
-                <a href="unidade01.html" class="block p-6 bg-gray-700 text-white rounded-lg shadow-lg hover:bg-gray-800 transition-all duration-200 transform hover:-translate-y-1">
-                    <h2 class="text-2xl font-bold">Unidade 1: Fundamentos (Ser vs. Chamar-se)</h2>
-                    <p class="text-gray-200 mt-1">Revisão das regras de apresentação (o/a), formalidade (tu/você) e dias da semana.</p>
-                </a>
-                
-                <a href="unidade05.html" class="block p-6 bg-sky-600 text-white rounded-lg shadow-lg hover:bg-sky-700 transition-all duration-200 transform hover:-translate-y-1">
-                    <h2 class="text-2xl font-bold">Unidade 5: Tenho Carta de Condução (Verbo 'Ter')</h2>
-                    <p class="text-sky-100 mt-1">Prática: Verbo 'Ter', Plurais, e 'de/do/da'.</p>
-                </a>
 
-                <a href="unidade06_1.html" class="block p-6 bg-amber-600 text-white rounded-lg shadow-lg hover:bg-amber-700 transition-all duration-200 transform hover:-translate-y-1">
-                    <h2 class="text-2xl font-bold">Unidade 6 (Parte 1): Formalidade e Numerais</h2>
-                    <p class="text-amber-100 mt-1">Revisão de Tu/Você, números ordinais (1º) e cardinais (datas), e o alfabeto.</p>
+                <a href="../unidade34.html" class="podcast-card block p-6 bg-cyan-600 text-white rounded-lg shadow-lg hover:bg-cyan-700 transition-all duration-200 transform hover:-translate-y-1">
+                    <h2 class="text-2xl font-bold">Unidade 34: Dói-me a Cabeça (Verbo 'Doer')</h2>
+                    <p class="text-cyan-100 mt-1">Foco no verbo "doer" (dói-me, doem-te) e vocabulário de saúde e sintomas.</p>
                 </a>
                 
-                <a href="unidade07_1.html" class="block p-6 bg-indigo-600 text-white rounded-lg shadow-lg hover:bg-indigo-700 transition-all duration-200 transform hover:-translate-y-1">
-                    <h2 class="text-2xl font-bold">Unidade 7 (Parte 1): Possessivos e Sons do S</h2>
-                    <p class="text-indigo-100 mt-1">Foco em possessivos (seu vs. dele), profissões (médico/a) e os 3 sons do S.</p>
-                </a>
-
-                <a href="unidade07_2.html" class="block p-6 bg-indigo-500 text-white rounded-lg shadow-lg hover:bg-indigo-600 transition-all duration-200 transform hover:-translate-y-1">
-                    <h2 class="text-2xl font-bold">Unidade 7 (Parte 2): Concordância e Expressões</h2>
-                    <p class="text-indigo-100 mt-1">Revisão de adjetivos (grande, bonito/a), "quanto/s" e expressões idiomáticas.</p>
+                <a href="../unidade27.html" class="podcast-card block p-6 bg-purple-600 text-white rounded-lg shadow-lg hover:bg-purple-700 transition-all duration-200 transform hover:-translate-y-1">
+                    <h2 class="text-2xl font-bold">Unidade 27: O Verbo 'Dever' (Conselhos/Suposições)</h2>
+                    <p class="text-purple-100 mt-1">Revisão de "dever" (should/must be), "sentir-se" vs "sentar-se" e dicas culturais.</p>
                 </a>
                 
-                <a href="unidade07_3.html" class="block p-6 bg-pink-600 text-white rounded-lg shadow-lg hover:bg-pink-700 transition-all duration-200 transform hover:-translate-y-1">
-                    <h2 class="text-2xl font-bold">Unidade 7 (Parte 3): Adjetivos e "Gostar de"</h2>
-                    <p class="text-pink-100 mt-1">Revisão de "muito/s", a regra do "gostar de" e contrações (disto, nisto, daqui).</p>
+                <a href="../unidade26.html" class="podcast-card block p-6 bg-red-600 text-white rounded-lg shadow-lg hover:bg-red-700 transition-all duration-200 transform hover:-translate-y-1">
+                    <h2 class="text-2xl font-bold">Unidade 26: Prove Uma Francesinha (Imperativo)</h2>
+                    <p class="text-red-100 mt-1">Prática do imperativo formal (vá, faça, veja) com dicas de viagem e comida.</p>
                 </a>
 
-             
-
-                <a href="unidade25.html" class="block p-6 bg-teal-600 text-white rounded-lg shadow-lg hover:bg-teal-700 transition-all duration-200 transform hover:-translate-y-1">
+                <a href="../unidade25.html" class="podcast-card block p-6 bg-teal-600 text-white rounded-lg shadow-lg hover:bg-teal-700 transition-all duration-200 transform hover:-translate-y-1">
                     <h2 class="text-2xl font-bold">Unidade 25: Guia de Sobrevivência (Estou Perdido)</h2>
                     <p class="text-teal-100 mt-1">Foco no imperativo formal (vire, siga) para dar direções e vocabulário de serviços.</p>
                 </a>
                 
-                <a href="unidade26.html" class="block p-6 bg-red-600 text-white rounded-lg shadow-lg hover:bg-red-700 transition-all duration-200 transform hover:-translate-y-1">
-                    <h2 class="text-2xl font-bold">Unidade 26: Prove Uma Francesinha (Imperativo)</h2>
-                    <p class="text-red-100 mt-1">Prática do imperativo formal (vá, faça, veja) com dicas de viagem e comida.</p>
+                <a href="../unidade07_3.html" class="podcast-card block p-6 bg-pink-600 text-white rounded-lg shadow-lg hover:bg-pink-700 transition-all duration-200 transform hover:-translate-y-1">
+                    <h2 class="text-2xl font-bold">Unidade 7 (Parte 3): Adjetivos e "Gostar de"</h2>
+                    <p class="text-pink-100 mt-1">Revisão de "muito/s", a regra do "gostar de" e contrações (disto, nisto, daqui).</p>
                 </a>
                 
-                <a href="unidade27.html" class="block p-6 bg-purple-600 text-white rounded-lg shadow-lg hover:bg-purple-700 transition-all duration-200 transform hover:-translate-y-1">
-                    <h2 class="text-2xl font-bold">Unidade 27: O Verbo 'Dever' (Conselhos/Suposições)</h2>
-                    <p class="text-purple-100 mt-1">Revisão de "dever" (should/must be), "sentir-se" vs "sentar-se" e dicas culturais.</p>
+                <a href="../unidade07_2.html" class="podcast-card block p-6 bg-indigo-500 text-white rounded-lg shadow-lg hover:bg-indigo-600 transition-all duration-200 transform hover:-translate-y-1">
+                    <h2 class="text-2xl font-bold">Unidade 7 (Parte 2): Concordância e Expressões</h2>
+                    <p class="text-indigo-100 mt-1">Revisão de adjetivos (grande, bonito/a), "quanto/s" e expressões idiomáticas.</p>
                 </a>
 
-                <a href="unidade34.html" class="block p-6 bg-cyan-600 text-white rounded-lg shadow-lg hover:bg-cyan-700 transition-all duration-200 transform hover:-translate-y-1">
-                    <h2 class="text-2xl font-bold">Unidade 34: Dói-me a Cabeça (Verbo 'Doer')</h2>
-                    <p class="text-cyan-100 mt-1">Foco no verbo "doer" (dói-me, doem-te) e vocabulário de saúde e sintomas.</p>
+                <a href="../unidade07_1.html" class="podcast-card block p-6 bg-indigo-600 text-white rounded-lg shadow-lg hover:bg-indigo-700 transition-all duration-200 transform hover:-translate-y-1">
+                    <h2 class="text-2xl font-bold">Unidade 7 (Parte 1): Possessivos e Sons do S</h2>
+                    <p class="text-indigo-100 mt-1">Foco em possessivos (seu vs. dele), profissões (médico/a) e os 3 sons do S.</p>
                 </a>
 
+                <a href="../unidade06_2.html" class="podcast-card block p-6 bg-amber-600 text-white rounded-lg shadow-lg hover:bg-amber-700 transition-all duration-200 transform hover:-translate-y-1">
+                    <h2 class="text-2xl font-bold">Unidade 6 (Parte 2): Formalidade e Numerais</h2>
+                    <p class="text-amber-100 mt-1">Revisão de Tu/Você, números ordinais (1º) e cardinais (datas), e o alfabeto.</p>
+                </a>
+                
+                <a href="../unidade06_1.html" class="podcast-card block p-6 bg-amber-500 text-white rounded-lg shadow-lg hover:bg-amber-600 transition-all duration-200 transform hover:-translate-y-1">
+                    <h2 class="text-2xl font-bold">Unidade 6 (Parte 1): Locais, Possessivos e Pronúncia</h2>
+                    <p class="text-amber-100 mt-1">Revisão de contrações (no, na), possessivos (meu, dele) e os sons do R.</p>
+                </a>
+
+                <a href="../unidade05.html" class="podcast-card block p-6 bg-sky-600 text-white rounded-lg shadow-lg hover:bg-sky-700 transition-all duration-200 transform hover:-translate-y-1">
+                    <h2 class="text-2xl font-bold">Unidade 5: Tenho Carta de Condução (Verbo 'Ter')</h2>
+                    <p class="text-sky-100 mt-1">Prática: Verbo 'Ter', Plurais, e 'de/do/da'.</p>
+                </a>
+
+                <a href="../unidade01.html" class="podcast-card block p-6 bg-gray-700 text-white rounded-lg shadow-lg hover:bg-gray-800 transition-all duration-200 transform hover:-translate-y-1">
+                    <h2 class="text-2xl font-bold">Unidade 1: Fundamentos (Ser vs. Chamar-se)</h2>
+                    <p class="text-gray-200 mt-1">Revisão das regras de apresentação (o/a), formalidade (tu/você) e dias da semana.</p>
+                </a>
+                
             </div>
         </main>
 
