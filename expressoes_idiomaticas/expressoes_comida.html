@@ -22,20 +22,34 @@
         .expression-card {
             border-left: 5px solid #ef4444; /* red-500 */
             transition: background-color 0.2s;
+            display: flex; /* Usar flexbox para alinhar imagem e texto */
+            align-items: center; /* Alinhar itens ao centro verticalmente */
+            gap: 1.5rem; /* Espaço entre a imagem e o texto */
+            padding-right: 1.5rem; /* Adicionar padding à direita para melhor espaçamento */
         }
         .expression-card:hover {
             background-color: #fef2f2; /* red-50 */
         }
-        .meaning {
-            font-weight: 600;
-            color: #1c1917; /* stone-900 */
-            display: block;
-            margin-top: 0.5rem;
+        .expression-image {
+            flex-shrink: 0; /* Evita que a imagem encolha */
+            width: 120px; /* Tamanho fixo para a imagem */
+            height: 120px;
+            object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .expression-content {
+            flex-grow: 1; /* Permite que o conteúdo do texto ocupe o espaço restante */
         }
         .english-meaning {
+            font-weight: 600;
+            color: #1c1917; /* stone-900 */
             font-style: italic;
-            color: #44403c; /* stone-700 */
+            margin-top: 0.5rem;
+        }
+        .literal-translation {
             font-size: 0.95em;
+            color: #44403c; /* stone-700 */
             margin-top: 0.25rem;
         }
     </style>
@@ -62,35 +76,51 @@
             <div class="space-y-4">
 
                 <div class="expression-card p-4 bg-white shadow-md rounded-lg">
-                    <p class="text-2xl font-bold text-red-700 mb-1">Ter a faca e o queijo na mão</p>
-                    <p class="text-lg text-red-900 font-semibold">Tradução Literal: To have the knife and the cheese in hand</p>
-                    <span class="meaning">Significado: Estar numa posição de **completo poder** ou controlo sobre uma situação.</span>
-                    <p class="english-meaning">English Meaning: To be in a position of **complete power** or control over a situation.</p>
-                    <p class="text-sm text-stone-500 italic mt-3">Exemplo: O chefe tem a faca e o queijo na mão para decidir quem vai ser promovido.</p>
+                    <img src="faca_queijo.png" alt="Ilustração da expressão 'Ter a faca e o queijo na mão'" class="expression-image">
+                    <div class="expression-content">
+                        <p class="text-2xl font-bold text-red-700 mb-1">Ter a faca e o queijo na mão</p>
+                        <p class="literal-translation text-red-900 font-semibold">Tradução Literal: To have the knife and the cheese in hand</p>
+                        <p class="english-meaning">
+                            **English Meaning:** To be in a position of **complete power** or control over a situation, having all the necessary authority or resources for the final decision (Similar to 'to have the upper hand').
+                        </p>
+                        <p class="text-sm text-stone-500 italic mt-3">Exemplo: O chefe tem a faca e o queijo na mão para decidir quem vai ser promovido.</p>
+                    </div>
                 </div>
 
                 <div class="expression-card p-4 bg-white shadow-md rounded-lg">
-                    <p class="text-2xl font-bold text-red-700 mb-1">Pão pão, queijo queijo</p>
-                    <p class="text-lg text-red-900 font-semibold">Tradução Literal: Bread bread, cheese cheese</p>
-                    <span class="meaning">Significado: Falar de forma **clara, direta e objetiva**, sem rodeios.</span>
-                    <p class="english-meaning">English Meaning: To speak in a **clear, direct, and objective way**, without beating around the bush.</p>
-                    <p class="text-sm text-stone-500 italic mt-3">Exemplo: Eu prefiro que digas "pão pão, queijo queijo", sem me estares a enganar.</p>
+                    <div class="expression-image bg-gray-200 flex items-center justify-center text-gray-500 text-center text-xs">Imagem aqui</div>
+                    <div class="expression-content">
+                        <p class="text-2xl font-bold text-red-700 mb-1">Pão pão, queijo queijo</p>
+                        <p class="literal-translation text-red-900 font-semibold">Tradução Literal: Bread bread, cheese cheese</p>
+                        <p class="english-meaning">
+                            **English Meaning:** To speak **clearly, directly, and objectively**, without beating around the bush or using euphemisms (Similar to 'to call a spade a spade').
+                        </p>
+                        <p class="text-sm text-stone-500 italic mt-3">Exemplo: Eu prefiro que digas "pão pão, queijo queijo", sem me estares a enganar.</p>
+                    </div>
                 </div>
 
                 <div class="expression-card p-4 bg-white shadow-md rounded-lg">
-                    <p class="text-2xl font-bold text-red-700 mb-1">Estar com a corda ao pescoço</p>
-                    <p class="text-lg text-red-900 font-semibold">Tradução Literal: To have the rope around the neck</p>
-                    <span class="meaning">Significado: Estar em **grande dificuldade financeira** (com dívidas) ou numa situação de grande pressão/risco.</span>
-                    <p class="english-meaning">English Meaning: To be in **great financial difficulty** (in debt) or under intense pressure/risk.</p>
-                    <p class="text-sm text-stone-500 italic mt-3">Exemplo: Depois de perder o emprego, ele ficou com a corda ao pescoço para pagar o aluguer.</p>
+                    <div class="expression-image bg-gray-200 flex items-center justify-center text-gray-500 text-center text-xs">Imagem aqui</div>
+                    <div class="expression-content">
+                        <p class="text-2xl font-bold text-red-700 mb-1">Estar com a corda ao pescoço</p>
+                        <p class="literal-translation text-red-900 font-semibold">Tradução Literal: To have the rope around the neck</p>
+                        <p class="english-meaning">
+                            **English Meaning:** To be in **great financial difficulty** (often due to debt) or under intense pressure and risk.
+                        </p>
+                        <p class="text-sm text-stone-500 italic mt-3">Exemplo: Depois de perder o emprego, ele ficou com a corda ao pescoço para pagar o aluguer.</p>
+                    </div>
                 </div>
                 
                 <div class="expression-card p-4 bg-white shadow-md rounded-lg">
-                    <p class="text-2xl font-bold text-red-700 mb-1">Comprar gato por lebre</p>
-                    <p class="text-lg text-red-900 font-semibold">Tradução Literal: To buy cat for hare</p>
-                    <span class="meaning">Significado: Ser **enganado numa transação**; comprar algo que não corresponde ao que foi prometido.</span>
-                    <p class="english-meaning">English Meaning: To be **deceived in a transaction**; to buy something that does not correspond to what was promised (similar to 'to buy a pig in a poke').</p>
-                    <p class="text-sm text-stone-500 italic mt-3">Exemplo: Aquele telemóvel parecia bom, mas avariou logo. Acho que comprei gato por lebre.</p>
+                    <div class="expression-image bg-gray-200 flex items-center justify-center text-gray-500 text-center text-xs">Imagem aqui</div>
+                    <div class="expression-content">
+                        <p class="text-2xl font-bold text-red-700 mb-1">Comprar gato por lebre</p>
+                        <p class="literal-translation text-red-900 font-semibold">Tradução Literal: To buy cat for hare</p>
+                        <p class="english-meaning">
+                            **English Meaning:** To be **deceived in a transaction**; to buy something that turns out to be much less valuable or different from what was promised (Similar to 'to buy a pig in a poke').
+                        </p>
+                        <p class="text-sm text-stone-500 italic mt-3">Exemplo: Aquele telemóvel parecia bom, mas avariou logo. Acho que comprei gato por lebre.</p>
+                    </div>
                 </div>
 
             </div>
