@@ -42,12 +42,13 @@
         .tab-content-active {
             display: block;
         }
+        /* ERRO CORRIGIDO AQUI (faltava um ;) */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1, transform: translateY(0); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        /* Cor 1: Mulher (Neutro) */
-        .chat-bubble-mulher {
+        /* Cor 1: Homem (Neutro) - ETIQUETAS TROCADAS */
+        .chat-bubble-homem {
             background-color: #f5f5f4; /* stone-100 */
             color: #1c1917; /* stone-900 */
             padding: 0.75rem 1rem;
@@ -55,8 +56,8 @@
             max-width: 80%;
             align-self: flex-start;
         }
-        /* Cor 2: Homem (Destaque Céu) */
-        .chat-bubble-homem {
+        /* Cor 2: Mulher (Destaque Céu) - ETIQUETAS TROCADAS */
+        .chat-bubble-mulher {
             background-color: #e0f2fe; /* sky-100 */
             color: #0c4a6e; /* sky-900 */
             padding: 0.75rem 1rem;
@@ -134,156 +135,33 @@
 
                 <h2 class="text-3xl font-semibold text-stone-800 mb-4 mt-8">Transcrição</h2>
                 <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
+                    
                     <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Boas-vindas. Hoje vamos, ah, mergulhar um pouco nos materiais da Unidade 5 do CIPLE Master A2. Aquela unidade, sabem? "Tenho carta de condução".
+                        <div class="chat-bubble-homem"> <span class="font-bold block">Homem</span> Boas-vindas. Hoje vamos, ah, mergulhar um pouco nos materiais da Unidade 5 do CIPLE Master A2. Aquela unidade, sabem? "Tenho carta de condução".
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Exatamente. Estivemos a analisar os apontamentos, os slides, os exercícios todos. E, bem, parece que os pontos chave são mesmo aquele vocabulário do dia-a-dia, não é? Os objetos...
+                        <div class="chat-bubble-mulher"> <span class="font-bold block">Mulher</span> Exatamente. Estivemos a analisar os apontamentos, os slides, os exercícios todos. E, bem, parece que os pontos chave são mesmo aquele vocabulário do dia-a-dia, não é? Os objetos...
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Sim, sim, os objetos que andam sempre connosco.
+                        <div class="chat-bubble-homem"> <span class="font-bold block">Homem</span> Sim, sim, os objetos que andam sempre connosco.
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Pois. E depois, como é que dizemos mais de um? Os plurais.
+                        <div class="chat-bubble-mulher"> <span class="font-bold block">Mulher</span> Pois. E depois, como é que dizemos mais de um? Os plurais.
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Aham.
+                        <div class="chat-bubble-homem"> <span class="font-bold block">Homem</span> Aham.
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            A quem pertencem as coisas, com o "de", "do", "da". E, claro, aquele verbo, o "ter", que é central.
+                        <div class="chat-bubble-mulher"> <span class="font-bold block">Mulher</span> A quem pertencem as coisas, com o "de", "do", "da". E, claro, aquele verbo, o "ter", que é central.
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Essencial mesmo.
+                        <div class="chat-bubble-homem"> <span class="font-bold block">Homem</span> Essencial mesmo.
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Pronto. Preparados para esta análise focada?
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Vamos a isso. O objetivo é mesmo solidificar estas ferramentas, pegar nos exemplos concretos dos materiais, acho que é a melhor forma.
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Sim, tornar a coisa prática.
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Exato.
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Garantir que a aplicação fica clara. Falar dos objetos que temos, ou que perdemos, não é? Às vezes.
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Quem nunca?
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Pois. Como os pluralizamos, como dizemos de quem é, para que serve. E, claro, dominar o verbo "ter". Esse é fundamental, não só aqui, mas, pronto, para comunicar em geral.
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Perfeito. Então vamos lá desconstruir isto tudo, passo a passo, com exemplos. E, se calhar, até falamos de umas, umas armadilhas, não é? Onde é fácil tropeçar.
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Sim, aqueles erros comuns, é bom saber onde eles estão.
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            A ideia é que fique tudo mais... puf... mais prático, mais útil. Então, se calhar começamos pelos básicos, pelos tijolos, o vocabulário.
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Ótimo. OK.
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            A Unidade 5, logo de início, apresenta um monte de objetos, não é? Coisas muito úteis que trazemos connosco. Dos materiais, quais é que saltam logo à vista como, como essenciais? Lembro-me do passaporte, das chaves...
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Sim, sim. Mala. Sem dúvida, são mesmo fundamentais. "Passaporte" (passport), claro. "Chaves" (keys). Epá, quem nunca ficou à porta à procura das chaves, não é? 5 minutos.
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Sempre.
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            E a "carteira", claro (wallet ou purse). O "telemóvel" (mobile phone). E os "óculos de sol" (sunglasses). São palavras que, bem, usamos quase diariamente.
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            É verdade. Pensa em situações concretas. No aeroporto, pedem o passaporte. Ou estamos num café e o telemóvel toca. "Desculpe, é o meu telemóvel". Saber dizer estas palavras é mesmo o primeiro passo para, para interagir.
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            E a "mala"? Lembro-me que os materiais faziam aquela distinção, não era? Entre "mala de viagem" (tipo suitcase) e "mala de mão" (handbag)?
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Exato.
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="
+                    <div class="flex justify
