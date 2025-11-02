@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast A2: Unidade 25 (Estou Perdido)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f4; /* stone-100 */
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .nav-tab {
+            padding: 0.75rem 1.25rem;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            color: #57534e; /* stone-600 */
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-tab:hover {
+            color: #115e59; /* teal-900 */
+        }
+        .tab-active {
+            color: #0f766e; /* teal-700 */
+            border-bottom-color: #0f766e; /* teal-700 */
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content-active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Ordem dos Oradores: Homem (1) / Mulher (2) */
+        
+        /* Cor 1: Homem (Orador 1) - Neutro, Esquerda */
+        .chat-bubble-homem {
+            background-color: #f5f5f4; /* stone-100 */
+            color: #1c1917; /* stone-900 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 1.25rem 0.25rem;
+            max-width: 80%;
+            align-self: flex-start;
+        }
+        /* Cor 2: Mulher (Oradora 2) - Destaque Teal, Direita */
+        .chat-bubble-mulher {
+            background-color: #ccfbf1; /* teal-100 */
+            color: #134e4a; /* teal-900 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 0.25rem 1.25rem;
+            max-width: 80%;
+            align-self: flex-end;
+        }
+        .translation-text { /* Re-utilizado para notas */
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.9em;
+            font-style: italic;
+            border-top: 1px dashed rgba(0, 0, 0, 0.1);
+            padding-top: 0.5rem;
+            color: #57534e; /* stone-600 */
+        }
+        .quiz-question {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #fafaf9; /* stone-50 */
+            border-radius: 0.5rem;
+            border: 1px solid #e7e5e4; /* stone-200 */
+        }
+        .quiz-options label {
+            display: block;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+         .quiz-options input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+        .quiz-options label:hover {
+            background-color: #e0f2fe; /* light-blue-100 */
+        }
+        .feedback {
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        .correct { color: #15803d; /* green-700 */}
+        .incorrect { color: #b91c1c; /* red-700 */ }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="text-center pb-6 border-b border-stone-200">
+            <h1 class="text-4xl font-bold text-cyan-900">Unidade 25: Guia de Sobrevivência (Estou Perdido)</h1>
+            <p class="text-xl text-stone-600 mt-2">Foco no imperativo formal (vire, siga) para dar direções e vocabulário de serviços.</p>
+            <a href="index.html" class="text-sky-600 hover:text-sky-800 mt-4 inline-block">&larr; Voltar ao Menu de Podcasts</a>
+        </header>
+
+        <nav class="mt-6 border-b border-stone-200">
+            <ul class="flex flex-wrap -mb-px">
+                <li><button class="nav-tab tab-active" data-tab="transcricao">Transcrição e Áudio</button></li>
+                <li><button class="nav-tab" data-tab="revisao">Revisão Gramatical</button></li>
+                <li><button class="nav-tab" data-tab="quiz">Quiz</button></li>
+            </ul>
+        </nav>
+
+        <main class="mt-8">
+
+            <section id="transcricao" class="tab-content tab-content-active">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Áudio da Lição</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-4">
+                    Practice your listening. Listen to the audio and follow along with the transcription below.
+                </p>
+                
+                <audio controls class="w-full mb-6">
+                    <source src="unidade25.m4a" type="audio/x-m4a">
+                    O seu browser não suporta o elemento de áudio.
+                </audio>
+
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4 mt-8">Transcrição</h2>
+                <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Bem-vindos a mais uma exploração focada. Hoje vamos, hum, olhar para um material mesmo muito prático. São excertos da unidade 25 de um curso de português para estrangeiros, o A2 da Ciple Master. E o tema: "Estou perdido".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ah, excelente tema.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Pois ver. A ideia é mesmo extrair o essencial desta lição. Vamos dar uma vista de olhos ao vocabulário, situações tipo ir aos correios, ir ao banco, e claro, como pedir e dar indicações. Essencial para não nos sentirmos tão à deriva, não é? E claro, um bocadinho de gramática: o imperativo formal.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Exato. Basicamente, um kit de sobrevivência.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            É isso mesmo.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Esta unidade foca-se em cenários muito, muito comuns para quem está a aprender a orientar-se cá em Portugal. Vamos analisar os diálogos, o vocabulário dos serviços, da orientação na cidade, e desmistificar um pouco como é que se dão ordens ou instruções de forma educada: o imperativo formal.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Hum-hum.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            É, na verdade, uma base fundamental para a interação do dia-a-dia, para a pessoa se desenrascar.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Muito bem, então vamos lá desempacotar isto. Começando pelos Correios, que é logo uma aventura às vezes.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ah, pois é.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            A primeira situação é mesmo essa, uma estação de correios. Os slides 3 e 4, temos as imagens, não é? Envelopes, selos postais, encomendas. E o vocabulário que salta logo à vista: correios, carta, postal, selo, encomenda. E aquela palavra mágica: impresso.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ah, o impresso. O formulário.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Esse mesmo. Que temos de preencher tantas vezes.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sem dúvida. E o diálogo no slide 4 é um bom exemplo. É uma interação, bem, típica. Temos um cliente que quer enviar uma carta e uma encomenda para Espanha. E o interessante é ver a conversa. A funcionária pergunta: "Em correio normal?" E ele responde: "Em correio azul, se faz favor." Já mostra opções.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sim, sim.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E depois lá vem ele: "Preencha este impresso, faz favor."
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Hum-hum. A burocracia do costume.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Exato. E não fica por aí.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Não, ele aproveita.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Aproveita, sim. Pede postais de Lisboa, pede selos para Espanha. É uma transação bastante completa, muito realista.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E uma coisa interessante que o slide menciona, os verbos "enviar" e "mandar".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ah, sim.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Diz que são sinónimos neste contexto. O cliente diz: "Bom dia, queria mandar esta carta." Podia ter dito "queria enviar", certo?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Perfeito. Bom dia. Perfeitamente. Ambos funcionam. Se calhar "mandar" soa um bocadinho mais quotidiano, talvez. Mas os dois são corretíssimos. E repara na estrutura: "Queria + infinitivo". É a forma simpática, educada, de pedir algo num serviço. "Queria mandar", "Queria pedir". Muito útil.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Boa dica. OK, seguimos viagem. Próxima paragem: o banco. Slides 5 e 6. Outro mundo.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Outro mundo, sim. Com a sua própria linguagem.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exato. O slide 5 lista logo uma série de verbos e nomes importantes. Ações como: abrir uma conta, depositar dinheiro, fazer uma transferência, pedir um cartão, pedir informações, preencher mais um formulário.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sempre eles.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Levantar dinheiro, normally no multibanco, e trocar moeda, euros por dólares, por exemplo.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E o vocabulário essencial está lá: conta, dinheiro, o nosso amigo multibanco, cartão de crédito, transferência. O slide também ajuda a rever a conjugação do verbo "pedir" no presente. Eu peço, tu pedes, ele pede, nós pedimos, eles pedem.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Essencialíssimo. Porque estamos sempre a pedir qualquer coisa, não é? Informações, ajuda, os tais formulários.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Exatamente. E o slide 6 dá-nos exemplos práticos, mini-diálogos, pequenas conversas que podiam acontecer mesmo. Por exemplo, a pergunta: "O que é que tenho que fazer para abrir uma conta?" Pergunta chave para um recém-chegado.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sem dúvida.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E a resposta do funcionário é direta ao ponto. "Tem que preencher um formulário e trazer o seu cartão de cidadão." Pronto. Ou então, para depositar, o cliente diz: "Queria depositar este dinheiro." E o funcionário: "Tem de preencher este impresso e assinar aqui."
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Repara: "tem que preencher", "tem de preencher". As duas formas a indicar obrigação ou necessidade.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Exatamente. E lá estão eles outra vez, os impressos, os formulários. Parece que não há como fugir.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            É verdade. A papelada persegue-nos. Mas nota-se que as respostas são funcionais, diretas ao assunto. É o que se precisa nestas situações. Mas agora, vamos ao coração da unidade, aquilo que lhe dá o nome: "Estou perdido". Pedir e dar direções. Isto é vital.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ah, isto é mesmo crucial.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            O slide 7 já ajuda com imagens e expressões. Vamos ver algumas. Temos: "seguir em frente" ou "ir em frente", para continuar na mesma direção.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Certo.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            "Ir em frente", depois "virar à direita" e "virar à esquerda". Os comandos básicos.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Uhum.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            "Atravessar a rua". Importante na cidade.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Muito.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            "Ir até ao fim da rua". Para dar um limite. "Passar o semáforo". Um ponto de referência.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sim, ou "parar na esquina".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Outro ponto.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Exato.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E "ir ao longo do rio". Para percursos maiores, talvez. São mesmo as peças do puzzle para dar indicações.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            São, são as bases. E o slide 8 vai mais fundo. Traz mais verbos e, muito importante, as preposições de movimento. Aqui a coisa fica mais interessante.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E às vezes mais complicada.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ah, as preposições.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Pois. Vemos combinações tipo "sair de Lisboa", "sair para o Porto" (origem e destino). "Vir até aqui" (chegar a um ponto). "Subir" ou "descer as escadas".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E o modo como nos movemos: "ir a pé", "vir de bicicleta", "ir de carro".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exato. E a preposição "por": "seguir por esta rua", indica o caminho. A escolha da preposição certa, ufa, é fundamental.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sim. Essas palavrinhas pequenas, as preposições, fazem mesmo toda a diferença. E para ver isto tudo a funcionar, temos o diálogo dos slides 9 e 10.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Ah, o diálogo do Piotr.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Esse mesmo. Que quer ir ao Oceanário de Lisboa, mas coitado, está "um bocado perdido", como ele diz.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            É, este diálogo é ótimo. É perfeito para ilustrar o imperativo formal a dar direções na vida real. O funcionário do Oceanário, ao telefone, vai guiando o Piotr, passo a passo. Vamos ouvir algumas partes.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sim, sim. Diz ele: "Apanhe a linha verde do metro." Depois: "Saia na estação Alameda." A seguir: "Mude para a linha vermelha e vá até à estação do Oriente."
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Uhum. Tudo comandos diretos.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Exato. E já mais perto: "Atravesse todo o centro comercial, saia do outro lado. Depois de sair, vire à direita, siga até ver um edifício grande..." Todos estes verbos: imperativo formal, a falar para o "senhor" implicitamente.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Nota-se a lógica, a clareza. Mas olha, há duas expressões que me chamaram a atenção. No fim, o funcionário diz: "Despache-se", porque iam fechar.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ah, sim.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E depois sugere: "Venha amanhã." Este "despache-se", soa um bocadinho brusco, não?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            É uma ótima observação. "Despache-se" quer dizer "apresse-se", "ande depressa". É verdade que, dito assim isolado, pode parecer rude. Mas temos de pensar no contexto. É um telefonema, há urgência, o Oceanário vai fechar. Talvez com um tom de voz simpático, seja só um aviso útil. Mas sim, é um verbo que exige algum cuidado, não se diz a qualquer um.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Percebo. É preciso ter sensibilidade.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Exato. Já o "venha" (imperativo de "vir") é perfeitamente normal. É um convite, uma sugestão educada. "Venha amanhã." Tranquilo.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            OK. E este diálogo todo puxa-nos para a gramática, não é? Para percebermos bem este imperativo formal.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Precisamente.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Então vamos lá focar disso. O módulo imperativo formal. A forma educada de dar instruções ou ordens a alguém que tratamos por "o senhor", "a senhora", "você", no tratamento formal. O slide 12 explica.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sim. E a boa notícia é que, para os verbos regulares, a formação é, bem, bastante sistemática. A regra geral, como diz o slide, é usar a forma da primeira pessoa do singular ("eu") do presente do *conjuntivo*. Ou seja...
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Ou seja?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Para verbos em -AR, como "falar", pensamos em "eu fale" [slide 12 refere-se à regra de trocar 'o' por 'e'],... pensamos em "eu falo", tiramos o "o", pomos "e". "Fale".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            OK.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Verbos em -ER, como "comer", "eu como", tiro o "o", ponho "a". "Coma".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Certo.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E verbos em -IR, como "partir", "eu parto", tiro o "o", ponho "a". "Parta". Isto para o singular formal (você, o senhor, a senhora).
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Parece lógico. E a negativa?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Mais fácil ainda. É só pôr o "não" à frente. "Não fale", "não coma", "não parta".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Perfeito. E foi isto que ouvimos no diálogo do Oceanário. "Apanhe" (de apanhar), "saia" (de sair), "mude" (de mudar).
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            "Vá" (que é irregular, de "ir").
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Ah, bem lembrado. "Vá" é irregular. E depois "atravesse", "vire", "siga". Tudo imperativo formal.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Exato. O slide 12 também mostra esse irregular, o "ir": "vá". É importante não confundir com a informal para "tu", que seria "vai".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Hum-hum.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            O exercício B nesse slide é bom para praticar isso. Pede para passar do informal para o formal. "Pede ajuda" (tu) passa a "peça ajuda" (o senhor/a senhora).
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Faz sentido.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Outro clássico: "Vem cá" (tu) passa a "venha cá" (o senhor/a senhora). Esta diferença formal/informal é mesmo muito importante em português.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Claríssimo. E a prática continua nos slides 13 e 15. São exercícios que usam o imperativo para dar direções, com mapas, sinais de trânsito. Vemos frases como: "Siga em frente", "Vire à direita", "Passe o cruzamento", "Contorne a rotunda". Frases chave para fixar isto.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            A repetição ajuda imenso.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sem dúvida. Ter fluência no imperativo formal é essencial para interagir bem nos serviços ou só para pedir ou dar ajuda na rua de forma educada.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Mas, pronto, para estas frases funcionarem mesmo, não bastam os verbos. Precisamos de ligar as ideias, os locais. E aí entram outra vez as preposições e os artigos.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            É verdade. Voltamos a elas. O slide 11 foca nisso. Pede para completar frases que ligam atividades a sítios. E o desafio é usar a preposição certa e fazer a contração com o artigo, quando é preciso. Por exemplo: "Quando quer fazer compras, vou..." O quê?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Provavelmente "ao centro comercial".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exato. "Ao", que é a preposição "a" (movimento para) mais o artigo "o" (centro comercial é masculino).
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Isso. E se fosse "farmácia"? Vou "à farmácia".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Porquê?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Porque farmácia é feminino. "A" igual a "a + a".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Perfeito. Outro exemplo do slide: "Quando estou doente, vou..."
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Pode ser "ao hospital" ou "ao centro de saúde".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            De novo, "ao". É mesmo preciso dominar estas contrações. "Ao", "à", "no", "na", "do", "da", "pelo", "pela". Elas estão por todo o lado e são essenciais para falar bem.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E o slide 14 reforça isto mesmo. É um exercício de preencher espaços num texto de direções, focado nas preposições e contrações. "Para chegar à estação de comboios..." ("a" porque estação é feminino).
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Hum-hum.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            "...vá em frente por aquela rua." ("Em frente" é a expressão, "por" indica o percurso).
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Certo.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            "Vire na segunda esquina à esquerda." ("Na" = em + a, porque esquina é feminino). Fica mesmo claro como estas palavrinhas são a cola que junta tudo.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            São, são absolutamente cruciais. Um erro ali pode mudar o sentido todo ou fazer a frase soar, eh, estranha. Portanto, esta combinação de imperativo formal, vocabulário de locais, preposições, é o que realmente nos permite orientar e comunicar bem nestas situações.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Hum. Então, resumindo. Damos uma volta pelos correios e pelo banco, vimos o vocabulário e as frases-chave para tratar de assuntos lá. E depois, dedicámos bastante tempo a desmistificar como pedir e, principalmente, como dar direções. Vimos as expressões de movimento, o imperativo formal...
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            ...e a importância vital das preposições e contrações.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Exatamente. O ponto central disto tudo é a aplicação prática, no dia a dia. Esta unidade dá mesmo ferramentas concretas para uma pessoa se sentir mais, mais segura, mais autónoma a mexer-se em Portugal. Seja para mandar uma carta, levantar dinheiro, ou literalmente encontrar o caminho quando se está perdido.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Uhum. E perceber e usar bem o imperativo formal é chave para ser educado e eficaz, tanto nos serviços como na rua.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sente-se de facto um caminho mais claro depois disto. Mas olha, fica aqui talvez uma questão para pensarmos um bocadinho.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Diz.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Aprendemos a forma gramaticalmente educada, o imperativo formal: "vire", "siga", "peça". Mas na comunicação real, no dia a dia, até que ponto é que o tom de voz, os gestos, ou um simples "por favor" não mudam tudo?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Hum.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Será que um "vira à direita" (informal), dito com um sorriso enorme e um tom super simpático, não é percebido como mais amigável do que um "vire à direita" (formal), mas dito assim com um tom seco, impaciente?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Essa é uma excelente reflexão final. Excelente mesmo. A gramática dá-nos a estrutura, a base da formalidade, da educação. Mas depois há a pragmática.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Exato.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            O uso da língua em contexto. A entoação, os gestos, a cara que fazemos. Tudo isso joga um papel enorme em como a mensagem é recebida. Aprender uma língua também é aprender estas, estas nuances culturais, interpessoais. Não é só gramática e vocabulário.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sem dúvida. É todo um pacote.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E com essa nota sobre a complexidade da comunicação real, fechamos esta nossa análise da unidade 25. Esperamos que esta conversa tenha sido útil para consolidar estas ideias.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Esperamos que sim.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Até uma próxima exploração.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Até à próxima.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="revisao" class="tab-content">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Revisão Gramatical</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-6">
+                    Review the key grammar points from the podcast, focusing on the formal imperative.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-stone-50 p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: Imperativo Formal (Dar Direções)</h3>
+                        <p class="text-stone-700 mb-3">Para dar instruções a "você", "o senhor" ou "a senhora", trocamos as vogais:</p>
+
+                        <h4 class="font-bold text-lg text-stone-800">Verbos em -AR (mudam para -E)</h4>
+                        <ul class="list-disc list-inside ml-2 space-y-1">
+                            <li>(Apanhar) &rarr; <strong>Apanhe</strong> a linha verde.</li>
+                            <li>(Mudar) &rarr; <strong>Mude</strong> para a linha vermelha.</li>
+                            <li>(Atravessar) &rarr; <strong>Atravesse</strong> o centro comercial.</li>
+                            <li>(Virar) &rarr; <strong>Vire</strong> à direita.</li>
+                        </ul>
+
+                        <h4 class="font-bold text-lg text-stone-800 mt-6">Verbos em -ER / -IR (mudam para -A)</h4>
+                        <ul class="list-disc list-inside ml-2 space-y-1">
+                            <li>(Sair) &rarr; <strong>Saia</strong> na estação Alameda.</li>
+                            <li>(Seguir) &rarr; <strong>Siga</strong> em frente.</li>
+                            <li>(Preencher) &rarr; <strong>Preencha</strong> este impresso.</li>
+                        </ul>
+                        
+                        <h4 class="font-bold text-lg text-stone-800 mt-6">Irregulares Importantes</h4>
+                        <ul class="list-disc list-inside ml-2 space-y-1">
+                            <li>(Ir) &rarr; <strong>Vá</strong> até à estação.</li>
+                            <li>(Vir) &rarr; <strong>Venha</strong> amanhã.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-stone-50 p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: Vocabulário e Estruturas</h3>
+                        
+                        <h4 class="font-bold text-lg text-stone-800">Nos Serviços (Banco/Correios)</h4>
+                        <ul class="list-disc list-inside ml-2 space-y-3 text-stone-800 mb-6">
+                            <li><strong>Queria</strong> mandar/enviar esta carta. (Pedido educado)</li>
+                            <li><strong>Tem que</strong> preencher um formulário. (Obrigação)</li>
+                            <li><strong>Tem de</strong> preencher este impresso. (Obrigação)</li>
+                            <li>Vocabulário: selo, encomenda, correio azul, abrir uma conta, depositar, multibanco.</li>
+                        </ul>
+
+                        <h4 class="font-bold text-lg text-stone-800">Preposições de Movimento</h4>
+                        <ul class="list-disc list-inside ml-2 space-y-3 text-stone-800">
+                            <li>Vou <strong>ao</strong> centro comercial. (a + o)</li>
+                            <li>Vou <strong>à</strong> farmácia. (a + a)</li>
+                            <li>Siga <strong>pela</strong> rua. (por + a)</li>
+                            <li>Vire <strong>na</strong> esquina. (em + a)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+             <section id="quiz" class="tab-content">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Quick Quiz</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-6">
+                    Test your understanding of the lesson. Choose the best answer for each question.
+                </p>
+
+                <form id="quizForm">
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">1. Qual é a forma correta do Imperativo Formal para o verbo "Virar" (ex: à direita)?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> a) Vire</label>
+                            <label><input type="radio" name="q1" value="b"> b) Vira</label>
+                            <label><input type="radio" name="q1" value="c"> c) Virem</label>
+                        </div>
+                        <div class="feedback" id="feedback-q1"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">2. Qual é a forma correta do Imperativo Formal para o verbo "Seguir" (ex: em frente)?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q2" value="a"> a) Segue</label>
+                            <label><input type="radio" name="q2" value="b"> b) Siga</label>
+                            <label><input type="radio" name="q2" value="c"> c) Segi</label>
+                        </div>
+                         <div class="feedback" id="feedback-q2"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">3. O que é um "impresso" que tem de preencher nos Correios ou no Banco?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q3" value="a"> a) Um selo</label>
+                            <label><input type="radio" name="q3" value="b"> b) Um cartão de multibanco</label>
+                            <label><input type="radio" name="q3" value="c"> c) Um formulário</label>
+                        </div>
+                         <div class="feedback" id="feedback-q3"></div>
+                    </div>
+                     <div class="quiz-question">
+                        <p class="font-semibold mb-2">4. Qual é a forma mais educada de pedir algo num café ou balcão?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q4" value="a"> a) Quero mandar esta carta.</label>
+                            <label><input type="radio" name="q4" value="b"> b) Dê-me esta carta.</label>
+                            <label><input type="radio" name="q4" value="c"> c) Queria mandar esta carta.</label>
+                        </div>
+                         <div class="feedback" id="feedback-q4"></div>
+                    </div>
+
+                    <button type="button" id="checkQuiz" class="mt-4 px-6 py-2 bg-teal-600 text-white rounded-lg shadow hover:bg-teal-700 transition-all duration-200">
+                        Check Answers
+                    </button>
+                    <p id="quizScore" class="mt-4 font-bold text-lg"></p>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- CÓDIGO PARA ESCONDER O MENU (se ?modo=aula) ---
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('modo') === 'aula') {
+                const backButton = document.querySelector('header a[href="index.html"]');
+                if (backButton) {
+                    backButton.style.display = 'none';
+                }
+            }
+            // -----------------------------------------
+
+            // --- LÓGICA DAS ABAS (TABS) ---
+            const tabs = document.querySelectorAll('.nav-tab');
+            const contents = document.querySelectorAll('.tab-content');
+            const defaultTab = 'transcricao'; 
+
+            function activateTab(tabId) {
+                 tabs.forEach(t => {
+                    t.classList.remove('tab-active');
+                    if (t.dataset.tab === tabId) {
+                        t.classList.add('tab-active');
+                    }
+                });
+                contents.forEach(c => {
+                    c.classList.remove('tab-content-active');
+                    if (c.id === tabId) {
+                        c.classList.add('tab-content-active');
+                    }
+                });
+            }
+
+            activateTab(defaultTab);
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    activateTab(tab.dataset.tab);
+                });
+            });
+
+
+            // --- LÓGICA DO QUIZ ---
+            const checkQuizButton = document.getElementById('checkQuiz');
+            const quizForm = document.getElementById('quizForm');
+            const quizScoreDisplay = document.getElementById('quizScore');
+
+            const correctAnswers = {
+                q1: 'a', // Virar (-ar) -> Vire (-e)
+                q2: 'b', // Seguir (-ir) -> Siga (-a)
+                q3: 'c', // Impresso = Formulário
+                q4: 'c'  // Queria + infinitivo
+            };
+
+            checkQuizButton.addEventListener('click', () => {
+                let score = 0;
+                const totalQuestions = Object.keys(correctAnswers).length;
+                let answeredAll = true;
+
+                for (const question in correctAnswers) {
+                    const feedbackEl = document.getElementById(`feedback-${question}`);
+                    const selectedOptionInput = quizForm.querySelector(`input[name="${question}"]:checked`); 
+
+                    if (selectedOptionInput) {
+                        const selectedValue = selectedOptionInput.value;
+                        if (selectedValue === correctAnswers[question]) {
+                            feedbackEl.textContent = 'Correcto!';
+                            feedbackEl.className = 'feedback correct';
+                            score++;
+                        } else {
+                            feedbackEl.textContent = 'Incorreto.';
+                            feedbackEl.className = 'feedback incorrect';
+                        }
+                    } else {
+                        feedbackEl.textContent = 'Por favor, selecione uma resposta.';
+                         feedbackEl.className = 'feedback incorrect';
+                         answeredAll = false; 
+                    }
+                }
+                 if(answeredAll){
+                    quizScoreDisplay.textContent = `A sua pontuação: ${score} em ${totalQuestions}`;
+                 } else {
+                    quizScoreDisplay.textContent = `Por favor, responda a todas as perguntas.`;
+                 }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
