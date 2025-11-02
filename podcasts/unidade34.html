@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast A2: Unidade 34 (Dói-me a cabeça)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f4; /* stone-100 */
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .nav-tab {
+            padding: 0.75rem 1.25rem;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            color: #57534e; /* stone-600 */
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-tab:hover {
+            color: #9d174d; /* pink-900 */
+        }
+        .tab-active {
+            color: #ec4899; /* pink-500 */
+            border-bottom-color: #ec4899; /* pink-500 */
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content-active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Ordem dos Oradores: Mulher (1) / Homem (2) */
+        
+        /* Cor 1: Mulher (Oradora 1) - Neutro, Esquerda */
+        .chat-bubble-mulher {
+            background-color: #f5f5f4; /* stone-100 */
+            color: #1c1917; /* stone-900 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 1.25rem 0.25rem;
+            max-width: 80%;
+            align-self: flex-start;
+        }
+        /* Cor 2: Homem (Orador 2) - Destaque Rosa, Direita */
+        .chat-bubble-homem {
+            background-color: #fce7f3; /* pink-100 */
+            color: #9d174d; /* pink-900 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 0.25rem 1.25rem;
+            max-width: 80%;
+            align-self: flex-end;
+        }
+        .translation-text { /* Re-utilizado para notas */
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.9em;
+            font-style: italic;
+            border-top: 1px dashed rgba(0, 0, 0, 0.1);
+            padding-top: 0.5rem;
+            color: #57534e; /* stone-600 */
+        }
+        .quiz-question {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #fafaf9; /* stone-50 */
+            border-radius: 0.5rem;
+            border: 1px solid #e7e5e4; /* stone-200 */
+        }
+        .quiz-options label {
+            display: block;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+         .quiz-options input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+        .quiz-options label:hover {
+            background-color: #e0f2fe; /* light-blue-100 */
+        }
+        .feedback {
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        .correct { color: #15803d; /* green-700 */}
+        .incorrect { color: #b91c1c; /* red-700 */ }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="text-center pb-6 border-b border-stone-200">
+            <h1 class="text-4xl font-bold text-cyan-900">Unidade 34: "Dói-me a cabeça"</h1>
+            <p class="text-xl text-stone-600 mt-2">Desvendamos o verbo "doer", vocabulário de sintomas e partes do corpo.</p>
+            <a href="index.html" class="text-sky-600 hover:text-sky-800 mt-4 inline-block">&larr; Voltar ao Menu de Podcasts</a>
+        </header>
+
+        <nav class="mt-6 border-b border-stone-200">
+            <ul class="flex flex-wrap -mb-px">
+                <li><button class="nav-tab tab-active" data-tab="transcricao">Transcrição e Áudio</button></li>
+                <li><button class="nav-tab" data-tab="revisao">Revisão Gramatical</button></li>
+                <li><button class="nav-tab" data-tab="quiz">Quiz</button></li>
+            </ul>
+        </nav>
+
+        <main class="mt-8">
+
+            <section id="transcricao" class="tab-content tab-content-active">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Áudio da Lição</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-4">
+                    Practice your listening. Listen to the audio and follow along with the transcription below.
+                </p>
+                
+                <audio controls class="w-full mb-6">
+                    <source src="Dói-me_a_Cabeça__Desvendamos_o_Verbo__Doer_,_Sintomas_Essenciai.m4a" type="audio/x-m4a">
+                    O seu browser não suporta o elemento de áudio.
+                </audio>
+
+                <h2 class="text-3xl font-semibold text-stone-800 mb-6">Transcrição</h2>
+                
+                <div class="space-y-4 flex flex-col">
+                    
+                    <div class="chat-bubble-homem">
+                        Olá e bem-vindos. Hoje, hum, vamos fazer uma análise focada, assim, mais prática, a uma unidade que, bem, toda a gente vai precisar mais cedo ou mais tarde, não é?
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        É verdade.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        É a unidade 34 do curso CIPLE Master A2. O título diz tudo: "Dói-me a cabeça". Portanto, preparem-se para falar de dores e sintomas.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Exatamente. As nossas fontes, pronto, são os materiais desta aula 48. E a nossa missão, bem, é tentar destilar o essencial, o vocabulário, a gramática, para conseguirmos falar sobre saúde, doenças, essas coisas, em português.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Mas sem parecer um robô a ler um manual médico, não é?
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Exato. Queremos que seja útil, fácil de lembrar e, claro, com um toque assim mais leve.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Sem dúvida. E é um tema super relevante para o dia-a-dia, lá está. Vamos focar-nos talvez em três áreas principais.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        OK.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Primeiro, o vocabulário básico, não é? As partes do corpo e os problemas de saúde. O básico. Depois, as frases úteis, não é? Para comunicar como nos sentimos ou perguntar a outros.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Uhum.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        E terceiro, o ponto gramatical que é mesmo central nesta lição: o verbo "doer". É aqui que muita gente, hum, tropeça um bocadinho. Vamos tentar desmistificar isso.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Perfeito. Então, vamos a isso. Começar pelo mais básico. Como é que nomeamos as, as ferramentas do crime? Quer dizer, as partes do corpo que costumam doer.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Isso. O diapositivo 3 até tem um exercício sobre isso.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Ah, OK.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Então vamos pegar nos exemplos mais comuns que vão aparecendo. Por exemplo, temos "a cabeça" (the head). Essa é clássica.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Um clássico, sim. E outras áreas que dão problemas frequentemente: "a barriga" (the belly/stomach), "o pescoço" (the neck), "a garganta" (the throat).
+                    </div>
+                    <div class="chat-bubble-homem">
+                        E aqui, atenção.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Sim.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        É importante notar logo o género. "A cabeça", "a barriga", "a garganta" são todas femininas.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Bem visto. É uma boa chamada de atenção.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        E depois, dos exemplos e diálogos, tiramos também "as costas" (the back). Essas são um clássico das queixas, sempre no plural.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Sempre.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        E "o olho" ou, se forem os dois, "os olhos" (the eye, the eyes). Estes já são masculinos.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Exato.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        E não podemos esquecer "o pé" e o plural "os pés" (the foot, the feet).
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Uhum.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        E "o dente" ou "os dentes" (the tooth, the teeth), também masculinos.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        O exercício lá no diapositivo 3 ainda acrescenta outros, tipo: "a perna" (feminino), "o braço" (masculino), "a mão" (feminino).
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Certo. E saber o género é mesmo fundamental. Não é só para os adjetivos concordarem, tipo "uma dor forte" ou "um braço partido".
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Não.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        É especialmente importante para o que vem a seguir: o verbo "doer".
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        OK. Então, vamos lá mergulhar nesse verbo que até dá nome à unidade: "doer" (to hurt). Este verbo é, ah, um bocadinho especial. É irregular...
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Sim.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        ...e a forma como o usamos em português é diferente da estrutura que se usa mais em inglês, não é? O diapositivo 4 mostra que, no presente, as formas que realmente interessam são a terceira pessoa do singular, "dói", e a terceira do plural, "doem". São essas que vamos usar quase sempre.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Exato. E aqui é que está o truque que vai, que está bem explicado no diapositivo 5. Quando usamos o verbo "doer" em português, o sujeito da frase não somos nós, a pessoa que sente a dor.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Ah, não?
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Não. O sujeito é a parte do corpo que está a doer. Esta é a diferença fundamental em relação ao inglês.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Exato. Então, em vez de dizermos algo como, sei lá, "Eu doo a cabeça", que soa muito estranho...
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Estranhíssimo.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        ...dizemos que "a cabeça dói". O sujeito é "a cabeça". É uma coisa, singular, por isso usamos a forma verbal "dói".
+                    </div>
+                    <div class="chat-bubble-homem">
+                        OK. E se for mais de uma parte? Ou uma parte que seja plural, como "os dentes", por exemplo? "Os dentes" é plural.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Certo.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Então, a frase correta é: "Os dentes doem". O sujeito plural ("os dentes") pede a forma verbal plural ("doem"). É simples, na verdade, quando se apanha a lógica. O diapositivo 4 até faz a comparação, não é? "My 'x' hurts".
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Pois faz.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        A lógica é clara. A parte do corpo é que manda no verbo. Mas então, espera aí. Se a cabeça dói ou os dentes doem, como é que a gente indica quem é que está a sofrer? De quem é essa cabeça ou esses dentes que doem? É aqui que fica mesmo interessante, ou não?
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        É precisamente aí. É nesse ponto que entram os tais pronomes de complemento indireto. Estão lá destacados no diapositivo 5 também.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Aquelas palavrinhas pequenas.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Isso, aquelas palavrinhas pequenas mas super importantes. "Me" (para eu), "te" (para tu), "lhe" (para ele, ela, você).
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Uhum.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        "Nos" (para nós), "vos" (para vós ou vocês aqui em Portugal) e "lhes" (para eles, elas, vocês). São estes pronomes que indicam quem é o recetor da dor, digamos assim.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        OK, OK. Portanto, temos de juntar as peças todas: o pronome que indica a pessoa, o verbo "doer" (que concorda com a parte do corpo) e a parte do corpo em si. Como é que fica a estrutura completa, na prática?
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        A estrutura mais comum, e a que vemos nos exemplos dos diapositivos 5, 6 e 9, é assim: pronome (CI) + verbo "doer" ("dói" ou "doem") + parte do corpo.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Dá um exemplo. Para dizer "My head hurts".
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Fica: "Dói-me a cabeça". Se formos traduzir à letra, seria algo como "Hurts me the head", que em inglês não faz sentido, mas em português é perfeito. O "me" mostra que sou eu.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Certo. E se for outra pessoa? Se eu quiser dizer que as costas do meu amigo, a quem trato por "tu", estão a doer? "Your back hurts".
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Nesse caso, usas o pronome "te". E como "as costas" é plural...
+                    </div>
+                    <div class="chat-bubble-homem">
+                        O verbo tem que ser "doem".
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Exatamente. A frase fica: "Doem-te as costas". Os exercícios nos diapositivos 6 e 9 são ótimos para praticar isto. Têm lá perguntas tipo: "O que te dói?" ou "Onde é que te dói?".
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Sim, lembro-me de ver isso.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        E afirmações como: "Hoje dói-me a garganta". Ou aquela pergunta: "Não te doem os dentes quando comes gelado?". É tudo a mesma lógica.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Entendido. Então, se calhar uma boa forma de pensar nisto, para quem vem do inglês, é imaginar a frase como "A mim, dói-me a cabeça" ou "A ti, doem-te as costas".
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Uhum. Mesmo que não se diga sempre o "a mim" ou o "a ti".
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Exato. Não é preciso, mas ajuda a fixar a ideia.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Ajuda a fixar a ideia de que a dor acontece *à* pessoa, e não que a pessoa "tem" a dor, como em "I have a headache". É uma perspetiva um bocadinho diferente.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        É uma excelente forma de interiorizar, sim. Capta bem a lógica do português neste caso.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        E já que estamos no verbo "doer", convém saber falar de dores no passado, certo?
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Ah, sim, claro.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Os diapositivos 6 e 9 também mostram as formas do Pretérito Perfeito Simples (o PPS): "doeu" (para sujeito singular) e "doeram" (para sujeito plural).
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Ah, boa. Então, se ontem tive uma dor de dentes horrível, como é que eu digo isso?
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Manténs a estrutura. Seria: "Ontem doeu-me um dente." (Yesterday, a tooth hurt me).
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Ou, se foi mais que um dente... "Doeu-me os dentes."
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Isso mesmo. "Ontem doeram-me os dentes." (Yesterday, my teeth hurt). O diapositivo 9 até dá outro exemplo: "Ontem doeram-lhe as costas." (Yesterday his/her/your formal back hurt). A estrutura base não muda, só o tempo do verbo.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Fantástico. Acho que o verbo "doer" ficou bem mais claro agora. É mesmo uma questão de praticar, de interiorizar essa estrutura.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Sem dúvida.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Mas agora, vamos alargar um bocadinho o nosso kit de primeiros socorros linguísticos. Como é que falamos de outros problemas, de sintomas, do nosso estado de saúde em geral? Os diálogos nos diapositivos 7 e 10 parecem ótimos para isso.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        São ótimos, sim. Estão cheios de vocabulário e expressões do dia a dia. Vamos ver algumas palavras importantes que aparecem por lá.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Força.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Temos "gripe" (the flu), como na frase: "Se calhar estás com gripe."
+                    </div>
+                    <div class="chat-bubble-homem">
+                        OK.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Depois, "constipado", que é um adjetivo, atenção, para dizer que se tem uma constipação (having a cold). "Acho que estou constipado."
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Certo. "Estar constipado".
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Isso. E "febre" (fever). A expressão é "estar com febre". "Acho que estou com febre."
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Uhum.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        E, claro, "dor" (no singular) ou "dores" (no plural) (pain, pains). Os diálogos têm vários exemplos: "Tenho umas dores de cabeça horríveis", ou "Tenho uma dor fortíssima no peito", ou ainda "Tenho umas dores muito fortes nas costas".
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Essas frases são muito úteis.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        São. E a palavra "sintomas" (symptoms), que aparece na lista de perguntas do diapositivo 8. E adjetivos como "horrível" (horrible) ou "grave" (serious) para descrever como nos sentimos ou a situação.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        E para além das palavras soltas, o que ajuda mesmo a comunicar são as frases feitas, não é? As expressões que usamos naturalmente. Eu notei algumas muito úteis nos diálogos dos diapositivos 7 e 10.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Quais, por exemplo?
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Por exemplo: "Não me sinto muito bem." (I don't feel very well).
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Sim, essa é essencial.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        E a pergunta: "O que é que se passa?" (What's wrong? What's happening?)
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Para mostrar preocupação, querer saber mais.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Uhum. E para dar a nossa opinião: "Acho que estou constipado."
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Sim.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        E, claro, usando o nosso amigo verbo "doer": "Dói-te alguma coisa?"
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Sim.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Uma pergunta direta sobre a dor.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Exato.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        E tão importante como saber descrever o problema, é saber reagir quando alguém nos diz que não está bem. Os diálogos também nos dão umas pistas.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Como por exemplo?
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Aquela expressão de empatia: "Coitado" ou "Coitada" (Poor you).
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        É super comum em Portugal. Usa-se quando alguém conta uma desgraça, uma doença, um azar. Vemos "Coitada" no diálogo 1 do diapositivo 7.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Ah, sim.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        E depois, "As melhoras", o desejo simpático que se diz a alguém doente. Também está lá no diálogo 1.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        "As melhoras". Muito útil.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        E depois, conselhos simples, tipo: "Toma uma aspirina".
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Que aparece no diálogo 1 do diapositivo 10. Claro que, pronto, só devemos dar conselhos médicos se soubermos o que estamos a fazer.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        É verdade, é melhor ter cuidado com isso.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        E por falar em ajuda médica, os diálogos também mencionam ações mais concretas.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Lembro-me que no diálogo 2, no diapositivo 7, falava-se de...
+                    </div>
+                    <div class="chat-bubble-homem">
+                        De "marcar uma consulta médica".
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Exato.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Exato. E também o verbo "ligar para". No diálogo 3, fala-se da possibilidade de chamar uma ambulância. "É melhor chamar uma ambulância?" E no fim, a pessoa diz: "Depois ligo-te". Portanto, "marcar consulta" e "ligar" são verbos que dão jeito neste contexto de saúde.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Sem dúvida.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Bem, e agora, imaginemos que, pronto, marcamos a consulta, chegamos lá. O diapositivo 8 tem uma lista de perguntas típicas que um médico ou enfermeiro podem fazer. Reconhecer estas perguntas já é meio caminho andado para a consulta correr melhor, não é?
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Completamente. Não precisamos de as decorar já todas, mas ir-nos familiarizando com elas é excelente. Vamos dar uma espreitadela a algumas.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Vamos.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Por exemplo: "Tem sentido cansaço ou fadiga?" (Have you been feeling tired or fatigue?). Repara na forma verbal: "tem sentido".
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Isto indica algo que tem vindo a acontecer recentemente até agora. Não vamos entrar em nomes técnicos dos tempos verbais, mas a ideia é essa.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Algo contínuo ou recente.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Isso, uma sensação que começou no passado e se prolonga ou repete. Outro exemplo: "Tem tido febre ou outros sintomas?" (Have you had a fever or other symptoms?). Mesma ideia com "tem tido": ocorrências repetidas ou contínuas num período recente.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        OK. E aquela sobre medicamentos?
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Ah, sim. "Está a tomar algum medicamento?" (Are you taking any medication?). Aqui, "está a tomar" refere-se a algo que acontece agora, no presente, uma ação contínua. "Are you currently taking?"
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Faz sentido.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        E uma alternativa interessante para perguntar sobre dor sem usar o verbo "doer"?
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        "Está com dor em algum lugar?" A expressão "estar com dor" também é muito, muito comum.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Boa alternativa.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        E por fim, uma essencial para ver a evolução: "Sente-se melhor ou pior do que antes?" (Do you feel better or worse than before?). Uma pergunta comparativa.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Estas são mesmo frases-chave. Mesmo que uma pessoa ao início só as consiga perceber e responder tipo "sim", "não", ou apontar para onde dói, já é um avanço enorme, dá mais segurança em situações reais.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Sem dúvida.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Bom, fizemos aqui uma viagem bastante completa pela unidade 34. Então assim, para resumir, o que é que retirámos de mais importante disto tudo? Recapitulando. Vimos vocabulário essencial, não é? Partes do corpo, algumas doenças, sintomas comuns como gripe, constipação, febre, dores.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Exato. E acima de tudo, acho que desvendámos o mistério do verbo "doer". Aquela estrutura "pronome (CI) + 'dói' ou 'doem' + parte do corpo" é mesmo o ponto gramatical mais crucial desta unidade.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Sim, parece-me que sim.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Lembrar que o sujeito é a parte do corpo (singular leva "dói", plural leva "doem") e que o pronome ("me", "te", "lhe", etc.) indica quem sente a dor. É mesmo a chave. Dominar isto faz uma diferença gigante na fluidez e na correção quando se fala de dores.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Concordo plenamente. E não nos ficámos só pela gramática pura, não é? Vimos também muitas frases super úteis, tiradas dos diálogos, que nos permitem começar uma conversa sobre como nos sentimos ("Não me sinto bem")...
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        ...e perguntar aos outros ("O que é que se passa?", "Dói-te alguma coisa?")...
+                    </div>
+                    <div class="chat-bubble-homem">
+                        ...mostrar empatia ("Coitado", "As melhoras")...
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        ...e falar de ações práticas ("marcar uma consulta", "toma uma aspirina"). É um pacote bastante completo para começar a desenrascar-se.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        É verdade. E assim, acho que fechamos esta nossa exploração focada na aula 48. Foi, hum, uma abordagem muito prática para nos sentirmos mais à vontade a falar sobre saúde, bem-estar, ou a falta dele, às vezes, em português.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Esperamos que tenha sido útil. E, quem sabe, até um bocadinho divertido.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        O segredo agora é mesmo praticar. Ouvir, ler, tentar usar estas estruturas. Prestar atenção a como os falantes nativos usam o verbo "doer", em filmes, em músicas, em conversas. Cada vez que o encontrarem, pensem: OK, qual é o sujeito? Qual é o pronome? Isso ajuda a fixar a regra de forma mais natural. E os exercícios da lição, claro, são um excelente ponto de partida.
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Sem dúvida.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        E para ficarem a pensar um bocadinho, deixamos aqui uma reflexão final. Esta estrutura do verbo "doer" em português, onde a dor "acontece" à pessoa ("Dói-me a cabeça"), um pouco como acontece com o verbo "gustar" em espanhol ("Me gusta el chocolate"), não é fascinante?
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        É interessante, sim.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Se contrastarmos com o inglês, onde geralmente a pessoa é o sujeito mais ativo ("I have a headache", "I like chocolate"), será que estas diferenças na gramática, assim subtis, refletem ou até moldam de alguma forma a maneira como encaramos as nossas experiências, as nossas sensações, a nossa relação com o mundo?
+                    </div>
+                    <div class="chat-bubble-mulher">
+                        Fica a pergunta no ar.
+                    </div>
+                    <div class="chat-bubble-homem">
+                        Algo para refletir enquanto continuam a vossa aprendizagem desta língua tão rica. Por hoje é tudo. Muito obrigado pela companhia e, bem, até à próxima análise.
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="revisao" class="tab-content">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-6">Revisão Gramatical: O Verbo "Doer"</h2>
+                
+                <div class="space-y-6 text-lg text-stone-700 leading-relaxed">
+                    <p>O ponto gramatical central desta unidade é o verbo <strong class="text-pink-700">doer</strong>. A sua estrutura em português é diferente do inglês e é essencial para falar de dores corretamente.</p>
+
+                    <div class="p-4 bg-stone-50 rounded-lg border border-stone-200">
+                        <h3 class="text-2xl font-semibold text-stone-800 mb-2">1. O Sujeito da Frase</h3>
+                        <p>Em português, o sujeito da frase não é a pessoa que sente a dor. O sujeito é <strong class="text-pink-700">a parte do corpo</strong> que dói.</p>
+                        <ul class="list-disc list-inside mt-2 pl-2 space-y-1">
+                            <li>Se a parte do corpo for <strong class="font-medium">singular</strong> (ex: a cabeça), usamos a forma verbal <strong class="font-medium">"dói"</strong>.</li>
+                            <li>Se a parte do corpo for <strong class="font-medium">plural</strong> (ex: os dentes), usamos a forma verbal <strong class="font-medium">"doem"</strong>.</li>
+                        </ul>
+                        <p class="mt-3 font-medium">Exemplos:</p>
+                        <p class="mt-1 ml-4 italic">"A cabeça <strong class="text-pink-700">dói</strong>."</eM>
+                        <p class="mt-1 ml-4 italic">"Os dentes <strong class="text-pink-700">doem</strong>."</p>
+                    </div>
+
+                    <div class="p-4 bg-stone-50 rounded-lg border border-stone-200">
+                        <h3 class="text-2xl font-semibold text-stone-800 mb-2">2. Indicar a Pessoa (Pronome de Complemento Indireto)</h3>
+                        <p>Para dizer *quem* está a sentir a dor, usamos um pronome de complemento indireto (CI) antes do verbo.</p>
+                        <ul class="list-disc list-inside mt-2 pl-2 space-y-1">
+                            <li><strong>me</strong> (eu)</li>
+                            <li><strong>te</strong> (tu)</li>
+                            <li><strong>lhe</strong> (ele, ela, você)</li>
+                            <li><strong>nos</strong> (nós)</li>
+                            <li><strong>vos</strong> (vós, vocês)</li>
+                            <li><strong>lhes</strong> (eles, elas, vocês)</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-4 bg-rose-50 rounded-lg border border-rose-200">
+                        <h3 class="text-2xl font-semibold text-rose-800 mb-2">A Estrutura Completa (Presente)</h3>
+                        <p class="font-semibold text-rose-900 text-center py-2 bg-white rounded">Pronome (CI) + Verbo ("dói" ou "doem") + Parte do Corpo</p>
+                        <p class="mt-3 font-medium">Exemplos:</p>
+                        <p class="mt-1 ml-4 italic">"Como se diz 'My head hurts'?" &rarr; "<strong class="text-pink-700">Dói-me a cabeça.</strong>"</p>
+                        <p class="mt-1 ml-4 italic">"Como se diz 'Your back hurts'?" &rarr; "<strong class="text-pink-700">Doem-te as costas.</strong>" (Lembre-se: "as costas" é plural!)</p>
+                        <p class="mt-1 ml-4 italic">"Não <strong class="text-pink-700">te doem</strong> os dentes quando comes gelado?"</p>
+                    </div>
+
+                     <div class="p-4 bg-stone-50 rounded-lg border border-stone-200">
+                        <h3 class="text-2xl font-semibold text-stone-800 mb-2">3. O Verbo "Doer" no Passado (PPS)</h3>
+                        <p>Para falar de dores no Pretérito Perfeito Simples, a lógica é a mesma, mas as formas do verbo mudam:</p>
+                        <ul class="list-disc list-inside mt-2 pl-2 space-y-1">
+                            <li>Singular: <strong class="font-medium">"doeu"</strong></li>
+                            <li>Plural: <strong class="font-medium">"doeram"</strong></li>
+                        </ul>
+                        <p class="mt-3 font-medium">Exemplos:</p>
+                        <p class="mt-1 ml-4 italic">"Ontem <strong class="text-pink-700">doeu-me</strong> um dente."</p>
+                        <p class="mt-1 ml-4 italic">"Ontem <strong class="text-pink-700">doeram-me</strong> os dentes."</p>
+                        <p class="mt-1 ml-4 italic">"Ontem <strong class="text-pink-700">doeram-lhe</strong> as costas."</p>
+                    </div>
+
+                    <div class="p-4 bg-stone-50 rounded-lg border border-stone-200">
+                        <h3 class="text-2xl font-semibold text-stone-800 mb-2">4. Outras Expressões Úteis sobre Saúde</h3>
+                        <ul class="list-disc list-inside mt-2 pl-2 space-y-1">
+                            <li><strong>Estar com...</strong>: "Acho que <strong class="font-medium">estou com febre</strong>.", "Se calhar <strong class="font-medium">estás com gripe</strong>."</li>
+                            <li><strong>Estar (adjetivo)</strong>: "Acho que <strong class="font-medium">estou constipado</strong>."</li>
+                            <li><strong>Sentir-se</strong>: "<strong class="font-medium">Não me sinto muito bem</strong>."</li>
+                            <li><strong>Reagir com empatia</strong>: "<strong class="font-medium">Coitado(a)</strong>.", "<strong class="font-medium">As melhoras</strong>."</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="quiz" class="tab-content">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-6">Quiz: Teste o seu conhecimento</h2>
+                
+                <div id="quiz-container">
+                    <div class="quiz-question" data-correct="b">
+                        <p class="text-lg font-semibold mb-2">1. Qual é a forma correta de dizer "My head hurts" em português?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> a) Eu doo a cabeça.</label>
+                            <label><input type="radio" name="q1" value="b"> b) Dói-me a cabeça.</label>
+                            <label><input type="radio" name="q1" value="c"> c) Eu tenho uma dor de cabeça.</label>
+                        </div>
+                        <div class="feedback mt-2"></div>
+                    </div>
+
+                    <div class="quiz-question" data-correct="c">
+                        <p class="text-lg font-semibold mb-2">2. Complete a frase: "Eu comi muito gelado e agora ______ os dentes."</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q2" value="a"> a) dói-me</label>
+                            <label><input type="radio" name="q2" value="b"> b) doo-me</label>
+                            <label><input type="radio" name="q2" value="c"> c) doem-me</label>
+                        </div>
+                        <div class="feedback mt-2"></div>
+                    </div>
+
+                    <div class="quiz-question" data-correct="c">
+                        <p class="text-lg font-semibold mb-2">3. O seu amigo diz: "Ontem levantei muito peso." Você pergunta: "Ah sim? ______ as costas?"</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q3" value="a"> a) Doeu-te</label>
+                            <label><input type="radio" name="q3" value="b"> b) Doem-te</label>
+                            <label><input type="radio" name="q3" value="c"> c) Doeram-te</label>
+                        </div>
+                        <div class="feedback mt-2"></div>
+                    </div>
+
+                    <div class="quiz-question" data-correct="a">
+                        <p class="text-lg font-semibold mb-2">4. Qual expressão é comum para dizer "I have a cold"?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q4" value="a"> a) Estou constipado.</label>
+                            <label><input type="radio" name="q4" value="b"> b) Dói-me o constipado.</label>
+                            <label><input type="radio" name="q4" value="c"> c) Eu sinto-me constipado.</label>
+                        </div>
+                        <div class="feedback mt-2"></div>
+                    </div>
+                </div>
+
+                <button id="check-quiz" class="mt-6 px-6 py-3 bg-pink-600 text-white font-bold rounded-lg hover:bg-pink-700 transition-colors">Verificar Respostas</button>
+                <div id="quiz-results" class="mt-4 text-xl font-semibold"></div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.nav-tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Desativar todas as tabs e conteúdos
+                    tabs.forEach(item => item.classList.remove('tab-active'));
+                    tabContents.forEach(content => content.classList.remove('tab-content-active'));
+
+                    // Ativar a tab clicada e o seu conteúdo
+                    tab.classList.add('tab-active');
+                    const targetTab = tab.getAttribute('data-tab');
+                    document.getElementById(targetTab).classList.add('tab-content-active');
+                });
+            });
+
+            // Lógica do Quiz
+            const checkButton = document.getElementById('check-quiz');
+            if (checkButton) {
+                checkButton.addEventListener('click', () => {
+                    const questions = document.querySelectorAll('.quiz-question');
+                    let score = 0;
+                    
+                    questions.forEach(question => {
+                        const correctAnswer = question.getAttribute('data-correct');
+                        const selectedOption = question.querySelector('input[type="radio"]:checked');
+                        const feedback = question.querySelector('.feedback');
+
+                        if (selectedOption) {
+                            const selectedValue = selectedOption.value;
+                            if (selectedValue === correctAnswer) {
+                                feedback.textContent = 'Correto!';
+                                feedback.className = 'feedback correct';
+                                score++;
+                            } else {
+                                feedback.textContent = `Incorreto. A resposta certa era a (${correctAnswer}).`;
+                                feedback.className = 'feedback incorrect';
+                            }
+                        } else {
+                            feedback.textContent = 'Por favor, selecione uma opção.';
+                            feedback.className = 'feedback incorrect';
+                        }
+                    });
+
+                    const results = document.getElementById('quiz-results');
+                    results.textContent = `O seu resultado: ${score} de ${questions.length} corretas.`;
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
