@@ -29,11 +29,11 @@
             transition: all 0.2s ease-in-out;
         }
         .nav-tab:hover {
-            color: #047857; /* emerald-800 */
+            color: #78350f; /* amber-900 */
         }
         .tab-active {
-            color: #059669; /* emerald-600 */
-            border-bottom-color: #059669; /* emerald-600 */
+            color: #b45309; /* amber-700 */
+            border-bottom-color: #b45309; /* amber-700 */
         }
         .tab-content {
             display: none;
@@ -44,10 +44,13 @@
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1, transform: translateY(0); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        /* Cor 1: Homem (Neutro) */
-        .chat-bubble-homem {
+        
+        /* Ordem dos Oradores: Mulher (1) / Homem (2) */
+        
+        /* Cor 1: Mulher (Oradora 1) - Neutro, Esquerda */
+        .chat-bubble-mulher {
             background-color: #f5f5f4; /* stone-100 */
             color: #1c1917; /* stone-900 */
             padding: 0.75rem 1rem;
@@ -55,10 +58,10 @@
             max-width: 80%;
             align-self: flex-start;
         }
-        /* Cor 2: Mulher (Destaque Esmeralda) */
-        .chat-bubble-mulher {
-            background-color: #d1fae5; /* emerald-100 */
-            color: #065f46; /* emerald-900 */
+        /* Cor 2: Homem (Orador 2) - Destaque Âmbar, Direita */
+        .chat-bubble-homem {
+            background-color: #fef3c7; /* amber-100 */
+            color: #78350f; /* amber-900 */
             padding: 0.75rem 1rem;
             border-radius: 1.25rem 1.25rem 0.25rem 1.25rem;
             max-width: 80%;
@@ -106,8 +109,8 @@
 
     <div class="container">
         <header class="text-center pb-6 border-b border-stone-200">
-            <h1 class="text-4xl font-bold text-cyan-900">Unidade 6 (Parte 2): Possessivos e Sons</h2>
-            <p class="text-xl text-stone-600 mt-2">Foco em possessivos (seu vs. dele), profissões (médico/a) e os 3 sons do S.</p>
+            <h1 class="text-4xl font-bold text-cyan-900">Unidade 6 (Parte 2): Formalidade e Numerais</h1>
+            <p class="text-xl text-stone-600 mt-2">Revisão de Tu/Você, números ordinais (1º) e cardinais (datas), e o alfabeto.</p>
             <a href="index.html" class="text-sky-600 hover:text-sky-800 mt-4 inline-block">&larr; Voltar ao Menu de Podcasts</a>
         </header>
 
@@ -135,213 +138,579 @@
                 <h2 class="text-3xl font-semibold text-stone-800 mb-4 mt-8">Transcrição</h2>
                 <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
                     <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Olá, bem-vindos a, hum, mais uma análise focada. Hoje temos em mãos materiais do curso A2 de português, a, da CIPLE Master, da professora Sheila Meneses. A nossa missão é destilar o essencial, aquilo que, pronto, que realmente faz a diferença para quem está a aprender.
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Olá, bem-vindos a mais uma exploração focada. Hoje, ah, temos aqui material de português A2: slides, guias, exercícios.
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Exatamente. Vamos olhar assim para alguns pontos chave de gramática e vocabulário que surgem nestas lições, sim. A ideia é pegar nos, nos possessivos, nas profissões e até naqueles sons, às vezes tramados do S, e dar-lhes uma volta rápida para ajudar a fixar.
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Olá.
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Boa. Então, vamos lá desmontar isto. Ah, comecemos pelos possessivos, aquelas palavrinhas que usamos para dizer de quem são as coisas, certo? Nos materiais, vimos exemplos como: "Ele é italiano, o apelido dele é Ciancio". Ou seja, em inglês, "He is Italian, his surname is Ciancio".
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            A nossa missão é destilar o essencial para quem quer, pronto, começar a trocar informações pessoais em português. Parece que o foco é mesmo ganhar confiança, não é?
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Sim. Parece simples, mas lembro-me que a diferença entre "seu" e "dele", ah, às vezes causa alguma confusão.
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente. É revisitar aqueles blocos de construção, hum, que estas fontes do CIPLE e Master e os guias destacam. Como é que se pergunta e responde sobre dados pessoais? Como usar os números sem, eh, sem tropeçar? E o alfabeto, que às vezes parece básico, mas...
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Pois, causa, é um ponto muito comum. É mesmo crucial distinguir "meu", "minha", "teu", "tua", "seu", "sua", "nosso", "nossa", "vosso", "vossa"...
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Pois.
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Uhum.
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            ...e algumas regras de gramática, aquelas que fazem logo diferença na prática. A ideia é ser uma revisão rápida, útil.
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            ...daqueles que não variam em género, como "dele", "dela", "deles", "delas". A chave está na concordância, não é?
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ótimo. Vamos a isso então. Começando pelo mais básico: apresentar e perguntar pelo outro. As fontes falam de seis áreas, certo? Nome, idade...
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Sim. "Meu carro", "minha casa" concorda com a coisa possuída. Já "dele" ou "dela" não mudam. Vêm de "de plus ele" ou "de plus ela", basicamente. Nos exercícios, tínhamos: "Qual é o nome do seu país?"
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sim. Nome, idade, morada, nacionalidade, estado civil e profissão. Pronto, e o ponto de partida é mesmo saber fazer as perguntas.
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Uhum.
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Tipo, "Como te chamas?" ou "Qual é o teu nome?", o nosso "What is your name?". Mas aqui há logo uma coisa importante, não é?
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Que, pronto, pode ser "your" or "his country", como disseste. E a resposta: "A minha morada é...", "My address is...". Aqui, "minha" concorda com "morada", que é feminino, lá está.
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Hum-hum. Fundamental. A distinção entre o informal, o "tu", e o formal, o "você". Ou melhor ainda, o "senhor" ou a "senhora".
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            E também aquele exemplo: "O último nome da nossa professora", que seria "The last name of our teacher", onde "nossa" concorda com "professora", claro. E, ah, "O primeiro nome dela é Rocio", "Her first name is Rocio".
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ah, pois é.
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Exato. Portanto, a regra de ouro é: "meu", "minha", etc., concordam com o que se possui. "Dele", "dela" não mudam, referem-se a quem possui.
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            As perguntas com "teu" ou "tua". "Qual é a tua idade?", por exemplo, "What is your age?" ou "Onde moras?", "Where do you live?". Isso é para amigos, família, gente próxima.
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Percebido.
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            OK.
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            É isso mesmo. Dominar esta concordância, olha, tira logo muitas dores de cabeça. Acredita.
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Agora, numa situação mais formal, imagina, sei lá, chegar a uma repartição ou uma entrevista, aí muda. Usamos "seu" ou "sua". "Qual é o seu nome completo, por favor?", "What is your full name, please?" ou então "Qual é a sua nacionalidade?", "What is your nationality?".
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Falando em pessoas e em descrevê-las, a seguir temos as profissões. Isso é super útil para as conversas básicas, não é? O que me saltou à vista nos materiais foi a regra geral: masculino e feminino. Tipo, "médico" vira "médica", "professor" passa a "professora".
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E essa escolha não é só gramática, pois não? Quer dizer, usar o registo errado pode ser estranho. As fontes dão exemplos disso?
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Sim. E até há casos como "ator" que muda para "atriz".
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Ui, sem dúvida. Usar "tu" com alguém mais velho ou numa posição de chefia, sem que a pessoa dê abertura, pode ser visto como falta de respeito, sim.
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Correto. Essa é a norma, digamos assim. Mas depois, bem, há aquele grupo que gosta de simplificar as coisas: as profissões que têm uma só forma para os dois géneros. Muitas delas acabam em "-ente" ou "-ista": "estudante", "jornalista", "dentista".
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Hum-hum.
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Gerente?
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E o contrário também. Usar o "senhor" ou a "senhora" com um amigo soa muito distante, quase irónico, às vezes. As fontes usam o exemplo da Mafalda Lemos para mostrar a informação: Nome: Mafalda Lemos, Idade: 32 anos, Nacionalidade: Portuguesa...
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Gerente, exatamente. Nesses casos, é o contexto ou se usarmos um artigo noutra frase, tipo "o estudante" versus "a estudante", que desfaz a dúvida.
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Profissão: advogada, Estado civil: casada, Morada: Rua de Ceuta, etc.
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            E a dica prática que eu adorei e que simplifica imenso é aquela de: quando falamos da nossa *própria* profissão, dizemos só "sou" e o nome da profissão. Sem artigos, sem "um" ou "uma". Lembro-me bem de ter essa dúvida no início.
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exato. E cada um destes dados responde a uma pergunta que pode ser feita das duas formas. "Qual é a tua profissão?", "What is your profession?" (informal), ou "Qual é a sua profissão?", "What is your profession?" (formal).
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Precisamente. É um atalho muito útil mesmo. Os exemplos eram claros, não eram? "Eu sou professora", "I am a teacher", ou "Sou desenvolvedor de software de engenharia", "I am a software engineering developer".
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            OK, percebido. E vi que as fontes também sugerem um exercício depois: descrever a pessoa na terceira pessoa. Com a Mafalda ficaria: "Ela chama-se Mafalda Lemos, tem 32 anos..."
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Uhum.
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            "...é portuguesa e mora em Lisboa. Ela é casada, ela é advogada."
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            E até "Sou dona de casa", "I am a housewife". É direto, sem complicações. Evita-se aquela tradução muito literal do inglês "I am a teacher".
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sim, é um exercício excelente. Parece mais que repetir, não é?
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Pronto. Já sabemos de quem são as coisas e o que as pessoas fazem. Mas falta soar bem. E demos uma olhada rápida na pronúncia, especificamente nos sons do S. Confesso que este S português às vezes prega-nos partidas.
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            É, porque consolida muita coisa. O vocabulário (nacionalidades, profissões), a conjugação dos verbos na terceira pessoa ("chama-se", "tem", "é", "mora"). Ajuda a fixar a estrutura da frase.
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Ah, o "s" é um clássico. O exercício que vimos destacava três sons principais no português europeu. Vamos lá ver. Primeiro, o som "s", como o nosso "see" em inglês. Aparece no início das palavras ou quando temos SS. "Segunda", "professora".
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E prepara para falar de outras pessoas.
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            OK, esse é familiar. E os outros?
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exato. Apresentar alguém, falar sobre um colega. E repara na concordância de género: "Ela é portuguesa, advogada." Se fosse o Mário, seria "português, advogado". Essa concordância é outro pilar que começa logo aqui.
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Depois temos o som "ch", que é o nosso "sh" em "shoe". Este é muito, muito comum em português. Surge antes de consoantes como t, c, p, f, ou então no final das palavras. "Espanha", "pasta", "nós", "português".
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Faz todo o sentido. Agora, outro desafio inicial: nomes ou palavras que não percebemos bem. Nomes estrangeiros, apelidos. Como é que se lida com isso?
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Ah, OK. O "ch". Sim.
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Ah, aí entra a pergunta mágica: "Como se escreve?". É o nosso "How do you spell that?" ou "How is it written?". Essencial para ter a certeza.
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            E finalmente, o som "z", como o "z" em "zoo". Que acontece tipicamente quando o S está entre duas vogais. "Mesa", "casado", "portuguesa".
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E parece que há uma versão mais formal para nomes.
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Fascinante como a mesma letra muda tanto dependendo, pronto, dos vizinhos. Ou seja, a posição na palavra é mesmo tudo. Ouvir com atenção parece ser o segredo, então.
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sim, num contexto mais formal, tipo, preencher um papel oficial, fazer um registo, a pergunta seria mais direta, usando o tratamento formal. "Como se escreve o seu nome?" ou então "Pode soletrar o seu apelido, por favor?".
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Sem dúvida. Não há como fugir. É preciso treinar o ouvido e, claro, praticar a leitura em voz alta, prestando atenção a essas, a essas nuances.
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            "Could you spell your surname, please?"
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            OK. Então, resumindo a nossa análise rápida de hoje. Atenção à concordância dos possessivos: quem possui versus o que é possuído. Depois, saber quando mudar o género das profissões e quando não mudar. E usar o simples "sou [profissão]".
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Claro. E para responder, ou mesmo para perguntar, temos de saber o alfabeto português.
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Exato. E, claro, apurar o ouvido para os diferentes sotaques, digamos assim, dos S.
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sim, sem dúvida. E as fontes listam as letras, não é? A, B, C, D, E, F, G, H...
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            É isso. São elementos que, embora pareçam básicos, são fundamentais para construir frases corretas e, bem, para soar mais natural. O interessante é mesmo ver como estas peças – gramática, vocabulário, fonética – se encaixam todas para permitir a comunicação real, no dia a dia.
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            I, J, K, L, M, N, O...
                         </div>
                     </div>
                     <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            P, Q, R, S, T, U, V...
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Fica então a sugestão. Da próxima vez que estiverem a ouvir português, tentem caçar estas regras em ação. Será que notam a diferença entre "seu" e "dele"? Conseguem identificar os diferentes sons do S numa conversa? Pode ser um exercício, ah, interessante. Bem, até à próxima.
+                            W, X, Y, Z. Parece simples, mas a pronúncia de algumas letras pode ser complicada para quem vem de outras línguas. O G e o J, por exemplo.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ou o R e o RR.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exato. O som do R forte no início ou duplo, mais suave no meio. E é muito importante, como as fontes indicam, as vogais com acento: Á, É, Ó. Não é só o som aberto, é também a sílaba tónica. Ajuda imenso a sermos entendidos.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Como em "Fátima".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente. Soletrar "Fátima" é F-Á-T-I-M-A. Tem de se ouvir bem os "ás". Uma pronúncia mais ou menos pode levar a enganos.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Imagino. Gostei de um exercício que as fontes têm: ler siglas. Não é só nomes. Pedem para ler RTP, GNR, USB...
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            BMW, PDF. Sim, é uma ótima aplicação prática.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            É inteligente, porque praticamos as letras isoladas num contexto que existe.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente. São siglas comuns em Portugal. RTP (R-T-P) é a televisão pública. GNR (G-N-R) é uma polícia. USB (U-S-B), toda a gente conhece. BMW (B-M-W), a marca. PDF (P-D-F), o ficheiro. Praticar isto ajuda a fixar o som e a reconhecer as letras quando as ouvimos.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Muito útil, sim. Seguindo para os números. As fontes distinguem cardinais (1, 2, 3) e ordinais (primeiro, segundo). Os cardinais usam-se para a idade, certo?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Certo. Perguntas como "Que idade tens?" ou aquela mais literal "Quantos anos tens?", "How many years you have?". E a resposta "Tenho 32. 32 anos."
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Correto.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            A idade é com os cardinais. Mas atenção, não é só a idade. Ao contrário do inglês, que usa ordinais nas datas ("April 2nd", "December 25th"), em português usamos cardinais para *quase todos* os dias do mês.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            A sério? Como assim?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Dizemos "2 de abril", "25 de dezembro". Não dizemos "segundo de abril" ou "vigésimo quinto de dezembro".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Espera lá. Então nunca usamos ordinais nas datas? Isso é diferente do inglês.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Calma. Há uma exceção. Uma só, mas crucial: o primeiro dia do mês.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ah!
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Aí sim, é sempre ordinal: "primeiro de abril", "primeiro de janeiro". Mas para todos os outros, do dia 2 ao 31, é cardinal: 2, 3, 4, até 31.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            OK, OK. Primeiro dia é ordinal, o resto é cardinal, percebido. É daquelas coisas para decorar mesmo.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            É mesmo, porque a tentação de usar o ordinal, por causa do inglês, é enorme no início.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E há mais usos estranhos? Li qualquer coisa sobre séculos.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sim. Há uma regra para os séculos. Até ao século X (dez), usamos o ordinal: "século primeiro", "século segundo", "século décimo". Mas a partir do século XI (onze), passamos para o cardinal: "século XI", "século XV", "século XXI".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Lê-se mesmo "século onze"?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Lê-se "século onze", "século vinte", "século vinte e um". É uma mudança de padrão, um bocadinho, eh, inesperada.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Realmente. São estes pormenores. E os ordinais? As fontes focam do primeiro ao décimo. Onde é que os encontramos mais no dia a dia, tirando o dia 1 e os primeiros séculos?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            O uso mais comum, que as fontes destacam e que se vê em todo o lado, é para os andares dos prédios. A pergunta típica: "Em que andar moras?", "On which floor do you live?".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E a resposta usa o ordinal.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exato. "Moro no segundo andar", "I live on the second floor". E depois entram aquelas abreviaturas que às vezes se veem nas moradas.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ah, sim. Tipo "terceiro DTO" ou "quarto ESQ". O que é isso?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente. São super importantes. "Terceiro direito" (DTO) quer dizer "terceiro andar direito". "Quarto esquerdo" (ESQ) é "quarto andar esquerdo". E o R/C é o "rés do chão", o nosso "ground floor".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ah, R/C é rés do chão! OK.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Portanto, a resposta pode ser: "Eu moro no quarto esquerdo". Dominar isto é essencial para dar ou perceber moradas.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E há mais alguma aplicação dos ordinais que as fontes mencionem?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sim, aparecem em perguntas como: "Qual é o seu primeiro nome?", "What is your first name?" e "Qual é o seu último nome?", "What is your last name?". E aqui as fontes sublinham uma regra gramatical: os ordinais (e geralmente os adjetivos) vêm *antes* do nome que modificam.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            "Primeiro nome", não "nome primeiro".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente. A ordem das palavras é diferente do inglês em muitos casos.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Essa questão da ordem leva-nos direitinhos às pérolas de gramática. A primeira sobre possessivos. Há logo uma regra que salta à vista para quem fala inglês.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sem dúvida. Em português, regra geral, usamos *sempre* o artigo definido (o, a, os, as) *antes* do pronome possessivo (meu, teu, seu, nosso, vosso). Dizemos "a minha casa", "o teu carro", "os nossos livros".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Não é só "my house", "your car", é "a minha casa", "o teu carro".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exato. Essa presença do artigo é muito característica do português.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E não é a única coisa dos possessivos, pois não? Tem a ver com a posição e com o "seu/sua" que já falámos. Que é um bocado confuso.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            É. "Seu/sua" pode ser: "dele" (his), "dela" (her), "deles/delas" (their), ou então o tratamento formal para "você", "o senhor", "a senhora". Se eu disser: "O seu livro está na mesa", de quem é o livro? "His book?", "Her book?", "Your (formal) book?", "Their book?". Fica no ar.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            É verdade. E como é que se resolve isso? As fontes explicam?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Explicam, sim. Para clarificar a posse na terceira pessoa ("his/her/their"), usamos as formas "dele", "dela", "deles", "delas". E estas formas vêm obrigatoriamente *depois* do nome.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ah!
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Portanto, em vez do ambíguo "o seu livro", dizemos "o livro dele" (his book). Fica claro que é *dele*. "O livro dela" (her book). "O livro deles/delas" (their book). Esta construção (nome + de + pronome) é super útil e muito comum.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Isso ajuda imenso, mesmo. E reforça aquela ligação do "seu/sua" (antes do nome) com o tratamento formal, e o "teu/tua" com o informal, o "tu". As fontes parecem insistir bastante nisto.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente. É das primeiras grandes distinções sociais e gramaticais que quem aprende português tem de, ah, interiorizar. A escolha não é só gramática, afeta mesmo o tom da conversa.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Falando em regras que afetam a escrita. Há uma coisa sobre maiúsculas que apanha muitos falantes de inglês desprevenidos.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Ah, sim. É um detalhe pequeno, mas que está em todo o lado. Em português, os dias da semana (segunda-feira, terça-feira, etc.) e os meses do ano (janeiro, fevereiro) escrevem-se com letra minúscula.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ao contrário do inglês, que é sempre "Monday", "January".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente. É fácil esquecer, mas faz parte da escrita correta.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E já agora, voltando à Mafalda. Ela era "advogada". Se fosse "engenheira" ou "médica", também acabava em "a". Mas se fosse homem, seria "engenheiro", "médico". As fontes falam desta concordância de género nas profissões?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Falam, sim. Talvez não muito a fundo neste nível A2, mas o próprio exemplo "advogada" já introduz a regra: muitas profissões têm forma masculina e feminina (professor/professora, cantor/cantora).
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Certo.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Outras têm forma única, como "polícia" ou "estudante". E aí o género vê-se no artigo: "o polícia", "a polícia", "o estudante", "a estudante". É um aspeto da gramática fundamental que se começa a trabalhar logo de início.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            OK. Acho que cobrimos os pontos essenciais destes materiais A2. Recapitulando, vimos a importância do formal/informal nas informações pessoais, como "como se escreve" e o alfabeto são cruciais. Desvendámos os usos dos números cardinais e ordinais para idades, datas, séculos, andares. E explorámos regras-chave como artigos com possessivos, a ambiguidade do "seu/sua" e a solução "de le/dela", a ordem das palavras, género nas profissões e a questão das minúsculas nos dias e meses. Ufa. Parece muito, mas são mesmo os tijolos da comunicação, não é?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            São, são. E ter estes tijolos bem assentes dá a base para construir frases e, pronto, interagir com mais confiança no dia a dia. Não é só decorar, é perceber como as ferramentas funcionam para comunicar.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sem dúvida. E agora, para ficarmos a pensar um bocadinho, uma questão que vai além da gramática pura, mas que tem tudo a ver com a formalidade que falámos. As fontes distinguem bem o "seu nome" (formal) do "teu nome" (informal). Mas na vida real, em Portugal ou noutros países onde se fala português, como é que esta escolha entre "tu" e "você" (ou "o senhor/a senhora") joga na dinâmica de uma primeira conversa? Para além do "certo" e "errado", que impressão cultural é que se pode causar? Será que ir pelo seguro e ser sempre formal é a melhor aposta? Ou também pode criar barreiras?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            É uma excelente pergunta. Essa gestão da formalidade é uma dança social muito subtil. E em Portugal é bastante marcada. Observar como os nativos fazem essa gestão em diferentes situações – no café, no trabalho, com a família – ensina imenso, talvez tanto ou mais que os livros. É algo para terem atenção enquanto se continua a aprender e, claro, a praticar.
                         </div>
                     </div>
                 </div>
@@ -350,44 +719,48 @@
             <section id="revisao" class="tab-content">
                 <h2 class="text-3xl font-semibold text-stone-800 mb-4">Revisão Gramatical</h2>
                 <p class="text-lg text-stone-700 leading-relaxed mb-6">
-                    Review the key grammar and pronunciation points from the podcast.
+                    Review the key grammar points from the podcast, focusing on formal vs. informal and number usage.
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-stone-50 p-6 rounded-lg shadow-sm border border-stone-200">
-                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: Possessivos (Ambiguidade)</h3>
-                        <p class="text-stone-700 mb-3">Como clarificar a posse (His / Her / Their).</p>
+                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: Formal vs. Informal (Tu vs. Você)</h3>
+                        <p class="text-stone-700 mb-3">A sua escolha de palavras muda dependendo de com quem fala.</p>
 
-                        <h4 class="font-bold text-lg text-stone-800">1. 'Seu / Sua' (Ambíguo)</h4>
-                        <p class="text-stone-700 mb-4">Pode significar 'His', 'Her', 'Their' ou 'Your' (formal).</p>
+                        <h4 class="font-bold text-lg text-stone-800">1. Tratamento Informal (Tu)</h4>
+                        <p class="text-stone-700 mb-4">Para amigos, família, pessoas da mesma idade.</p>
                         <ul class="list-disc list-inside ml-2 space-y-1">
-                            <li>O <strong>seu</strong> livro. (His? Her? Your?)</li>
+                            <li>Qual é a <strong>tua</strong> idade?</li>
+                            <li>Onde <strong>moras</strong>?</li>
+                            <li>Qual é a <strong>tua</strong> profissão?</li>
                         </ul>
 
-                        <h4 class="font-bold text-lg text-stone-800 mt-6">2. 'Dele / Dela' (Claro)</h4>
-                        <p class="text-stone-700 mb-4">Usa-se <span class="font-bold">DEPOIS</span> do nome para ser específico.</p>
+                        <h4 class="font-bold text-lg text-stone-800 mt-6">2. Tratamento Formal (O Senhor / A Senhora)</h4>
+                        <p class="text-stone-700 mb-4">Para desconhecidos, pessoas mais velhas, no trabalho.</p>
                         <ul class="list-disc list-inside ml-2 space-y-1">
-                            <li>O livro <strong>dele</strong>. (His book - Claro!)</li>
-                            <li>A casa <strong>dela</strong>. (Her house - Claro!)</li>
-                            <li>O apelido <strong>deles</strong>. (Their surname - Claro!)</li>
+                            <li>Qual é a <strong>sua</strong> idade?</li>
+                            <li>Onde <strong>mora</strong>?</li>
+                            <li>Qual é a <strong>sua</strong> profissão?</li>
                         </ul>
                     </div>
 
                     <div class="bg-stone-50 p-6 rounded-lg shadow-sm border border-stone-200">
-                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: Profissões e Sons do 'S'</h3>
+                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: Números Cardinais vs. Ordinais</h3>
                         
-                        <h4 class="font-bold text-lg text-stone-800">Profissões</h4>
-                        <ul class="list-disc list-inside ml-2 space-y-3 text-stone-800 mb-6">
-                            <li><strong>Regra:</strong> Eu <strong>sou professora</strong>. (Sem artigo 'uma')</li>
-                            <li><strong>Variável:</strong> O professor / A professora</li>
-                            <li><strong>Uniforme:</strong> O estudante / A estudante (palavras em -ista, -ente)</li>
+                        <h4 class="font-bold text-lg text-stone-800">1. Números Cardinais (1, 2, 3)</h4>
+                        <p class="text-stone-700 mb-2">Usados para idade, moradas, e a maioria das datas.</p>
+                        <ul class="list-disc list-inside ml-2 space-y-1 mb-4">
+                            <li>Tenho <strong>32</strong> (trinta e dois) anos.</li>
+                            <li>Hoje é dia <strong>25</strong> (vinte e cinco) de dezembro.</li>
+                            <li>Século <strong>XI</strong> (lê-se "século onze")</li>
                         </ul>
 
-                        <h4 class="font-bold text-lg text-stone-800">Os 3 Sons do 'S' (em Portugal)</h4>
-                        <ul class="list-disc list-inside ml-2 space-y-3 text-stone-800">
-                            <li><strong>Som /s/ (see):</strong> Início de palavra (<strong>S</strong>egunda) ou <strong>SS</strong> (Profe<strong>ss</strong>ora).</li>
-                            <li><strong>Som /z/ (zoo):</strong> Entre vogais (Me<strong>s</strong>a, Ca<strong>s</strong>ado).</li>
-                            <li><strong>Som /ʃ/ (sh):</strong> Fim de palavra (Nó<strong>s</strong>) ou antes de consoante (E<strong>s</strong>panha, Pa<strong>s</strong>ta).</li>
+                        <h4 class="font-bold text-lg text-stone-800">2. Números Ordinais (1º, 2º, 3º)</h4>
+                        <p class="text-stone-700 mb-2">Usados para andares, séculos (até X) e o 1º dia do mês.</p>
+                        <ul class="list-disc list-inside ml-2 space-y-1 mb-4">
+                            <li>Moro no <strong>segundo</strong> andar (2º).</li>
+                            <li>Hoje é <strong>primeiro</strong> de abril. (A exceção!)</li>
+                            <li><strong>DTO</strong> = Direito / <strong>ESQ</strong> = Esquerdo / <strong>R/C</strong> = Rés do Chão</li>
                         </ul>
                     </div>
                 </div>
@@ -401,45 +774,45 @@
 
                 <form id="quizForm">
                     <div class="quiz-question">
-                        <p class="font-semibold mb-2">1. Qual é a forma mais clara de dizer "His surname is Ciancio"?</p>
+                        <p class="font-semibold mb-2">1. Se estiver a falar com um amigo, qual é a forma correta de perguntar a profissão?</p>
                         <div class="quiz-options">
-                            <label><input type="radio" name="q1" value="a"> a) O seu apelido é Ciancio.</label>
-                            <label><input type="radio" name="q1" value="b"> b) O apelido dele é Ciancio.</label>
-                            <label><input type="radio" name="q1" value="c"> c) O apelido teu é Ciancio.</label>
+                            <label><input type="radio" name="q1" value="a"> a) Qual é a sua profissão?</label>
+                            <label><input type="radio" name="q1" value="b"> b) Qual é a tua profissão?</label>
+                            <label><input type="radio" name="q1" value="c"> c) Como se escreve a profissão?</label>
                         </div>
                         <div class="feedback" id="feedback-q1"></div>
                     </div>
 
                     <div class="quiz-question">
-                        <p class="font-semibold mb-2">2. Como se diz "I am a teacher" da forma mais natural em Portugal?</p>
+                        <p class="font-semibold mb-2">2. Como se diz "April 2nd" (dois de abril) em português?</p>
                         <div class="quiz-options">
-                            <label><input type="radio" name="q2" value="a"> a) Eu sou professora.</label>
-                            <label><input type="radio" name="q2" value="b"> b) Eu sou uma professora.</label>
-                            <label><input type="radio" name="q2" value="c"> c) Eu tenho uma professora.</label>
+                            <label><input type="radio" name="q2" value="a"> a) Segundo de abril. (Ordinal)</label>
+                            <label><input type="radio" name="q2" value="b"> b) Dois de abril. (Cardinal)</label>
+                            <label><input type="radio" name="q2" value="c"> c) Abril dois.</label>
                         </div>
                          <div class="feedback" id="feedback-q2"></div>
                     </div>
 
                     <div class="quiz-question">
-                        <p class="font-semibold mb-2">3. Na palavra "mesa", como soa o 'S' em Português Europeu?</p>
+                        <p class="font-semibold mb-2">3. Qual é a EXCEÇÃO? Como se diz "April 1st" (primeiro de abril)?</p>
                         <div class="quiz-options">
-                            <label><input type="radio" name="q3" value="a"> a) Como /s/ (see).</label>
-                            <label><input type="radio" name="q3" value="b"> b) Como /ʃ/ (shoe).</label>
-                            <label><input type="radio" name="q3" value="c"> c) Como /z/ (zoo).</label>
+                            <label><input type="radio" name="q3" value="a"> a) Um de abril. (Cardinal)</label>
+                            <label><input type="radio" name="q3" value="b"> b) Primeiro de abril. (Ordinal)</label>
+                            <label><input type="radio" name="q3" value="c"> c) Abril um.</label>
                         </div>
                          <div class="feedback" id="feedback-q3"></div>
                     </div>
                      <div class="quiz-question">
-                        <p class="font-semibold mb-2">4. Na palavra "pastéis", como soa o 's' (antes do 't')?</p>
+                        <p class="font-semibold mb-2">4. Se mora no "3º DTO", onde mora?</p>
                         <div class="quiz-options">
-                            <label><input type="radio" name="q4" value="a"> a) Como /s/ (see).</label>
-                            <label><input type="radio" name="q4" value="b"> b) Como /ʃ/ (shoe).</label>
-                            <label><input type="radio" name="q4" value="c"> c) Como /z/ (zoo).</label>
+                            <label><input type="radio" name="q4" value="a"> a) No terceiro andar, à Direita.</label>
+                            <label><input type="radio" name="q4" value="b"> b) No rés do chão (R/C).</label>
+                            <label><input type="radio" name="q4" value="c"> c) No terceiro andar, à Esquerda.</label>
                         </div>
                          <div class="feedback" id="feedback-q4"></div>
                     </div>
 
-                    <button type="button" id="checkQuiz" class="mt-4 px-6 py-2 bg-emerald-600 text-white rounded-lg shadow hover:bg-emerald-700 transition-all duration-200">
+                    <button type="button" id="checkQuiz" class="mt-4 px-6 py-2 bg-amber-600 text-white rounded-lg shadow hover:bg-amber-700 transition-all duration-200">
                         Check Answers
                     </button>
                     <p id="quizScore" class="mt-4 font-bold text-lg"></p>
@@ -497,10 +870,10 @@
             const quizScoreDisplay = document.getElementById('quizScore');
 
             const correctAnswers = {
-                q1: 'b', // "dele" é a forma clara
-                q2: 'a', // "Sou professora" (sem artigo)
-                q3: 'c', // 's' entre vogais = /z/
-                q4: 'b'  // 's' antes de consoante (t) = /ʃ/
+                q1: 'b', // Informal = tua
+                q2: 'b', // Dias do mês são cardinais
+                q3: 'b', // Exceto o dia 1, que é ordinal
+                q4: 'a'  // DTO = Direito
             };
 
             checkQuizButton.addEventListener('click', () => {
