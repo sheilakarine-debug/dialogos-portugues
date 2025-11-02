@@ -67,15 +67,19 @@
             max-width: 80%;
             align-self: flex-end;
         }
-        .translation-text { /* Re-utilizado para notas */
-            display: block;
-            margin-top: 0.5rem;
+
+        /* --- CSS ALTERADO --- */
+        .translation-text { /* Re-utilizado para notas E traduções */
+            display: none; /* ESCONDIDO POR DEFEITO */
+            margin-top: 0.75rem;
             font-size: 0.9em;
             font-style: italic;
             border-top: 1px dashed rgba(0, 0, 0, 0.1);
-            padding-top: 0.5rem;
+            padding-top: 0.75rem;
             color: #57534e; /* stone-600 */
         }
+        /* --- FIM DA ALTERAÇÃO --- */
+
         .quiz-question {
             margin-bottom: 1.5rem;
             padding: 1rem;
@@ -135,462 +139,542 @@
                     O seu browser não suporta o elemento de áudio.
                 </audio>
 
-                <h2 class="text-3xl font-semibold text-stone-800 mb-4 mt-8">Transcrição</h2>
+                <h2 class="text-3xl font-semibold text-stone-800 mb-2 mt-8">Transcrição</h2>
+                
+                <button id="toggle-translation" class="mb-6 px-4 py-2 bg-sky-600 text-white font-semibold rounded-lg hover:bg-sky-700 transition-colors text-sm">
+                    Mostrar Tradução (Show Translation)
+                </button>
                 <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Olá e bem-vindos a esta nossa conversa.
+                            <span class="translation-text">Hello and welcome to this conversation of ours.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Olá.
+                            <span class="translation-text">Hello.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Hoje vamos, ah, revisitar uns materiais de uma aula de português A2. É a unidade sete, "Gosto da minha cidade".
+                            <span class="translation-text">Today we are going to, ah, revisit some materials from an A2 Portuguese class. It's unit seven, "I like my city."</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ah, sim.
+                            <span class="translation-text">Ah, yes.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Temos aqui os diapositivos, alguns resumos. A ideia é, pronto, extrair o essencial de forma clara e útil. Vamos lá espreitar isto.
+                            <span class="translation-text">We have the slides here, some summaries. The idea is, well, to extract the essential clearly and usefully. Let's take a look at this.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Claro.
+                            <span class="translation-text">Of course.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             O foco dessa unidade, hum, parece ser mesmo a descrição de lugares e, claro, expressar gostos, preferências.
+                            <span class="translation-text">The focus of this unit, um, seems to be the description of places and, of course, expressing likes, preferences.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exato. E para isso há um ponto-chave em português que estes materiais destacam bem: a concordância. As palavras têm de, digamos, combinar umas com as outras.
+                            <span class="translation-text">Exactly. And for that, there is a key point in Portuguese that these materials highlight well: agreement. The words have to, let's say, match each other.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah, a famosa concordância.
+                            <span class="translation-text">Ah, the famous agreement.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Precisamente. Podemos começar talvez pelos adjetivos.
+                            <span class="translation-text">Precisely. Maybe we can start with adjectives.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sim, boa ideia. Os adjetivos em português, bem, para quem vem do inglês, às vezes é uma dor de cabeça.
+                            <span class="translation-text">Yes, good idea. Adjectives in Portuguese, well, for those coming from English, sometimes it's a headache.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Pois é. Porque mudam tanto. A regra base, que os materiais destacam bem, é que têm de concordar em género (masculino, feminino) e número (singular, plural) com o nome.
+                            <span class="translation-text">It is. Because they change so much. The basic rule, which the materials highlight well, is that they have to agree in gender (masculine, feminine) and number (singular, plural) with the noun.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Exatamente. Com o nome que se escrevem.
+                            <span class="translation-text">Exactly. With the noun they describe.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E atenção, normally vêm *depois* do nome. Por exemplo, "uma casa bonita".
+                            <span class="translation-text">And note that they normally come *after* the noun. For example, "uma casa bonita" (a beautiful house).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Isso. E em inglês...
+                            <span class="translation-text">That's right. And in English...</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             ...a ordem é outra.
+                            <span class="translation-text">...the order is different.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sim, seria "a beautiful house". Totalmente diferente a posição.
+                            <span class="translation-text">Yes, it would be "a beautiful house." The position is totally different.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exato. E essa concordância, ah, segue alguns padrões. Muitos adjetivos acabam em "o" no masculino, tipo "bonito",
+                            <span class="translation-text">Exactly. And this agreement, ah, follows some patterns. Many adjectives end in "o" in the masculine, like "bonito,"</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E mudam para "a" no feminino, "bonita".
+                            <span class="translation-text">And they change to "a" in the feminine, "bonita."</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Certo. E no plural, é só juntar um "s": "bonitos", "bonitas". Mas, claro, há exceções.
+                            <span class="translation-text">Right. And in the plural, you just add an "s": "bonitos," "bonitas." But, of course, there are exceptions.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sim. Lembro-me de ver isso. Os materiais mostram bem o adjetivo "grande", por exemplo.
+                            <span class="translation-text">Yes. I remember seeing that. The materials show the adjective "grande" well, for example.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ah, sim. "Grande" (big).
+                            <span class="translation-text">Ah, yes. "Grande" (big).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Esse não muda no feminino singular.
+                            <span class="translation-text">That one doesn't change in the feminine singular.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Dizemos "um prédio grande" (masculino)
+                            <span class="translation-text">We say "um prédio grande" (a big building) (masculine)</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E "uma casa grande" (feminino). Fica igual.
+                            <span class="translation-text">And "uma casa grande" (a big house) (feminine). It stays the same.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Fica igual. E também víamos aqueles pares de opostos muito úteis: "novo" e "velho" (new, old).
+                            <span class="translation-text">It stays the same. And we also saw those very useful pairs of opposites: "novo" and "velho" (new, old).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sim. "Caro" e "barato".
+                            <span class="translation-text">Yes. "Caro" and "barato." (Expensive and cheap).</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             (Expensive, cheap). Sim.
+                            <span class="translation-text">(Expensive, cheap). Yes.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E "perto", "longe".
+                            <span class="translation-text">And "perto" (near), "longe" (far).</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             (Near, far). Exatamente. Úteis para descrever cidades, casas, etc.
+                            <span class="translation-text">(Near, far). Exactly. Useful for describing cities, houses, etc.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E olha, essa coisa da concordância não para nos adjetivos, pois não?
+                            <span class="translation-text">And look, this agreement thing doesn't stop at adjectives, does it?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Não, não. Vi nos materiais que até para perguntar "quanto" ou "quantos", a palavra muda.
+                            <span class="translation-text">No, no. I saw in the materials that even for asking "quanto" (how much) or "quantos" (how many), the word changes.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             É verdade. A palavra "quanto" também tem de concordar com o nome que vem a seguir. Lembro-me do exemplo dos exercícios: "Quantos anos tens?".
+                            <span class="translation-text">It's true. The word "quanto" also has to agree with the noun that follows. I remember the example from the exercises: "Quantos anos tens?" (How old are you? / Literally: How many years do you have?).</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Isso. Que literalmente seria "How many years do you have?".
+                            <span class="translation-text">That's right. Which would literally be "How many years do you have?".</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Exato. E usa-se "quantos" porque "anos" é masculino e plural. Faz sentido.
+                            <span class="translation-text">Exactly. And "quantos" is used because "anos" (years) is masculine and plural. Makes sense.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             É fundamental perceber bem as quatro formas que apareceram lá: "quanto", "quanta", "quantos", "quantas". Uhum. Os exemplos dos materiais ajudam. "Quanto dinheiro?" (money, masculino singular).
+                            <span class="translation-text">It's fundamental to understand the four forms that appeared there well: "quanto" (masc. sing.), "quanta" (fem. sing.), "quantos" (masc. pl.), "quantas" (fem. pl.). Mm-hmm. The examples in the materials help. "Quanto dinheiro?" (How much money?) (money, masculine singular).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             "How much money?" OK.
+                            <span class="translation-text">"How much money?" OK.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Depois, "quanta água?" (water, feminino singular).
+                            <span class="translation-text">Then, "quanta água?" (How much water?) (water, feminine singular).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             "How much water?" Certo.
+                            <span class="translation-text">"How much water?" Right.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E no plural: "quantos carros?" (cars, masculino plural).
+                            <span class="translation-text">And in the plural: "quantos carros?" (How many cars?) (cars, masculine plural).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             "How many cars?"
+                            <span class="translation-text">"How many cars?"</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E "quantas malas?" (bags, feminino plural).
+                            <span class="translation-text">And "quantas malas?" (How many bags?) (bags, feminine plural).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             "How many bags?" Pronto, percebido. É sempre a mesma lógica, então.
+                            <span class="translation-text">"How many bags?" Right, understood. It's always the same logic, then.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             É, eh, a lógica da concordância, o género e o número do nome é que mandam.
+                            <span class="translation-text">It is, uh, the logic of agreement, the gender and number of the noun are what dictate it.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E depois, para dar assim um toque mais divertido, os materiais tinham as expressões idiomáticas.
+                            <span class="translation-text">And then, to give it a more fun touch, the materials had the idiomatic expressions.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ah, sim, a parte mais colorida da língua.
+                            <span class="translation-text">Ah, yes, the most colorful part of the language.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Adoro essas partes. São aquelas frases que não dá para traduzir palavra por palavra, certo?
+                            <span class="translation-text">I love those parts. They are those phrases that you can't translate word for word, right?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. Perdem o sentido se fizermos isso.
+                            <span class="translation-text">Exactly. They lose their meaning if we do that.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Aquela que me ficou mesmo na cabeça foi "estar com a pulga atrás da orelha".
+                            <span class="translation-text">The one that really stuck in my head was "estar com a pulga atrás da orelha" (to have a flea behind your ear).</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ah, essa é clássica.
+                            <span class="translation-text">Ah, that one is a classic.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Literalmente, "to be with the flea behind the ear". Que estranho.
+                            <span class="translation-text">Literally, "to be with the flea behind the ear." How strange.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Pois é. Mas significa o quê?
+                            <span class="translation-text">It is. But what does it mean?</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Estar desconfiado de alguma coisa.
+                            <span class="translation-text">To be suspicious of something.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Hum, em inglês, se calhar, "to smell a rat".
+                            <span class="translation-text">Hm, in English, maybe, "to smell a rat."</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Aproxima-se. Sim, é uma boa equivalência, transmite a mesma ideia de suspeita.
+                            <span class="translation-text">It's close. Yes, it's a good equivalent, it conveys the same idea of suspicion.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E havia outra: "fazer das tripas coração".
+                            <span class="translation-text">And there was another one: "fazer das tripas coração" (to make heart out of guts).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Essa também é muito visual. "To make heart out of guts".
+                            <span class="translation-text">That one is also very visual. "To make heart out of guts."</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Wow! Significa fazer um esforço muito grande, superar-se perante uma dificuldade.
+                            <span class="translation-text">Wow! It means to make a very big effort, to overcome yourself in the face of difficulty.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Dar o litro, como também dizemos.
+                            <span class="translation-text">To give your all, as we also say.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. Em inglês talvez "to give it your all" ou "to bend over backwards".
+                            <span class="translation-text">Exactly. In English maybe "to give it your all" or "to bend over backwards."</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Mostra bem como a linguagem figurada é rica, não é?
+                            <span class="translation-text">It really shows how rich figurative language is, doesn't it?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sem dúvida. Carrega muita cultura e emoção.
+                            <span class="translation-text">No doubt. It carries a lot of culture and emotion.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Bom, então, resumindo aqui a nossa passagem pela unidade sete. A concordância é mesmo, mesmo central em português.
+                            <span class="translation-text">Well, then, summarizing our time with unit seven here. Agreement is really, really central in Portuguese.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             É a rainha, pode-se dizer.
+                            <span class="translation-text">It's the queen, you could say.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Adjetivos, a palavra "quanto", tudo tem de se alinhar com o género e o número dos nomes.
+                            <span class="translation-text">Adjectives, the word "quanto" (how much/many), everything has to align with the gender and number of the nouns.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Certo.
+                            <span class="translation-text">Right.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E as expressões idiomáticas, bem, são aquela pitada de sal que torna a língua viva.
+                            <span class="translation-text">And the idiomatic expressions, well, they are that pinch of salt that makes the language come alive.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente.
+                            <span class="translation-text">Exactly.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             OK. Parece que demos aqui uma boa vista de olhos ao essencial disto.
+                            <span class="translation-text">OK. It seems like we've taken a good look at the essential parts of this.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sim, acho que sim. Fica talvez só uma pequena reflexão final.
+                            <span class="translation-text">Yes, I think so. Maybe there's just a small final reflection.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Força.
+                            <span class="translation-text">Go ahead.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Esta necessidade tão forte de concordância em português, que não existe da mesma forma em inglês, por exemplo.
+                            <span class="translation-text">This very strong need for agreement in Portuguese, which doesn't exist in the same way in English, for example.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Aham.
+                            <span class="translation-text">Uh-huh.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Levanta uma questão interessante, não? Será que esta característica da gramática influencia de alguma maneira como é que os falantes nativos pensam sobre as ligações entre as palavras, entre as ideias de uma frase?
+                            <span class="translation-text">It raises an interesting question, doesn't it? Could this characteristic of grammar somehow influence how native speakers think about the connections between words, between the ideas in a sentence?</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Hum, boa pergunta. Como é que a estrutura da língua molda a perceção?
+                            <span class="translation-text">Hm, good question. How does the structure of the language shape perception?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Pois. Fica a pergunta no ar para pensarmos um bocadinho.
+                            <span class="translation-text">Indeed. The question hangs in the air for us to think about a bit.</span>
                         </div>
                     </div>
                 </div>
@@ -616,31 +700,35 @@
                         </ul>
 
                         <h4 class="font-bold text-lg text-stone-800 mt-6">2. Adjetivos Uniformes (não mudam)</h4>
+                        <p class="text-stone-700 mb-3">Estes têm a mesma forma para o masculino e feminino.</p>
                         <ul class="list-disc list-inside ml-2 space-y-1">
                             <li>Um prédio <strong>grande</strong> (masc.)</li>
                             <li>Uma casa <strong>grande</strong> (fem.)</li>
+                            <li>Um homem <strong>pobre</strong> (masc.)</li>
+                            <li>Uma mulher <strong>pobre</strong> (fem.)</li>
                         </ul>
                     </div>
 
                     <div class="bg-stone-50 p-6 rounded-lg shadow-sm border border-stone-200">
                         <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: 'Quanto' vs. 'Quantos'</h3>
-                        <p class="text-stone-700 mb-4">A palavra para "How much/many" também concorda com o nome.</p>
+                        <p class="text-stone-700 mb-4">A palavra para "How much/many" também concorda com o nome em género e número.</p>
                         
                         <h4 class="font-bold text-lg text-stone-800">Singular (How much)</h4>
                         <ul class="list-disc list-inside ml-2 space-y-1 mb-4">
-                            <li><strong>Quanto</strong> dinheiro? (masc.)</li>
-                            <li><strong>Quanta</strong> água? (fem.)</li>
+                            <li><strong>Quanto</strong> dinheiro? (masc. sing.)</li>
+                            <li><strong>Quanta</strong> água? (fem. sing.)</li>
                         </ul>
 
                         <h4 class="font-bold text-lg text-stone-800">Plural (How many)</h4>
                         <ul class="list-disc list-inside ml-2 space-y-1 mb-4">
-                            <li><strong>Quantos</strong> carros? (masc.)</li>
-                            <li><strong>Quantas</strong> malas? (fem.)</li>
+                            <li><strong>Quantos</strong> carros? (masc. pl.)</li>
+                            <li><strong>Quantas</strong> malas? (fem. pl.)</li>
                         </ul>
 
-                        <h4 class="font-bold text-lg text-stone-800">Expressões</h4>
+                        <h4 class="font-bold text-lg text-stone-800 mt-6">Expressões Idiomáticas</h4>
                         <ul class="list-disc list-inside ml-2 space-y-1">
-                            <li>Estar com a pulga atrás da orelha (Estar desconfiado)</li>
+                            <li>**Estar com a pulga atrás da orelha** (To be suspicious)</li>
+                            <li>**Fazer das tripas coração** (To overcome a difficulty with great effort)</li>
                         </ul>
                     </div>
                 </div>
@@ -653,7 +741,7 @@
                 </p>
 
                 <form id="quizForm">
-                    <div class="quiz-question">
+                    <div class="quiz-question" data-correct="c" name="q1">
                         <p class="font-semibold mb-2">1. Qual é a forma correta de dizer "a beautiful house" em português?</p>
                         <div class="quiz-options">
                             <label><input type="radio" name="q1" value="a"> a) Uma bonita casa.</label>
@@ -663,7 +751,7 @@
                         <div class="feedback" id="feedback-q1"></div>
                     </div>
 
-                    <div class="quiz-question">
+                    <div class="quiz-question" data-correct="b" name="q2">
                         <p class="font-semibold mb-2">2. Como se pergunta "How many cars?"</p>
                         <div class="quiz-options">
                             <label><input type="radio" name="q2" value="a"> a) Quanto carros?</label>
@@ -673,7 +761,7 @@
                          <div class="feedback" id="feedback-q2"></div>
                     </div>
 
-                    <div class="quiz-question">
+                    <div class="quiz-question" data-correct="b" name="q3">
                         <p class="font-semibold mb-2">3. Qual adjetivo NÃO muda de forma para masculino ou feminino?</p>
                         <div class="quiz-options">
                             <label><input type="radio" name="q3" value="a"> a) Novo</label>
@@ -682,7 +770,7 @@
                         </div>
                          <div class="feedback" id="feedback-q3"></div>
                     </div>
-                     <div class="quiz-question">
+                     <div class="quiz-question" data-correct="a" name="q4">
                         <p class="font-semibold mb-2">4. O que significa "estar com a pulga atrás da orelha"?</p>
                         <div class="quiz-options">
                             <label><input type="radio" name="q4" value="a"> a) Estar desconfiado de algo.</label>
@@ -692,7 +780,7 @@
                          <div class="feedback" id="feedback-q4"></div>
                     </div>
 
-                    <button type="button" id="checkQuiz" class="mt-4 px-6 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition-all duration-200">
+                    <button type="button" id="checkQuiz" class="mt-4 px-6 py-2 bg-pink-600 text-white rounded-lg shadow hover:bg-pink-700 transition-all duration-200">
                         Check Answers
                     </button>
                     <p id="quizScore" class="mt-4 font-bold text-lg"></p>
@@ -722,17 +810,17 @@
 
             function activateTab(tabId) {
                  tabs.forEach(t => {
-                    t.classList.remove('tab-active');
-                    if (t.dataset.tab === tabId) {
-                        t.classList.add('tab-active');
-                    }
-                });
-                contents.forEach(c => {
-                    c.classList.remove('tab-content-active');
-                    if (c.id === tabId) {
-                        c.classList.add('tab-content-active');
-                    }
-                });
+                     t.classList.remove('tab-active');
+                     if (t.dataset.tab === tabId) {
+                         t.classList.add('tab-active');
+                     }
+                 });
+                 contents.forEach(c => {
+                     c.classList.remove('tab-content-active');
+                     if (c.id === tabId) {
+                         c.classList.add('tab-content-active');
+                     }
+                 });
             }
 
             activateTab(defaultTab);
@@ -742,6 +830,28 @@
                     activateTab(tab.dataset.tab);
                 });
             });
+
+            // --- LÓGICA NOVA DO BOTÃO DE TRADUÇÃO ---
+            const toggleButton = document.getElementById('toggle-translation');
+            let isTranslationVisible = false;
+
+            if (toggleButton) {
+                toggleButton.addEventListener('click', () => {
+                    isTranslationVisible = !isTranslationVisible; // Inverte o estado
+                    
+                    // Seleciona apenas as traduções DENTRO da secção de transcrição
+                    const translations = document.querySelectorAll('#transcricao .translation-text');
+                    
+                    if (isTranslationVisible) {
+                        translations.forEach(t => t.style.display = 'block');
+                        toggleButton.textContent = 'Ocultar Tradução (Hide Translation)';
+                    } else {
+                        translations.forEach(t => t.style.display = 'none');
+                        toggleButton.textContent = 'Mostrar Tradução (Show Translation)';
+                    }
+                });
+            }
+            // --- FIM DA LÓGICA NOVA ---
 
 
             // --- LÓGICA DO QUIZ ---
@@ -763,16 +873,18 @@
 
                 for (const question in correctAnswers) {
                     const feedbackEl = document.getElementById(`feedback-${question}`);
+                    // Apanhar a resposta correta diretamente do objeto
+                    const correctAnswer = correctAnswers[question];
                     const selectedOptionInput = quizForm.querySelector(`input[name="${question}"]:checked`); 
 
                     if (selectedOptionInput) {
                         const selectedValue = selectedOptionInput.value;
-                        if (selectedValue === correctAnswers[question]) {
+                        if (selectedValue === correctAnswer) {
                             feedbackEl.textContent = 'Correcto!';
                             feedbackEl.className = 'feedback correct';
                             score++;
                         } else {
-                            feedbackEl.textContent = 'Incorreto.';
+                            feedbackEl.textContent = `Incorreto. A resposta certa era a (${correctAnswer}).`;
                             feedbackEl.className = 'feedback incorrect';
                         }
                     } else {
@@ -782,14 +894,13 @@
                     }
                 }
                  if(answeredAll){
-                    quizScoreDisplay.textContent = `A sua pontuação: ${score} em ${totalQuestions}`;
+                     quizScoreDisplay.textContent = `A sua pontuação: ${score} em ${totalQuestions}`;
                  } else {
-                    quizScoreDisplay.textContent = `Por favor, responda a todas as perguntas.`;
+                     quizScoreDisplay.textContent = `Por favor, responda a todas as perguntas.`;
                  }
             });
 
         });
     </script>
-
-</body>
+    </body>
 </html>
