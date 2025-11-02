@@ -67,15 +67,19 @@
             max-width: 80%;
             align-self: flex-end;
         }
-        .translation-text { /* Re-utilizado para notas */
-            display: block;
-            margin-top: 0.5rem;
+
+        /* --- CSS ALTERADO --- */
+        .translation-text { /* Re-utilizado para notas E traduções */
+            display: none; /* ESCONDIDO POR DEFEITO */
+            margin-top: 0.75rem;
             font-size: 0.9em;
             font-style: italic;
             border-top: 1px dashed rgba(0, 0, 0, 0.1);
-            padding-top: 0.5rem;
+            padding-top: 0.75rem;
             color: #57534e; /* stone-600 */
         }
+        /* --- FIM DA ALTERAÇÃO --- */
+
         .quiz-question {
             margin-bottom: 1.5rem;
             padding: 1rem;
@@ -135,582 +139,682 @@
                     O seu browser não suporta o elemento de áudio.
                 </audio>
 
-                <h2 class="text-3xl font-semibold text-stone-800 mb-4 mt-8">Transcrição</h2>
+                <h2 class="text-3xl font-semibold text-stone-800 mb-2 mt-8">Transcrição</h2>
+                
+                <button id="toggle-translation" class="mb-6 px-4 py-2 bg-sky-600 text-white font-semibold rounded-lg hover:bg-sky-700 transition-colors text-sm">
+                    Mostrar Tradução (Show Translation)
+                </button>
                 <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Olá, bem-vindos a mais uma exploração focada. Hoje, ah, temos aqui material de português A2: slides, guias, exercícios.
+                            <span class="translation-text">Hello, welcome to another focused exploration. Today, ah, we have A2 Portuguese material here: slides, guides, exercises.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Olá.
+                            <span class="translation-text">Hello.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             A nossa missão é destilar o essencial para quem quer, pronto, começar a trocar informações pessoais em português. Parece que o foco é mesmo ganhar confiança, não é?
+                            <span class="translation-text">Our mission is to distill the essential for those who want to, well, start exchanging personal information in Portuguese. It seems the focus is really on gaining confidence, right?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. É revisitar aqueles blocos de construção, hum, que estas fontes do CIPLE e Master e os guias destacam. Como é que se pergunta e responde sobre dados pessoais? Como usar os números sem, eh, sem tropeçar? E o alfabeto, que às vezes parece básico, mas...
+                            <span class="translation-text">Exactly. It's revisiting those building blocks, um, that these CIPLE and Master sources and guides highlight. How do you ask and answer about personal details? How to use numbers without, uh, stumbling? And the alphabet, which sometimes seems basic, but...</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Pois.
+                            <span class="translation-text">Indeed.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             ...e algumas regras de gramática, aquelas que fazem logo diferença na prática. A ideia é ser uma revisão rápida, útil.
+                            <span class="translation-text">...and some grammar rules, the ones that immediately make a difference in practice. The idea is for it to be a quick, useful review.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ótimo. Vamos a isso então. Começando pelo mais básico: apresentar e perguntar pelo outro. As fontes falam de seis áreas, certo? Nome, idade...
+                            <span class="translation-text">Great. Let's do it then. Starting with the most basic: introducing and asking about the other person. The sources talk about six areas, right? Name, age...</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sim. Nome, idade, morada, nacionalidade, estado civil e profissão. Pronto, e o ponto de partida é mesmo saber fazer as perguntas.
+                            <span class="translation-text">Yes. Name, age, address, nationality, marital status, and profession. Right, and the starting point is really knowing how to ask the questions.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Tipo, "Como te chamas?" ou "Qual é o teu nome?", o nosso "What is your name?". Mas aqui há logo uma coisa importante, não é?
+                            <span class="translation-text">Like, "Como te chamas?" (What's your name? - informal) or "Qual é o teu nome?" (What is your name? - informal), our "What is your name?". But there's something important right here, isn't there?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Hum-hum. Fundamental. A distinção entre o informal, o "tu", e o formal, o "você". Ou melhor ainda, o "senhor" ou a "senhora".
+                            <span class="translation-text">Mm-hmm. Fundamental. The distinction between the informal, "tu" (you), and the formal, "você" (you). Or even better, "o senhor" (sir) or "a senhora" (madam).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah, pois é.
+                            <span class="translation-text">Ah, that's right.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             As perguntas com "teu" ou "tua". "Qual é a tua idade?", por exemplo, "What is your age?" ou "Onde moras?", "Where do you live?". Isso é para amigos, família, gente próxima.
+                            <span class="translation-text">The questions with "teu" (your, masc.) or "tua" (your, fem.). "Qual é a tua idade?" (How old are you?), for example, "What is your age?" or "Onde moras?" (Where do you live?). That's for friends, family, close people.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             OK.
+                            <span class="translation-text">OK.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Agora, numa situação mais formal, imagina, sei lá, chegar a uma repartição ou uma entrevista, aí muda. Usamos "seu" ou "sua". "Qual é o seu nome completo, por favor?", "What is your full name, please?" ou então "Qual é a sua nacionalidade?", "What is your nationality?".
+                            <span class="translation-text">Now, in a more formal situation, imagine, say, arriving at an office or an interview, it changes. We use "seu" (your, masc.) or "sua" (your, fem.). "Qual é o seu nome completo, por favor?" (What is your full name, please?) or else "Qual é a sua nacionalidade?" (What is your nationality?).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E essa escolha não é só gramática, pois não? Quer dizer, usar o registo errado pode ser estranho. As fontes dão exemplos disso?
+                            <span class="translation-text">And that choice is not just grammar, is it? I mean, using the wrong register can be strange. Do the sources give examples of this?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ui, sem dúvida. Usar "tu" com alguém mais velho ou numa posição de chefia, sem que a pessoa dê abertura, pode ser visto como falta de respeito, sim.
+                            <span class="translation-text">Wow, definitely. Using "tu" with someone older or in a position of authority, without the person giving permission, can be seen as disrespect, yes.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Hum-hum.
+                            <span class="translation-text">Mm-hmm.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E o contrário também. Usar o "senhor" ou a "senhora" com um amigo soa muito distante, quase irónico, às vezes. As fontes usam o exemplo da Mafalda Lemos para mostrar a informação: Nome: Mafalda Lemos, Idade: 32 anos, Nacionalidade: Portuguesa...
+                            <span class="translation-text">And the opposite too. Using "o senhor" or "a senhora" with a friend sounds very distant, almost ironic, sometimes. The sources use the example of Mafalda Lemos to show the information: Name: Mafalda Lemos, Age: 32 years old, Nationality: Portuguese...</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Profissão: advogada, Estado civil: casada, Morada: Rua de Ceuta, etc.
+                            <span class="translation-text">Profession: lawyer, Marital status: married, Address: Rua de Ceuta, etc.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exato. E cada um destes dados responde a uma pergunta que pode ser feita das duas formas. "Qual é a tua profissão?", "What is your profession?" (informal), ou "Qual é a sua profissão?", "What is your profession?" (formal).
+                            <span class="translation-text">Exactly. And each of these details answers a question that can be asked in both forms. "Qual é a tua profissão?" (What is your profession? - informal), or "Qual é a sua profissão?" (What is your profession? - formal).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             OK, percebido. E vi que as fontes também sugerem um exercício depois: descrever a pessoa na terceira pessoa. Com a Mafalda ficaria: "Ela chama-se Mafalda Lemos, tem 32 anos..."
+                            <span class="translation-text">OK, understood. And I saw that the sources also suggest an exercise afterwards: describing the person in the third person. With Mafalda it would be: "Ela chama-se Mafalda Lemos, tem 32 anos..." (Her name is Mafalda Lemos, she is 32 years old...)</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             "...é portuguesa e mora em Lisboa. Ela é casada, ela é advogada."
+                            <span class="translation-text">"...she is Portuguese and lives in Lisbon. She is married, she is a lawyer."</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sim, é um exercício excelente. Parece mais que repetir, não é?
+                            <span class="translation-text">Yes, it's an excellent exercise. It seems like more than just repeating, doesn't it?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             É, porque consolida muita coisa. O vocabulário (nacionalidades, profissões), a conjugação dos verbos na terceira pessoa ("chama-se", "tem", "é", "mora"). Ajuda a fixar a estrutura da frase.
+                            <span class="translation-text">It is, because it consolidates many things. The vocabulary (nationalities, professions), the conjugation of verbs in the third person ("chama-se," "tem," "é," "mora"). It helps to solidify the sentence structure.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E prepara para falar de outras pessoas.
+                            <span class="translation-text">And it prepares you to talk about other people.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exato. Apresentar alguém, falar sobre um colega. E repara na concordância de género: "Ela é portuguesa, advogada." Se fosse o Mário, seria "português, advogado". Essa concordância é outro pilar que começa logo aqui.
+                            <span class="translation-text">Exactly. Introducing someone, talking about a colleague. And note the gender agreement: "Ela é portuguesa, advogada." (She is Portuguese, lawyer.) If it were Mário, it would be "português, advogado." (Portuguese, lawyer.) This agreement is another pillar that starts right here.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Faz todo o sentido. Agora, outro desafio inicial: nomes ou palavras que não percebemos bem. Nomes estrangeiros, apelidos. Como é que se lida com isso?
+                            <span class="translation-text">It makes perfect sense. Now, another initial challenge: names or words we don't quite understand. Foreign names, surnames. How do you deal with that?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ah, aí entra a pergunta mágica: "Como se escreve?". É o nosso "How do you spell that?" ou "How is it written?". Essencial para ter a certeza.
+                            <span class="translation-text">Ah, that's where the magic question comes in: "Como se escreve?" (How is it written?). It's our "How do you spell that?" or "How is it written?". Essential for being sure.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E parece que há uma versão mais formal para nomes.
+                            <span class="translation-text">And it seems there's a more formal version for names.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sim, num contexto mais formal, tipo, preencher um papel oficial, fazer um registo, a pergunta seria mais direta, usando o tratamento formal. "Como se escreve o seu nome?" ou então "Pode soletrar o seu apelido, por favor?".
+                            <span class="translation-text">Yes, in a more formal context, like, filling out an official document, registering, the question would be more direct, using the formal address. "Como se escreve o seu nome?" (How do you write your name?) or else "Pode soletrar o seu apelido, por favor?" (Can you spell your surname, please?).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             "Could you spell your surname, please?"
+                            <span class="translation-text">"Could you spell your surname, please?"</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Claro. E para responder, ou mesmo para perguntar, temos de saber o alfabeto português.
+                            <span class="translation-text">Of course. And to answer, or even to ask, we have to know the Portuguese alphabet.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sim, sem dúvida. E as fontes listam as letras, não é? A, B, C, D, E, F, G, H...
+                            <span class="translation-text">Yes, without a doubt. And the sources list the letters, right? A, B, C, D, E, F, G, H...</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             I, J, K, L, M, N, O...
+                            <span class="translation-text">I, J, K, L, M, N, O...</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             P, Q, R, S, T, U, V...
+                            <span class="translation-text">P, Q, R, S, T, U, V...</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             W, X, Y, Z. Parece simples, mas a pronúncia de algumas letras pode ser complicada para quem vem de outras línguas. O G e o J, por exemplo.
+                            <span class="translation-text">W, X, Y, Z. It seems simple, but the pronunciation of some letters can be complicated for those coming from other languages. G and J, for example.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ou o R e o RR.
+                            <span class="translation-text">Or R and RR.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exato. O som do R forte no início ou duplo, mais suave no meio. E é muito importante, como as fontes indicam, as vogais com acento: Á, É, Ó. Não é só o som aberto, é também a sílaba tónica. Ajuda imenso a sermos entendidos.
+                            <span class="translation-text">Exactly. The strong R sound at the beginning or double, softer in the middle. And it's very important, as the sources indicate, the accented vowels: Á, É, Ó. It's not just the open sound, it's also the stressed syllable. It helps immensely in being understood.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Como em "Fátima".
+                            <span class="translation-text">Like in "Fátima."</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. Soletrar "Fátima" é F-Á-T-I-M-A. Tem de se ouvir bem os "ás". Uma pronúncia mais ou menos pode levar a enganos.
+                            <span class="translation-text">Exactly. Spelling "Fátima" is F-Á-T-I-M-A. You have to clearly hear the "ás" (A sounds). A so-so pronunciation can lead to mistakes.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Imagino. Gostei de um exercício que as fontes têm: ler siglas. Não é só nomes. Pedem para ler RTP, GNR, USB...
+                            <span class="translation-text">I imagine. I liked an exercise the sources have: reading acronyms. It's not just names. They ask to read RTP, GNR, USB...</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             BMW, PDF. Sim, é uma ótima aplicação prática.
+                            <span class="translation-text">BMW, PDF. Yes, it's a great practical application.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             É inteligente, porque praticamos as letras isoladas num contexto que existe.
+                            <span class="translation-text">It's clever, because we practice isolated letters in a context that exists.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. São siglas comuns em Portugal. RTP (R-T-P) é a televisão pública. GNR (G-N-R) é uma polícia. USB (U-S-B), toda a gente conhece. BMW (B-M-W), a marca. PDF (P-D-F), o ficheiro. Praticar isto ajuda a fixar o som e a reconhecer as letras quando as ouvimos.
+                            <span class="translation-text">Exactly. These are common acronyms in Portugal. RTP (R-T-P) is the public television. GNR (G-N-R) is a police force. USB (U-S-B), everyone knows. BMW (B-M-W), the brand. PDF (P-D-F), the file. Practicing this helps to solidify the sound and recognize the letters when we hear them.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Muito útil, sim. Seguindo para os números. As fontes distinguem cardinais (1, 2, 3) e ordinais (primeiro, segundo). Os cardinais usam-se para a idade, certo?
+                            <span class="translation-text">Very useful, yes. Moving on to numbers. The sources distinguish cardinals (1, 2, 3) and ordinals (first, second). Cardinals are used for age, right?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Certo. Perguntas como "Que idade tens?" ou aquela mais literal "Quantos anos tens?", "How many years you have?". E a resposta "Tenho 32. 32 anos."
+                            <span class="translation-text">Right. Questions like "Que idade tens?" (What age are you?) or that more literal one "Quantos anos tens?" (How many years do you have?). And the answer "Tenho 32. 32 anos." (I am 32. 32 years old.)</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Correto.
+                            <span class="translation-text">Correct.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             A idade é com os cardinais. Mas atenção, não é só a idade. Ao contrário do inglês, que usa ordinais nas datas ("April 2nd", "December 25th"), em português usamos cardinais para *quase todos* os dias do mês.
+                            <span class="translation-text">Age is with cardinals. But pay attention, it's not just age. Unlike English, which uses ordinals for dates ("April 2nd", "December 25th"), in Portuguese we use cardinals for *almost all* days of the month.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             A sério? Como assim?
+                            <span class="translation-text">Seriously? How so?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Dizemos "2 de abril", "25 de dezembro". Não dizemos "segundo de abril" ou "vigésimo quinto de dezembro".
+                            <span class="translation-text">We say "2 de abril" (2 of April), "25 de dezembro" (25 of December). We don't say "segundo de abril" (second of April) or "vigésimo quinto de dezembro" (twenty-fifth of December).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Espera lá. Então nunca usamos ordinais nas datas? Isso é diferente do inglês.
+                            <span class="translation-text">Wait a minute. So we never use ordinals in dates? That's different from English.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Calma. Há uma exceção. Uma só, mas crucial: o primeiro dia do mês.
+                            <span class="translation-text">Hold on. There is one exception. Only one, but crucial: the first day of the month.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah!
+                            <span class="translation-text">Ah!</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Aí sim, é sempre ordinal: "primeiro de abril", "primeiro de janeiro". Mas para todos os outros, do dia 2 ao 31, é cardinal: 2, 3, 4, até 31.
+                            <span class="translation-text">There, yes, it is always ordinal: "primeiro de abril" (first of April), "primeiro de janeiro" (first of January). But for all the others, from day 2 to 31, it's cardinal: 2, 3, 4, up to 31.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             OK, OK. Primeiro dia é ordinal, o resto é cardinal, percebido. É daquelas coisas para decorar mesmo.
+                            <span class="translation-text">OK, OK. The first day is ordinal, the rest is cardinal, understood. It's one of those things to really memorize.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             É mesmo, porque a tentação de usar o ordinal, por causa do inglês, é enorme no início.
+                            <span class="translation-text">It really is, because the temptation to use the ordinal, because of English, is huge at the beginning.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E há mais usos estranhos? Li qualquer coisa sobre séculos.
+                            <span class="translation-text">And are there any more strange uses? I read something about centuries.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sim. Há uma regra para os séculos. Até ao século X (dez), usamos o ordinal: "século primeiro", "século segundo", "século décimo". Mas a partir do século XI (onze), passamos para o cardinal: "século XI", "século XV", "século XXI".
+                            <span class="translation-text">Yes. There's a rule for centuries. Up to century X (ten), we use the ordinal: "século primeiro" (first century), "século segundo" (second century), "século décimo" (tenth century). But from century XI (eleven) onwards, we switch to the cardinal: "século XI," "século XV," "século XXI."</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Lê-se mesmo "século onze"?
+                            <span class="translation-text">Is it really read as "século onze"?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Lê-se "século onze", "século vinte", "século vinte e um". É uma mudança de padrão, um bocadinho, eh, inesperada.
+                            <span class="translation-text">It is read "século onze" (century eleven), "século vinte" (century twenty), "século vinte e um" (century twenty-one). It's a pattern change, a little, uh, unexpected.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Realmente. São estes pormenores. E os ordinais? As fontes focam do primeiro ao décimo. Onde é que os encontramos mais no dia a dia, tirando o dia 1 e os primeiros séculos?
+                            <span class="translation-text">Indeed. These are the details. And the ordinals? The sources focus from first to tenth. Where do we find them most in everyday life, besides day 1 and the early centuries?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             O uso mais comum, que as fontes destacam e que se vê em todo o lado, é para os andares dos prédios. A pergunta típica: "Em que andar moras?", "On which floor do you live?".
+                            <span class="translation-text">The most common use, which the sources highlight and which is seen everywhere, is for building floors. The typical question: "Em que andar moras?" (On which floor do you live?).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E a resposta usa o ordinal.
+                            <span class="translation-text">And the answer uses the ordinal.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exato. "Moro no segundo andar", "I live on the second floor". E depois entram aquelas abreviaturas que às vezes se veem nas moradas.
+                            <span class="translation-text">Exactly. "Moro no segundo andar" (I live on the second floor). And then those abbreviations that are sometimes seen in addresses come in.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah, sim. Tipo "terceiro DTO" ou "quarto ESQ". O que é isso?
+                            <span class="translation-text">Ah, yes. Like "terceiro DTO" or "quarto ESQ." What is that?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. São super importantes. "Terceiro direito" (DTO) quer dizer "terceiro andar direito". "Quarto esquerdo" (ESQ) é "quarto andar esquerdo". E o R/C é o "rés do chão", o nosso "ground floor".
+                            <span class="translation-text">Exactly. They are super important. "Terceiro direito" (DTO) means "third floor right." "Quarto esquerdo" (ESQ) is "fourth floor left." And R/C is "rés do chão," our "ground floor."</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah, R/C é rés do chão! OK.
+                            <span class="translation-text">Ah, R/C is ground floor! OK.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Portanto, a resposta pode ser: "Eu moro no quarto esquerdo". Dominar isto é essencial para dar ou perceber moradas.
+                            <span class="translation-text">Therefore, the answer can be: "Eu moro no quarto esquerdo" (I live on the fourth floor left). Mastering this is essential for giving or understanding addresses.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E há mais alguma aplicação dos ordinais que as fontes mencionem?
+                            <span class="translation-text">And are there any more applications of ordinals that the sources mention?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sim, aparecem em perguntas como: "Qual é o seu primeiro nome?", "What is your first name?" e "Qual é o seu último nome?", "What is your last name?". E aqui as fontes sublinham uma regra gramatical: os ordinais (e geralmente os adjetivos) vêm *antes* do nome que modificam.
+                            <span class="translation-text">Yes, they appear in questions like: "Qual é o seu primeiro nome?" (What is your first name?) and "Qual é o seu último nome?" (What is your last name?). And here the sources underline a grammatical rule: ordinals (and generally adjectives) come *before* the noun they modify.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             "Primeiro nome", não "nome primeiro".
+                            <span class="translation-text">"Primeiro nome" (first name), not "nome primeiro" (name first).</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. A ordem das palavras é diferente do inglês em muitos casos.
+                            <span class="translation-text">Exactly. The word order is different from English in many cases.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Essa questão da ordem leva-nos direitinhos às pérolas de gramática. A primeira sobre possessivos. Há logo uma regra que salta à vista para quem fala inglês.
+                            <span class="translation-text">That question of order leads us right to the grammar gems. The first one about possessives. There's a rule that immediately stands out for English speakers.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sem dúvida. Em português, regra geral, usamos *sempre* o artigo definido (o, a, os, as) *antes* do pronome possessivo (meu, teu, seu, nosso, vosso). Dizemos "a minha casa", "o teu carro", "os nossos livros".
+                            <span class="translation-text">No doubt. In Portuguese, as a general rule, we *always* use the definite article (o, a, os, as) *before* the possessive pronoun (meu, teu, seu, nosso, vosso). We say "a minha casa" (the my house / my house), "o teu carro" (the your car / your car), "os nossos livros" (the our books / our books).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Não é só "my house", "your car", é "a minha casa", "o teu carro".
+                            <span class="translation-text">It's not just "my house," "your car," it's "a minha casa," "o teu carro."</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exato. Essa presença do artigo é muito característica do português.
+                            <span class="translation-text">Exactly. That presence of the article is very characteristic of Portuguese.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E não é a única coisa dos possessivos, pois não? Tem a ver com a posição e com o "seu/sua" que já falámos. Que é um bocado confuso.
+                            <span class="translation-text">And it's not the only thing about possessives, is it? It has to do with the position and with "seu/sua" that we already talked about. Which is a bit confusing.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             É. "Seu/sua" pode ser: "dele" (his), "dela" (her), "deles/delas" (their), ou então o tratamento formal para "você", "o senhor", "a senhora". Se eu disser: "O seu livro está na mesa", de quem é o livro? "His book?", "Her book?", "Your (formal) book?", "Their book?". Fica no ar.
+                            <span class="translation-text">It is. "Seu/sua" can be: "dele" (his), "dela" (her), "deles/delas" (their), or the formal address for "você" (you), "o senhor" (sir), "a senhora" (madam). If I say: "O seu livro está na mesa" (The your book is on the table), whose book is it? "His book?", "Her book?", "Your (formal) book?", "Their book?". It's ambiguous.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             É verdade. E como é que se resolve isso? As fontes explicam?
+                            <span class="translation-text">It's true. And how do you resolve that? Do the sources explain?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Explicam, sim. Para clarificar a posse na terceira pessoa ("his/her/their"), usamos as formas "dele", "dela", "deles", "delas". E estas formas vêm obrigatoriamente *depois* do nome.
+                            <span class="translation-text">They do explain, yes. To clarify possession in the third person ("his/her/their"), we use the forms "dele" (his), "dela" (her), "deles" (theirs, masc.), "delas" (theirs, fem.). And these forms are obligatory *after* the noun.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah!
+                            <span class="translation-text">Ah!</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Portanto, em vez do ambíguo "o seu livro", dizemos "o livro dele" (his book). Fica claro que é *dele*. "O livro dela" (her book). "O livro deles/delas" (their book). Esta construção (nome + de + pronome) é super útil e muito comum.
+                            <span class="translation-text">Therefore, instead of the ambiguous "o seu livro" (the your book), we say "o livro dele" (the book of him / his book). It's clear that it's *his*. "O livro dela" (her book). "O livro deles/delas" (their book). This construction (noun + de + pronoun) is super useful and very common.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Isso ajuda imenso, mesmo. E reforça aquela ligação do "seu/sua" (antes do nome) com o tratamento formal, e o "teu/tua" com o informal, o "tu". As fontes parecem insistir bastante nisto.
+                            <span class="translation-text">That helps immensely, really. And it reinforces that connection of "seu/sua" (before the noun) with the formal address, and "teu/tua" with the informal, "tu." The sources seem to insist on this quite a bit.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. É das primeiras grandes distinções sociais e gramaticais que quem aprende português tem de, ah, interiorizar. A escolha não é só gramática, afeta mesmo o tom da conversa.
+                            <span class="translation-text">Exactly. It's one of the first big social and grammatical distinctions that those learning Portuguese have to, ah, internalize. The choice is not just grammar, it really affects the tone of the conversation.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Falando em regras que afetam a escrita. Há uma coisa sobre maiúsculas que apanha muitos falantes de inglês desprevenidos.
+                            <span class="translation-text">Speaking of rules that affect writing. There's something about capital letters that catches many English speakers off guard.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ah, sim. É um detalhe pequeno, mas que está em todo o lado. Em português, os dias da semana (segunda-feira, terça-feira, etc.) e os meses do ano (janeiro, fevereiro) escrevem-se com letra minúscula.
+                            <span class="translation-text">Ah, yes. It's a small detail, but it's everywhere. In Portuguese, the days of the week (segunda-feira, terça-feira, etc.) and the months of the year (janeiro, fevereiro) are written with a lowercase letter.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ao contrário do inglês, que é sempre "Monday", "January".
+                            <span class="translation-text">Unlike English, where it's always "Monday," "January."</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. É fácil esquecer, mas faz parte da escrita correta.
+                            <span class="translation-text">Exactly. It's easy to forget, but it's part of correct writing.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E já agora, voltando à Mafalda. Ela era "advogada". Se fosse "engenheira" ou "médica", também acabava em "a". Mas se fosse homem, seria "engenheiro", "médico". As fontes falam desta concordância de género nas profissões?
+                            <span class="translation-text">And speaking of which, going back to Mafalda. She was a "advogada" (lawyer). If she were an "engenheira" (engineer) or "médica" (doctor), it would also end in "a." But if it were a man, it would be "engenheiro," "médico." Do the sources talk about this gender agreement in professions?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Falam, sim. Talvez não muito a fundo neste nível A2, mas o próprio exemplo "advogada" já introduz a regra: muitas profissões têm forma masculina e feminina (professor/professora, cantor/cantora).
+                            <span class="translation-text">They do talk about it, yes. Maybe not in great depth at this A2 level, but the example "advogada" itself already introduces the rule: many professions have masculine and feminine forms (professor/professora, cantor/cantora).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Certo.
+                            <span class="translation-text">Right.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Outras têm forma única, como "polícia" ou "estudante". E aí o género vê-se no artigo: "o polícia", "a polícia", "o estudante", "a estudante". É um aspeto da gramática fundamental que se começa a trabalhar logo de início.
+                            <span class="translation-text">Others have a single form, like "polícia" (police officer) or "estudante" (student). And there the gender is seen in the article: "o polícia," "a polícia," "o estudante," "a estudante." It's a fundamental aspect of grammar that starts being worked on right from the beginning.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             OK. Acho que cobrimos os pontos essenciais destes materiais A2. Recapitulando, vimos a importância do formal/informal nas informações pessoais, como "como se escreve" e o alfabeto são cruciais. Desvendámos os usos dos números cardinais e ordinais para idades, datas, séculos, andares. E explorámos regras-chave como artigos com possessivos, a ambiguidade do "seu/sua" e a solução "de le/dela", a ordem das palavras, género nas profissões e a questão das minúsculas nos dias e meses. Ufa. Parece muito, mas são mesmo os tijolos da comunicação, não é?
+                            <span class="translation-text">OK. I think we've covered the essential points of these A2 materials. Recapping, we saw the importance of formal/informal in personal information, how "como se escreve" (how it's written) and the alphabet are crucial. We uncovered the uses of cardinal and ordinal numbers for ages, dates, centuries, floors. And we explored key rules like articles with possessives, the ambiguity of "seu/sua" and the solution "dele/dela," word order, gender in professions, and the issue of lowercase letters for days and months. Phew. It seems like a lot, but they are truly the building blocks of communication, aren't they?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             São, são. E ter estes tijolos bem assentes dá a base para construir frases e, pronto, interagir com mais confiança no dia a dia. Não é só decorar, é perceber como as ferramentas funcionam para comunicar.
+                            <span class="translation-text">They are, they are. And having these building blocks firmly established provides the foundation for constructing sentences and, well, interacting with more confidence in everyday life. It's not just about memorizing, it's about understanding how the tools work to communicate.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sem dúvida. E agora, para ficarmos a pensar um bocadinho, uma questão que vai além da gramática pura, mas que tem tudo a ver com a formalidade que falámos. As fontes distinguem bem o "seu nome" (formal) do "teu nome" (informal). Mas na vida real, em Portugal ou noutros países onde se fala português, como é que esta escolha entre "tu" e "você" (ou "o senhor/a senhora") joga na dinâmica de uma primeira conversa? Para além do "certo" e "errado", que impressão cultural é que se pode causar? Será que ir pelo seguro e ser sempre formal é a melhor aposta? Ou também pode criar barreiras?
+                            <span class="translation-text">No doubt. And now, to leave us thinking a bit, a question that goes beyond pure grammar, but that has everything to do with the formality we talked about. The sources clearly distinguish "seu nome" (formal) from "teu nome" (informal). But in real life, in Portugal or other Portuguese-speaking countries, how does this choice between "tu" and "você" (or "o senhor/a senhora") play out in the dynamic of a first conversation? Beyond "right" and "wrong," what cultural impression can be made? Is playing it safe and always being formal the best bet? Or can that also create barriers?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             É uma excelente pergunta. Essa gestão da formalidade é uma dança social muito subtil. E em Portugal é bastante marcada. Observar como os nativos fazem essa gestão em diferentes situações – no café, no trabalho, com a família – ensina imenso, talvez tanto ou mais que os livros. É algo para terem atenção enquanto se continua a aprender e, claro, a praticar.
+                            <span class="translation-text">That is an excellent question. This management of formality is a very subtle social dance. And in Portugal it is quite marked. Observing how natives manage this in different situations – at the café, at work, with family – teaches a lot, maybe as much or more than books. It's something to pay attention to while continuing to learn and, of course, to practice.</span>
                         </div>
                     </div>
                 </div>
@@ -748,19 +852,22 @@
                         <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: Números Cardinais vs. Ordinais</h3>
                         
                         <h4 class="font-bold text-lg text-stone-800">1. Números Cardinais (1, 2, 3)</h4>
-                        <p class="text-stone-700 mb-2">Usados para idade, moradas, e a maioria das datas.</p>
+                        <p class="text-stone-700 mb-2">Usados para idade, moradas, e a maioria das datas (Ex: **2** de abril).</p>
                         <ul class="list-disc list-inside ml-2 space-y-1 mb-4">
-                            <li>Tenho <strong>32</strong> (trinta e dois) anos.</li>
-                            <li>Hoje é dia <strong>25</strong> (vinte e cinco) de dezembro.</li>
-                            <li>Século <strong>XI</strong> (lê-se "século onze")</li>
+                            <li>Tenho <strong>32</strong> anos.</li>
+                            <li>Datas: <strong>25</strong> de dezembro.</li>
                         </ul>
 
                         <h4 class="font-bold text-lg text-stone-800">2. Números Ordinais (1º, 2º, 3º)</h4>
-                        <p class="text-stone-700 mb-2">Usados para andares, séculos (até X) e o 1º dia do mês.</p>
+                        <p class="text-stone-700 mb-2">Usados para andares e o 1º dia do mês (Ex: **Primeiro** de abril).</p>
                         <ul class="list-disc list-inside ml-2 space-y-1 mb-4">
-                            <li>Moro no <strong>segundo</strong> andar (2º).</li>
-                            <li>Hoje é <strong>primeiro</strong> de abril. (A exceção!)</li>
-                            <li><strong>DTO</strong> = Direito / <strong>ESQ</strong> = Esquerdo / <strong>R/C</strong> = Rés do Chão</li>
+                            <li>Moro no <strong>segundo</strong> andar.</li>
+                            <li><strong>R/C</strong> = Rés do Chão / <strong>DTO</strong> = Direito / <strong>ESQ</strong> = Esquerdo</li>
+                        </ul>
+                        
+                         <h4 class="font-bold text-lg text-stone-800">Escrita de Datas e Meses</h4>
+                        <ul class="list-disc list-inside ml-2 space-y-1">
+                            <li>Dias da semana e meses são escritos com **minúscula** (ex: segunda-feira, janeiro).</li>
                         </ul>
                     </div>
                 </div>
@@ -773,7 +880,7 @@
                 </p>
 
                 <form id="quizForm">
-                    <div class="quiz-question">
+                    <div class="quiz-question" data-correct="b" name="q1">
                         <p class="font-semibold mb-2">1. Se estiver a falar com um amigo, qual é a forma correta de perguntar a profissão?</p>
                         <div class="quiz-options">
                             <label><input type="radio" name="q1" value="a"> a) Qual é a sua profissão?</label>
@@ -783,7 +890,7 @@
                         <div class="feedback" id="feedback-q1"></div>
                     </div>
 
-                    <div class="quiz-question">
+                    <div class="quiz-question" data-correct="b" name="q2">
                         <p class="font-semibold mb-2">2. Como se diz "April 2nd" (dois de abril) em português?</p>
                         <div class="quiz-options">
                             <label><input type="radio" name="q2" value="a"> a) Segundo de abril. (Ordinal)</label>
@@ -793,7 +900,7 @@
                          <div class="feedback" id="feedback-q2"></div>
                     </div>
 
-                    <div class="quiz-question">
+                    <div class="quiz-question" data-correct="b" name="q3">
                         <p class="font-semibold mb-2">3. Qual é a EXCEÇÃO? Como se diz "April 1st" (primeiro de abril)?</p>
                         <div class="quiz-options">
                             <label><input type="radio" name="q3" value="a"> a) Um de abril. (Cardinal)</label>
@@ -802,7 +909,7 @@
                         </div>
                          <div class="feedback" id="feedback-q3"></div>
                     </div>
-                     <div class="quiz-question">
+                     <div class="quiz-question" data-correct="a" name="q4">
                         <p class="font-semibold mb-2">4. Se mora no "3º DTO", onde mora?</p>
                         <div class="quiz-options">
                             <label><input type="radio" name="q4" value="a"> a) No terceiro andar, à Direita.</label>
@@ -842,17 +949,17 @@
 
             function activateTab(tabId) {
                  tabs.forEach(t => {
-                    t.classList.remove('tab-active');
-                    if (t.dataset.tab === tabId) {
-                        t.classList.add('tab-active');
-                    }
-                });
-                contents.forEach(c => {
-                    c.classList.remove('tab-content-active');
-                    if (c.id === tabId) {
-                        c.classList.add('tab-content-active');
-                    }
-                });
+                     t.classList.remove('tab-active');
+                     if (t.dataset.tab === tabId) {
+                         t.classList.add('tab-active');
+                     }
+                 });
+                 contents.forEach(c => {
+                     c.classList.remove('tab-content-active');
+                     if (c.id === tabId) {
+                         c.classList.add('tab-content-active');
+                     }
+                 });
             }
 
             activateTab(defaultTab);
@@ -862,6 +969,28 @@
                     activateTab(tab.dataset.tab);
                 });
             });
+
+            // --- LÓGICA NOVA DO BOTÃO DE TRADUÇÃO ---
+            const toggleButton = document.getElementById('toggle-translation');
+            let isTranslationVisible = false;
+
+            if (toggleButton) {
+                toggleButton.addEventListener('click', () => {
+                    isTranslationVisible = !isTranslationVisible; // Inverte o estado
+                    
+                    // Seleciona apenas as traduções DENTRO da secção de transcrição
+                    const translations = document.querySelectorAll('#transcricao .translation-text');
+                    
+                    if (isTranslationVisible) {
+                        translations.forEach(t => t.style.display = 'block');
+                        toggleButton.textContent = 'Ocultar Tradução (Hide Translation)';
+                    } else {
+                        translations.forEach(t => t.style.display = 'none');
+                        toggleButton.textContent = 'Mostrar Tradução (Show Translation)';
+                    }
+                });
+            }
+            // --- FIM DA LÓGICA NOVA ---
 
 
             // --- LÓGICA DO QUIZ ---
@@ -883,16 +1012,18 @@
 
                 for (const question in correctAnswers) {
                     const feedbackEl = document.getElementById(`feedback-${question}`);
+                    // Apanhar a resposta correta diretamente do objeto
+                    const correctAnswer = correctAnswers[question];
                     const selectedOptionInput = quizForm.querySelector(`input[name="${question}"]:checked`); 
 
                     if (selectedOptionInput) {
                         const selectedValue = selectedOptionInput.value;
-                        if (selectedValue === correctAnswers[question]) {
+                        if (selectedValue === correctAnswer) {
                             feedbackEl.textContent = 'Correcto!';
                             feedbackEl.className = 'feedback correct';
                             score++;
                         } else {
-                            feedbackEl.textContent = 'Incorreto.';
+                            feedbackEl.textContent = `Incorreto. A resposta certa era a (${correctAnswer}).`;
                             feedbackEl.className = 'feedback incorrect';
                         }
                     } else {
@@ -902,14 +1033,13 @@
                     }
                 }
                  if(answeredAll){
-                    quizScoreDisplay.textContent = `A sua pontuação: ${score} em ${totalQuestions}`;
+                     quizScoreDisplay.textContent = `A sua pontuação: ${score} em ${totalQuestions}`;
                  } else {
-                    quizScoreDisplay.textContent = `Por favor, responda a todas as perguntas.`;
+                     quizScoreDisplay.textContent = `Por favor, responda a todas as perguntas.`;
                  }
             });
 
         });
     </script>
-
-</body>
+    </body>
 </html>
