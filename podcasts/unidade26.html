@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast A2: Unidade 26 (Prove Uma Francesinha)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f4; /* stone-100 */
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .nav-tab {
+            padding: 0.75rem 1.25rem;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            color: #57534e; /* stone-600 */
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-tab:hover {
+            color: #991b1b; /* red-900 */
+        }
+        .tab-active {
+            color: #dc2626; /* red-600 */
+            border-bottom-color: #dc2626; /* red-600 */
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content-active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Ordem dos Oradores: Mulher (1) / Homem (2) */
+        
+        /* Cor 1: Mulher (Oradora 1) - Neutro, Esquerda */
+        .chat-bubble-mulher {
+            background-color: #f5f5f4; /* stone-100 */
+            color: #1c1917; /* stone-900 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 1.25rem 0.25rem;
+            max-width: 80%;
+            align-self: flex-start;
+        }
+        /* Cor 2: Homem (Orador 2) - Destaque Vermelho, Direita */
+        .chat-bubble-homem {
+            background-color: #fee2e2; /* red-100 */
+            color: #991b1b; /* red-900 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 0.25rem 1.25rem;
+            max-width: 80%;
+            align-self: flex-end;
+        }
+        .translation-text { /* Re-utilizado para notas */
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.9em;
+            font-style: italic;
+            border-top: 1px dashed rgba(0, 0, 0, 0.1);
+            padding-top: 0.5rem;
+            color: #57534e; /* stone-600 */
+        }
+        .quiz-question {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #fafaf9; /* stone-50 */
+            border-radius: 0.5rem;
+            border: 1px solid #e7e5e4; /* stone-200 */
+        }
+        .quiz-options label {
+            display: block;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+         .quiz-options input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+        .quiz-options label:hover {
+            background-color: #e0f2fe; /* light-blue-100 */
+        }
+        .feedback {
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        .correct { color: #15803d; /* green-700 */}
+        .incorrect { color: #b91c1c; /* red-700 */ }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="text-center pb-6 border-b border-stone-200">
+            <h1 class="text-4xl font-bold text-cyan-900">Unidade 26: Prove Uma Francesinha</h1>
+            <p class="text-xl text-stone-600 mt-2">Prática do Imperativo Formal (vá, faça, veja) com dicas de viagem e comida.</p>
+            <a href="index.html" class="text-sky-600 hover:text-sky-800 mt-4 inline-block">&larr; Voltar ao Menu de Podcasts</a>
+        </header>
+
+        <nav class="mt-6 border-b border-stone-200">
+            <ul class="flex flex-wrap -mb-px">
+                <li><button class="nav-tab tab-active" data-tab="transcricao">Transcrição e Áudio</button></li>
+                <li><button class="nav-tab" data-tab="revisao">Revisão Gramatical</button></li>
+                <li><button class="nav-tab" data-tab="quiz">Quiz</button></li>
+            </ul>
+        </nav>
+
+        <main class="mt-8">
+
+            <section id="transcricao" class="tab-content tab-content-active">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Áudio da Lição</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-4">
+                    Practice your listening. Listen to the audio and follow along with the transcription below.
+                </p>
+                
+                <audio controls class="w-full mb-6">
+                    <source src="unidade26.m4a" type="audio/x-m4a">
+                    O seu browser não suporta o elemento de áudio.
+                </audio>
+
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4 mt-8">Transcrição</h2>
+                <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Bem-vindos. Hoje vamos dar uma vista de olhos a uns materiais de aprendizagem de português, ah, especificamente a unidade 26 de um curso A2 do CIPLE Master. E o título é ótimo: "Prove uma francesinha". Só isto já, já apetece, não é?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sem dúvida, sem dúvida. Olha, o material que temos, a base, eh, são os slides e notas da aula da professora Sheila Meneses para este curso CIPLE Master A2. E a nossa ideia aqui é, pronto, tentar tirar daqui o essencial, os pontos chave de aprendizagem, as dicas culturais, a gramática mais importante.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Uhum.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Pensa nisto como, eh, um guia rápido para quem quer falar sobre viagens e comida em Portugal, especialmente nesse nível A2.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Exatamente. Vamos focar-nos então no vocabulário de turismo, de gastronomia e tentar, eh, desmistificar uma coisa que às vezes assusta um bocadinho, que é o imperativo formal, para dar conselhos de forma educada. Tudo com exemplos dos materiais, em português de Portugal, claro, e esperamos nós de uma forma leve e interessante. Pronto, vamos a isso.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Vamos.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Então, começando pelo início, dar conselhos. Em português, para fazer isso de forma mais polida, usamos o imperativo formal. É isso, não é? Para sugestões, recomendações.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            É isso mesmo. É o tal modo, olhe, devia mesmo experimentar isto, mas pronto, dito com mais cerimónia. É fundamental para interagir em viagens, sem dúvida.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E a formação? É complicada?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Bem, segundo as fontes, e de facto é assim, a formação é até bastante regular na maioria dos verbos. Há um padrão, uma espécie de troca de vogais no fim do verbo. Nos verbos em -AR, a terminação passa a E. Por exemplo, "falar".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Fica "fale".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exato. "Fale". Simples.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            OK, percebo. E nos verbos em -ER e -IR?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            É o contrário.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            É exatamente isso.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            A terminação passa a A. Portanto, "comer" fica...
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            "Coma".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            "Coma". E um verbo em -IR como, sei lá, "abrir" fica "abra". Ou um que aparece nos exemplos, "servir", fica "sirva". As fontes até mencionam que isto vem do presente do conjuntivo, mas focam-se no uso prático para dar conselhos, o que neste nível A2 é, olha, muito mais útil do que entrar logo na teoria toda do conjuntivo.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            É pragmático. Faz todo o sentido focar no uso direto. Mas, imagino que haja exceções, aqueles verbos que gostam sempre de ser diferentes.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Pois há. Claro, como sempre. E as fontes destacam os mais importantes, aqueles que usamos mesmo muito, não é? Especialmente a viajar ou a interagir. Os cinco irregulares chave que eles apontam são: "ir", que fica "vá".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            "Vá". Uhum.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            "Fazer", que fica "faça". "Ver", que fica "veja". "Vir", que fica "venha". E "trazer", que fica "traga". Pronto. E as notas também falam de outros úteis, como "pedir", que fica "peça", e "seguir", que fica "siga".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Esses parecem mesmo essenciais. "Vá", "faça", "veja", são verbos muito comuns.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E é aqui que vemos a aplicação prática, não é? Nos conselhos de viagem que as fontes dão. Como são esses exemplos para o Porto?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Exato, a aplicação é imediata e muito clara nos materiais. Para o Porto, as sugestões são ótimas para ilustrar isto. Primeiro: "Descubra a beleza dos azulejos." Aqui está: "descobrir" em -IR, fica "descubra".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            OK.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Depois: "Faça um cruzeiro no Rio Douro." É um dos nossos irregulares: "fazer", "faça".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Certo.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            A seguir: "Prove uma francesinha." O título da lição. "Provar" em -AR, fica "prove". Direitinho à regra.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Uhum.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E ainda: "Atravesse a Ponte Dom Luís." "Atravessar" em -AR, fica "atravesse". E finally: "Visite as caves do Vinho do Porto." "Visitar" (-AR), "visite".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Vês? É bastante consistente.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sim, vê-se bem a lógica. E para além da gramática, já dão um cheirinho da cultura do Porto: os azulejos, a francesinha, as caves.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sem dúvida. E as fontes fazem isso bem, dão contexto. Os azulejos, pronto, aqueles painéis de cerâmica, são uma imagem de marca. As caves do Vinho do Porto, lá em Gaia, não é? Do outro lado do rio. E a francesinha, bem, essa é uma história à parte, mas descrevem-na como uma sanduíche especial com carnes, queijo, o tal molho de cerveja, batatas fritas, ovo. Mencionam até que é considerada uma das 10 melhores do mundo.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Uau! Uma das 10 melhores do mundo. Fico mesmo curiosa. Mas antes da comida, vamos a Lisboa. Que conselhos dão as fontes para lá? A lógica do imperativo é a mesma, imagino.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            É, é exatamente a mesma. Para Lisboa, as sugestões são: "Apanhe o famoso elétrico 28." "Apanhar" (-AR), "apanhe".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Uhum.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            "Perca-se nas ruas de Alfama." Esta é interessante, é reflexivo. "Perder-se". O verbo base "perder" (-ER) fica "perca" e o "se" vai para o fim.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ah, OK.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Depois, "Não se esqueça de olhar para os passeios." Outro reflexivo, "esquecer-se". A forma base é "esqueça", mas como está na negativa, o "se" vem antes.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Percebo.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E ainda: "Ouçam o fado numa casa de fado." "Ouvir" (-IR), "ouça". E "Viva a noite lisboeta no Bairro Alto." "Viver" (-ER), "viva".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Olha, mais uma vez, são dicas culturais muito fortes. O elétrico 28, Alfama, o fado. E essa de olhar para os passeios? Estão a falar da calçada portuguesa, certo?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente. As fontes destacam esses ícones. O fado, aquela música cheia de alma, não é? Que se ouve nas casas de fado. E a dica "Não se esqueça de olhar para os passeios" é mesmo um convite para apreciar a calçada portuguesa, aqueles desenhos nas ruas feitos com pedrinhas. As fontes dizem que é muito bonita, o que é verdade, é uma arte.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            É fascinante como a língua e a cultura vêm juntas aqui. E as fontes mostram que isto do imperativo formal serve para qualquer sítio, não só Portugal.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sim, sim, dão exemplos para alargar horizontes. Coisas como: "Em Havana, beba um mojito", ou "Em Buenos Aires, dance o tango", ou "Em Estocolmo, visite o bar de gelo". O padrão gramatical funciona para dar este tipo de conselho formal em qualquer contexto. É uma ferramenta útil.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Falámos dos verbos, mas e o outro vocabulário? A unidade destaca mais palavras-chave para além destas culturais que já fomos dizendo?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sim, sim. A lição vai introduzindo e reforçando o vocabulário importante que aparece nos exemplos. Se compilarmos, temos: a calçada portuguesa (que já falámos).
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sim.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            O fado (a música), os azulejos (a cerâmica), as caves do Vinho do Porto (as adegas), um cruzeiro (o passeio de barco, que recomendam no Douro e mencionam no Tejo também).
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Uhum.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Um jogo (referem ir ver o futebol no Rio ou do Benfica em Lisboa), e até os "cariocas" (os habitantes do Rio) com a sugestão "Divirta-se com os cariocas na praia". É um convite à interação.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ter estas palavras ajuda imenso a perceber as dicas e a falar sobre as experiências. Não é só a gramática, saber o que é "calçada" ou "fado" dá muito mais significado à sugestão.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Precisamente. A língua ganha vida, ganha contexto. O vocabulário não, não está solto, está ligado a coisas práticas e culturais.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            OK. Mas agora temos mesmo de voltar ao título. "Prove uma francesinha". Vamos lá dedicar-lhe um bocadinho mais de atenção. O que é que as fontes dizem mais sobre ela?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Hum, a francesinha. Pois, as fontes dão-lhe destaque. Descrevem-na como uma "sandes" (usam a palavra "sandes", que é mais comum em Portugal que "sanduíche"), muito diferente e típica do Porto. Explicam os ingredientes: muita carne, normalmente (bife, linguiça, fiambre, salsicha), coberta com queijo derretido, e o tal molho de cerveja quente, picante q.b. E, como disseste, muitas vezes com batatas fritas e um ovo estrelado por cima.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Hum, soa, eh, intenso. Delicioso, imagino, mas intenso. Dizem alguma coisa sobre ser saudável ou não?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Dizem, dizem. E com uma honestidade que se agradece. Dizem algo como: "Não é, de certeza, um prato saudável." Mas logo a seguir: "É muito saboroso." É aquele aviso amigo, não é? É uma experiência, não é propriamente uma refeição leve.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Gosto dessa sinceridade. É bom saber ao que vamos. E a lição explora mais vocabulário de cozinha para além disto?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sim, um dos objetivos da unidade é mesmo ler uma receita culinária. Por isso, no exercício, que parece ser sobre fazer a francesinha ou o molho, introduzem verbos de cozinha essenciais: "misturar", "servir", "cozer", "tapar" (uma panela, por exemplo), "juntar" (ingredientes).
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Uhum.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E dão uma nota útil. Dizem que "pôr no forno" ou "colocar no forno" são sinónimos, o que é bom saber, dá flexibilidade.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Muito útil, sim, para quem gosta de cozinhar ou quer decifrar receitas. E parece que há mais comida e bebida pela lição, não é?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente. Não fica só na francesinha. Nos conselhos para o Rio, aparece: "Beba água de coco", super típico lá. Para Havana, "Beba um mojito". E no exercício com sugestões para outras cidades, há um exemplo para Taipé: "Provar Xiao Long Bao no Din Tai Fung". Mostra como falar de comida é universal em viagem.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            É verdade, a comida une toda a gente. Bem, falamos muito do imperativo, do vocabulário. Há mais alguma gramática importante nesta unidade que as fontes abordem?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sim. O imperativo é a estrela, mas tocam brevemente noutros pontos. Há um foco em algumas formas do presente do indicativo, especialmente de verbos irregulares que aparecem nos textos. Mencionam "descobrir", "servir", "sentir-se", "conseguir".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Parece que a ênfase é na primeira pessoa, o "eu", que costuma ter irregularidades.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Mostram formas como: "Eu descubro".
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            OK.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            "Eu sirvo" (com mudança de vogal), "Eu sinto-me" (também com mudança e o pronome), "Eu consigo" (que se conjuga como "seguir", "eu sigo").
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E também "eu peço" (de "pedir") e "eu sigo".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Percebo. Não é um estudo profundo, mas um alerta para formas que aparecem. E há exemplos em frases?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sim. Incluem frases de exercícios que mostram o uso, tipo: "Não consigo fazer este exercício sozinho." (Usa o "consigo"). Ou: "No nosso restaurante não servimos álcool antes do meio-dia." (Usa o "servimos", do verbo "servir"). Sąo exemplos práticos.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E para além destes verbos no presente, mais alguma coisa?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sim, um último ponto, muito útil: as palavras de sequência. Chamam-lhes locuções conjuncionais ou expressões temporais. Destacam quatro principais para organizar listas ou textos: "primeiro", "a seguir", "depois" e "finalmente".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Ah, essas são ótimas para dar estrutura.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Então, com o exemplo do Porto, podíamos dizer: "Primeiro, visite as caves. A seguir, faça um cruzeiro. Depois, atravesse a ponte. E, finally, prove uma francesinha." Fica bem mais arrumado, não é?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente, dão uma sequência lógica, clara. É simples, mas muito eficaz para tornar a comunicação mais fluida.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Então, resumindo esta nossa análise da unidade 26. Parece-me que estes materiais dão aqui um bom conjunto de ferramentas para este nível A2.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Concordo plenamente. O interessante é como conseguem ligar a gramática (o imperativo formal) com o vocabulário prático (de viagens, cultura, comida) e ainda dar essa sensibilidade cultural. Os pontos chave a reter são mesmo: primeiro, o imperativo formal para dar conselhos, com a regra da troca de vogais e os irregulares chave ("vá", "faça", "veja", "venha", "traga").
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Uhum.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Depois, o vocabulário cultural ("azulejos", "fado", "calçada") e gastronómico ("a francesinha", claro, mas também outros detalhes). E, por fim, estas palavras de sequência ("primeiro", "a seguir", "depois", "finalmente") e um toque nos verbos irregulares do presente. Tudo isto ajuda a falar um português mais autêntico e informado.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            E para terminar, fica aqui uma ideia inspirada num exercício das fontes. Eles pedem ao aluno para fazer uma lista de cinco coisas a "não perder" na sua própria cidade ou país. E depois, para escrever um textinho com essas sugestões, usando as palavras de sequência.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Pois é. E isso levanta uma ideia interessante para quem nos ouve e está a aprender. Que tal tentar fazer exatamente isso? Usar o imperativo formal ("visite isto", "explore aquilo", "prove aquele outro", "descubra x", "faça y") e as palavras de sequência para descrever cinco coisas imperdíveis do sítio onde vivem? Seria uma ótima forma de praticar, não achas? Aplicar isto à sua realidade.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            É uma excelente sugestão. Torna a aprendizagem mais pessoal. Fica então o desafio lançado.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="revisao" class="tab-content">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Revisão Gramatical</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-6">
+                    Review the key grammar points from the podcast, focusing on the formal imperative.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-stone-50 p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: Imperativo Formal (Dar Conselhos)</h3>
+                        <p class="text-stone-700 mb-3">Para dar sugestões a "você", "o senhor" ou "a senhora", trocamos as vogais:</p>
+
+                        <h4 class="font-bold text-lg text-stone-800">Verbos em -AR (mudam para -E)</h4>
+                        <ul class="list-disc list-inside ml-2 space-y-1">
+                            <li>(Provar) &rarr; <strong>Prove</strong> uma francesinha.</li>
+                            <li>(Atravessar) &rarr; <strong>Atravesse</strong> a ponte.</li>
+                            <li>(Visitar) &rarr; <strong>Visite</strong> as caves.</li>
+                            <li>(Apanhar) &rarr; <strong>Apanhe</strong> o elétrico.</li>
+                        </ul>
+
+                        <h4 class="font-bold text-lg text-stone-800 mt-6">Verbos em -ER / -IR (mudam para -A)</h4>
+                        <ul class="list-disc list-inside ml-2 space-y-1">
+                            <li>(Descobrir) &rarr; <strong>Descubra</strong> os azulejos.</li>
+                            <li>(Viver) &rarr; <strong>Viva</strong> a noite.</li>
+                            <li>(Perder-se) &rarr; <strong>Perca-se</strong> em Alfama.</li>
+                            <li>(Beber) &rarr; <strong>Beba</strong> água de coco.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-stone-50 p-6 rounded-lg shadow-sm border border-stone-200">
+                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: Imperativo (Irregulares)</h3>
+                        <p class="text-stone-700 mb-4">Alguns dos verbos mais comuns são irregulares:</p>
+                        
+                        <ul class="list-disc list-inside ml-2 space-y-3 text-stone-800 mb-6">
+                            <li>(Fazer) &rarr; <strong>Faça</strong> um cruzeiro.</li>
+                            <li>(Ir) &rarr; <strong>Vá</strong> ao Porto.</li>
+                            <li>(Ver) &rarr; <strong>Veja</strong> os passeios.</li>
+                            <li>(Vir) &rarr; <strong>Venha</strong> a Lisboa.</li>
+                            <li>(Trazer) &rarr; <strong>Traga</strong> um casaco.</li>
+                            <li>(Pedir) &rarr; <strong>Peça</strong> um café.</li>
+                            <li>(Seguir) &rarr; <strong>Siga</strong> em frente.</li>
+                        </ul>
+
+                        <h4 class="font-bold text-lg text-stone-800">Palavras de Sequência</h4>
+                        <ul class="list-disc list-inside ml-2 space-y-3 text-stone-800">
+                            <li><strong>Primeiro,</strong> ...</li>
+                            <li><strong>A seguir,</strong> ...</li>
+                            <li><strong>Depois,</strong> ...</li>
+                            <li><strong>Finalmente,</strong> ...</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+             <section id="quiz" class="tab-content">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Quick Quiz</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-6">
+                    Test your understanding of the lesson. Choose the best answer for each question.
+                </p>
+
+                <form id="quizForm">
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">1. Qual é o imperativo formal (conselho) do verbo "Provar"?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q1" value="a"> a) Prova</label>
+                            <label><input type="radio" name="q1" value="b"> b) Prove</label>
+                            <label><input type="radio" name="q1" value="c"> c) Provi</label>
+                        </div>
+                        <div class="feedback" id="feedback-q1"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">2. Qual é o imperativo formal (conselho) do verbo irregular "Fazer"?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q2" value="a"> a) Faz</label>
+                            <label><input type="radio" name="q2" value="b"> b) Faze</label>
+                            <label><input type="radio" name="q2" value="c"> c) Faça</label>
+                        </div>
+                         <div class="feedback" id="feedback-q2"></div>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p class="font-semibold mb-2">3. O que é a "calçada portuguesa"?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q3" value="a"> a) Um tipo de música tradicional.</label>
+                            <label><input type="radio" name="q3" value="b"> b) Os desenhos de pedra nos passeios.</label>
+                            <label><input type="radio" name="q3" value="c"> c) Uma sanduíche típica do Porto.</label>
+                        </div>
+                         <div class="feedback" id="feedback-q3"></div>
+                    </div>
+                     <div class="quiz-question">
+                        <p class="font-semibold mb-2">4. Qual é o imperativo formal (conselho) do verbo "Ir"?</p>
+                        <div class="quiz-options">
+                            <label><input type="radio" name="q4" value="a"> a) Vá</label>
+                            <label><input type="radio" name="q4" value="b"> b) Vai</label>
+                            <label><input type="radio" name="q4" value="c"> c) Ia</label>
+                        </div>
+                         <div class="feedback" id="feedback-q4"></div>
+                    </div>
+
+                    <button type="button" id="checkQuiz" class="mt-4 px-6 py-2 bg-red-600 text-white rounded-lg shadow hover:bg-red-700 transition-all duration-200">
+                        Check Answers
+                    </button>
+                    <p id="quizScore" class="mt-4 font-bold text-lg"></p>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- CÓDIGO PARA ESCONDER O MENU (se ?modo=aula) ---
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('modo') === 'aula') {
+                const backButton = document.querySelector('header a[href="index.html"]');
+                if (backButton) {
+                    backButton.style.display = 'none';
+                }
+            }
+            // -----------------------------------------
+
+            // --- LÓGICA DAS ABAS (TABS) ---
+            const tabs = document.querySelectorAll('.nav-tab');
+            const contents = document.querySelectorAll('.tab-content');
+            const defaultTab = 'transcricao'; 
+
+            function activateTab(tabId) {
+                 tabs.forEach(t => {
+                    t.classList.remove('tab-active');
+                    if (t.dataset.tab === tabId) {
+                        t.classList.add('tab-active');
+                    }
+                });
+                contents.forEach(c => {
+                    c.classList.remove('tab-content-active');
+                    if (c.id === tabId) {
+                        c.classList.add('tab-content-active');
+                    }
+                });
+            }
+
+            activateTab(defaultTab);
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    activateTab(tab.dataset.tab);
+                });
+            });
+
+
+            // --- LÓGICA DO QUIZ ---
+            const checkQuizButton = document.getElementById('checkQuiz');
+            const quizForm = document.getElementById('quizForm');
+            const quizScoreDisplay = document.getElementById('quizScore');
+
+            const correctAnswers = {
+                q1: 'b', // Provar (-ar) -> Prove (-e)
+                q2: 'c', // Fazer -> Faça
+                q3: 'b', // Calçada = passeios
+                q4: 'a'  // Ir -> Vá
+            };
+
+            checkQuizButton.addEventListener('click', () => {
+                let score = 0;
+                const totalQuestions = Object.keys(correctAnswers).length;
+                let answeredAll = true;
+
+                for (const question in correctAnswers) {
+                    const feedbackEl = document.getElementById(`feedback-${question}`);
+                    const selectedOptionInput = quizForm.querySelector(`input[name="${question}"]:checked`); 
+
+                    if (selectedOptionInput) {
+                        const selectedValue = selectedOptionInput.value;
+                        if (selectedValue === correctAnswers[question]) {
+                            feedbackEl.textContent = 'Correcto!';
+                            feedbackEl.className = 'feedback correct';
+                            score++;
+                        } else {
+                            feedbackEl.textContent = 'Incorreto.';
+                            feedbackEl.className = 'feedback incorrect';
+                        }
+                    } else {
+                        feedbackEl.textContent = 'Por favor, selecione uma resposta.';
+                         feedbackEl.className = 'feedback incorrect';
+                         answeredAll = false; 
+                    }
+                }
+                 if(answeredAll){
+                    quizScoreDisplay.textContent = `A sua pontuação: ${score} em ${totalQuestions}`;
+                 } else {
+                    quizScoreDisplay.textContent = `Por favor, responda a todas as perguntas.`;
+                 }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
