@@ -67,15 +67,19 @@
             max-width: 80%;
             align-self: flex-end;
         }
-        .translation-text { /* Re-utilizado para notas */
-            display: block;
-            margin-top: 0.5rem;
+
+        /* --- CSS ALTERADO --- */
+        .translation-text { /* Re-utilizado para notas E traduções */
+            display: none; /* ESCONDIDO POR DEFEITO */
+            margin-top: 0.75rem;
             font-size: 0.9em;
             font-style: italic;
             border-top: 1px dashed rgba(0, 0, 0, 0.1);
-            padding-top: 0.5rem;
+            padding-top: 0.75rem;
             color: #57534e; /* stone-600 */
         }
+        /* --- FIM DA ALTERAÇÃO --- */
+
         .quiz-question {
             margin-bottom: 1.5rem;
             padding: 1rem;
@@ -135,450 +139,600 @@
                     O seu browser não suporta o elemento de áudio.
                 </audio>
 
-                <h2 class="text-3xl font-semibold text-stone-800 mb-6">Transcrição</h2>
+                <h2 class="text-3xl font-semibold text-stone-800 mb-2">Transcrição</h2>
                 
+                <button id="toggle-translation" class="mb-6 px-4 py-2 bg-sky-600 text-white font-semibold rounded-lg hover:bg-sky-700 transition-colors text-sm">
+                    Mostrar Tradução (Show Translation)
+                </button>
                 <div class="space-y-4 flex flex-col">
                     
                     <div class="chat-bubble-homem">
                         Olá e bem-vindos. Hoje, hum, vamos fazer uma análise focada, assim, mais prática, a uma unidade que, bem, toda a gente vai precisar mais cedo ou mais tarde, não é?
+                        <span class="translation-text">Hello and welcome. Today, um, we're going to do a focused, more practical analysis of a unit that, well, everyone will need sooner or later, right?</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         É verdade.
+                        <span class="translation-text">That's true.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         É a unidade 34 do curso CIPLE Master A2. O título diz tudo: "Dói-me a cabeça". Portanto, preparem-se para falar de dores e sintomas.
+                        <span class="translation-text">It's unit 34 of the CIPLE Master A2 course. The title says it all: "My head hurts." So, get ready to talk about aches and symptoms.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Exatamente. As nossas fontes, pronto, são os materiais desta aula 48. E a nossa missão, bem, é tentar destilar o essencial, o vocabulário, a gramática, para conseguirmos falar sobre saúde, doenças, essas coisas, em português.
+                        <span class="translation-text">Exactly. Our sources are the materials from this class, 48. And our mission, well, is to try to distill the essentials—the vocabulary, the grammar—so we can talk about health, illnesses, and that sort of thing in Portuguese.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Mas sem parecer um robô a ler um manual médico, não é?
+                        <span class="translation-text">But without sounding like a robot reading a medical manual, right?</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Exato. Queremos que seja útil, fácil de lembrar e, claro, com um toque assim mais leve.
+                        <span class="translation-text">Exactly. We want it to be useful, easy to remember, and, of course, with a lighter touch.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Sem dúvida. E é um tema super relevante para o dia-a-dia, lá está. Vamos focar-nos talvez em três áreas principais.
+                        <span class="translation-text">No doubt. And it's a super relevant topic for daily life, there you have it. We'll focus on maybe three main areas.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         OK.
+                        <span class="translation-text">OK.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Primeiro, o vocabulário básico, não é? As partes do corpo e os problemas de saúde. O básico. Depois, as frases úteis, não é? Para comunicar como nos sentimos ou perguntar a outros.
+                        <span class="translation-text">First, the basic vocabulary, right? Parts of the body and health problems. The basics. Then, the useful phrases, right? To communicate how we feel or ask others.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Uhum.
+                        <span class="translation-text">Uh-huh.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         E terceiro, o ponto gramatical que é mesmo central nesta lição: o verbo "doer". É aqui que muita gente, hum, tropeça um bocadinho. Vamos tentar desmistificar isso.
+                        <span class="translation-text">And third, the grammatical point that is really central to this lesson: the verb "doer" (to hurt). This is where many people, um, stumble a bit. We'll try to demystify that.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Perfeito. Então, vamos a isso. Começar pelo mais básico. Como é que nomeamos as, as ferramentas do crime? Quer dizer, as partes do corpo que costumam doer.
+                        <span class="translation-text">Perfect. So, let's get to it. Starting with the most basic. How do we name the, the tools of the crime? I mean, the parts of the body that usually hurt.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Isso. O diapositivo 3 até tem um exercício sobre isso.
+                        <span class="translation-text">Right. Slide 3 even has an exercise on that.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Ah, OK.
+                        <span class="translation-text">Ah, OK.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Então vamos pegar nos exemplos mais comuns que vão aparecendo. Por exemplo, temos "a cabeça" (the head). Essa é clássica.
+                        <span class="translation-text">So let's take the most common examples that appear. For example, we have "a cabeça" (the head). That's a classic.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Um clássico, sim. E outras áreas que dão problemas frequentemente: "a barriga" (the belly/stomach), "o pescoço" (the neck), "a garganta" (the throat).
+                        <span class="translation-text">A classic, yes. And other areas that frequently cause problems: "a barriga" (the belly/stomach), "o pescoço" (the neck), "a garganta" (the throat).</span>
                     </div>
                     <div class="chat-bubble-homem">
                         E aqui, atenção.
+                        <span class="translation-text">And here, pay attention.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Sim.
+                        <span class="translation-text">Yes.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         É importante notar logo o género. "A cabeça", "a barriga", "a garganta" são todas femininas.
+                        <span class="translation-text">It's important to note the gender right away. "A cabeça," "a barriga," "a garganta" are all feminine.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Bem visto. É uma boa chamada de atenção.
+                        <span class="translation-text">Good point. That's a good heads-up.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         E depois, dos exemplos e diálogos, tiramos também "as costas" (the back). Essas são um clássico das queixas, sempre no plural.
+                        <span class="translation-text">And then, from the examples and dialogues, we also get "as costas" (the back). That's a classic complaint, always in the plural.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Sempre.
+                        <span class="translation-text">Always.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         E "o olho" ou, se forem os dois, "os olhos" (the eye, the eyes). Estes já são masculinos.
+                        <span class="translation-text">And "o olho" (the eye) or, if it's both, "os olhos" (the eyes). These are masculine.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Exato.
+                        <span class="translation-text">Exactly.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         E não podemos esquecer "o pé" e o plural "os pés" (the foot, the feet).
+                        <span class="translation-text">And we can't forget "o pé" (the foot) and the plural "os pés" (the feet).</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Uhum.
+                        <span class="translation-text">Uh-huh.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         E "o dente" ou "os dentes" (the tooth, the teeth), também masculinos.
+                        <span class="translation-text">And "o dente" (the tooth) or "os dentes" (the teeth), also masculine.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         O exercício lá no diapositivo 3 ainda acrescenta outros, tipo: "a perna" (feminino), "o braço" (masculino), "a mão" (feminino).
+                        <span class="translation-text">The exercise there on slide 3 also adds others, like: "a perna" (leg, feminine), "o braço" (arm, masculine), "a mão" (hand, feminine).</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Certo. E saber o género é mesmo fundamental. Não é só para os adjetivos concordarem, tipo "uma dor forte" ou "um braço partido".
+                        <span class="translation-text">Right. And knowing the gender is really fundamental. It's not just so the adjectives agree, like "uma dor forte" (a strong pain) or "um braço partido" (a broken arm).</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Não.
+                        <span class="translation-text">No.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         É especialmente importante para o que vem a seguir: o verbo "doer".
+                        <span class="translation-text">It's especially important for what comes next: the verb "doer."</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         OK. Então, vamos lá mergulhar nesse verbo que até dá nome à unidade: "doer" (to hurt). Este verbo é, ah, um bocadinho especial. É irregular...
+                        <span class="translation-text">OK. So, let's dive into this verb that even gives the unit its name: "doer" (to hurt). This verb is, ah, a little special. It's irregular...</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Sim.
+                        <span class="translation-text">Yes.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         ...e a forma como o usamos em português é diferente da estrutura que se usa mais em inglês, não é? O diapositivo 4 mostra que, no presente, as formas que realmente interessam são a terceira pessoa do singular, "dói", e a terceira do plural, "doem". São essas que vamos usar quase sempre.
+                        <span class="translation-text">...and the way we use it in Portuguese is different from the structure used most in English, isn't it? Slide 4 shows that, in the present tense, the forms that really matter are the third person singular, "dói," and the third person plural, "doem." Those are the ones we'll use almost always.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Exato. E aqui é que está o truque que vai, que está bem explicado no diapositivo 5. Quando usamos o verbo "doer" em português, o sujeito da frase não somos nós, a pessoa que sente a dor.
+                        <span class="translation-text">Exactly. And this is the trick that's well-explained on slide 5. When we use the verb "doer" in Portuguese, the subject of the sentence isn't us, the person feeling the pain.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Ah, não?
+                        <span class="translation-text">Oh, no?</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Não. O sujeito é a parte do corpo que está a doer. Esta é a diferença fundamental em relação ao inglês.
+                        <span class="translation-text">No. The subject is the part of the body that is hurting. This is the fundamental difference from English.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Exato. Então, em vez de dizermos algo como, sei lá, "Eu doo a cabeça", que soa muito estranho...
+                        <span class="translation-text">Exactly. So, instead of saying something like, I don't know, "Eu doo a cabeça" (I hurt the head), which sounds very strange...</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Estranhíssimo.
+                        <span class="translation-text">Extremely strange.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         ...dizemos que "a cabeça dói". O sujeito é "a cabeça". É uma coisa, singular, por isso usamos a forma verbal "dói".
+                        <span class="translation-text">...we say that "a cabeça dói" (the head hurts). The subject is "a cabeça." It's one thing, singular, so we use the verb form "dói."</span>
                     </div>
                     <div class="chat-bubble-homem">
                         OK. E se for mais de uma parte? Ou uma parte que seja plural, como "os dentes", por exemplo? "Os dentes" é plural.
+                        <span class="translation-text">OK. And what if it's more than one part? Or a part that is plural, like "os dentes" (the teeth), for example? "Os dentes" is plural.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Certo.
+                        <span class="translation-text">Right.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Então, a frase correta é: "Os dentes doem". O sujeito plural ("os dentes") pede a forma verbal plural ("doem"). É simples, na verdade, quando se apanha a lógica. O diapositivo 4 até faz a comparação, não é? "My 'x' hurts".
+                        <span class="translation-text">So, the correct sentence is: "Os dentes doem" (The teeth hurt). The plural subject ("os dentes") requires the plural verb form ("doem"). It's simple, really, once you get the logic. Slide 4 even makes the comparison, right? "My 'x' hurts."</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Pois faz.
+                        <span class="translation-text">It does.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         A lógica é clara. A parte do corpo é que manda no verbo. Mas então, espera aí. Se a cabeça dói ou os dentes doem, como é que a gente indica quem é que está a sofrer? De quem é essa cabeça ou esses dentes que doem? É aqui que fica mesmo interessante, ou não?
+                        <span class="translation-text">The logic is clear. The body part dictates the verb. But then, wait a minute. If the head hurts or the teeth hurt, how do we indicate who is suffering? Whose head or whose teeth are hurting? This is where it gets really interesting, isn't it?</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         É precisamente aí. É nesse ponto que entram os tais pronomes de complemento indireto. Estão lá destacados no diapositivo 5 também.
+                        <span class="translation-text">That's precisely it. That's where the indirect object pronouns come in. They are highlighted on slide 5 as well.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Aquelas palavrinhas pequenas.
+                        <span class="translation-text">Those little words.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Isso, aquelas palavrinhas pequenas mas super importantes. "Me" (para eu), "te" (para tu), "lhe" (para ele, ela, você).
+                        <span class="translation-text">Yes, those small but super important little words. "Me" (for I), "te" (for you-informal), "lhe" (for he, she, you-formal).</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Uhum.
+                        <span class="translation-text">Uh-huh.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         "Nos" (para nós), "vos" (para vós ou vocês aqui em Portugal) e "lhes" (para eles, elas, vocês). São estes pronomes que indicam quem é o recetor da dor, digamos assim.
+                        <span class="translation-text">"Nos" (for us), "vos" (for you-plural, here in Portugal) and "lhes" (for them, you-plural). These are the pronouns that indicate who the "receiver" of the pain is, so to speak.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         OK, OK. Portanto, temos de juntar as peças todas: o pronome que indica a pessoa, o verbo "doer" (que concorda com a parte do corpo) e a parte do corpo em si. Como é que fica a estrutura completa, na prática?
+                        <span class="translation-text">OK, OK. So, we have to put all the pieces together: the pronoun that indicates the person, the verb "doer" (which agrees with the body part), and the body part itself. What does the complete structure look like in practice?</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         A estrutura mais comum, e a que vemos nos exemplos dos diapositivos 5, 6 e 9, é assim: pronome (CI) + verbo "doer" ("dói" ou "doem") + parte do corpo.
+                        <span class="translation-text">The most common structure, and the one we see in the examples on slides 5, 6, and 9, is this: pronoun (IO) + verb "doer" ("dói" or "doem") + body part.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Dá um exemplo. Para dizer "My head hurts".
+                        <span class="translation-text">Give an example. To say "My head hurts."</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Fica: "Dói-me a cabeça". Se formos traduzir à letra, seria algo como "Hurts me the head", que em inglês não faz sentido, mas em português é perfeito. O "me" mostra que sou eu.
+                        <span class="translation-text">It becomes: "Dói-me a cabeça." If we were to translate it literally, it would be something like "Hurts me the head," which makes no sense in English, but in Portuguese, it's perfect. The "me" shows that it's me.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Certo. E se for outra pessoa? Se eu quiser dizer que as costas do meu amigo, a quem trato por "tu", estão a doer? "Your back hurts".
+                        <span class="translation-text">Right. And if it's someone else? If I want to say that my friend's back, whom I address as "tu," is hurting? "Your back hurts."</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Nesse caso, usas o pronome "te". E como "as costas" é plural...
+                        <span class="translation-text">In that case, you use the pronoun "te." And since "as costas" (the back) is plural...</span>
                     </div>
                     <div class="chat-bubble-homem">
                         O verbo tem que ser "doem".
+                        <span class="translation-text">The verb has to be "doem."</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Exatamente. A frase fica: "Doem-te as costas". Os exercícios nos diapositivos 6 e 9 são ótimos para praticar isto. Têm lá perguntas tipo: "O que te dói?" ou "Onde é que te dói?".
+                        <span class="translation-text">Exactly. The sentence becomes: "Doem-te as costas" (Your back hurts). The exercises on slides 6 and 9 are great for practicing this. They have questions like: "O que te dói?" (What hurts you?) or "Onde é que te dói?" (Where does it hurt you?).</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Sim, lembro-me de ver isso.
+                        <span class="translation-text">Yes, I remember seeing that.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         E afirmações como: "Hoje dói-me a garganta". Ou aquela pergunta: "Não te doem os dentes quando comes gelado?". É tudo a mesma lógica.
+                        <span class="translation-text">And statements like: "Hoje dói-me a garganta" (My throat hurts today). Or that question: "Não te doem os dentes quando comes gelado?" (Don't your teeth hurt when you eat ice cream?). It's all the same logic.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Entendido. Então, se calhar uma boa forma de pensar nisto, para quem vem do inglês, é imaginar a frase como "A mim, dói-me a cabeça" ou "A ti, doem-te as costas".
+                        <span class="translation-text">Got it. So, maybe a good way to think about this, for those coming from English, is to imagine the phrase as "A mim, dói-me a cabeça" (To me, the head hurts) or "A ti, doem-te as costas" (To you, the back hurts).</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Uhum. Mesmo que não se diga sempre o "a mim" ou o "a ti".
+                        <span class="translation-text">Uh-huh. Even if you don't always say the "a mim" or "a ti."</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Exato. Não é preciso, mas ajuda a fixar a ideia.
+                        <span class="translation-text">Exactly. It's not necessary, but it helps to fix the idea.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Ajuda a fixar a ideia de que a dor acontece *à* pessoa, e não que a pessoa "tem" a dor, como em "I have a headache". É uma perspetiva um bocadinho diferente.
+                        <span class="translation-text">It helps to fix the idea that the pain *happens to* the person, not that the person "has" the pain, as in "I have a headache." It's a slightly different perspective.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         É uma excelente forma de interiorizar, sim. Capta bem a lógica do português neste caso.
+                        <span class="translation-text">That's an excellent way to internalize it, yes. It captures the logic of Portuguese in this case well.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         E já que estamos no verbo "doer", convém saber falar de dores no passado, certo?
+                        <span class="translation-text">And since we're on the verb "doer," it's good to know how to talk about pain in the past, right?</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Ah, sim, claro.
+                        <span class="translation-text">Ah, yes, of course.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Os diapositivos 6 e 9 também mostram as formas do Pretérito Perfeito Simples (o PPS): "doeu" (para sujeito singular) e "doeram" (para sujeito plural).
+                        <span class="translation-text">Slides 6 and 9 also show the forms of the Simple Past Tense (PPS): "doeu" (for singular subject) and "doeram" (for plural subject).</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Ah, boa. Então, se ontem tive uma dor de dentes horrível, como é que eu digo isso?
+                        <span class="translation-text">Ah, good. So, if I had a horrible toothache yesterday, how do I say that?</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Manténs a estrutura. Seria: "Ontem doeu-me um dente." (Yesterday, a tooth hurt me).
+                        <span class="translation-text">You keep the structure. It would be: "Ontem doeu-me um dente." (Yesterday, a tooth hurt me).</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Ou, se foi mais que um dente... "Doeu-me os dentes."
+                        <span class="translation-text">Or, if it was more than one tooth... "Doeu-me os dentes." (My teeth hurt me - *note: speaker makes a mistake here*).</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Isso mesmo. "Ontem doeram-me os dentes." (Yesterday, my teeth hurt). O diapositivo 9 até dá outro exemplo: "Ontem doeram-lhe as costas." (Yesterday his/her/your formal back hurt). A estrutura base não muda, só o tempo do verbo.
+                        <span class="translation-text">That's right. "Ontem doeram-me os dentes." (Yesterday, my teeth hurt). Slide 9 even gives another example: "Ontem doeram-lhe as costas." (Yesterday his/her/your formal back hurt). The basic structure doesn't change, only the verb tense.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Fantástico. Acho que o verbo "doer" ficou bem mais claro agora. É mesmo uma questão de praticar, de interiorizar essa estrutura.
+                        <span class="translation-text">Fantastic. I think the verb "doer" is much clearer now. It's really a matter of practicing, of internalizing that structure.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Sem dúvida.
+                        <span class="translation-text">No doubt.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Mas agora, vamos alargar um bocadinho o nosso kit de primeiros socorros linguísticos. Como é que falamos de outros problemas, de sintomas, do nosso estado de saúde em geral? Os diálogos nos diapositivos 7 e 10 parecem ótimos para isso.
+                        <span class="translation-text">But now, let's broaden our linguistic first-aid kit a bit. How do we talk about other problems, symptoms, our state of health in general? The dialogues on slides 7 and 10 seem great for that.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         São ótimos, sim. Estão cheios de vocabulário e expressões do dia a dia. Vamos ver algumas palavras importantes que aparecem por lá.
+                        <span class="translation-text">They are great, yes. They are full of everyday vocabulary and expressions. Let's see some important words that appear there.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Força.
+                        <span class="translation-text">Go for it.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Temos "gripe" (the flu), como na frase: "Se calhar estás com gripe."
+                        <span class="translation-text">We have "gripe" (the flu), as in the sentence: "Se calhar estás com gripe." (Maybe you have the flu.)</span>
                     </div>
                     <div class="chat-bubble-homem">
                         OK.
+                        <span class="translation-text">OK.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Depois, "constipado", que é um adjetivo, atenção, para dizer que se tem uma constipação (having a cold). "Acho que estou constipado."
+                        <span class="translation-text">Then, "constipado," which is an adjective, mind you, to say you have a cold. "Acho que estou constipado." (I think I have a cold.)</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Certo. "Estar constipado".
+                        <span class="translation-text">Right. "Estar constipado" (To have a cold).</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Isso. E "febre" (fever). A expressão é "estar com febre". "Acho que estou com febre."
+                        <span class="translation-text">That's it. And "febre" (fever). The expression is "estar com febre" (to have a fever). "Acho que estou com febre." (I think I have a fever.)</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Uhum.
+                        <span class="translation-text">Uh-huh.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         E, claro, "dor" (no singular) ou "dores" (no plural) (pain, pains). Os diálogos têm vários exemplos: "Tenho umas dores de cabeça horríveis", ou "Tenho uma dor fortíssima no peito", ou ainda "Tenho umas dores muito fortes nas costas".
+                        <span class="translation-text">And, of course, "dor" (singular) or "dores" (plural) (pain, pains). The dialogues have several examples: "Tenho umas dores de cabeça horríveis" (I have horrible headaches), or "Tenho uma dor fortíssima no peito" (I have a very strong pain in my chest), or "Tenho umas dores muito fortes nas costas" (I have very strong pains in my back).</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Essas frases são muito úteis.
+                        <span class="translation-text">Those phrases are very useful.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         São. E a palavra "sintomas" (symptoms), que aparece na lista de perguntas do diapositivo 8. E adjetivos como "horrível" (horrible) ou "grave" (serious) para descrever como nos sentimos ou a situação.
+                        <span class="translation-text">They are. And the word "sintomas" (symptoms), which appears in the list of questions on slide 8. And adjectives like "horrível" (horrible) or "grave" (serious) to describe how we feel or the situation.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         E para além das palavras soltas, o que ajuda mesmo a comunicar são as frases feitas, não é? As expressões que usamos naturalmente. Eu notei algumas muito úteis nos diálogos dos diapositivos 7 e 10.
+                        <span class="translation-text">And besides individual words, what really helps communicate are set phrases, right? The expressions we use naturally. I noticed some very useful ones in the dialogues on slides 7 and 10.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Quais, por exemplo?
+                        <span class="translation-text">Which ones, for example?</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Por exemplo: "Não me sinto muito bem." (I don't feel very well).
+                        <span class="translation-text">For example: "Não me sinto muito bem." (I don't feel very well).</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Sim, essa é essencial.
+                        <span class="translation-text">Yes, that one is essential.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         E a pergunta: "O que é que se passa?" (What's wrong? What's happening?)
+                        <span class="translation-text">And the question: "O que é que se passa?" (What's wrong? What's happening?)</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Para mostrar preocupação, querer saber mais.
+                        <span class="translation-text">To show concern, to want to know more.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Uhum. E para dar a nossa opinião: "Acho que estou constipado."
+                        <span class="translation-text">Uh-huh. And to give our opinion: "Acho que estou constipado." (I think I have a cold.)</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Sim.
+                        <span class="translation-text">Yes.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         E, claro, usando o nosso amigo verbo "doer": "Dói-te alguma coisa?"
+                        <span class="translation-text">And, of course, using our friend the verb "doer": "Dói-te alguma coisa?" (Does anything hurt you?)</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Sim.
+                        <span class="translation-text">Yes.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Uma pergunta direta sobre a dor.
+                        <span class="translation-text">A direct question about the pain.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Exato.
+                        <span class="translation-text">Exactly.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         E tão importante como saber descrever o problema, é saber reagir quando alguém nos diz que não está bem. Os diálogos também nos dão umas pistas.
+                        <span class="translation-text">And just as important as knowing how to describe the problem is knowing how to react when someone tells us they're not well. The dialogues also give us some clues.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Como por exemplo?
+                        <span class="translation-text">Like what?</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Aquela expressão de empatia: "Coitado" ou "Coitada" (Poor you).
+                        <span class="translation-text">That expression of empathy: "Coitado" or "Coitada" (Poor you / Poor thing).</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         É super comum em Portugal. Usa-se quando alguém conta uma desgraça, uma doença, um azar. Vemos "Coitada" no diálogo 1 do diapositivo 7.
+                        <span class="translation-text">It's super common in Portugal. It's used when someone tells you about a misfortune, an illness, bad luck. We see "Coitada" in dialogue 1 of slide 7.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Ah, sim.
+                        <span class="translation-text">Ah, yes.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         E depois, "As melhoras", o desejo simpático que se diz a alguém doente. Também está lá no diálogo 1.
+                        <span class="translation-text">And then, "As melhoras" (Get well soon), the nice wish you say to someone who is sick. It's also there in dialogue 1.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         "As melhoras". Muito útil.
+                        <span class="translation-text">"As melhoras." Very useful.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         E depois, conselhos simples, tipo: "Toma uma aspirina".
+                        <span class="translation-text">And then, simple advice, like: "Toma uma aspirina" (Take an aspirin).</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Que aparece no diálogo 1 do diapositivo 10. Claro que, pronto, só devemos dar conselhos médicos se soubermos o que estamos a fazer.
+                        <span class="translation-text">Which appears in dialogue 1 of slide 10. Of course, well, we should only give medical advice if we know what we're doing.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         É verdade, é melhor ter cuidado com isso.
+                        <span class="translation-text">That's true, it's better to be careful with that.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         E por falar em ajuda médica, os diálogos também mencionam ações mais concretas.
+                        <span class="translation-text">And speaking of medical help, the dialogues also mention more concrete actions.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Lembro-me que no diálogo 2, no diapositivo 7, falava-se de...
+                        <span class="translation-text">I remember in dialogue 2, on slide 7, they talked about...</span>
                     </div>
                     <div class="chat-bubble-homem">
                         De "marcar uma consulta médica".
+                        <span class="translation-text">About "marcar uma consulta médica" (booking a doctor's appointment).</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Exato.
+                        <span class="translation-text">Exactly.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Exato. E também o verbo "ligar para". No diálogo 3, fala-se da possibilidade de chamar uma ambulância. "É melhor chamar uma ambulância?" E no fim, a pessoa diz: "Depois ligo-te". Portanto, "marcar consulta" e "ligar" são verbos que dão jeito neste contexto de saúde.
+                        <span class="translation-text">Exactly. And also the verb "ligar para" (to call). In dialogue 3, they talk about the possibility of calling an ambulance. "É melhor chamar uma ambulância?" (Is it better to call an ambulance?) And at the end, the person says: "Depois ligo-te" (I'll call you later). So, "marcar consulta" and "ligar" are verbs that come in handy in this health context.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Sem dúvida.
+                        <span class="translation-text">No doubt.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Bem, e agora, imaginemos que, pronto, marcamos a consulta, chegamos lá. O diapositivo 8 tem uma lista de perguntas típicas que um médico ou enfermeiro podem fazer. Reconhecer estas perguntas já é meio caminho andado para a consulta correr melhor, não é?
+                        <span class="translation-text">Well, and now, let's imagine that we've booked the appointment, we get there. Slide 8 has a list of typical questions that a doctor or nurse might ask. Recognizing these questions is already half the battle for the appointment to go better, isn't it?</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Completamente. Não precisamos de as decorar já todas, mas ir-nos familiarizando com elas é excelente. Vamos dar uma espreitadela a algumas.
+                        <span class="translation-text">Completely. We don't need to memorize them all right now, but getting familiar with them is excellent. Let's take a peek at some.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Vamos.
+                        <span class="translation-text">Let's.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Por exemplo: "Tem sentido cansaço ou fadiga?" (Have you been feeling tired or fatigue?). Repara na forma verbal: "tem sentido".
+                        <span class="translation-text">For example: "Tem sentido cansaço ou fadiga?" (Have you been feeling tired or fatigue?). Notice the verb form: "tem sentido" (have been feeling).</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Isto indica algo que tem vindo a acontecer recentemente até agora. Não vamos entrar em nomes técnicos dos tempos verbais, mas a ideia é essa.
+                        <span class="translation-text">This indicates something that has been happening recently up to now. We're not going to get into technical names for verb tenses, but that's the idea.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Algo contínuo ou recente.
+                        <span class="translation-text">Something continuous or recent.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Isso, uma sensação que começou no passado e se prolonga ou repete. Outro exemplo: "Tem tido febre ou outros sintomas?" (Have you had a fever or other symptoms?). Mesma ideia com "tem tido": ocorrências repetidas ou contínuas num período recente.
+                        <span class="translation-text">Yes, a feeling that started in the past and continues or repeats. Another example: "Tem tido febre ou outros sintomas?" (Have you had a fever or other symptoms?). Same idea with "tem tido" (have had): repeated or continuous occurrences in a recent period.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         OK. E aquela sobre medicamentos?
+                        <span class="translation-text">OK. And what about the one about medication?</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Ah, sim. "Está a tomar algum medicamento?" (Are you taking any medication?). Aqui, "está a tomar" refere-se a algo que acontece agora, no presente, uma ação contínua. "Are you currently taking?"
+                        <span class="translation-text">Ah, yes. "Está a tomar algum medicamento?" (Are you taking any medication?). Here, "está a tomar" (are taking) refers to something happening now, in the present, a continuous action. "Are you currently taking?"</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Faz sentido.
+                        <span class="translation-text">Makes sense.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         E uma alternativa interessante para perguntar sobre dor sem usar o verbo "doer"?
+                        <span class="translation-text">And an interesting alternative to ask about pain without using the verb "doer"?</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         "Está com dor em algum lugar?" A expressão "estar com dor" também é muito, muito comum.
+                        <span class="translation-text">"Está com dor em algum lugar?" (Are you in pain somewhere?). The expression "estar com dor" (to be in pain) is also very, very common.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Boa alternativa.
+                        <span class="translation-text">Good alternative.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         E por fim, uma essencial para ver a evolução: "Sente-se melhor ou pior do que antes?" (Do you feel better or worse than before?). Uma pergunta comparativa.
+                        <span class="translation-text">And finally, an essential one to check progress: "Sente-se melhor ou pior do que antes?" (Do you feel better or worse than before?). A comparative question.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Estas são mesmo frases-chave. Mesmo que uma pessoa ao início só as consiga perceber e responder tipo "sim", "não", ou apontar para onde dói, já é um avanço enorme, dá mais segurança em situações reais.
+                        <span class="translation-text">These are really key phrases. Even if a person at first can only understand them and answer like "yes," "no," or point to where it hurts, it's already a huge step forward, it gives more security in real situations.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Sem dúvida.
+                        <span class="translation-text">No doubt.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Bom, fizemos aqui uma viagem bastante completa pela unidade 34. Então assim, para resumir, o que é que retirámos de mais importante disto tudo? Recapitulando. Vimos vocabulário essencial, não é? Partes do corpo, algumas doenças, sintomas comuns como gripe, constipação, febre, dores.
+                        <span class="translation-text">Well, we've taken a pretty complete journey through unit 34. So, to summarize, what's the most important thing we've taken from all this? Recapping. We saw essential vocabulary, right? Parts of the body, some illnesses, common symptoms like flu, cold, fever, pain.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Exato. E acima de tudo, acho que desvendámos o mistério do verbo "doer". Aquela estrutura "pronome (CI) + 'dói' ou 'doem' + parte do corpo" é mesmo o ponto gramatical mais crucial desta unidade.
+                        <span class="translation-text">Exactly. And above all, I think we've unraveled the mystery of the verb "doer." That structure "pronoun (IO) + 'dói' or 'doem' + body part" is really the most crucial grammatical point of this unit.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Sim, parece-me que sim.
+                        <span class="translation-text">Yes, I think so.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Lembrar que o sujeito é a parte do corpo (singular leva "dói", plural leva "doem") e que o pronome ("me", "te", "lhe", etc.) indica quem sente a dor. É mesmo a chave. Dominar isto faz uma diferença gigante na fluidez e na correção quando se fala de dores.
+                        <span class="translation-text">Remembering that the subject is the body part (singular takes "dói," plural takes "doem") and that the pronoun ("me," "te," "lhe," etc.) indicates who feels the pain. That's really the key. Mastering this makes a huge difference in fluency and correctness when talking about pain.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Concordo plenamente. E não nos ficámos só pela gramática pura, não é? Vimos também muitas frases super úteis, tiradas dos diálogos, que nos permitem começar uma conversa sobre como nos sentimos ("Não me sinto bem")...
+                        <span class="translation-text">I completely agree. And we didn't just stick to pure grammar, did we? We also saw many super useful phrases, taken from the dialogues, that allow us to start a conversation about how we feel ("Não me sinto bem")...</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         ...e perguntar aos outros ("O que é que se passa?", "Dói-te alguma coisa?")...
+                        <span class="translation-text">...and ask others ("O que é que se passa?", "Dói-te alguma coisa?")...</span>
                     </div>
                     <div class="chat-bubble-homem">
                         ...mostrar empatia ("Coitado", "As melhoras")...
+                        <span class="translation-text">...show empathy ("Coitado," "As melhoras")...</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         ...e falar de ações práticas ("marcar uma consulta", "toma uma aspirina"). É um pacote bastante completo para começar a desenrascar-se.
+                        <span class="translation-text">...and talk about practical actions ("marcar uma consulta," "toma uma aspirina"). It's a pretty complete package to start getting by.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         É verdade. E assim, acho que fechamos esta nossa exploração focada na aula 48. Foi, hum, uma abordagem muito prática para nos sentirmos mais à vontade a falar sobre saúde, bem-estar, ou a falta dele, às vezes, em português.
+                        <span class="translation-text">That's true. And so, I think we'll close this focused exploration of class 48. It was, um, a very practical approach to feeling more comfortable talking about health, well-being, or the lack thereof, sometimes, in Portuguese.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Esperamos que tenha sido útil. E, quem sabe, até um bocadinho divertido.
+                        <span class="translation-text">We hope it was useful. And, who knows, maybe even a little fun.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         O segredo agora é mesmo praticar. Ouvir, ler, tentar usar estas estruturas. Prestar atenção a como os falantes nativos usam o verbo "doer", em filmes, em músicas, em conversas. Cada vez que o encontrarem, pensem: OK, qual é o sujeito? Qual é o pronome? Isso ajuda a fixar a regra de forma mais natural. E os exercícios da lição, claro, são um excelente ponto de partida.
+                        <span class="translation-text">The secret now is really to practice. Listen, read, try to use these structures. Pay attention to how native speakers use the verb "doer" in movies, in songs, in conversations. Every time you find it, think: OK, what's the subject? What's the pronoun? This helps to fix the rule more naturally. And the lesson exercises, of course, are an excellent starting point.</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Sem dúvida.
+                        <span class="translation-text">No doubt.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         E para ficarem a pensar um bocadinho, deixamos aqui uma reflexão final. Esta estrutura do verbo "doer" em português, onde a dor "acontece" à pessoa ("Dói-me a cabeça"), um pouco como acontece com o verbo "gustar" em espanhol ("Me gusta el chocolate"), não é fascinante?
+                        <span class="translation-text">And to leave you with something to think about, here's a final reflection. This structure of the verb "doer" in Portuguese, where the pain "happens" to the person ("Dói-me a cabeça"), a bit like what happens with the verb "gustar" in Spanish ("Me gusta el chocolate"), isn't it fascinating?</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         É interessante, sim.
+                        <span class="translation-text">It's interesting, yes.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Se contrastarmos com o inglês, onde geralmente a pessoa é o sujeito mais ativo ("I have a headache", "I like chocolate"), será que estas diferenças na gramática, assim subtis, refletem ou até moldam de alguma forma a maneira como encaramos as nossas experiências, as nossas sensações, a nossa relação com o mundo?
+                        <span class="translation-text">If we contrast it with English, where the person is generally the more active subject ("I have a headache," "I like chocolate"), could it be that these subtle differences in grammar reflect or even shape in some way how we view our experiences, our sensations, our relationship with the world?</span>
                     </div>
                     <div class="chat-bubble-mulher">
                         Fica a pergunta no ar.
+                        <span class="translation-text">The question hangs in the air.</span>
                     </div>
                     <div class="chat-bubble-homem">
                         Algo para refletir enquanto continuam a vossa aprendizagem desta língua tão rica. Por hoje é tudo. Muito obrigado pela companhia e, bem, até à próxima análise.
+                        <span class="translation-text">Something to reflect on as you continue your learning of this very rich language. That's all for today. Thank you very much for your company and, well, until the next analysis.</span>
                     </div>
 
                 </div>
@@ -678,7 +832,7 @@
                         <p class="text-lg font-semibold mb-2">3. O seu amigo diz: "Ontem levantei muito peso." Você pergunta: "Ah sim? ______ as costas?"</p>
                         <div class="quiz-options">
                             <label><input type="radio" name="q3" value="a"> a) Doeu-te</label>
-                            <label><input type="radio" name="q3" value="b"> b) Doem-te</label>
+                            <label><input type="radio"name="q3" value="b"> b) Doem-te</label>
                             <label><input type="radio" name="q3" value="c"> c) Doeram-te</label>
                         </div>
                         <div class="feedback mt-2"></div>
@@ -720,6 +874,29 @@
                 });
             });
 
+            // --- LÓGICA NOVA DO BOTÃO DE TRADUÇÃO ---
+            const toggleButton = document.getElementById('toggle-translation');
+            let isTranslationVisible = false;
+
+            if (toggleButton) {
+                toggleButton.addEventListener('click', () => {
+                    isTranslationVisible = !isTranslationVisible; // Inverte o estado
+                    
+                    // Seleciona apenas as traduções DENTRO da secção de transcrição
+                    const translations = document.querySelectorAll('#transcricao .translation-text');
+                    
+                    if (isTranslationVisible) {
+                        translations.forEach(t => t.style.display = 'block');
+                        toggleButton.textContent = 'Ocultar Tradução (Hide Translation)';
+                    } else {
+                        translations.forEach(t => t.style.display = 'none');
+                        toggleButton.textContent = 'Mostrar Tradução (Show Translation)';
+                    }
+                });
+            }
+            // --- FIM DA LÓGICA NOVA ---
+
+
             // Lógica do Quiz
             const checkButton = document.getElementById('check-quiz');
             if (checkButton) {
@@ -754,6 +931,5 @@
             }
         });
     </script>
-
-</body>
+    </body>
 </html>
