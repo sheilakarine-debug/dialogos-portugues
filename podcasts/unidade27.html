@@ -67,15 +67,19 @@
             max-width: 80%;
             align-self: flex-end;
         }
-        .translation-text { /* Re-utilizado para notas */
-            display: block;
-            margin-top: 0.5rem;
+        
+        /* --- CSS ALTERADO --- */
+        .translation-text { /* Re-utilizado para notas E traduções */
+            display: none; /* ESCONDIDO POR DEFEITO */
+            margin-top: 0.75rem;
             font-size: 0.9em;
             font-style: italic;
             border-top: 1px dashed rgba(0, 0, 0, 0.1);
-            padding-top: 0.5rem;
+            padding-top: 0.75rem;
             color: #57534e; /* stone-600 */
         }
+        /* --- FIM DA ALTERAÇÃO --- */
+
         .quiz-question {
             margin-bottom: 1.5rem;
             padding: 1rem;
@@ -135,678 +139,794 @@
                     O seu browser não suporta o elemento de áudio.
                 </audio>
 
-                <h2 class="text-3xl font-semibold text-stone-800 mb-4 mt-8">Transcrição</h2>
+                <h2 class="text-3xl font-semibold text-stone-800 mb-2 mt-8">Transcrição</h2>
+                
+                <button id="toggle-translation" class="mb-6 px-4 py-2 bg-sky-600 text-white font-semibold rounded-lg hover:bg-sky-700 transition-colors text-sm">
+                    Mostrar Tradução (Show Translation)
+                </button>
                 <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Bem-vindos a esta análise mais a fundo. Hoje vamos, vamos mergulhar nuns materiais que me pareceram muito interessantes de um curso de português A2. Vamos focar-nos, pronto, nos pontos chave de uma lição em particular, a unidade 27.
+                            <span class="translation-text">Welcome to this deeper analysis. Today we're going to dive into some materials that I found very interesting from an A2 Portuguese course. We're going to focus on the key points of one particular lesson, unit 27.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Exatamente. São materiais, eh, do curso CIPLE Master, que foi criado pela professora Sheila Meneses. E esta unidade, a 27, aborda não só gramática essencial, mas também aspetos de comunicação e até, hum, algumas práticas culturais importantes cá em Portugal.
+                            <span class="translation-text">Exactly. These are materials, uh, from the CIPLE Master course, which was created by professor Sheila Meneses. And this unit, 27, covers not only essential grammar but also communication aspects and even, um, some important cultural practices here in Portugal.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Basicamente, a nossa ideia aqui é extrair o essencial, de forma clara e, esperamos nós, útil para quem está a aprender.
+                            <span class="translation-text">Basically, our idea here is to extract the essential, clearly and, we hope, usefully for those who are learning.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             É isso mesmo, precisamente. Vamos tentar desmistificar alguns verbos que, bem, às vezes dão umas dores de cabeça. Tipo o "dever", quando o usamos para dar conselhos ou para fazer suposições.
+                            <span class="translation-text">That's it, precisely. We're going to try to demystify some verbs that, well, sometimes cause headaches. Like "dever", when we use it to give advice or make assumptions.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Certo. E também vamos espreitar umas dicas culturais que, olha, podem mesmo fazer a diferença no dia a dia. Tudo isto com exemplos práticos, tirados diretamente dos materiais. OK. Então, vamos a isto.
+                            <span class="translation-text">Right. And we'll also take a look at some cultural tips that, look, can really make a difference in everyday life. All this with practical examples, taken directly from the materials. OK. So, let's do this.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Talvez pudéssemos começar por um ponto que, hum, que gera muitas vezes confusão para quem aprende português. Aqueles verbos reflexos que são muito parecidos na forma, mas têm significados completamente diferentes. Estou a pensar no "sentir-se" e no "sentar-se".
+                            <span class="translation-text">Maybe we could start with a point that, um, often creates confusion for those learning Portuguese. Those reflexive verbs that are very similar in form but have completely different meanings. I'm thinking of "sentir-se" (to feel) and "sentar-se" (to sit).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ah, sim. Esses dois. Parecem quase gémeos, não é? Mas um fala de como estamos, das emoções, e o outro, bem, o outro tem a ver com cadeiras.
+                            <span class="translation-text">Ah, yes. Those two. They seem almost like twins, don't they? But one talks about how we are, our emotions, and the other, well, the other has to do with chairs.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Exatamente isso. O "sentir-se" tem a ver com "to feel", como nos sentimos, seja emocionalmente ou fisicamente. Já o "sentar-se" é mesmo a ação física, "to sit down", ocupar um lugar, um assento.
+                            <span class="translation-text">Exactly that. "Sentir-se" has to do with "to feel," how we feel, whether emotionally or physically. Whereas "sentar-se" is the physical action, "to sit down," to occupy a place, a seat.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Hum-hum. Ambos são verbos reflexos, é verdade. E nos exemplos que temos aqui no material, estão conjugados no presente do indicativo. Mas é mesmo crucial não os confundir.
+                            <span class="translation-text">Mm-hmm. Both are reflexive verbs, it's true. And in the examples we have here in the material, they are conjugated in the present indicative. But it's really crucial not to confuse them.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Como seria?
+                            <span class="translation-text">How would it be?</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Aí já usamos o "sentar-se". Por exemplo, "Eu sento-me nesta cadeira". Ou, se estivermos em grupo e quisermos saber onde podemos ficar, "Onde é que nos sentamos?" (para nós), não é?
+                            <span class="translation-text">Then we use "sentar-se". For example, "Eu sento-me nesta cadeira" (I sit in this chair). Or, if we are in a group and want to know where we can be, "Onde é que nos sentamos?" (Where do we sit?) (for us), right?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Exato.
+                            <span class="translation-text">Exactly.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E para descrever um hábito de outras pessoas, "Eles sentam-se sempre no sofá". O ato de se sentarem.
+                            <span class="translation-text">And to describe a habit of other people, "Eles sentam-se sempre no sofá" (They always sit on the sofa). The act of sitting down.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E se quisesses perguntar diretamente a um amigo como é que ele está, como se está a sentir?
+                            <span class="translation-text">And if you wanted to ask a friend directly how he is, how he is feeling?</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ah, aí voltamos ao "sentir-se", claro. Seria "Como te sentes?", usando o "tu". E também podemos usar para falar de outra pessoa, tipo, "Acho que o Carlos não se sente bem".
+                            <span class="translation-text">Ah, then we go back to "sentir-se", of course. It would be "Como te sentes?" (How do you feel?), using "tu". And we can also use it to talk about someone else, like, "Acho que o Carlos não se sente bem" (I think Carlos doesn't feel well).</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Perfeito. Acho que essa distinção entre sentir uma emoção e sentar o corpo ficou clara. É um passo importante. E agora, que tal passarmos para aquele verbo que mencionaste, o tal canivete suíço?
+                            <span class="translation-text">Perfect. I think that distinction between feeling an emotion and sitting the body is clear. It's an important step. And now, how about we move on to that verb you mentioned, the "Swiss army knife" one?</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Agora sim. Vamos a ele. O verbo "dever" é mesmo super útil. Dá para imensas coisas na gramática portuguesa.
+                            <span class="translation-text">Now, yes. Let's get to it. The verb "dever" is really super useful. It's used for many things in Portuguese grammar.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sem dúvida. E os materiais da unidade 27 destacam, hum, duas funções principais para este verbo. A primeira função é a de dar conselhos ou indicar uma obrigação, uma recomendação forte. É algo parecido com o "should" em inglês.
+                            <span class="translation-text">No doubt. And the materials for unit 27 highlight, um, two main functions for this verb. The first function is to give advice or indicate an obligation, a strong recommendation. It's something similar to "should" in English.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exato. O próprio título da unidade já o mostra: "Deves estudar mais". É um conselho direto.
+                            <span class="translation-text">Exactly. The unit's title itself already shows it: "Deves estudar mais" (You should study more). It's direct advice.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Precisamente. Vamos ver como isto funciona nos cenários que eles apresentam. Temos aqui uma pessoa a queixar-se: "Ganho muito pouco. Os meus colegas ganham muito mais, mas não trabalham tanto como eu." Pronto, um desabafo. Qual seria o conselho aqui?
+                            <span class="translation-text">Precisely. Let's see how this works in the scenarios they present. We have a person complaining here: "I earn very little. My colleagues earn much more, but they don't work as much as I do." There, a vent. What would be the advice here?</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Hum, o material sugere: "Deve mudar de emprego." É direto ao ponto. Parece um conselho bastante lógico, de facto.
+                            <span class="translation-text">Um, the material suggests: "Deve mudar de emprego" (He/She should change jobs). It's straight to the point. It seems like quite logical advice, indeed.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E numa situação um bocadinho mais, ah, complexa? Também temos. Alguém com problemas para chegar a horas: "Chego sempre atrasado ao escritório. Saio de casa cedo, mas depois perco muito tempo no trânsito. O trânsito de manhã é horrível."
+                            <span class="translation-text">And in a slightly more, ah, complex situation? We have that too. Someone with problems arriving on time: "I'm always late to the office. I leave home early, but then I waste a lot of time in traffic. The traffic in the morning is horrible."</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Uma situação comum, infelizmente.
+                            <span class="translation-text">A common situation, unfortunately.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Pois é. E o conselho aqui é mais detalhado: "Deve usar transportes alternativos ao carro, por exemplo, ir de metro ou de bicicleta para o trabalho." É uma sugestão prática para resolver o problema.
+                            <span class="translation-text">It is. And the advice here is more detailed: "Deve usar transportes alternativos ao carro, por exemplo, ir de metro ou de bicicleta para o trabalho." (He/She should use alternative transport to the car, for example, go by metro or bike to work.) It's a practical suggestion to solve the problem.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E vemos que este uso do "dever" também se aplica quando o conselho não é para a pessoa com quem falamos, mas para terceiros, como no caso dos pais preocupados com a filha.
+                            <span class="translation-text">And we see that this use of "dever" also applies when the advice isn't for the person we're talking to, but for third parties, as in the case of parents worried about their daughter.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sim, exatamente. Eh, nesse exercício, os pais dizem algo como: "A nossa filha tem problemas na escola. Não é boa aluna. Diz que os professores não gostam dela. O que devemos fazer?" Hum-hum. E o conselho dado é duplo: "Deve falar com os professores" e "Deve ajudar a sua filha a estudar". Claro que também podemos usar na negativa, não é? "Não deves trabalhar tanto", falando para "tu".
+                            <span class="translation-text">Yes, exactly. Uh, in that exercise, the parents say something like: "Our daughter has problems at school. She's not a good student. She says the teachers don't like her. What should we do?" Mm-hmm. And the advice given is twofold: "Deve falar com os professores" (You/He/She should talk to the teachers) and "Deve ajudar a sua filha a estudar" (You/He/She should help your daughter study). Of course, we can also use it in the negative, right? "Não deves trabalhar tanto" (You shouldn't work so much), speaking to "tu".</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Certo.
+                            <span class="translation-text">Right.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ou para um grupo: "Nós devemos esperar por ele". E aquela forma tão nossa, "a gente". "A gente deve falar com o chefe". É sempre bom lembrar que "a gente", embora signifique "nós", leva o verbo na terceira pessoa do singular, como "ele" ou "ela". "A gente deve", não "a gente devemos".
+                            <span class="translation-text">Or for a group: "Nós devemos esperar por ele" (We should wait for him). And that form of ours, "a gente" (we/people). "A gente deve falar com o chefe" (We should talk to the boss). It's always good to remember that "a gente," although it means "we," takes the verb in the third person singular, like "ele" or "ela". "A gente deve," not "a gente devemos."</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Muito bem lembrado. Pronto, essa função de conselho ou obrigação parece clara. Mas qual é então a segunda grande utilização do "dever" que a unidade explora? É aqui que a coisa fica ainda mais interessante, não é?
+                            <span class="translation-text">Very well remembered. Okay, that advice or obligation function seems clear. But what then is the second major use of "dever" that the unit explores? This is where it gets even more interesting, isn't it?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E como fica. Esta segunda função é quase detetive.
+                            <span class="translation-text">And how. This second function is almost detective-like.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             É um bocadinho, sim. A segunda função chave é a de expressar probabilidade. Ou seja, fazer uma suposição lógica baseada em alguma evidência que temos ou no contexto. Em inglês, seria algo como "must be" ou "probably".
+                            <span class="translation-text">It is a bit, yes. The second key function is to express probability. That is, to make a logical assumption based on some evidence we have or the context. In English, it would be something like "must be" or "probably".</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Hum-hum.
+                            <span class="translation-text">Mm-hmm.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Usamos o "dever" quando não temos a certeza absoluta, 100%, mas temos fortes razões para acreditar que algo é verdade. É fazer uma dedução lógica.
+                            <span class="translation-text">We use "dever" when we are not 100% absolutely certain, but we have strong reasons to believe something is true. It's making a logical deduction.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             É isso mesmo. Vamos às pistas e conclusões que os materiais nos dão, que são ótimas. Pista: "São 10 da noite e o Miguel ainda está a trabalhar." Qual é a conclusão óbvia?
+                            <span class="translation-text">That's it exactly. Let's get to the clues and conclusions the materials give us, which are great. Clue: "It's 10 at night and Miguel is still working." What's the obvious conclusion?</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Hum, "Deve estar muito cansado."
+                            <span class="translation-text">Um, "Deve estar muito cansado" (He must be very tired).</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Parece lógico, certo?
+                            <span class="translation-text">Seems logical, right?</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Faz todo o sentido. Que outras pistas temos por aí?
+                            <span class="translation-text">Makes perfect sense. What other clues do we have?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Olha esta. Pista: "O Manuel tem um Porsche." Uau! A conclusão imediata de quase toda a gente seria: "Deve ter muito dinheiro." É uma suposição razoável, vá.
+                            <span class="translation-text">Look at this one. Clue: "Manuel has a Porsche." Wow! Almost everyone's immediate conclusion would be: "Deve ter muito dinheiro" (He must have a lot of money). It's a reasonable assumption, come on.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Bem razoável.
+                            <span class="translation-text">Very reasonable.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Outra. Pista: "O telefone está a tocar." E a informação extra é que só a mãe costuma ligar àquela hora. Conclusão: "Deve ser a tua mãe." Ou uma mais doméstica. Pista: "O cão está na cozinha a olhar para o frigorífico."
+                            <span class="translation-text">Another one. Clue: "The phone is ringing." And the extra information is that only his mother usually calls at that time. Conclusion: "Deve ser a tua mãe" (It must be your mom). Or a more domestic one. Clue: "The dog is in the kitchen looking at the fridge."</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Coitadinho.
+                            <span class="translation-text">Poor thing.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             A conclusão: "Deve estar com fome."
+                            <span class="translation-text">The conclusion: "Deve estar com fome" (He must be hungry).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Claro.
+                            <span class="translation-text">Of course.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             É curioso como isto funciona até quando a evidência é, na verdade, uma ausência, algo que não está a acontecer.
+                            <span class="translation-text">It's curious how this works even when the evidence is, in fact, an absence, something that isn't happening.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Precisamente. Vê só este exemplo. Pista: "A Joana não está no escritório." "Está de férias?" A resposta é: "Não, ela nunca tira férias." Então a conclusão lógica é: "Deve estar doente."
+                            <span class="translation-text">Precisely. Just look at this example. Clue: "Joana is not in the office." "Is she on vacation?" The answer is: "No, she never takes vacations." So the logical conclusion is: "Deve estar doente" (She must be sick).</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Hum-hum.
+                            <span class="translation-text">Mm-hmm.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ou baseada apenas no nome. Pista: "Aquele rapaz chama-se Christos. Sabes de onde é?" A dedução mais provável: "Deve ser grego."
+                            <span class="translation-text">Or based just on the name. Clue: "That boy's name is Christos. Do you know where he's from?" The most likely deduction: "Deve ser grego" (He must be Greek).</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             O que é interessante aqui, e que os materiais do CIPLE Master também referem, é a ligação forte entre usar o "dever" para indicar probabilidade e o advérbio "provavelmente". Muitas vezes, uma frase com "provavelmente" pode ser dita de forma mais natural, ou talvez um pouco mais, ah, assertiva, usando o "dever".
+                            <span class="translation-text">What's interesting here, and which the CIPLE Master materials also mention, is the strong connection between using "dever" to indicate probability and the adverb "provavelmente" (probably). Often, a sentence with "provavelmente" can be said more naturally, or perhaps a little more, ah, assertively, using "dever".</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sim, os exercícios até mostram essa transformação. Por exemplo, a frase "Ela provavelmente está na praia" pode ser dita como "Ela deve estar na praia".
+                            <span class="translation-text">Yes, the exercises even show this transformation. For example, the sentence "Ela provavelmente está na praia" (She is probably at the beach) can be said as "Ela deve estar na praia" (She must be at the beach).</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Exato.
+                            <span class="translation-text">Exactly.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ou "O Afonso probably está no trabalho" transforma-se em "O Afonso deve estar no trabalho".
+                            <span class="translation-text">Or "O Afonso probably está no trabalho" (Afonso is probably at work) transforms into "O Afonso deve estar no trabalho" (Afonso must be at work).</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Soa mais direto, de facto. Mais conversacional, talvez.
+                            <span class="translation-text">It sounds more direct, indeed. More conversational, perhaps.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E a boa notícia nisto tudo é que para usar o "dever" nestas duas funções, seja para dar conselhos, seja para indicar probabilidade, só precisamos de saber conjugar o verbo no presente do indicativo. E é uma conjugação bastante regular, felizmente.
+                            <span class="translation-text">And the good news in all this is that to use "dever" in these two functions, whether to give advice or to indicate probability, we just need to know how to conjugate the verb in the present indicative. And it's a fairly regular conjugation, thankfully.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             É verdade. A conjugação não tem grandes segredos. Vamos só rever rapidamente: Eu devo, tu deves, ele, ela ou a gente deve, nós devemos, eles ou elas devem.
+                            <span class="translation-text">It's true. The conjugation doesn't have any big secrets. Let's just quickly review: Eu devo, tu deves, ele/ela/a gente deve, nós devemos, eles/elas devem.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Certo.
+                            <span class="translation-text">Right.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E a estrutura é sempre, sempre a mesma: o verbo "dever" conjugado e logo a seguir o verbo principal no infinitivo. Como vimos nos exemplos: "deve estar", "devemos falar", "deve mudar". Simples e muito eficaz.
+                            <span class="translation-text">And the structure is always, always the same: the verb "dever" conjugated, followed immediately by the main verb in the infinitive. As we saw in the examples: "deve estar," "devemos falar," "deve mudar." Simple and very effective.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Um verbo extremamente útil, sem dúvida nenhuma. Agora, mudando um bocadinho de registo gramatical, vamos falar de como dar ordens ou instruções, especificamente o imperativo informal, aquela forma que usamos para falar diretamente com "tu".
+                            <span class="translation-text">An extremely useful verb, without a doubt. Now, changing the grammatical register a bit, let's talk about how to give orders or instructions, specifically the informal imperative, that form we use to speak directly to "tu".</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Hum-hum.
+                            <span class="translation-text">Mm-hmm.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E a unidade 27 usa um contexto muito específico para praticar isto: as tarefas domésticas.
+                            <span class="translation-text">And unit 27 uses a very specific context to practice this: household chores.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah, as famosas tarefas domésticas. O exercício com o pobre do Nuno é um clássico do A2, não é? Basicamente, são ordens diretas para ele fazer coisas em casa. Por exemplo, para mandar limpar: "Nuno, limpa o pó das estantes e da secretária."
+                            <span class="translation-text">Ah, the famous household chores. The exercise with poor Nuno is an A2 classic, isn't it? Basically, they are direct orders for him to do things at home. For example, to order him to clean: "Nuno, limpa o pó das estantes e da secretária." (Nuno, dust the shelves and the desk.)</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E para outras tarefas comuns em casa? Como seria?
+                            <span class="translation-text">And for other common tasks at home? How would it be?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Para arrumar o quarto: "Nuno, arruma o quarto!" Para passar a ferro: "Nuno, passa a roupa a ferro!" Para levar o lixo para fora: "Nuno, põe o lixo na rua!" E atenção aqui, o verbo "pôr" é irregular no imperativo, fica "põe", não é "põe".
+                            <span class="translation-text">To tidy the room: "Nuno, arruma o quarto!" (Nuno, tidy the room!) To iron: "Nuno, passa a roupa a ferro!" (Nuno, iron the clothes!) To take the trash out: "Nuno, põe o lixo na rua!" (Nuno, put the trash on the street!) And pay attention here, the verb "pôr" (to put) is irregular in the imperative, it becomes "põe," not "põe."</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Bem notada essa irregularidade do "pôr", é importante. E para aspirar ou lavar?
+                            <span class="translation-text">That irregularity of "pôr" is well-noted, it's important. And to vacuum or wash?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Para aspirar: "Nuno, aspira os tapetes!" E para lavar a roupa: "Nuno, lava a roupa!" Geralmente, a forma do imperativo informal para "tu" é igual à forma da terceira pessoa do singular do presente do indicativo. Por exemplo, "ele limpa", imperativo "limpa tu". Mas temos que ter atenção a esses irregulares como o "pôr", o "ter" (tem), o "ser" (sê), o "ir" (vai).
+                            <span class="translation-text">To vacuum: "Nuno, aspira os tapetes!" (Nuno, vacuum the carpets!) And to wash the clothes: "Nuno, lava a roupa!" (Nuno, wash the clothes!) Generally, the informal imperative form for "tu" is the same as the third-person singular form of the present indicative. For example, "ele limpa" (he cleans), imperative "limpa tu" (clean!). But we have to pay attention to those irregulars like "pôr" (põe), "ter" (tem), "ser" (sê), "ir" (vai).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Certo. É o comando direto, muito comum em casa, entre amigos, em contextos mais informais.
+                            <span class="translation-text">Right. It's the direct command, very common at home, among friends, in more informal contexts.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Alto da gramática para a cultura.
+                            <span class="translation-text">Stop grammar, on to culture.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ótima transição, sim. Vamos a isso.
+                            <span class="translation-text">Great transition, yes. Let's do it.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Vamos então falar um pouco de etiqueta, de costumes sociais. As fontes dão-nos algumas dicas importantes sobre coisas que, hum, que não devemos fazer em Portugal. São aquelas pequenas regras, às vezes não ditas, que conhecer pode fazer a diferença no dia a dia.
+                            <span class="translation-text">Let's talk a bit about etiquette, social customs. The sources give us some important tips about things that, um, we shouldn't do in Portugal. They are those small, sometimes unsaid rules, that knowing can make a difference in daily life.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. O material do curso até sublinha isso mesmo, a importância de percebermos os costumes locais. Lembram que aquilo que é perfeitamente normal numa cultura pode ser estranho ou até indelicado noutra.
+                            <span class="translation-text">Exactly. The course material even highlights this, the importance of understanding local customs. They remind us that what is perfectly normal in one culture can be strange or even rude in another.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Hum-hum.
+                            <span class="translation-text">Mm-hmm.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Estar ciente destas regras não escritas mostra respeito e, claro, ajuda a evitar aquelas situações um bocadinho embaraçosas, as chamadas gafes. A lista que temos foca-se em coisas a evitar em Portugal.
+                            <span class="translation-text">Being aware of these unwritten rules shows respect and, of course, helps to avoid those slightly embarrassing situations, the so-called "gaffes" (blunders). The list we have focuses on things to avoid in Portugal.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Então, vamos lá ver essa lista. As cinco regras que, segundo estas fontes que estamos a usar, se aplicam mesmo a Portugal. Número um: não tire os sapatos na casa de alguém.
+                            <span class="translation-text">So, let's see this list. The five rules that, according to these sources we are using, really apply to Portugal. Number one: don't take off your shoes in someone's house.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Hum.
+                            <span class="translation-text">Hm.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             A não ser, claro, que o dono da casa insista muito ou peça especificamente. Mas a norma geral, ao contrário de outros países, é manter os sapatos calçados quando se visita alguém.
+                            <span class="translation-text">Unless, of course, the homeowner insists a lot or specifically asks. But the general rule, unlike in other countries, is to keep your shoes on when you visit someone.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Interessante essa diferença cultural. E a segunda regra?
+                            <span class="translation-text">That's an interesting cultural difference. And the second rule?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Não escreva a vermelho. Parece que, tradicionalmente, usar caneta vermelha podia ter associações negativas, talvez ligadas a correções escolares ou algo de mau presságio. Por via das dúvidas, talvez seja melhor usar outra cor para notas ou cartas mais pessoais.
+                            <span class="translation-text">Don't write in red. It seems that, traditionally, using a red pen could have negative associations, perhaps linked to school corrections or something of a bad omen. Just in case, it might be better to use another color for notes or more personal letters.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Percebido. A terceira regra tem a ver com a pontualidade, mas em contextos sociais, quando somos convidados.
+                            <span class="translation-text">Understood. The third rule has to do with punctuality, but in social contexts, when we are invited.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sim, não chegue à casa de alguém antes da hora marcada. Em Portugal, para um convite em casa de alguém, um jantar, por exemplo, chegar exatamente à hora marcada ou até com uns 10, 15 minutos de atraso é considerado perfeitamente normal e até preferível a chegar adiantado.
+                            <span class="translation-text">Yes, don't arrive at someone's house before the set time. In Portugal, for an invitation to someone's home, a dinner, for example, arriving exactly on time or even 10, 15 minutes late is considered perfectly normal and even preferable to arriving early.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ah, sim.
+                            <span class="translation-text">Ah, yes.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sim. Chegar cedo pode apanhar os anfitriões ainda nos preparativos, meio desprevenidos.
+                            <span class="translation-text">Yes. Arriving early might catch the hosts still in preparations, somewhat off guard.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ah, isso é uma nuance importante da pontualidade social portuguesa. Não é bem como no trabalho. E a quarta regra, envolve um ritual muito comum.
+                            <span class="translation-text">Ah, that's an important nuance of Portuguese social punctuality. It's not quite like at work. And the fourth rule involves a very common ritual.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             É verdade. Não brinde com água. Ao fazer um brinde, ao dizer "saúde", o costume é usar uma bebida alcoólica, ou pelo menos um sumo, um refrigerante. Brindar só com um copo de água é visto por muita gente como dando azar. É uma superstição bastante comum.
+                            <span class="translation-text">It's true. Don't toast with water. When making a toast, saying "saúde" (cheers/health), the custom is to use an alcoholic beverage, or at least a juice or soda. Toasting with just a glass of water is seen by many people as bad luck. It's a very common superstition.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Curioso. E a regra final desta lista de coisas a evitar?
+                            <span class="translation-text">Curious. And the final rule on this list of things to avoid?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Não feche a porta sem dizer "com licença". Isto aplica-se a se estiver numa sala com outras pessoas e precisar de fechar a porta, talvez por causa do barulho ou do frio. Considera-se mais educado pedir permissão antes. Um simples "Com licença, posso fechar a porta?" ou algo do género.
+                            <span class="translation-text">Don't close the door without saying "com licença" (excuse me). This applies if you are in a room with other people and need to close the door, perhaps because of noise or cold. It is considered more polite to ask for permission first. A simple "Com licença, posso fechar a porta?" (Excuse me, may I close the door?) or something similar.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Entendido. Agora, o material do CIPLE Master faz aqui uma coisa inteligente. Depois de apresentar esta lista, revela que algumas das regras que estavam lá misturadas são, na verdade, equívocos. Não se aplicam especificamente a Portugal. São as chamadas regras falsas.
+                            <span class="translation-text">Understood. Now, the CIPLE Master material does something clever here. After presenting this list, it reveals that some of the rules that were mixed in are, in fact, misconceptions. They don't apply specifically to Portugal. They are the so-called false rules.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Exatamente.
+                            <span class="translation-text">Exactly.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E isso também é uma lição importante. Ensina a ter um olhar crítico sobre a informação cultural que recebemos.
+                            <span class="translation-text">And that is also an important lesson. It teaches us to have a critical eye on the cultural information we receive.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sem dúvida. E agora vamos às armadilhas. São duas regras que estavam na lista inicial, mas que, segundo as fontes que estamos a usar, não são costumes portugueses. Podem existir noutras culturas, mas não aqui. A primeira é: não dê flores amarelas a uma amiga ou namorada.
+                            <span class="translation-text">No doubt. And now for the traps. There are two rules that were on the initial list, but which, according to the sources we are using, are not Portuguese customs. They may exist in other cultures, but not here. The first is: don't give yellow flowers to a female friend or girlfriend.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E qual é a realidade por trás disso? Porque é que isso não se aplica cá?
+                            <span class="translation-text">And what is the reality behind that? Why doesn't that apply here?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             A fonte esclarece que essa ideia de associar flores amarelas a sentimentos negativos, tipo ciúme ou separação, é um costume mais comum noutros países, como na Rússia ou na Ucrânia. Em Portugal não há problema nenhum em oferecer flores amarelas. Podem simbolizar alegria, amizade, luz.
+                            <span class="translation-text">The source clarifies that this idea of associating yellow flowers with negative feelings, like jealousy or separation, is a more common custom in other countries, such as Russia or Ukraine. In Portugal, there is no problem at all in giving yellow flowers. They can symbolize joy, friendship, light.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Fica esclarecido. Não há azar com as flores amarelas em Portugal. E a segunda ideia errada que estava na lista?
+                            <span class="translation-text">That's clarified. No bad luck with yellow flowers in Portugal. And the second wrong idea that was on the list?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             É a regra "não coma com a mão esquerda". O material explica bem que esta restrição está ligada a algumas culturas, nomeadamente islâmicas, onde a mão esquerda pode ser considerada impura para certas atividades, como comer ou cumprimentar. Mas isto não faz parte da etiqueta portuguesa. Come-se com talheres, usando ambas as mãos conforme necessário.
+                            <span class="translation-text">It's the "don't eat with your left hand" rule. The material explains well that this restriction is linked to some cultures, namely Islamic ones, where the left hand can be considered impure for certain activities, like eating or greeting. But this is not part of Portuguese etiquette. You eat with cutlery, using both hands as needed.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             O interessante nisto tudo é como nos leva a pensar sobre a origem da informação cultural. É mesmo fundamental tentar basearmo-nos em fontes locais, autênticas, e não em generalizações ou estereótipos que ouvimos por aí.
+                            <span class="translation-text">The interesting thing about all this is how it leads us to think about the origin of cultural information. It's really fundamental to try to base ourselves on local, authentic sources, and not on generalizations or stereotypes we hear about.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Pois é. E o objetivo ao aprender estas regras não é tornarmo-nos robôs perfeitos da etiqueta, mas sim demonstrar respeito e abertura para com a cultura. Cometer uma pequena gafe é humano e compreensível. O que conta mais é a intenção de respeitar e de aprender, não acha?
+                            <span class="translation-text">Indeed. And the goal in learning these rules is not to become perfect etiquette robots, but to demonstrate respect and openness towards the culture. Committing a small gaffe is human and understandable. What matters most is the intention to respect and to learn, don't you think?</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sem dúvida nenhuma. A intenção e o esforço são quase sempre muito bem recebidos.
+                            <span class="translation-text">Without a doubt. The intention and the effort are almost always very well received.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E só para termos a visão completa da unidade 27, vale a pena referir brevemente, como as fontes também fazem, que a unidade também aborda outros pontos gramaticais. Mencionam o verbo "dar" e os conceitos de complemento direto e complemento indireto.
+                            <span class="translation-text">And just so we have the complete picture of unit 27, it's worth briefly mentioning, as the sources also do, that the unit also addresses other grammatical points. They mention the verb "dar" (to give) and the concepts of direct object and indirect object.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ah, sim.
+                            <span class="translation-text">Ah, yes.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             São outras peças importantes do puzzle da gramática neste nível A2.
+                            <span class="translation-text">These are other important pieces of the grammar puzzle at this A2 level.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Certo.
+                            <span class="translation-text">Right.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Perceber a quem se dá algo (o complemento indireto) e o que se dá (o complemento direto) é mesmo fundamental para construir frases corretamente com imensos verbos comuns em português.
+                            <span class="translation-text">Understanding to whom something is given (the indirect object) and what is given (the direct object) is fundamental for correctly constructing sentences with many common verbs in Portuguese.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. Ajuda a organizar a frase, a responder às perguntas "o quê?" e "a quem?".
+                            <span class="translation-text">Exactly. It helps organize the sentence, to answer the questions "what?" and "to whom?".</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Por exemplo, na frase "Eu dou o livro à Maria", "o livro" é o complemento direto (responde a "o quê?") e "à Maria" é o complemento indireto (responde "a quem?"). Dominar isto abre muitas portas para uma comunicação mais clara e mais precisa.
+                            <span class="translation-text">For example, in the sentence "Eu dou o livro à Maria" (I give the book to Maria), "o livro" is the direct object (answers "what?") and "à Maria" is the indirect object (answers "to whom?"). Mastering this opens many doors to clearer and more precise communication.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Boa nota. Fica a referência para quem estiver a seguir o curso ou quiser aprofundar essa parte. Então, fazendo aqui um balanço rápido desta nossa exploração da unidade 27. Vimos a versatilidade incrível do verbo "dever", essa ferramenta multifunções para dar conselhos e fazer suposições.
+                            <span class="translation-text">Good note. That's a reference for anyone following the course or wanting to delve deeper into that part. So, making a quick assessment of our exploration of unit 27. We saw the incredible versatility of the verb "dever," that multifunctional tool for giving advice and making assumptions.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Uhum.
+                            <span class="translation-text">Uh-huh.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Desfizemos aquela confusão clássica entre "sentir-se", que é para emoções, e "sentar-se", que é para cadeiras. Revisitámos o imperativo informal, o "tu" que manda fazer as tarefas lá em casa. E, por fim, navegámos um pouco pelas águas, por vezes subtis, da etiqueta portuguesa, separando o que são regras úteis dos mitos culturais.
+                            <span class="translation-text">We cleared up that classic confusion between "sentir-se," which is for emotions, and "sentar-se," which is for chairs. We revisited the informal imperative, the "tu" that orders chores to be done at home. And finally, we navigated a bit through the sometimes subtle waters of Portuguese etiquette, separating useful rules from cultural myths.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             O que me parece fascinante nisto tudo é precisely essa ligação, essa dança entre a língua e a cultura. Dominar as nuances de um verbo como o "dever" não só nos permite expressar ideias mais complexas – pensa na diferença entre uma obrigação forte e uma mera probabilidade –, mas também aproxima a nossa forma de falar da naturalidade dos falantes nativos.
+                            <span class="translation-text">What seems fascinating to me in all this is precisely this connection, this dance between language and culture. Mastering the nuances of a verb like "dever" not only allows us to express more complex ideas – think of the difference between a strong obligation and a mere probability – but it also brings our way of speaking closer to the naturalness of native speakers.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Certo.
+                            <span class="translation-text">Right.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Da mesma forma, conhecer as regras de etiqueta, como não brindar com água ou pedir licença para fechar uma porta, são pequenos gestos, mas são gestos que demonstram um conhecimento e um respeito pela cultura que facilitam imenso a integração social. Tornam as interações muito mais fluidas, mais agradáveis para todos.
+                            <span class="translation-text">In the same way, knowing etiquette rules, like not toasting with water or asking permission to close a door, are small gestures, but they are gestures that demonstrate knowledge and respect for the culture, which greatly facilitate social integration. They make interactions much smoother, more pleasant for everyone.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Deixa-nos a pensar, não é? Até que ponto é que conhecer estas pequenas regras não escritas, seja a subtileza de usar o "dever" corretamente numa conversa, seja saber se deve ou não tirar os sapatos ao entrar na casa de alguém, até que ponto é que isto transforma a nossa experiência num país estrangeiro ou mesmo a nossa aprendizagem da língua.
+                            <span class="translation-text">It makes us think, doesn't it? To what extent does knowing these small unwritten rules—be it the subtlety of using "dever" correctly in a conversation, or knowing whether or not to take off your shoes when entering someone's house—to what extent does this transform our experience in a foreign country or even our language learning.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Hum.
+                            <span class="translation-text">Hm.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Será que o domínio destas nuances, tanto na gramática como na cultura, é a verdadeira chave para passarmos de ser apenas um comunicador que funciona, para sermos alguém que realmente se conecta e compreende a cultura a um nível mais, mais profundo?
+                            <span class="translation-text">Could it be that mastering these nuances, both in grammar and in culture, is the real key to moving from being just a functional communicator to being someone who truly connects with and understands the culture on a deeper, more profound level?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Fica a reflexão para a próxima viagem, ou talvez já para a próxima conversa em português. E com esta nota final, terminamos a nossa análise de hoje. Muito obrigado e até à próxima.
+                            <span class="translation-text">That's food for thought for the next trip, or maybe for the next conversation in Portuguese. And with this final note, we end our analysis for today. Thank you very much and until next time.</span>
                         </div>
                     </div>
                 </div>
@@ -940,17 +1060,17 @@
 
             function activateTab(tabId) {
                  tabs.forEach(t => {
-                    t.classList.remove('tab-active');
-                    if (t.dataset.tab === tabId) {
-                        t.classList.add('tab-active');
-                    }
-                });
-                contents.forEach(c => {
-                    c.classList.remove('tab-content-active');
-                    if (c.id === tabId) {
-                        c.classList.add('tab-content-active');
-                    }
-                });
+                     t.classList.remove('tab-active');
+                     if (t.dataset.tab === tabId) {
+                         t.classList.add('tab-active');
+                     }
+                 });
+                 contents.forEach(c => {
+                     c.classList.remove('tab-content-active');
+                     if (c.id === tabId) {
+                         c.classList.add('tab-content-active');
+                     }
+                 });
             }
 
             activateTab(defaultTab);
@@ -960,6 +1080,28 @@
                     activateTab(tab.dataset.tab);
                 });
             });
+
+            // --- LÓGICA NOVA DO BOTÃO DE TRADUÇÃO ---
+            const toggleButton = document.getElementById('toggle-translation');
+            let isTranslationVisible = false;
+
+            if (toggleButton) {
+                toggleButton.addEventListener('click', () => {
+                    isTranslationVisible = !isTranslationVisible; // Inverte o estado
+                    
+                    // Seleciona apenas as traduções DENTRO da secção de transcrição
+                    const translations = document.querySelectorAll('#transcricao .translation-text');
+                    
+                    if (isTranslationVisible) {
+                        translations.forEach(t => t.style.display = 'block');
+                        toggleButton.textContent = 'Ocultar Tradução (Hide Translation)';
+                    } else {
+                        translations.forEach(t => t.style.display = 'none');
+                        toggleButton.textContent = 'Mostrar Tradução (Show Translation)';
+                    }
+                });
+            }
+            // --- FIM DA LÓGICA NOVA ---
 
 
             // --- LÓGICA DO QUIZ ---
@@ -1000,9 +1142,9 @@
                     }
                 }
                  if(answeredAll){
-                    quizScoreDisplay.textContent = `A sua pontuação: ${score} em ${totalQuestions}`;
+                     quizScoreDisplay.textContent = `A sua pontuação: ${score} em ${totalQuestions}`;
                  } else {
-                    quizScoreDisplay.textContent = `Por favor, responda a todas as perguntas.`;
+                     quizScoreDisplay.textContent = `Por favor, responda a todas as perguntas.`;
                  }
             });
 
