@@ -42,12 +42,15 @@
         .tab-content-active {
             display: block;
         }
-        /* ERRO CORRIGIDO AQUI (faltava um ;) */
+        /* ERRO DA VÍRGULA CORRIGIDO AQUI (era uma vírgula, agora é ;) */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        /* Cor 1: Homem (Neutro) - ETIQUETAS TROCADAS */
+        
+        /* --- ESTILOS DAS LEGENDAS CORRIGIDOS --- */
+        
+        /* Cor 1: Homem (Orador 1) - Neutro, Esquerda */
         .chat-bubble-homem {
             background-color: #f5f5f4; /* stone-100 */
             color: #1c1917; /* stone-900 */
@@ -56,7 +59,7 @@
             max-width: 80%;
             align-self: flex-start;
         }
-        /* Cor 2: Mulher (Destaque Céu) - ETIQUETAS TROCADAS */
+        /* Cor 2: Mulher (Oradora 2) - Destaque Céu, Direita */
         .chat-bubble-mulher {
             background-color: #e0f2fe; /* sky-100 */
             color: #0c4a6e; /* sky-900 */
@@ -137,31 +140,88 @@
                 <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
                     
                     <div class="flex justify-start">
-                        <div class="chat-bubble-homem"> <span class="font-bold block">Homem</span> Boas-vindas. Hoje vamos, ah, mergulhar um pouco nos materiais da Unidade 5 do CIPLE Master A2. Aquela unidade, sabem? "Tenho carta de condução".
+                        <div class="chat-bubble-homem"> <span class="font-bold block">Homem</span>
+                            Boas-vindas. Hoje vamos, ah, mergulhar um pouco nos materiais da Unidade 5 do CIPLE Master A2. Aquela unidade, sabem? "Tenho carta de condução".
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-mulher"> <span class="font-bold block">Mulher</span> Exatamente. Estivemos a analisar os apontamentos, os slides, os exercícios todos. E, bem, parece que os pontos chave são mesmo aquele vocabulário do dia-a-dia, não é? Os objetos...
+                        <div class="chat-bubble-mulher"> <span class="font-bold block">Mulher</span>
+                            Exatamente. Estivemos a analisar os apontamentos, os slides, os exercícios todos. E, bem, parece que os pontos chave são mesmo aquele vocabulário do dia-a-dia, não é? Os objetos...
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-homem"> <span class="font-bold block">Homem</span> Sim, sim, os objetos que andam sempre connosco.
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sim, sim, os objetos que andam sempre connosco.
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-mulher"> <span class="font-bold block">Mulher</span> Pois. E depois, como é que dizemos mais de um? Os plurais.
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Pois. E depois, como é que dizemos mais de um? Os plurais.
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-homem"> <span class="font-bold block">Homem</span> Aham.
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Aham.
                         </div>
                     </div>
                     <div class="flex justify-end">
-                        <div class="chat-bubble-mulher"> <span class="font-bold block">Mulher</span> A quem pertencem as coisas, com o "de", "do", "da". E, claro, aquele verbo, o "ter", que é central.
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            A quem pertencem as coisas, com o "de", "do", "da". E, claro, aquele verbo, o "ter", que é central.
                         </div>
                     </div>
                     <div class="flex justify-start">
-                        <div class="chat-bubble-homem"> <span class="font-bold block">Homem</span> Essencial mesmo.
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Essencial mesmo.
                         </div>
                     </div>
-                    <div class="flex justify
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Pronto. Preparados para esta análise focada?
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Vamos a isso. O objetivo é mesmo solidificar estas ferramentas, pegar nos exemplos concretos dos materiais, acho que é a melhor forma.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sim, tornar a coisa prática.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exato.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Garantir que a aplicação fica clara. Falar dos objetos que temos, ou que perdemos, não é? Às vezes.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Quem nunca?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Pois. Como os pluralizamos, como dizemos de quem é, para que serve. E, claro, dominar o verbo "ter". Esse é fundamental, não só aqui, mas, pronto, para comunicar em geral.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Perfeito. Então vamos lá desconstruir isto tudo, passo a passo, com exemplos. E, se calhar, até falamos de umas, umas armadilhas, não é? Onde é fácil trope
