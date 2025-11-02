@@ -10,6 +10,11 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        .space-y-5 a {
+            /* Garantir que todos os cartões (a) têm o mesmo comportamento de hover */
+            transition: all 0.2s;
+            transform: translateZ(0); /* Força a aceleração de hardware */
+        }
     </style>
 </head>
 <body class="bg-stone-100 text-stone-900">
@@ -21,59 +26,56 @@
             <p class="text-xl text-stone-600 mt-2">Recursos de Português A1/A2</p>
         </header>
 
+        <div class="text-center mt-4 mb-8">
+            <a href="index.html" class="inline-block px-6 py-2 bg-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-gray-300 transition-colors">
+                &larr; Voltar ao Menu Principal
+            </a>
+        </div>
+
         <main class="mt-8">
             <p class="text-lg text-stone-700 leading-relaxed mb-8">
                 Welcome! This is the main menu for your interactive lessons. Click on one of the topics below to start practicing. Each lesson includes a dialogue, a grammar review, and a short quiz
             </p>
-	<a href="podcasts/index.html" class="block p-6 bg-gray-700 text-white rounded-lg shadow-lg hover:bg-gray-800 transition-all duration-200 transform hover:-translate-y-1">
-                    <h2 class="text-2xl font-bold">Podcasts &rarr;</h2>
-                    <p class="text-gray-200 mt-1">Ouvir áudios com transcrições interativas.</p>
-                </a>
-
+            
             <div class="space-y-5">
                 
-                <!-- Link para a pagina: Dados Pessoais -->
                 <a href="dialogo_dados_pessoais.html" class="block p-6 bg-sky-600 text-white rounded-lg shadow-lg hover:bg-sky-700 transition-all duration-200 transform hover:-translate-y-1">
                     <h2 class="text-2xl font-bold">Dados Pessoais</h2>
                     <p class="text-sky-100 mt-1">Pratique como perguntar e responder sobre informações pessoais e pronomes possessivos.</p>
                 </a>
 
-                <!-- Link para a pagina: Conhecer Alguém -->
                 <a href="dialogo_conhecer_alguem.html" class="block p-6 bg-amber-600 text-white rounded-lg shadow-lg hover:bg-amber-700 transition-all duration-200 transform hover:-translate-y-1">
                     <h2 class="text-2xl font-bold">Conhecer Alguém</h2>
                     <p class="text-amber-100 mt-1">Pratique como falar sobre profissões, nacionalidades e onde vive.</p>
                 </a>
 
-                <!-- Link para a pagina No Café -->
                 <a href="dialogo_no_cafe.html" class="block p-6 bg-emerald-600 text-white rounded-lg shadow-lg hover:bg-emerald-700 transition-all duration-200 transform hover:-translate-y-1">
                     <h2 class="text-2xl font-bold">No Café</h2>
                     <p class="text-emerald-100 mt-1">Pratique como pedir bebidas, comidas e a conta num café português.</p>
                 </a>
 
 
-		<!-- Link para a pagina Profissoes -->
-		<a href="dialogo_profissoes.html" class="block p-6 bg-purple-400 text-white rounded-lg shadow-lg hover:bg-purple-500 transition-all duration-200 transform hover:-translate-y-1">
-    		<h3 class="text-2xl font-bold text-cyan-900 mb-2">Profissões</h3>
-    		<p class="text-stone-600">Aprenda a perguntar e a responder sobre o que faz e onde trabalha.</p>
-		</a>
+                <a href="dialogo_profissoes.html" class="block p-6 bg-purple-600 text-white rounded-lg shadow-lg hover:bg-purple-700 transition-all duration-200 transform hover:-translate-y-1">
+                    <h2 class="text-2xl font-bold">Profissões</h2>
+                    <p class="text-purple-100 mt-1">Aprenda a perguntar e a responder sobre o que faz e onde trabalha.</p>
+                </a>
 
-		<!-- Link para a pagina Familia -->
-		<a href="dialogo_familia.html" class="block p-6 bg-sky-600 text-white rounded-lg shadow-lg hover:bg-purple-500 transition-all duration-200 transform hover:-translate-y-1">
-    		<h3 class="text-2xl font-bold text-cyan-900 mb-2">Familia</h3>
-    		<p class="text-stone-600">Pratique como falar sobre membros da família e adjetivos possessivos. </p>
-		</a>
+                <a href="dialogo_familia.html" class="block p-6 bg-orange-600 text-white rounded-lg shadow-lg hover:bg-orange-700 transition-all duration-200 transform hover:-translate-y-1">
+                    <h2 class="text-2xl font-bold">Família</h2>
+                    <p class="text-orange-100 mt-1">Pratique como falar sobre membros da família e adjetivos possessivos. </p>
+                </a>
 
-		<a href="dialogo_restaurante.html" class="block p-6 bg-teal-600 text-white rounded-lg shadow-lg hover:bg-teal-700 transition-all duration-200 transform hover:-translate-y-1">
+                <a href="dialogo_restaurante.html" class="block p-6 bg-teal-600 text-white rounded-lg shadow-lg hover:bg-teal-700 transition-all duration-200 transform hover:-translate-y-1">
                     <h2 class="text-2xl font-bold">No Restaurante</h2>
                     <p class="text-teal-100 mt-1">Pratique como pedir uma mesa, os pratos do dia, e a conta.</p>
                 </a>
 
-		<a href="dialogo_rotinas.html" class="block p-6 bg-pink-600 text-white rounded-lg shadow-lg hover:bg-pink-700 transition-all duration-200 transform hover:-translate-y-1">
+                <a href="dialogo_rotinas.html" class="block p-6 bg-pink-600 text-white rounded-lg shadow-lg hover:bg-pink-700 transition-all duration-200 transform hover:-translate-y-1">
                     <h2 class="text-2xl font-bold">Rotinas Diárias</h2>
                     <p class="text-pink-100 mt-1">Pratique como falar sobre verbos reflexivos, horas e advérbios de frequência.</p>
                 </a>
 
-<a href="dialogo_farmacia.html" class="block p-6 bg-cyan-600 text-white rounded-lg shadow-lg hover:bg-cyan-700 transition-all duration-200 transform hover:-translate-y-1">
+                <a href="dialogo_farmacia.html" class="block p-6 bg-cyan-600 text-white rounded-lg shadow-lg hover:bg-cyan-700 transition-all duration-200 transform hover:-translate-y-1">
                     <h2 class="text-2xl font-bold">Na Farmácia</h2>
                     <p class="text-cyan-100 mt-1">Pratique como pedir medicamentos para dores e falar sobre receitas.</p>
                 </a>
@@ -89,9 +91,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
