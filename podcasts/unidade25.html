@@ -67,15 +67,19 @@
             max-width: 80%;
             align-self: flex-end;
         }
-        .translation-text { /* Re-utilizado para notas */
-            display: block;
-            margin-top: 0.5rem;
+
+        /* --- CSS ALTERADO --- */
+        .translation-text { /* Re-utilizado para notas E traduções */
+            display: none; /* ESCONDIDO POR DEFEITO */
+            margin-top: 0.75rem;
             font-size: 0.9em;
             font-style: italic;
             border-top: 1px dashed rgba(0, 0, 0, 0.1);
-            padding-top: 0.5rem;
+            padding-top: 0.75rem;
             color: #57534e; /* stone-600 */
         }
+        /* --- FIM DA ALTERAÇÃO --- */
+
         .quiz-question {
             margin-bottom: 1.5rem;
             padding: 1rem;
@@ -135,750 +139,879 @@
                     O seu browser não suporta o elemento de áudio.
                 </audio>
 
-                <h2 class="text-3xl font-semibold text-stone-800 mb-4 mt-8">Transcrição</h2>
+                <h2 class="text-3xl font-semibold text-stone-800 mb-2 mt-8">Transcrição</h2>
+                
+                <button id="toggle-translation" class="mb-6 px-4 py-2 bg-sky-600 text-white font-semibold rounded-lg hover:bg-sky-700 transition-colors text-sm">
+                    Mostrar Tradução (Show Translation)
+                </button>
                 <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Bem-vindos a mais uma exploração focada. Hoje vamos, hum, olhar para um material mesmo muito prático. São excertos da unidade 25 de um curso de português para estrangeiros, o A2 da Ciple Master. E o tema: "Estou perdido".
+                            <span class="translation-text">Welcome to another focused exploration. Today we're going to, um, look at some very practical material. These are excerpts from unit 25 of a Portuguese course for foreigners, the A2 from Ciple Master. And the theme: "I'm lost."</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah, excelente tema.
+                            <span class="translation-text">Ah, excellent topic.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Pois ver. A ideia é mesmo extrair o essencial desta lição. Vamos dar uma vista de olhos ao vocabulário, situações tipo ir aos correios, ir ao banco, e claro, como pedir e dar indicações. Essencial para não nos sentirmos tão à deriva, não é? E claro, um bocadinho de gramática: o imperativo formal.
+                            <span class="translation-text">Let's see. The idea is really to extract the essential from this lesson. We'll take a look at the vocabulary, situations like going to the post office, going to the bank, and of course, how to ask for and give directions. Essential so we don't feel so adrift, right? And of course, a little bit of grammar: the formal imperative.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Exato. Basicamente, um kit de sobrevivência.
+                            <span class="translation-text">Exactly. Basically, a survival kit.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             É isso mesmo.
+                            <span class="translation-text">That's it.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Esta unidade foca-se em cenários muito, muito comuns para quem está a aprender a orientar-se cá em Portugal. Vamos analisar os diálogos, o vocabulário dos serviços, da orientação na cidade, e desmistificar um pouco como é que se dão ordens ou instruções de forma educada: o imperativo formal.
+                            <span class="translation-text">This unit focuses on very, very common scenarios for those who are learning to find their way around here in Portugal. We'll analyze the dialogues, the vocabulary for services, for orientation in the city, and demystify a bit how to give orders or instructions politely: the formal imperative.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Hum-hum.
+                            <span class="translation-text">Mm-hmm.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             É, na verdade, uma base fundamental para a interação do dia-a-dia, para a pessoa se desenrascar.
+                            <span class="translation-text">It is, in fact, a fundamental basis for day-to-day interaction, for a person to get by.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Muito bem, então vamos lá desempacotar isto. Começando pelos Correios, que é logo uma aventura às vezes.
+                            <span class="translation-text">Alright, so let's unpack this. Starting with the Post Office, which is always an adventure sometimes.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah, pois é.
+                            <span class="translation-text">Ah, it is indeed.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             A primeira situação é mesmo essa, uma estação de correios. Os slides 3 e 4, temos as imagens, não é? Envelopes, selos postais, encomendas. E o vocabulário que salta logo à vista: correios, carta, postal, selo, encomenda. E aquela palavra mágica: impresso.
+                            <span class="translation-text">The first situation is just that, a post office. Slides 3 and 4, we have the images, right? Envelopes, postage stamps, parcels. And the vocabulary that jumps out right away: correios (post office), carta (letter), postal (postcard), selo (stamp), encomenda (parcel). And that magic word: impresso (form).</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah, o impresso. O formulário.
+                            <span class="translation-text">Ah, the impresso. The form.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Esse mesmo. Que temos de preencher tantas vezes.
+                            <span class="translation-text">That's the one. That we have to fill out so many times.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sem dúvida. E o diálogo no slide 4 é um bom exemplo. É uma interação, bem, típica. Temos um cliente que quer enviar uma carta e uma encomenda para Espanha. E o interessante é ver a conversa. A funcionária pergunta: "Em correio normal?" E ele responde: "Em correio azul, se faz favor." Já mostra opções.
+                            <span class="translation-text">No doubt. And the dialogue on slide 4 is a good example. It's a, well, typical interaction. We have a customer who wants to send a letter and a parcel to Spain. And what's interesting is seeing the conversation. The employee asks: "Em correio normal?" (Standard mail?) And he replies: "Em correio azul, se faz favor." (Blue mail [priority], please.) It already shows options.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sim, sim.
+                            <span class="translation-text">Yes, yes.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E depois lá vem ele: "Preencha este impresso, faz favor."
+                            <span class="translation-text">And then there it is: "Preencha este impresso, faz favor." (Fill out this form, please.)</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Hum-hum. A burocracia do costume.
+                            <span class="translation-text">Mm-hmm. The usual bureaucracy.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Exato. E não fica por aí.
+                            <span class="translation-text">Exactly. And it doesn't stop there.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Não, ele aproveita.
+                            <span class="translation-text">No, he takes advantage of the situation.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Aproveita, sim. Pede postais de Lisboa, pede selos para Espanha. É uma transação bastante completa, muito realista.
+                            <span class="translation-text">He does, yes. He asks for postcards of Lisbon, he asks for stamps for Spain. It's a very complete transaction, very realistic.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E uma coisa interessante que o slide menciona, os verbos "enviar" e "mandar".
+                            <span class="translation-text">And an interesting thing the slide mentions, the verbs "enviar" (to send) and "mandar" (to send).</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah, sim.
+                            <span class="translation-text">Ah, yes.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Diz que são sinónimos neste contexto. O cliente diz: "Bom dia, queria mandar esta carta." Podia ter dito "queria enviar", certo?
+                            <span class="translation-text">It says they are synonyms in this context. The customer says: "Bom dia, queria mandar esta carta." (Good morning, I'd like to send this letter.) He could have said "queria enviar," right?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Perfeito. Bom dia. Perfeitamente. Ambos funcionam. Se calhar "mandar" soa um bocadinho mais quotidiano, talvez. Mas os dois são corretíssimos. E repara na estrutura: "Queria + infinitivo". É a forma simpática, educada, de pedir algo num serviço. "Queria mandar", "Queria pedir". Muito útil.
+                            <span class="translation-text">Perfect. Good morning. Perfectly. Both work. Maybe "mandar" sounds a little more everyday, perhaps. But both are perfectly correct. And notice the structure: "Queria + infinitive." It's the polite, nice way to ask for something in a service. "Queria mandar" (I would like to send), "Queria pedir" (I would like to ask for). Very useful.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Boa dica. OK, seguimos viagem. Próxima paragem: o banco. Slides 5 e 6. Outro mundo.
+                            <span class="translation-text">Good tip. OK, let's continue our journey. Next stop: the bank. Slides 5 and 6. Another world.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Outro mundo, sim. Com a sua própria linguagem.
+                            <span class="translation-text">Another world, yes. With its own language.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exato. O slide 5 lista logo uma série de verbos e nomes importantes. Ações como: abrir uma conta, depositar dinheiro, fazer uma transferência, pedir um cartão, pedir informações, preencher mais um formulário.
+                            <span class="translation-text">Exactly. Slide 5 lists a series of important verbs and nouns right away. Actions like: abrir uma conta (open an account), depositar dinheiro (deposit money), fazer uma transferência (make a transfer), pedir um cartão (request a card), pedir informações (ask for information), preencher (fill out) another form.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sempre eles.
+                            <span class="translation-text">Always them (the forms).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Levantar dinheiro, normally no multibanco, e trocar moeda, euros por dólares, por exemplo.
+                            <span class="translation-text">Levantar dinheiro (withdraw money), normally at the multibanco (ATM), and trocar moeda (exchange currency), euros for dollars, for example.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E o vocabulário essencial está lá: conta, dinheiro, o nosso amigo multibanco, cartão de crédito, transferência. O slide também ajuda a rever a conjugação do verbo "pedir" no presente. Eu peço, tu pedes, ele pede, nós pedimos, eles pedem.
+                            <span class="translation-text">And the essential vocabulary is there: conta (account), dinheiro (money), our friend multibanco (ATM), cartão de crédito (credit card), transferência (transfer). The slide also helps to review the conjugation of the verb "pedir" (to ask for) in the present tense. Eu peço, tu pedes, ele pede, nós pedimos, eles pedem.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Essencialíssimo. Porque estamos sempre a pedir qualquer coisa, não é? Informações, ajuda, os tais formulários.
+                            <span class="translation-text">Absolutely essential. Because we are always asking for something, aren't we? Information, help, those forms.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Exatamente. E o slide 6 dá-nos exemplos práticos, mini-diálogos, pequenas conversas que podiam acontecer mesmo. Por exemplo, a pergunta: "O que é que tenho que fazer para abrir uma conta?" Pergunta chave para um recém-chegado.
+                            <span class="translation-text">Exactly. And slide 6 gives us practical examples, mini-dialogues, small conversations that could really happen. For example, the question: "O que é que tenho que fazer para abrir uma conta?" (What do I have to do to open an account?) A key question for a newcomer.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sem dúvida.
+                            <span class="translation-text">No doubt.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E a resposta do funcionário é direta ao ponto. "Tem que preencher um formulário e trazer o seu cartão de cidadão." Pronto. Ou então, para depositar, o cliente diz: "Queria depositar este dinheiro." E o funcionário: "Tem de preencher este impresso e assinar aqui."
+                            <span class="translation-text">And the employee's answer is straight to the point. "Tem que preencher um formulário e trazer o seu cartão de cidadão." (You have to fill out a form and bring your citizen card.) There. Or else, to deposit, the customer says: "Queria depositar este dinheiro." (I'd like to deposit this money.) And the employee: "Tem de preencher este impresso e assinar aqui." (You have to fill out this form and sign here.)</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Repara: "tem que preencher", "tem de preencher". As duas formas a indicar obrigação ou necessidade.
+                            <span class="translation-text">Notice: "tem que preencher" (you have to fill out), "tem de preencher" (you have to/must fill out). Both forms indicating obligation or necessity.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Exatamente. E lá estão eles outra vez, os impressos, os formulários. Parece que não há como fugir.
+                            <span class="translation-text">Exactly. And there they are again, the impressos, the formulários (forms). It seems there's no escaping them.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             É verdade. A papelada persegue-nos. Mas nota-se que as respostas são funcionais, diretas ao assunto. É o que se precisa nestas situações. Mas agora, vamos ao coração da unidade, aquilo que lhe dá o nome: "Estou perdido". Pedir e dar direções. Isto é vital.
+                            <span class="translation-text">It's true. The paperwork haunts us. But you can tell the answers are functional, straight to the point. It's what you need in these situations. But now, let's get to the heart of the unit, what gives it its name: "I'm lost." Asking for and giving directions. This is vital.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah, isto é mesmo crucial.
+                            <span class="translation-text">Ah, this is really crucial.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             O slide 7 já ajuda com imagens e expressões. Vamos ver algumas. Temos: "seguir em frente" ou "ir em frente", para continuar na mesma direção.
+                            <span class="translation-text">Slide 7 already helps with images and expressions. Let's see some. We have: "seguir em frente" (go straight ahead) or "ir em frente" (go straight ahead), to continue in the same direction.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Certo.
+                            <span class="translation-text">Right.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             "Ir em frente", depois "virar à direita" e "virar à esquerda". Os comandos básicos.
+                            <span class="translation-text">"Go straight ahead," then "virar à direita" (turn right) and "virar à esquerda" (turn left). The basic commands.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Uhum.
+                            <span class="translation-text">Uh-huh.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             "Atravessar a rua". Importante na cidade.
+                            <span class="translation-text">"Atravessar a rua" (Cross the street). Important in the city.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Muito.
+                            <span class="translation-text">Very.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             "Ir até ao fim da rua". Para dar um limite. "Passar o semáforo". Um ponto de referência.
+                            <span class="translation-text">"Ir até ao fim da rua" (Go to the end of the street). To give a limit. "Passar o semáforo" (Go past the traffic light). A reference point.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sim, ou "parar na esquina".
+                            <span class="translation-text">Yes, or "parar na esquina" (stop at the corner).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Outro ponto.
+                            <span class="translation-text">Another point.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Exato.
+                            <span class="translation-text">Exactly.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E "ir ao longo do rio". Para percursos maiores, talvez. São mesmo as peças do puzzle para dar indicações.
+                            <span class="translation-text">And "ir ao longo do rio" (go along the river). For longer routes, maybe. These are really the puzzle pieces for giving directions.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             São, são as bases. E o slide 8 vai mais fundo. Traz mais verbos e, muito importante, as preposições de movimento. Aqui a coisa fica mais interessante.
+                            <span class="translation-text">They are, they are the basics. And slide 8 goes deeper. It brings more verbs and, very importantly, prepositions of movement. This is where it gets more interesting.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E às vezes mais complicada.
+                            <span class="translation-text">And sometimes more complicated.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah, as preposições.
+                            <span class="translation-text">Ah, prepositions.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Pois. Vemos combinações tipo "sair de Lisboa", "sair para o Porto" (origem e destino). "Vir até aqui" (chegar a um ponto). "Subir" ou "descer as escadas".
+                            <span class="translation-text">Yes. We see combinations like "sair de Lisboa" (leave from Lisbon), "sair para o Porto" (leave for Porto) (origin and destination). "Vir até aqui" (come up to here) (arrive at a point). "Subir" (go up) or "descer as escadas" (go down the stairs).</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E o modo como nos movemos: "ir a pé", "vir de bicicleta", "ir de carro".
+                            <span class="translation-text">And the way we move: "ir a pé" (go on foot), "vir de bicicleta" (come by bike), "ir de carro" (go by car).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exato. E a preposição "por": "seguir por esta rua", indica o caminho. A escolha da preposição certa, ufa, é fundamental.
+                            <span class="translation-text">Exactly. And the preposition "por": "seguir por esta rua" (go down/along this street), it indicates the path. Choosing the right preposition, phew, is fundamental.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sim. Essas palavrinhas pequenas, as preposições, fazem mesmo toda a diferença. E para ver isto tudo a funcionar, temos o diálogo dos slides 9 e 10.
+                            <span class="translation-text">Yes. Those little words, prepositions, they really make all the difference. And to see this all working, we have the dialogue on slides 9 and 10.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ah, o diálogo do Piotr.
+                            <span class="translation-text">Ah, Piotr's dialogue.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Esse mesmo. Que quer ir ao Oceanário de Lisboa, mas coitado, está "um bocado perdido", como ele diz.
+                            <span class="translation-text">That's the one. Who wants to go to the Lisbon Oceanarium, but poor thing, he's "um bocado perdido" (a bit lost), as he says.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             É, este diálogo é ótimo. É perfeito para ilustrar o imperativo formal a dar direções na vida real. O funcionário do Oceanário, ao telefone, vai guiando o Piotr, passo a passo. Vamos ouvir algumas partes.
+                            <span class="translation-text">Yeah, this dialogue is great. It's perfect for illustrating the formal imperative giving directions in real life. The Oceanarium employee, on the phone, guides Piotr, step by step. Let's hear some parts.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sim, sim. Diz ele: "Apanhe a linha verde do metro." Depois: "Saia na estação Alameda." A seguir: "Mude para a linha vermelha e vá até à estação do Oriente."
+                            <span class="translation-text">Yes, yes. He says: "Apanhe a linha verde do metro." (Take the green metro line.) Then: "Saia na estação Alameda." (Get off at Alameda station.) Next: "Mude para a linha vermelha e vá até à estação do Oriente." (Change to the red line and go to Oriente station.)</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Uhum. Tudo comandos diretos.
+                            <span class="translation-text">Uh-huh. All direct commands.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Exato. E já mais perto: "Atravesse todo o centro comercial, saia do outro lado. Depois de sair, vire à direita, siga até ver um edifício grande..." Todos estes verbos: imperativo formal, a falar para o "senhor" implicitamente.
+                            <span class="translation-text">Exactly. And when closer: "Atravesse todo o centro comercial, saia do outro lado. Depois de sair, vire à direita, siga até ver um edifício grande..." (Cross the entire shopping center, exit on the other side. After exiting, turn right, go straight until you see a large building...) All these verbs: formal imperative, implicitly speaking to "o senhor" (you, sir).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Nota-se a lógica, a clareza. Mas olha, há duas expressões que me chamaram a atenção. No fim, o funcionário diz: "Despache-se", porque iam fechar.
+                            <span class="translation-text">You can see the logic, the clarity. But look, two expressions caught my attention. At the end, the employee says: "Despache-se" (Hurry up), because they were about to close.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah, sim.
+                            <span class="translation-text">Ah, yes.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E depois sugere: "Venha amanhã." Este "despache-se", soa um bocadinho brusco, não?
+                            <span class="translation-text">And then suggests: "Venha amanhã" (Come tomorrow). This "despache-se," it sounds a bit abrupt, doesn't it?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             É uma ótima observação. "Despache-se" quer dizer "apresse-se", "ande depressa". É verdade que, dito assim isolado, pode parecer rude. Mas temos de pensar no contexto. É um telefonema, há urgência, o Oceanário vai fechar. Talvez com um tom de voz simpático, seja só um aviso útil. Mas sim, é um verbo que exige algum cuidado, não se diz a qualquer um.
+                            <span class="translation-text">That's a great observation. "Despache-se" means "hurry up," "go quickly." It's true that, said in isolation, it can seem rude. But we have to think about the context. It's a phone call, there's urgency, the Oceanarium is closing. Maybe with a friendly tone of voice, it's just a helpful warning. But yes, it's a verb that requires some care; you don't say it to just anyone.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Percebo. É preciso ter sensibilidade.
+                            <span class="translation-text">I understand. You need to be sensitive.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Exato. Já o "venha" (imperativo de "vir") é perfeitamente normal. É um convite, uma sugestão educada. "Venha amanhã." Tranquilo.
+                            <span class="translation-text">Exactly. Whereas "venha" (imperative of "vir" - to come) is perfectly normal. It's an invitation, a polite suggestion. "Venha amanhã" (Come tomorrow). No problem.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             OK. E este diálogo todo puxa-nos para a gramática, não é? Para percebermos bem este imperativo formal.
+                            <span class="translation-text">OK. And this whole dialogue pulls us towards the grammar, doesn't it? So we can understand this formal imperative well.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Precisamente.
+                            <span class="translation-text">Precisely.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Então vamos lá focar disso. O módulo imperativo formal. A forma educada de dar instruções ou ordens a alguém que tratamos por "o senhor", "a senhora", "você", no tratamento formal. O slide 12 explica.
+                            <span class="translation-text">So let's focus on that. The formal imperative module. The polite way to give instructions or orders to someone we address as "o senhor," "a senhora," "você," in formal treatment. Slide 12 explains.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sim. E a boa notícia é que, para os verbos regulares, a formação é, bem, bastante sistemática. A regra geral, como diz o slide, é usar a forma da primeira pessoa do singular ("eu") do presente do *conjuntivo*. Ou seja...
+                            <span class="translation-text">Yes. And the good news is that, for regular verbs, the formation is, well, quite systematic. The general rule, as the slide says, is to use the first-person singular ("eu") form of the present *subjunctive*. That is...</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ou seja?
+                            <span class="translation-text">That is?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Para verbos em -AR, como "falar", pensamos em "eu fale" [slide 12 refere-se à regra de trocar 'o' por 'e'],... pensamos em "eu falo", tiramos o "o", pomos "e". "Fale".
+                            <span class="translation-text">For -AR verbs, like "falar" (to speak), we think of "eu fale" [slide 12 refers to the rule of swapping 'o' for 'e'],... we think of "eu falo" (I speak), we take off the "o," we put "e." "Fale."</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             OK.
+                            <span class="translation-text">OK.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Verbos em -ER, como "comer", "eu como", tiro o "o", ponho "a". "Coma".
+                            <span class="translation-text">-ER verbs, like "comer" (to eat), "eu como" (I eat), I take off the "o," put "a." "Coma."</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Certo.
+                            <span class="translation-text">Right.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E verbos em -IR, como "partir", "eu parto", tiro o "o", ponho "a". "Parta". Isto para o singular formal (você, o senhor, a senhora).
+                            <span class="translation-text">And -IR verbs, like "partir" (to leave), "eu parto" (I leave), I take off the "o," put "a." "Parta." This is for the formal singular (você, o senhor, a senhora).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Parece lógico. E a negativa?
+                            <span class="translation-text">Seems logical. And the negative?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Mais fácil ainda. É só pôr o "não" à frente. "Não fale", "não coma", "não parta".
+                            <span class="translation-text">Even easier. Just put "não" (not) in front. "Não fale" (Don't speak), "não coma" (Don't eat), "não parta" (Don't leave).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Perfeito. E foi isto que ouvimos no diálogo do Oceanário. "Apanhe" (de apanhar), "saia" (de sair), "mude" (de mudar).
+                            <span class="translation-text">Perfect. And this is what we heard in the Oceanarium dialogue. "Apanhe" (from apanhar), "saia" (from sair), "mude" (from mudar).</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             "Vá" (que é irregular, de "ir").
+                            <span class="translation-text">"Vá" (which is irregular, from "ir").</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ah, bem lembrado. "Vá" é irregular. E depois "atravesse", "vire", "siga". Tudo imperativo formal.
+                            <span class="translation-text">Ah, good point. "Vá" is irregular. And then "atravesse," "vire," "siga." All formal imperative.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Exato. O slide 12 também mostra esse irregular, o "ir": "vá". É importante não confundir com a informal para "tu", que seria "vai".
+                            <span class="translation-text">Exactly. Slide 12 also shows that irregular, "ir": "vá." It's important not to confuse it with the informal "tu" form, which would be "vai."</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Hum-hum.
+                            <span class="translation-text">Mm-hmm.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             O exercício B nesse slide é bom para praticar isso. Pede para passar do informal para o formal. "Pede ajuda" (tu) passa a "peça ajuda" (o senhor/a senhora).
+                            <span class="translation-text">Exercise B on that slide is good for practicing this. It asks to change from informal to formal. "Pede ajuda" (you-informal ask for help) becomes "peça ajuda" (you-formal ask for help).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Faz sentido.
+                            <span class="translation-text">Makes sense.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Outro clássico: "Vem cá" (tu) passa a "venha cá" (o senhor/a senhora). Esta diferença formal/informal é mesmo muito importante em português.
+                            <span class="translation-text">Another classic: "Vem cá" (you-informal come here) becomes "venha cá" (you-formal come here). This formal/informal difference is
+really very important in Portuguese.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Claríssimo. E a prática continua nos slides 13 e 15. São exercícios que usam o imperativo para dar direções, com mapas, sinais de trânsito. Vemos frases como: "Siga em frente", "Vire à direita", "Passe o cruzamento", "Contorne a rotunda". Frases chave para fixar isto.
+                            <span class="translation-text">Crystal clear. And the practice continues on slides 13 and 15. They are exercises that use the imperative to give directions, with maps, traffic signs. We see phrases like: "Siga em frente" (Go straight ahead), "Vire à direita" (Turn right), "Passe o cruzamento" (Pass the intersection), "Contorne a rotunda" (Go around the roundabout). Key phrases to solidify this.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             A repetição ajuda imenso.
+                            <span class="translation-text">Repetition helps immensely.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sem dúvida. Ter fluência no imperativo formal é essencial para interagir bem nos serviços ou só para pedir ou dar ajuda na rua de forma educada.
+                            <span class="translation-text">No doubt. Being fluent in the formal imperative is essential for interacting well in services or just for asking for or giving help on the street politely.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Mas, pronto, para estas frases funcionarem mesmo, não bastam os verbos. Precisamos de ligar as ideias, os locais. E aí entram outra vez as preposições e os artigos.
+                            <span class="translation-text">But, well, for these sentences to really work, verbs are not enough. We need to connect the ideas, the places. And that's where prepositions and articles come in again.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             É verdade. Voltamos a elas. O slide 11 foca nisso. Pede para completar frases que ligam atividades a sítios. E o desafio é usar a preposição certa e fazer a contração com o artigo, quando é preciso. Por exemplo: "Quando quer fazer compras, vou..." O quê?
+                            <span class="translation-text">It's true. We're back to them. Slide 11 focuses on that. It asks to complete sentences that link activities to places. And the challenge is to use the correct preposition and make the contraction with the article, when necessary. For example: "Quando quer fazer compras, vou..." (When I want to go shopping, I go...) What?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Provavelmente "ao centro comercial".
+                            <span class="translation-text">Probably "ao centro comercial" (to the shopping center).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exato. "Ao", que é a preposição "a" (movimento para) mais o artigo "o" (centro comercial é masculino).
+                            <span class="translation-text">Exactly. "Ao," which is the preposition "a" (movement to) plus the article "o" (centro comercial is masculine).</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Isso. E se fosse "farmácia"? Vou "à farmácia".
+                            <span class="translation-text">Right. And if it were "farmácia" (pharmacy)? Vou "à farmácia" (I go to the pharmacy).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Porquê?
+                            <span class="translation-text">Why?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Porque farmácia é feminino. "A" igual a "a + a".
+                            Porque farmácia é feminino. "À" igual a "a + a".
+                            <span class="translation-text">Because farmácia is feminine. "À" equals "a + a."</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Perfeito. Outro exemplo do slide: "Quando estou doente, vou..."
+                            <span class="translation-text">Perfect. Another example from the slide: "Quando estou doente, vou..." (When I'm sick, I go...)</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Pode ser "ao hospital" ou "ao centro de saúde".
+                            <span class="translation-text">It could be "ao hospital" (to the hospital) or "ao centro de saúde" (to the health center).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             De novo, "ao". É mesmo preciso dominar estas contrações. "Ao", "à", "no", "na", "do", "da", "pelo", "pela". Elas estão por todo o lado e são essenciais para falar bem.
+                            <span class="translation-text">Again, "ao." You really need to master these contractions. "Ao," "à," "no," "na," "do," "da," "pelo," "pela." They are everywhere and are essential for speaking well.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            E o slide 14 reforça isto mesmo. É um exercício de preencher espaços num texto de direções, focado nas preposições e contrações. "Para chegar à estação de comboios..." ("a" porque estação é feminino).
+                            E o slide 14 reforça isto mesmo. É um exercício de preencher espaços num texto de direções, focado nas preposições e contrações. "Para chegar à estação de comboios..." ("à" porque estação é feminino).
+                            <span class="translation-text">And slide 14 reinforces this. It's an exercise of filling in the blanks in a directions text, focused on prepositions and contractions. "Para chegar à estação de comboios..." (To get to the train station...) ("à" because estação is feminine).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Hum-hum.
+                            <span class="translation-text">Mm-hmm.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             "...vá em frente por aquela rua." ("Em frente" é a expressão, "por" indica o percurso).
+                            <span class="translation-text">"...vá em frente por aquela rua." ("Em frente" is the expression, "por" indicates the path).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Certo.
+                            <span class="translation-text">Right.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             "Vire na segunda esquina à esquerda." ("Na" = em + a, porque esquina é feminino). Fica mesmo claro como estas palavrinhas são a cola que junta tudo.
+                            <span class="translation-text">"Vire na segunda esquina à esquerda." (Turn at the second corner on the left.) ("Na" = em + a, because esquina (corner) is feminine). It becomes really clear how these little words are the glue that holds everything together.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             São, são absolutamente cruciais. Um erro ali pode mudar o sentido todo ou fazer a frase soar, eh, estranha. Portanto, esta combinação de imperativo formal, vocabulário de locais, preposições, é o que realmente nos permite orientar e comunicar bem nestas situações.
+                            <span class="translation-text">They are, they are absolutely crucial. A mistake there can change the whole meaning or make the sentence sound, uh, strange. Therefore, this combination of formal imperative, vocabulary of places, prepositions, is what really allows us to navigate and communicate well in these situations.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Hum. Então, resumindo. Damos uma volta pelos correios e pelo banco, vimos o vocabulário e as frases-chave para tratar de assuntos lá. E depois, dedicámos bastante tempo a desmistificar como pedir e, principalmente, como dar direções. Vimos as expressões de movimento, o imperativo formal...
+                            <span class="translation-text">Hm. So, to summarize. We took a tour of the post office and the bank, we saw the vocabulary and key phrases for handling matters there. And then, we spent a lot of time demystifying how to ask for and, especially, how to give directions. We saw the expressions of movement, the formal imperative...</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             ...e a importância vital das preposições e contrações.
+                            <span class="translation-text">...and the vital importance of prepositions and contractions.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Exatamente. O ponto central disto tudo é a aplicação prática, no dia a dia. Esta unidade dá mesmo ferramentas concretas para uma pessoa se sentir mais, mais segura, mais autónoma a mexer-se em Portugal. Seja para mandar uma carta, levantar dinheiro, ou literalmente encontrar o caminho quando se está perdido.
+                            <span class="translation-text">Exactly. The central point of all this is the practical, day-to-day application. This unit really gives concrete tools for a person to feel more, more secure, more autonomous in getting around in Portugal. Whether it's to send a letter, withdraw money, or literally find the way when lost.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Uhum. E perceber e usar bem o imperativo formal é chave para ser educado e eficaz, tanto nos serviços como na rua.
+                            <span class="translation-text">Uh-huh. And understanding and using the formal imperative well is key to being polite and effective, both in services and on the street.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sente-se de facto um caminho mais claro depois disto. Mas olha, fica aqui talvez uma questão para pensarmos um bocadinho.
+                            <span class="translation-text">You really feel a clearer path after this. But look, maybe here's a question for us to think about a bit.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Diz.
+                            <span class="translation-text">Go ahead.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Aprendemos a forma gramaticalmente educada, o imperativo formal: "vire", "siga", "peça". Mas na comunicação real, no dia a dia, até que ponto é que o tom de voz, os gestos, ou um simples "por favor" não mudam tudo?
+                            <span class="translation-text">We learned the grammatically polite form, the formal imperative: "vire," "siga," "peça." But in real communication, day-to-day, to what extent do tone of voice, gestures, or a simple "please" not change everything?</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Hum.
+                            <span class="translation-text">Hm.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Será que um "vira à direita" (informal), dito com um sorriso enorme e um tom super simpático, não é percebido como mais amigável do que um "vire à direita" (formal), mas dito assim com um tom seco, impaciente?
+                            <span class="translation-text">Could it be that a "vira à direita" (informal), said with a huge smile and a super friendly tone, isn't perceived as friendlier than a "vire à direita" (formal), but said with a dry, impatient tone?</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Essa é uma excelente reflexão final. Excelente mesmo. A gramática dá-nos a estrutura, a base da formalidade, da educação. Mas depois há a pragmática.
+                            <span class="translation-text">That is an excellent final reflection. Truly excellent. Grammar gives us the structure, the basis of formality, of politeness. But then there's pragmatics.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Exato.
+                            <span class="translation-text">Exactly.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             O uso da língua em contexto. A entoação, os gestos, a cara que fazemos. Tudo isso joga um papel enorme em como a mensagem é recebida. Aprender uma língua também é aprender estas, estas nuances culturais, interpessoais. Não é só gramática e vocabulário.
+                            <span class="translation-text">The use of language in context. The intonation, the gestures, the face we make. All of this plays a huge role in how the message is received. Learning a language is also about learning these, these cultural, interpersonal nuances. It's not just grammar and vocabulary.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sem dúvida. É todo um pacote.
+                            <span class="translation-text">No doubt. It's a whole package.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E com essa nota sobre a complexidade da comunicação real, fechamos esta nossa análise da unidade 25. Esperamos que esta conversa tenha sido útil para consolidar estas ideias.
+                            <span class="translation-text">And with that note on the complexity of real communication, we close our analysis of unit 25. We hope this conversation has been useful for consolidating these ideas.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Esperamos que sim.
+                            <span class="translation-text">We hope so.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Até uma próxima exploração.
+                            <span class="translation-text">Until the next exploration.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Até à próxima.
+                            <span class="translation-text">Until next time.</span>
                         </div>
                     </div>
                 </div>
@@ -1015,17 +1148,17 @@
 
             function activateTab(tabId) {
                  tabs.forEach(t => {
-                    t.classList.remove('tab-active');
-                    if (t.dataset.tab === tabId) {
-                        t.classList.add('tab-active');
-                    }
-                });
-                contents.forEach(c => {
-                    c.classList.remove('tab-content-active');
-                    if (c.id === tabId) {
-                        c.classList.add('tab-content-active');
-                    }
-                });
+                     t.classList.remove('tab-active');
+                     if (t.dataset.tab === tabId) {
+                         t.classList.add('tab-active');
+                     }
+                 });
+                 contents.forEach(c => {
+                     c.classList.remove('tab-content-active');
+                     if (c.id === tabId) {
+                         c.classList.add('tab-content-active');
+                     }
+                 });
             }
 
             activateTab(defaultTab);
@@ -1035,6 +1168,28 @@
                     activateTab(tab.dataset.tab);
                 });
             });
+
+            // --- LÓGICA NOVA DO BOTÃO DE TRADUÇÃO ---
+            const toggleButton = document.getElementById('toggle-translation');
+            let isTranslationVisible = false;
+
+            if (toggleButton) {
+                toggleButton.addEventListener('click', () => {
+                    isTranslationVisible = !isTranslationVisible; // Inverte o estado
+                    
+                    // Seleciona apenas as traduções DENTRO da secção de transcrição
+                    const translations = document.querySelectorAll('#transcricao .translation-text');
+                    
+                    if (isTranslationVisible) {
+                        translations.forEach(t => t.style.display = 'block');
+                        toggleButton.textContent = 'Ocultar Tradução (Hide Translation)';
+                    } else {
+                        translations.forEach(t => t.style.display = 'none');
+                        toggleButton.textContent = 'Mostrar Tradução (Show Translation)';
+                    }
+                });
+            }
+            // --- FIM DA LÓGICA NOVA ---
 
 
             // --- LÓGICA DO QUIZ ---
@@ -1075,9 +1230,9 @@
                     }
                 }
                  if(answeredAll){
-                    quizScoreDisplay.textContent = `A sua pontuação: ${score} em ${totalQuestions}`;
+                     quizScoreDisplay.textContent = `A sua pontuação: ${score} em ${totalQuestions}`;
                  } else {
-                    quizScoreDisplay.textContent = `Por favor, responda a todas as perguntas.`;
+                     quizScoreDisplay.textContent = `Por favor, responda a todas as perguntas.`;
                  }
             });
 
