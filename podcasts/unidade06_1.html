@@ -68,15 +68,19 @@
             max-width: 80%;
             align-self: flex-end;
         }
-        .translation-text { /* Re-utilizado para notas */
-            display: block;
-            margin-top: 0.5rem;
+
+        /* --- CSS ALTERADO --- */
+        .translation-text { /* Re-utilizado para notas E traduções */
+            display: none; /* ESCONDIDO POR DEFEITO */
+            margin-top: 0.75rem;
             font-size: 0.9em;
             font-style: italic;
             border-top: 1px dashed rgba(0, 0, 0, 0.1);
-            padding-top: 0.5rem;
+            padding-top: 0.75rem;
             color: #57534e; /* stone-600 */
         }
+        /* --- FIM DA ALTERAÇÃO --- */
+
         .quiz-question {
             margin-bottom: 1.5rem;
             padding: 1rem;
@@ -136,414 +140,486 @@
                     O seu browser não suporta o elemento de áudio.
                 </audio>
 
-                <h2 class="text-3xl font-semibold text-stone-800 mb-4 mt-8">Transcrição</h2>
+                <h2 class="text-3xl font-semibold text-stone-800 mb-2 mt-8">Transcrição</h2>
+                
+                <button id="toggle-translation" class="mb-6 px-4 py-2 bg-sky-600 text-white font-semibold rounded-lg hover:bg-sky-700 transition-colors text-sm">
+                    Mostrar Tradução (Show Translation)
+                </button>
                 <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Olá e bem-vindos a mais uma análise detalhada. Hoje temos aqui connosco, ah, uns materiais. Parecem ser de uma lição de português nível A2 do CIPLE Master. Alguém anda a estudar, pelos vistos.
+                            <span class="translation-text">Hello and welcome to another detailed analysis. Today we have here with us, ah, some materials. They seem to be from an A2 level Portuguese lesson from CIPLE Master. Someone is studying, apparently.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. E a nossa tarefa, pronto, é pegar nisto e revisitar alguns pontos-chave. Vamos focar-nos em três coisinhas que são sempre, tipo, essenciais nesta fase: locais, possessivos e uns detalhes de pronúncia.
+                            <span class="translation-text">Exactly. And our task, well, is to take this and revisit some key points. We are going to focus on three things that are always, like, essential at this stage: places, possessives, and some pronunciation details.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Hum-hum. A ideia é mesmo essa: pegar nos materiais, sejam slides, notas, o que for, e tirar o essencial, organizar as ideias, sabes? Clarificar as regras e, pronto, tentar que isto fique bem arrumadinho na cabeça. Tudo em português, claro, mas vamos usando as traduções para inglês que estão nos materiais para ajudar.
+                            <span class="translation-text">Mm-hmm. The idea is precisely that: to take the materials, whether slides, notes, whatever, and extract the essential, organize the ideas, you know? Clarify the rules and, well, try to make sure this is all neatly tucked away in your head. All in Portuguese, of course, but we will use the English translations that are in the materials to help.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             A missão é essa mesma. Fazer com que a gramática não pareça um bicho de sete cabeças, mas sim algo útil para o dia a dia. Sem muitas voltas, vamos diretos ao que interessa.
+                            <span class="translation-text">That is the mission. To make grammar not seem like a beast with seven heads, but rather something useful for everyday life. Without much fuss, let's go straight to what matters.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Perfeito. Então, por onde é que a gente começa? Hum, que tal pelo básico? Onde estamos? A pergunta "Onde estás?" (em inglês "Where are you?") parece o ponto de partida, não é?
+                            <span class="translation-text">Perfect. So, where do we start? Hm, how about the basic? Where are we? The question "Onde estás?" (Where are you? - informal) seems like the starting point, doesn't it?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sim, é fundamental. E a base para responder a isso em português é a preposição "em", geralmente quer dizer "in" ou "at". Só que, na maioria das vezes, o "em" não anda sozinho. Gosta de companhia. Junta-se ao artigo definido "o" ou "a" que vem com o nome do sítio.
+                            <span class="translation-text">Yes, it is fundamental. And the basis for answering that in Portuguese is the preposition "em" (in/at/on), generally meaning "in" or "at." Only, most of the time, "em" doesn't walk alone. It likes company. It joins the definite article "o" (the, masc.) or "a" (the, fem.) that comes with the name of the place.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah, as famosas contrações. É quase uma dança, não é? O "em" + o "o" dá "no". E o "em" + o "a" dá "na".
+                            <span class="translation-text">Ah, the famous contractions. It's almost a dance, isn't it? "Em" (in/at) + "o" (the, masc.) gives "no" (in the). And "em" + "a" (the, fem.) gives "na" (in the).</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Parece simples, mas, epá, faz toda a diferença para soar natural. Precisamente. E os materiais que temos aqui, olha, estão cheios de exemplos. Para nomes masculinos, temos o "no". Coisas como "no supermercado" (in the supermarket), "no restaurante" (in the restaurant), ou "no hotel" (in the hotel), "no aeroporto" (in the airport). E outros que também aparecem muito: "no escritório", "no quarto", "no centro comercial", "no bar", pronto, imensos.
+                            <span class="translation-text">It seems simple, but, wow, it makes all the difference to sound natural. Precisely. And the materials we have here, look, they are full of examples. For masculine nouns, we have "no." Things like "no supermercado" (in the supermarket), "no restaurante" (in the restaurant), or "no hotel" (in the hotel), "no aeroporto" (in the airport). And others that also appear a lot: "no escritório" (in the office), "no quarto" (in the room), "no centro comercial" (in the shopping center), "no bar" (at the bar), well, lots of them.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E a mesma lógica para os femininos com o "na". Os exemplos são tipo "na biblioteca" (in the library), "na rua" (on the street)...
+                            <span class="translation-text">And the same logic for feminine nouns with "na." The examples are like "na biblioteca" (in the library), "na rua" (on the street)...</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Yeah.
+                            <span class="translation-text">Yeah.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             ... "na escola", "na praia" (on the beach). Coisas comuns: "na cozinha", "na sala". Cobre bastante.
+                            <span class="translation-text">... "na escola" (at school), "na praia" (on the beach). Common things: "na cozinha" (in the kitchen), "na sala" (in the living room). It covers a lot.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Mas claro, o português gosta sempre de ter ali uma exceçãozinha para animar, não é? E esta é daquelas mesmo importantes: a palavra "casa" (home).
+                            <span class="translation-text">But of course, Portuguese always likes to have a little exception to liven things up, doesn't it? And this one is a really important one: the word "casa" (home).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah, essa. Lembro-me de ver nos materiais, tipo, um carimbo a dizer "Importante!" ao lado de "Estou em casa".
+                            <span class="translation-text">Ah, that one. I remember seeing it in the materials, like, a stamp saying "Important!" next to "Estou em casa" (I am at home).</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Yeah.
+                            <span class="translation-text">Yeah.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Portanto, quando falamos da nossa casa, o nosso lar, a contração desaparece.
+                            <span class="translation-text">Therefore, when we talk about our house, our home, the contraction disappears.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             É isso mesmo. Não se diz "na casa" nesse sentido, diz-se simplesmente "em casa". É uma forma fixa. E é interessante pensar porquê, não é? Talvez porque "casa", no sentido de lar, seja um conceito tão, tão básico, tão pessoal que nem precisa do artigo. É "casa", pronto.
+                            <span class="translation-text">That's right. You don't say "na casa" (in the house) in that sense; you simply say "em casa" (at home). It's a fixed phrase. And it's interesting to think why, isn't it? Perhaps because "casa," in the sense of home, is such a, such a basic, such a personal concept that it doesn't even need the article. It's just "casa," that's it.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Pois, faz sentido. Quase como se tivesse um estatuto especial. E os materiais até comparam, não é? Como naquele exemplo: "O Ricardo está em casa", mas logo a seguir, "O Ricardo está no carro". Vê-se logo a diferença.
+                            <span class="translation-text">Yes, it makes sense. Almost as if it has a special status. And the materials even compare, don't they? Like in that example: "O Ricardo está em casa" (Ricardo is at home), but right after, "O Ricardo está no carro" (Ricardo is in the car). You see the difference immediately.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. "Carro" é masculino, regra geral, pimba, "no". "Casa" como lar, é a exceção, fica só "em". Portanto, para resumir os locais: regra geral, "no" para masculino, "na" para feminino. Exceção do dia a dia: "em casa". Já ajuda imenso.
+                            <span class="translation-text">Exactly. "Carro" (car) is masculine, general rule, bam, "no." "Casa" (home) as a dwelling is the exception; it stays just "em." So, to summarize places: general rule, "no" for masculine, "na" for feminine. Everyday exception: "em casa." That already helps immensely.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E para completar, os materiais também falavam daqueles indicadores: "aqui", "aí" e "ali". Essenciais para situar coisas no espaço, não é? Em relação a nós.
+                            <span class="translation-text">And to complete this, the materials also talked about those indicators: "aqui" (here), "aí" (there/near you) and "ali" (there/far away). Essential for placing things in space, aren't they? In relation to us.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sim, sim. O "aqui", perto de quem fala; o "aí", perto de quem ouve; e o "ali", quando está longe dos dois. Advérbios de lugar, muito úteis.
+                            <span class="translation-text">Yes, yes. "Aqui," close to the speaker; "aí," close to the listener; and "ali," when it's far from both. Adverbs of place, very useful.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E vemos isso nas perguntas dos exercícios, tipo: "O que é isso aí?". Usamos "aí" porque está perto da outra pessoa. Ou então: "O que é aquilo ali?" para algo mais longe. São ferramentas mesmo práticas.
+                            <span class="translation-text">And we see that in the exercise questions, like: "O que é isso aí?" (What is that there [near you]?). We use "aí" because it's close to the other person. Or else: "O que é aquilo ali?" (What is that over there?) for something farther away. They are truly practical tools.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sem dúvida. Pequenas palavras, grande impacto na clareza.
+                            <span class="translation-text">No doubt. Small words, big impact on clarity.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Muito bem. Acho que os locais estão despachados. Podemos ir para outro tópico que às vezes, epá, dá nós na cabeça: os possessivos. O "my" or "his", "her"... como é que isso funciona em português?
+                            <span class="translation-text">Very well. I think the places are covered. We can move on to another topic that sometimes, wow, causes headaches: possessives. "My" or "his," "her"... how does that work in Portuguese?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ah, os possessivos. É um clássico. A diferença principal com o inglês e outras línguas é esta, e isto é a regra de ouro mesmo: em português, o possessivo concorda em género e número com a *coisa possuída*, não com o *dono*.
+                            <span class="translation-text">Ah, possessives. It's a classic. The main difference with English and other languages is this, and this really is the golden rule: in Portuguese, the possessive agrees in gender and number with the *thing possessed*, not with the *owner*.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Epá, isto é mesmo o contrário do inglês. Dá a volta à cabeça no início. Os exemplos dos materiais são chave aqui. "O meu telemóvel" (my phone). Não interessa se sou eu ou tu, homem ou mulher. "Telemóvel" é masculino, por isso é "meu".
+                            <span class="translation-text">Wow, this is really the opposite of English. It messes with your head at the beginning. The examples in the materials are key here. "O meu telemóvel" (my phone). It doesn't matter if it's me or you, man or woman. "Telemóvel" is masculine, so it's "meu" (my, masc.).</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. E o contrário: "A minha carteira" (my wallet). Lá está, não interessa o dono. "Carteira" é palavra feminina, logo o possessivo tem de ser feminino: "minha". Concorda sempre com o objeto.
+                            <span class="translation-text">Exactly. And the opposite: "A minha carteira" (my wallet). There you go, the owner doesn't matter. "Carteira" is a feminine word, so the possessive has to be feminine: "minha." It always agrees with the object.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             OK, pronto. A concordância está percebida. Mas depois há a questão de onde pôr a palavra e se precisa de mais alguma coisa. Os materiais falavam de duas regras, não era?
+                            <span class="translation-text">OK, right. The agreement is understood. But then there's the question of where to put the word and if it needs anything else. The materials talked about two rules, didn't they?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sim. A primeira, e a mais comum, aplica-se à maioria: "meu", "minha", "teu", "tua", "seu", "sua", "nosso", "nossa", "vosso", "vossa". Aqui a regra é dupla: normalmente vêm *antes* do nome e quase sempre precisam do artigo definido "o", "a", "os", "as" *antes* deles.
+                            <span class="translation-text">Yes. The first, and most common, applies to the majority: "meu," "minha," "teu," "tua," "seu," "sua," "nosso," "nossa," "vosso," "vossa." Here the rule is double: they normally come *before* the noun and almost always need the definite article "o," "a," "os," "as" *before* them.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Certo. A estrutura fica: artigo + possessivo + nome. Os exercícios mostravam isso bem. "O seu país é Espanha." "País" é masculino, logo "o seu". Mas "A sua cidade é Sevilha." "Cidade" é feminino, então "a sua".
+                            <span class="translation-text">Right. The structure is: article + possessive + noun. The exercises showed this well. "O seu país é Espanha." (Your/His/Her country is Spain.) "País" is masculine, so "o seu." But "A sua cidade é Sevilha." (Your/His/Her city is Seville.) "Cidade" is feminine, so "a sua."</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Hum-hum. E outros exemplos que estavam lá: "A minha cidade é Berlim." "Minha" porque "cidade" é feminino. "O nosso país é a Rússia." "Nosso" porque "país" é masculino. Sempre com o artigo antes. E no plural, a mesma coisa: "os meus livros", "as tuas chaves". A lógica é a mesma.
+                            <span class="translation-text">Mm-hmm. And other examples that were there: "A minha cidade é Berlim." (My city is Berlin.) "Minha" because "cidade" is feminine. "O nosso país é a Rússia." (Our country is Russia.) "Nosso" because "país" is masculine. Always with the article before. And in the plural, the same thing: "os meus livros" (my books), "as tuas chaves" (your keys). The logic is the same.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             OK. Regra principal entendida. Mas depois vem a segunda maneira, a exceção: com "dele", "dela", "deles", "delas". Como é que esses funcionam? Parecem ter regras à parte.
+                            <span class="translation-text">OK. Main rule understood. But then comes the second way, the exception: with "dele," "dela," "deles," "delas." How do those work? They seem to have separate rules.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Têm mesmo. São diferentes em duas coisas. Primeiro, a posição: vêm sempre *depois* do nome. Segundo, a concordância: a forma deles ("dele", "dela") não muda com o objeto. Quer dizer, a forma já indica o género e número do *dono*. "Dele" é *his*, "dela" é *her*, "deles" é *their* (masculino), "delas" é *their* (feminino).
+                            <span class="translation-text">They really do. They are different in two ways. First, the position: they always come *after* the noun. Second, the agreement: their form ("dele," "dela") does not change with the object. That is, the form already indicates the gender and number of the *owner*. "Dele" is *his*, "dela" is *her*, "deles" is *their* (masculine), "delas" is *their* (feminine).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah, então a informação sobre o dono está na palavra. É diferente, pois. Os exemplos devem ajudar. "A carteira dele" (his wallet). "Carteira" é feminino, mas usamos "dele" porque o dono é masculino. E "A carteira dela" (her wallet). Usamos "dela" porque a dona é feminina. A palavra "carteira" não mexe na escolha entre "dele" e "dela".
+                            <span class="translation-text">Ah, so the information about the owner is in the word. It is different, indeed. The examples should help. "A carteira dele" (His wallet). "Carteira" is feminine, but we use "dele" because the owner is masculine. And "A carteira dela" (Her wallet). We use "dela" because the owner is feminine. The word "carteira" does not affect the choice between "dele" and "dela."</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Perfeitamente. O mesmo para "O carro dele" (his car) versus "O carro dela" (her car). "Carro" é masculino, mas escolhes "dele" ou "dela" dependendo *só* do dono. E no plural: "Os livros deles" (their books) de um grupo masculino ou misto; "As casas delas" (their houses) de um grupo feminino.
+                            <span class="translation-text">Perfectly. The same for "O carro dele" (his car) versus "O carro dela" (her car). "Carro" is masculine, but you choose "dele" or "dela" depending *only* on the owner. And in the plural: "Os livros deles" (their books) of a masculine or mixed group; "As casas delas" (their houses) of a feminine group.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Agora, uma coisa que me pareceu importante e os materiais falavam nisso, é a ambiguidade do "seu/sua". Pode ser tanta coisa: "his", "her", "their", "your" (formal). Como é que uma pessoa se safa com isso?
+                            <span class="translation-text">Now, something that seemed important to me and the materials talked about it, is the ambiguity of "seu/sua." It can mean so many things: "his," "her," "their," "your" (formal). How does one get by with that?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Excelente ponto. É precisamente aí que as formas "dele", "dela", "deles", "delas" se tornam super úteis. Como "seu/sua" pode ser ambíguo, para ter a certeza, para clarificar, especialmente para "his" ou "her", muitas vezes prefere-se usar "dele" ou "dela" *depois* do nome.
+                            <span class="translation-text">Excellent point. It is precisely there that the forms "dele," "dela," "deles," "delas" become super useful. Since "seu/sua" can be ambiguous, to be sure, to clarify, especially for "his" or "her," it is often preferred to use "dele" or "dela" *after* the noun.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Então é tipo uma ferramenta para desempatar. Em vez de dizer "Vi o seu carro", que pode deixar a dúvida (é dele? dela? o “seu” formal?), dizer "Vi o carro dele" ou "Vi o carro dela" tira as dúvidas todas.
+                            <span class="translation-text">So it's like a tie-breaker tool. Instead of saying "Vi o seu carro" (I saw your/his/her car), which can leave doubt (is it his? hers? the formal "your"?), saying "Vi o carro dele" (I saw his car) or "Vi o carro dela" (I saw her car) removes all doubts.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. Claro que o contexto muitas vezes ajuda a perceber o "seu/sua" numa conversa normal, mas usar "dele/dela" é mais direto, evita mal-entendidos. É muito comum, tanto a falar como a escrever.
+                            <span class="translation-text">Exactly. Of course, the context often helps to understand "seu/sua" in a normal conversation, but using "dele/dela" is more direct; it avoids misunderstandings. It is very common, both in speaking and writing.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Percebido. É bom saber que há essas opções para sermos mais claros. Pronto, acho que os possessivos estão vistos. Próximo ponto: pronúncia. Aquela parte onde tentamos, ah, soar um bocadinho melhor. Os materiais focavam em dois sons, não é?
+                            <span class="translation-text">Understood. It's good to know that those options exist for us to be clearer. Right, I think the possessives are covered. Next point: pronunciation. That part where we try to, ah, sound a little better. The materials focused on two sounds, didn't they?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sim, a pronúncia é onde a coisa pega, não é? Acertar nos sons é chave. O primeiro desafio que eles destacam é a terminação nasal "M".
+                            <span class="translation-text">Yes, pronunciation is where the difficulty lies, isn't it? Getting the sounds right is key. The first challenge they highlight is the nasal ending "M."</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Nasal... quer dizer que o som tem de sair também pelo nariz? Como é isso? Tipo...
+                            <span class="translation-text">Nasal... does that mean the sound has to come out through the nose too? How is that? Like...</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Basicamente, sim. Quando dizemos estas terminações, o ar não sai só pela boca, sai também um bocadinho pelo nariz. Cria uma ressonância especial. Pensa talvez no som "m" ou "n" no fim das palavras em inglês. Têm essa qualidade nasal. Em português, o "m" tem isso, mas a boca pode estar um pouco mais aberta.
+                            <span class="translation-text">Basically, yes. When we say these endings, the air doesn't just come out through the mouth; it also comes out a bit through the nose. It creates a special resonance. Think maybe of the "m" or "n" sound at the end of words in English. They have that nasal quality. In Portuguese, the "m" has that, but the mouth can be a little more open.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             OK. E que palavras é que eles davam para praticar esse som nasal?
+                            <span class="translation-text">OK. And what words did they give to practice that nasal sound?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Olha, a lista tinha "bem", "sem", "cem", "quem" e, muito importante, o contraste entre "tem" (he/she has) e "têm" (they have). Ambas são nasais.
+                            <span class="translation-text">Look, the list had "bem" (well), "sem" (without), "cem" (one hundred), "quem" (who), and, very importantly, the contrast between "tem" (he/she has) and "têm" (they have). Both are nasal.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah, "tem" versus "têm". A diferença é subtil, mas existe. Não só na escrita com o acento, mas no som também, certo? O "têm" é um bocadinho mais aberto, talvez?
+                            <span class="translation-text">Ah, "tem" versus "têm." The difference is subtle, but it exists. Not just in writing with the accent, but in the sound too, right? "Têm" is a little more open, perhaps?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. O som do "têm" é ligeiramente mais aberto, talvez um pouco mais longo por causa do acento, mas partilham essa nasalidade. Ouvir nativos e tentar imitar é o melhor. Tenta sentir uma vibraçãozinha no nariz quando dizes.
+                            <span class="translation-text">Exactly. The sound of "têm" is slightly more open, perhaps a little longer because of the accent, but they share that nasality. Listening to natives and trying to imitate is best. Try to feel a little vibration in your nose when you say it.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Boa dica. Vou tentar. E o outro som que dá trabalho: o famoso R português.
+                            <span class="translation-text">Good tip. I'll try. And the other sound that's tricky: the famous Portuguese R.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ah, o R. No português europeu, que é o que estes materiais ensinam, temos basicamente duas maneiras de fazer o R. É importante saber a diferença. Temos o R forte, que é gutural, vem da garganta. E o R suave, que é um toque rápido da língua no céu da boca, a chamada vibrante simples ou "tap".
+                            <span class="translation-text">Ah, the R. In European Portuguese, which is what these materials teach, we basically have two ways to make the R sound. It's important to know the difference. We have the strong R, which is guttural, coming from the throat. And the soft R, which is a quick tap of the tongue on the roof of the mouth, the so-called simple vibrant or "tap."</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Gutural versus toque rápido. OK. E quando é que usamos um e quando é que usamos o outro?
+                            <span class="translation-text">Guttural versus quick tap. OK. And when do we use one and when do we use the other?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             A regra até é bastante clara. O R forte, o gutural, que lembra o R francês ou o RR espanhol, aparece em duas situações principais. Primeiro, no início absoluto de uma palavra: "rua", "rosa", "relógio", "Roma", "russo". Segundo, quando está escrito RR no meio da palavra: "carro", "garrafa", "cigarro", "Inglaterra", "Marrocos".
+                            <span class="translation-text">The rule is quite clear. The strong R, the guttural one, which resembles the French R or the Spanish RR, appears in two main situations. First, at the absolute beginning of a word: "rua" (street), "rosa" (rose), "relógio" (watch/clock), "Roma" (Rome), "russo" (Russian). Second, when RR is written in the middle of the word: "carro" (car), "garrafa" (bottle), "cigarro" (cigarette), "Inglaterra" (England), "Marrocos" (Morocco).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Entendido. Início de palavra ou RR igual a som forte da garganta. E o outro, o R suave, o tal toque rápido, o "tap"? Onde é que esse entra?
+                            <span class="translation-text">Understood. Beginning of word or RR equals strong sound from the throat. And the other one, the soft R, that quick tap? Where does that come in?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Esse som R, que é bem mais leve e às vezes comparam ao "t" de "butter" ou "letter" em inglês americano, usa-se para o R sozinho quando *não* está no início da palavra. Tipicamente, entre vogais ou ao pé de outras consoantes.
+                            <span class="translation-text">That R sound, which is much softer and is sometimes compared to the "t" in "butter" or "letter" in American English, is used for a single R when it is *not* at the beginning of the word. Typically, between vowels or next to other consonants.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Exemplos ajudavam.
+                            <span class="translation-text">Examples would help.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Claro. Os materiais dão vários: "porta", "parede", "carta", "falar", "livro", "verde", "estar", "obrigado", "Brasil". Em todas estas, o R é só um toquezinho rápido da língua, não é o som forte da garganta.
+                            <span class="translation-text">Of course. The materials give several: "porta" (door), "parede" (wall), "carta" (letter), "falar" (to speak), "livro" (book), "verde" (green), "estar" (to be), "obrigado" (thank you), "Brasil" (Brazil). In all of these, the R is just a quick tap of the tongue; it's not the strong sound from the throat.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Lembro-me que havia exercícios para treinar o ouvido. Um era para sublinhar o R forte em palavras tipo "parede", "carta", "russo", "rua", "falar", "relógio". Seria em "russo", "rua" e "relógio". Certo?
+                            <span class="translation-text">I remember there were exercises to train the ear. One was to underline the strong R in words like "parede" (wall), "carta" (letter), "russo" (Russian), "rua" (street), "falar" (to speak), "relógio" (clock/watch). It would be in "russo," "rua," and "relógio." Right?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Correto. "Parede", "carta" e "falar" teriam um R suave. Havia outro exercício que pedia para pôr palavras como "livro", "rosa", "verde", "carro", "Roma", "estar" em duas colunas: R forte e R suave.
+                            <span class="translation-text">Correct. "Parede," "carta," and "falar" would have a soft R. There was another exercise that asked to put words like "livro" (book), "rosa" (rose), "verde" (green), "carro" (car), "Roma" (Rome), "estar" (to be) into two columns: strong R and soft R.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Então, "rosa", "carro", "Roma" iam para a coluna do R forte. E "livro", "verde", "estar" para a coluna do R suave. Parece lógico quando se percebe a regra.
+                            <span class="translation-text">So, "rosa," "carro," "Roma" would go into the strong R column. And "livro," "verde," "estar" into the soft R column. It seems logical once you understand the rule.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. O objetivo é mesmo esse: treinar o ouvido para distinguir os sons e ligá-los às regras. É um passo super importante para perceber melhor e falar melhor também.
+                            <span class="translation-text">Exactly. That is the goal: to train the ear to distinguish the sounds and link them to the rules. It's a super important step to better understand and speak better too.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E os materiais também tinham umas frases para repetir, não era? Tipo: "O que é que é isso?", "De onde é que és?", "Quem é que é?". Não focavam só nestes sons, mas imagino que ajudem na fluidez geral.
+                            <span class="translation-text">And the materials also had some sentences to repeat, didn't they? Like: "O que é que é isso?" (What is that?), "De onde é que és?" (Where are you from?), "Quem é que é?" (Who is he/she?). They didn't just focus on these sounds, but I imagine they help with general fluency.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sem dúvida. E o interessante é essa passagem. Começa-se por isolar os sons, o nasal, os Rs. Depois pratica-se em palavras. E, finalmente, junta-se tudo em frases. Ajuda a apanhar o ritmo, a entoação, a ligação entre as palavras, que é super importante para soar mais natural. Passar da palavra solta para a frase ligada é um salto e tanto.
+                            <span class="translation-text">No doubt. And the interesting thing is that transition. You start by isolating the sounds, the nasal one, the Rs. Then you practice in words. And, finally, you put everything together in sentences. It helps to catch the rhythm, the intonation, the connection between words, which is super important to sound more natural. Moving from the isolated word to the connected sentence is quite a leap.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             OK. Demos aqui uma boa volta a esta lição A2. Então, o que é que fica disto tudo? Em essência?
+                            <span class="translation-text">OK. We've done a good run-through of this A2 lesson here. So, what remains of all this? In essence?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Se tivéssemos que resumir, pronto. Primeiro: locais. As contrações "no/na" [...] como regra geral, e a exceção "em casa". E os úteis "aqui", "aí", "ali". Segundo: possessivos. A regra de ouro da concordância com o objeto ("o meu livro", "a minha caneta") e as duas formas de usar: ou com artigo antes ("o seu carro") ou com "dele/dela" depois ("o carro dele") para ser mais claro.
+                            <span class="translation-text">If we had to summarize, right. First: places. The contractions "no/na" [...] as a general rule, and the exception "em casa" (at home). And the useful "aqui" (here), "aí" (there/near you), "ali" (there/far away). Second: possessives. The golden rule of agreement with the object ("o meu livro" [my book], "a minha caneta" [my pen]) and the two ways to use them: either with the article before ("o seu carro" [your/his/her car]) or with "dele/dela" after ("o carro dele" [his car]) to be clearer.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E terceiro: a pronúncia. Dominar o som nasal do "em", "bem", "tem", "têm". E saber quando usar o R forte da garganta (início RR: "rua", "carro") e quando usar o R suave, o "tap" (outras posições: "porta", "falar").
+                            <span class="translation-text">And third: pronunciation. Mastering the nasal sound of "em," "bem," "tem," "têm." And knowing when to use the strong R from the throat (beginning RR: "rua," "carro") and when to use the soft R, the "tap" (other positions: "porta," "falar").</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exato. Dominar estes três pontos, os locais, possessivos e estes sons, dá uma base muito, muito sólida para quem está no A2. Se pensarmos bem, ter isto claro ajuda a construir frases melhor, a evitar erros comuns e, pronto, a ganhar confiança para comunicar.
+                            <span class="translation-text">Exactly. Mastering these three points—places, possessives, and these sounds—gives a very, very solid foundation for those at the A2 level. If we think about it, having this clear helps to build better sentences, avoid common mistakes, and, well, gain confidence to communicate.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Faz todo o sentido. São peças-chave mesmo.
+                            <span class="translation-text">It makes perfect sense. They are key pieces indeed.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E pensando naquela questão da ambiguidade do "seu/sua" que falámos, levanta aqui uma questão interessante sobre a língua no uso real, não é?
+                            <span class="translation-text">And thinking about that issue of the ambiguity of "seu/sua" that we talked about, it raises an interesting question here about the language in real use, doesn't it?</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             É verdade. Fica a reflexão. OK, "seu/sua" pode ser ambíguo: "his", "her", "their", "your". E sim, temos o "dele/dela" para clarificar. Mas numa conversa rápida do dia a dia, como é que o contexto – quem está a falar, do que se fala, a situação, até os gestos – funciona como desambiguador? Quer dizer, até que ponto é que a gente confia nesse contexto partilhado para preencher as lacunas que a gramática por si só pode deixar em aberto? É algo para se pensar, para observar quando ouvimos e falamos português, pois.
+                            <span class="translation-text">It's true. The reflection remains. OK, "seu/sua" can be ambiguous: "his," "her," "their," "your." And yes, we have "dele/dela" to clarify. But in a quick everyday conversation, how does the context – who is speaking, what is being talked about, the situation, even gestures – function as a disambiguator? I mean, to what extent do we rely on that shared context to fill in the gaps that grammar alone can leave open? It's something to think about, to observe when we listen to and speak Portuguese, indeed.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Fica no ar.
+                            <span class="translation-text">It remains open.</span>
                         </div>
                     </div>
                 </div>
@@ -560,22 +636,23 @@
                         <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: Locais e Possessivos</h3>
                         
                         <h4 class="font-bold text-lg text-stone-800">Locais (Preposição 'em')</h4>
+                        <p class="text-stone-700 mb-2">Contração: **no** (em + o), **na** (em + a). Exceção: **em casa**.</p>
                         <ul class="list-disc list-inside ml-2 space-y-1 mb-4">
-                            <li>em + o = <strong>no</strong> (Ex: O Ricardo está <strong>no</strong> carro.)</li>
-                            <li>em + a = <strong>na</strong> (Ex: Estou <strong>na</strong> biblioteca.)</li>
-                            <li><strong>Exceção:</strong> <strong>em casa</strong> (Ex: Estou <strong>em casa</strong>.)</li>
+                            <li>O Ricardo está <strong>no</strong> carro.</li>
+                            <li>Estou <strong>na</strong> biblioteca.</li>
+                            <li>Estou <strong>em casa</strong>.</li>
                         </ul>
 
                         <h4 class="font-bold text-lg text-stone-800">Possessivos (Regra 1: Com Artigo)</h4>
-                        <p class="text-stone-700 mb-2">Concorda com a *coisa possuída*. Usa-se ANTES do nome.</p>
+                        <p class="text-stone-700 mb-2">Concorda com o objeto e usa-se **antes** do nome (Ex: **O** meu carro).</p>
                         <ul class="list-disc list-inside ml-2 space-y-1 mb-4">
                             <li><strong>O meu</strong> telemóvel. (masculino)</li>
                             <li><strong>A minha</strong> carteira. (feminino)</li>
                         </ul>
                         
                         <h4 class="font-bold text-lg text-stone-800">Possessivos (Regra 2: 'Dele/Dela')</h4>
-                        <p class="text-stone-700 mb-2">Refere-se ao *dono*. Usa-se DEPOIS do nome. (Desfaz a ambiguidade de 'seu/sua').</p>
-                         <ul class="list-disc list-inside ml-2 space-y-1">
+                        <p class="text-stone-700 mb-2">Refere-se ao **dono** e usa-se **depois** do nome (para clarificar).</p>
+                           <ul class="list-disc list-inside ml-2 space-y-1">
                             <li>O carro <strong>dele</strong>. (His car)</li>
                             <li>A carteira <strong>dela</strong>. (Her wallet)</li>
                         </ul>
@@ -583,20 +660,17 @@
 
                     <div class="bg-stone-50 p-6 rounded-lg shadow-sm border border-stone-200">
                         <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: Pronúncia</h3>
-                        <p class="text-stone-700 mb-4">Dois sons importantes no Português Europeu:</p>
-
+                        
                         <h4 class="font-bold text-lg text-stone-800">1. Som Nasal (M no fim)</h4>
-                        <p class="text-stone-700 mb-2">O som sai parcialmente pelo nariz.</p>
+                        <p class="text-stone-700 mb-2">O som sai pelo nariz. Contraste: **tem** (he/she) vs. **têm** (they).</p>
                         <ul class="list-disc list-inside ml-2 space-y-1 mb-4">
-                            <li>bem, sem, cem, quem</li>
-                            <li><strong>tem</strong> (he/she has) - mais fechado</li>
-                            <li><strong>têm</strong> (they have) - mais aberto (com acento)</li>
+                            <li>bem, sem, quem</li>
                         </ul>
 
                         <h4 class="font-bold text-lg text-stone-800">2. Os Sons do 'R'</h4>
                         <ul class="list-disc list-inside ml-2 space-y-3 text-stone-800">
-                            <li><strong>R Forte (Gutural):</strong> Início de palavra (<strong>R</strong>ua, <strong>R</strong>oma) ou RR (Ca<strong>rr</strong>o, Ga<strong>rr</strong>afa).</li>
-                            <li><strong>R Suave (Tap):</strong> Meio da palavra, R sozinho (Po<strong>r</strong>ta, Pa<strong>r</strong>ede, Ca<strong>r</strong>ta, Ob<strong>r</strong>igado).</li>
+                            <li>**R Forte (Gutural):** Início de palavra (<strong>R</strong>ua) ou **RR** (Ca<strong>rr</strong>o).</li>
+                            <li>**R Suave (Tap):** Meio da palavra, R sozinho (Po<strong>r</strong>ta, Falar).</li>
                         </ul>
                     </div>
                 </div>
@@ -609,7 +683,7 @@
                 </p>
 
                 <form id="quizForm">
-                    <div class="quiz-question">
+                    <div class="quiz-question" data-correct="b" name="q1">
                         <p class="font-semibold mb-2">1. Qual é a forma correta de dizer "I am at home" em Portugal?</p>
                         <div class="quiz-options">
                             <label><input type="radio" name="q1" value="a"> a) Estou na casa.</label>
@@ -619,7 +693,7 @@
                         <div class="feedback" id="feedback-q1"></div>
                     </div>
 
-                    <div class="quiz-question">
+                    <div class="quiz-question" data-correct="b" name="q2">
                         <p class="font-semibold mb-2">2. Como se diz "His wallet" (A carteira... dele) para ser claro e evitar ambiguidade?</p>
                         <div class="quiz-options">
                             <label><input type="radio" name="q2" value="a"> a) A sua carteira.</label>
@@ -629,7 +703,7 @@
                          <div class="feedback" id="feedback-q2"></div>
                     </div>
 
-                    <div class="quiz-question">
+                    <div class="quiz-question" data-correct="b" name="q3">
                         <p class="font-semibold mb-2">3. Em qual destas palavras o 'R' é "Forte" (gutural), como em "Rua"?</p>
                         <div class="quiz-options">
                             <label><input type="radio" name="q3" value="a"> a) Porta</label>
@@ -638,7 +712,7 @@
                         </div>
                          <div class="feedback" id="feedback-q3"></div>
                     </div>
-                     <div class="quiz-question">
+                     <div class="quiz-question" data-correct="a" name="q4">
                         <p class="font-semibold mb-2">4. Qual é a diferença principal entre "tem" e "têm"?</p>
                         <div class="quiz-options">
                             <label><input type="radio" name="q4" value="a"> a) "tem" é para (he/she), "têm" é para (they).</label>
@@ -648,7 +722,7 @@
                          <div class="feedback" id="feedback-q4"></div>
                     </div>
 
-                    <button type="button" id="checkQuiz" class="mt-4 px-6 py-2 bg-sky-600 text-white rounded-lg shadow hover:bg-sky-700 transition-all duration-200">
+                    <button type="button" id="checkQuiz" class="mt-4 px-6 py-2 bg-amber-600 text-white rounded-lg shadow hover:bg-amber-700 transition-all duration-200">
                         Check Answers
                     </button>
                     <p id="quizScore" class="mt-4 font-bold text-lg"></p>
@@ -678,17 +752,17 @@
 
             function activateTab(tabId) {
                  tabs.forEach(t => {
-                    t.classList.remove('tab-active');
-                    if (t.dataset.tab === tabId) {
-                        t.classList.add('tab-active');
-                    }
-                });
-                contents.forEach(c => {
-                    c.classList.remove('tab-content-active');
-                    if (c.id === tabId) {
-                        c.classList.add('tab-content-active');
-                    }
-                });
+                     t.classList.remove('tab-active');
+                     if (t.dataset.tab === tabId) {
+                         t.classList.add('tab-active');
+                     }
+                 });
+                 contents.forEach(c => {
+                     c.classList.remove('tab-content-active');
+                     if (c.id === tabId) {
+                         c.classList.add('tab-content-active');
+                     }
+                 });
             }
 
             activateTab(defaultTab);
@@ -699,6 +773,28 @@
                 });
             });
 
+            // --- LÓGICA NOVA DO BOTÃO DE TRADUÇÃO ---
+            const toggleButton = document.getElementById('toggle-translation');
+            let isTranslationVisible = false;
+
+            if (toggleButton) {
+                toggleButton.addEventListener('click', () => {
+                    isTranslationVisible = !isTranslationVisible; // Inverte o estado
+                    
+                    // Seleciona apenas as traduções DENTRO da secção de transcrição
+                    const translations = document.querySelectorAll('#transcricao .translation-text');
+                    
+                    if (isTranslationVisible) {
+                        translations.forEach(t => t.style.display = 'block');
+                        toggleButton.textContent = 'Ocultar Tradução (Hide Translation)';
+                    } else {
+                        translations.forEach(t => t.style.display = 'none');
+                        toggleButton.textContent = 'Mostrar Tradução (Show Translation)';
+                    }
+                });
+            }
+            // --- FIM DA LÓGICA NOVA ---
+
 
             // --- LÓGICA DO QUIZ ---
             const checkQuizButton = document.getElementById('checkQuiz');
@@ -706,10 +802,10 @@
             const quizScoreDisplay = document.getElementById('quizScore');
 
             const correctAnswers = {
-                q1: 'b',
-                q2: 'b',
-                q3: 'b',
-                q4: 'a'
+                q1: 'b', // Exceção: em casa
+                q2: 'b', // Dele/dela para clarificar
+                q3: 'b', // R forte no RR
+                q4: 'a'  // tem = ele/ela, têm = eles/elas
             };
 
             checkQuizButton.addEventListener('click', () => {
@@ -719,16 +815,18 @@
 
                 for (const question in correctAnswers) {
                     const feedbackEl = document.getElementById(`feedback-${question}`);
+                    // Apanhar a resposta correta diretamente do objeto
+                    const correctAnswer = correctAnswers[question];
                     const selectedOptionInput = quizForm.querySelector(`input[name="${question}"]:checked`); 
 
                     if (selectedOptionInput) {
                         const selectedValue = selectedOptionInput.value;
-                        if (selectedValue === correctAnswers[question]) {
+                        if (selectedValue === correctAnswer) {
                             feedbackEl.textContent = 'Correcto!';
                             feedbackEl.className = 'feedback correct';
                             score++;
                         } else {
-                            feedbackEl.textContent = 'Incorreto.';
+                            feedbackEl.textContent = `Incorreto. A resposta certa era a (${correctAnswer}).`;
                             feedbackEl.className = 'feedback incorrect';
                         }
                     } else {
@@ -738,14 +836,13 @@
                     }
                 }
                  if(answeredAll){
-                    quizScoreDisplay.textContent = `A sua pontuação: ${score} em ${totalQuestions}`;
+                     quizScoreDisplay.textContent = `A sua pontuação: ${score} em ${totalQuestions}`;
                  } else {
-                    quizScoreDisplay.textContent = `Por favor, responda a todas as perguntas.`;
+                     quizScoreDisplay.textContent = `Por favor, responda a todas as perguntas.`;
                  }
             });
 
         });
     </script>
-
-</body>
+    </body>
 </html>
