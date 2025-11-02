@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast A2: Unidade 6 (Parte 2)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f4; /* stone-100 */
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        .nav-tab {
+            padding: 0.75rem 1.25rem;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            color: #57534e; /* stone-600 */
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-tab:hover {
+            color: #047857; /* emerald-800 */
+        }
+        .tab-active {
+            color: #059669; /* emerald-600 */
+            border-bottom-color: #059669; /* emerald-600 */
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content-active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1, transform: translateY(0); }
+        }
+        /* Cor 1: Homem (Neutro) */
+        .chat-bubble-homem {
+            background-color: #f5f5f4; /* stone-100 */
+            color: #1c1917; /* stone-900 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 1.25rem 0.25rem;
+            max-width: 80%;
+            align-self: flex-start;
+        }
+        /* Cor 2: Mulher (Destaque Esmeralda) */
+        .chat-bubble-mulher {
+            background-color: #d1fae5; /* emerald-100 */
+            color: #065f46; /* emerald-900 */
+            padding: 0.75rem 1rem;
+            border-radius: 1.25rem 1.25rem 0.25rem 1.25rem;
+            max-width: 80%;
+            align-self: flex-end;
+        }
+        .translation-text { /* Re-utilizado para notas */
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.9em;
+            font-style: italic;
+            border-top: 1px dashed rgba(0, 0, 0, 0.1);
+            padding-top: 0.5rem;
+            color: #57534e; /* stone-600 */
+        }
+        .quiz-question {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #fafaf9; /* stone-50 */
+            border-radius: 0.5rem;
+            border: 1px solid #e7e5e4; /* stone-200 */
+        }
+        .quiz-options label {
+            display: block;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+         .quiz-options input[type="radio"] {
+            margin-right: 0.5rem;
+        }
+        .quiz-options label:hover {
+            background-color: #e0f2fe; /* light-blue-100 */
+        }
+        .feedback {
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        .correct { color: #15803d; /* green-700 */}
+        .incorrect { color: #b91c1c; /* red-700 */ }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="text-center pb-6 border-b border-stone-200">
+            <h1 class="text-4xl font-bold text-cyan-900">Unidade 6 (Parte 2): Possessivos e Sons</h2>
+            <p class="text-xl text-stone-600 mt-2">Foco em possessivos (seu vs. dele), profissões (médico/a) e os 3 sons do S.</p>
+            <a href="index.html" class="text-sky-600 hover:text-sky-800 mt-4 inline-block">&larr; Voltar ao Menu de Podcasts</a>
+        </header>
+
+        <nav class="mt-6 border-b border-stone-200">
+            <ul class="flex flex-wrap -mb-px">
+                <li><button class="nav-tab tab-active" data-tab="transcricao">Transcrição e Áudio</button></li>
+                <li><button class="nav-tab" data-tab="revisao">Revisão Gramatical</button></li>
+                <li><button class="nav-tab" data-tab="quiz">Quiz</button></li>
+            </ul>
+        </nav>
+
+        <main class="mt-8">
+
+            <section id="transcricao" class="tab-content tab-content-active">
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4">Áudio da Lição</h2>
+                <p class="text-lg text-stone-700 leading-relaxed mb-4">
+                    Practice your listening. Listen to the audio and follow along with the transcription below.
+                </p>
+                
+                <audio controls class="w-full mb-6">
+                    <source src="unidade06_2.m4a" type="audio/x-m4a">
+                    O seu browser não suporta o elemento de áudio.
+                </audio>
+
+                <h2 class="text-3xl font-semibold text-stone-800 mb-4 mt-8">Transcrição</h2>
+                <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Olá, bem-vindos a, hum, mais uma análise focada. Hoje temos em mãos materiais do curso A2 de português, a, da CIPLE Master, da professora Sheila Meneses. A nossa missão é destilar o essencial, aquilo que, pronto, que realmente faz a diferença para quem está a aprender.
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Exatamente. Vamos olhar assim para alguns pontos chave de gramática e vocabulário que surgem nestas lições, sim. A ideia é pegar nos, nos possessivos, nas profissões e até naqueles sons, às vezes tramados do S, e dar-lhes uma volta rápida para ajudar a fixar.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Boa. Então, vamos lá desmontar isto. Ah, comecemos pelos possessivos, aquelas palavrinhas que usamos para dizer de quem são as coisas, certo? Nos materiais, vimos exemplos como: "Ele é italiano, o apelido dele é Ciancio". Ou seja, em inglês, "He is Italian, his surname is Ciancio".
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sim. Parece simples, mas lembro-me que a diferença entre "seu" e "dele", ah, às vezes causa alguma confusão.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Pois, causa, é um ponto muito comum. É mesmo crucial distinguir "meu", "minha", "teu", "tua", "seu", "sua", "nosso", "nossa", "vosso", "vossa"...
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Uhum.
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            ...daqueles que não variam em género, como "dele", "dela", "deles", "delas". A chave está na concordância, não é?
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sim. "Meu carro", "minha casa" concorda com a coisa possuída. Já "dele" ou "dela" não mudam. Vêm de "de plus ele" ou "de plus ela", basicamente. Nos exercícios, tínhamos: "Qual é o nome do seu país?"
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem
