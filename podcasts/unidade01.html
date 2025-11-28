@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -47,7 +48,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Cor 1: Mulher */
+        /* Cor 1: Mulher (Neutro) */
         .chat-bubble-mulher {
             background-color: #f5f5f4; /* stone-100 */
             color: #1c1917; /* stone-900 */
@@ -56,7 +57,7 @@
             max-width: 80%;
             align-self: flex-start;
         }
-        /* Cor 2: Homem */
+        /* Cor 2: Homem (Destaque Cinza) */
         .chat-bubble-homem {
             background-color: #e5e7eb; /* gray-200 */
             color: #1f2937; /* gray-800 */
@@ -66,15 +67,17 @@
             align-self: flex-end;
         }
 
-        .translation-text { 
-            display: none; 
+        /* --- CSS ALTERADO --- */
+        .translation-text { /* Re-utilizado para notas E traduções */
+            display: none; /* ESCONDIDO POR DEFEITO */
             margin-top: 0.75rem;
             font-size: 0.9em;
             font-style: italic;
             border-top: 1px dashed rgba(0, 0, 0, 0.1);
             padding-top: 0.75rem;
-            color: #57534e; 
+            color: #57534e; /* stone-600 */
         }
+        /* --- FIM DA ALTERAÇÃO --- */
         
         .quiz-question {
             margin-bottom: 1.5rem;
@@ -141,7 +144,6 @@
                     Mostrar Tradução (Show Translation)
                 </button>
                 <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
-                    <!-- INÍCIO DO DIÁLOGO -->
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
@@ -275,23 +277,23 @@
                             <span class="translation-text">Makes sense. And to say goodbye?</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Também há formal e informal, certo?
                             <span class="translation-text">There's formal and informal too, right?</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Sim.
                             <span class="translation-text">Yes.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                            <span class="font-bold block">homem</span>
                             A questão da formalidade aparece logo aqui. Temos o "adeus", que soa talvez um pouco mais formal ou mais final.
                             <span class="translation-text">The issue of formality appears right here. We have "adeus" (goodbye), which sounds perhaps a little more formal or more final.</span>
                         </div>
@@ -324,37 +326,37 @@
                             <span class="translation-text">That's right. "Até amanhã" (See you tomorrow) for the next day, and "Até já" (See you soon/in a bit), which is great for when we come back shortly.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             (See you later. See you in a bit.) Percebo. A escolha já diz muito sobre a conversa. Lá está.
                             <span class="translation-text">I see. The choice already says a lot about the conversation. There you go.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Precisamente. A formalidade é um fio condutor importante no português.
                             <span class="translation-text">Precisely. Formality is an important thread running through Portuguese.</span>
                         </div>
                     </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            OK. Agora, uma parte que, pelo que percebi das fontes, baralha muita gente no início: dizer o nome. Em inglês é simples: "I am" or "My name is". Mas em português, eh, parece que temos dois verbos principais: "ser" e "chamar-se". E a escolha não é indiferente.
+                            <span class="translation-text">OK. Now, a part that, from what I gathered from the sources, confuses many people at the beginning: saying your name. In English it's simple: "I am" or "My name is." But in Portuguese, uh, it seems we have two main verbs: "ser" (to be) and "chamar-se" (to be called). And the choice is not indifferent.</span>
+                        </div>
+                    </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            OK. Agora, uma parte que, pelo que percebi das fontes, baralha muita gente no início: dizer o nome. Em inglês é simples: "I am" or "My name is". Mas em português, eh, parece que temos dois verbos principais: "ser" e "chamar-se". E a escolha não é indiferente.
-                            <span class="translation-text">OK. Now, a part that, from what I gathered from the sources, confuses many people at the beginning: saying your name. In English it's simple: "I am" or "My name is." But in Portuguese, uh, it seems we have two main verbs: "ser" (to be) and "chamar-se" (to be called). And the choice is not indifferent.</span>
+                            É, é um ponto crucial. E uma das primeiras grandes diferenças em relação ao inglês. As fontes, como aquele artigo "Ser vs. Chamar-se", explicam bem. "Chamar-se" é um verbo reflexo. Literalmente quer dizer "chamar a si mesmo", não é? Usa-se mesmo para dizer o nome.
+                            <span class="translation-text">It is, it's a crucial point. And one of the first big differences from English. The sources, like that article "Ser vs. Chamar-se," explain it well. "Chamar-se" is a reflexive verb. It literally means "to call oneself," doesn't it? It is indeed used to say your name.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            É, é um ponto crucial. E uma das primeiras grandes diferenças em relação ao inglês. As fontes, como aquele artigo "Ser vs. Chamar-se", explicam bem. "Chamar-se" é um verbo reflexo. Literalmente quer dizer "chamar a si mesmo", não é? Usa-se mesmo para dizer o nome.
-                            <span class="translation-text">It is, it's a crucial point. And one of the first big differences from English. The sources, like that article "Ser vs. Chamar-se," explain it well. "Chamar-se" is a reflexive verb. It literally means "to call oneself," doesn't it? It is indeed used to say your name.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
                             Tipo, "Eu chamo-me Sheila". O "me" é a parte reflexa.
                             <span class="translation-text">Like, "Eu chamo-me Sheila." (I call myself Sheila.) The "me" is the reflexive part.</span>
                         </div>
@@ -408,205 +410,205 @@
                             <span class="translation-text">OK. With "chamar-se," no article. And with "ser" (to be)?</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                             Com "ser", a regra de ouro em português europeu é usar o artigo definido, "o" para masculino, "a" para feminino, antes do nome. Tem de ser "Eu sou o Pedro" ou "Ela é a Ana". Nunca "Sou Pedro" ou "Ela é Ana". Os exemplos mostram isso: "Ele é o Jorge Viegas".
-                            <span class="translation-text">With "ser," use the definite article, "o" (the, masc.) for masculine, "a" (the, fem.) for feminine, before the name. It has to be "Eu sou o Pedro" (I am the Pedro) or "Ela é a Ana" (She is the Ana). Never "Sou Pedro" or "Ela é Ana." The examples show this: "Ele é o Jorge Viegas." (He is the Jorge Viegas.)</span>
-                        </div>
-                    </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
+                             usar o artigo definido, "o" para masculino, "a" para feminino, antes do nome. Tem de ser "Eu sou o Pedro" ou "Ela é a Ana". Nunca "Sou Pedro" ou "Ela é Ana". Os exemplos mostram isso: "Ele é o Jorge Viegas".
+                            <span class="translation-text">With "ser,"  use the definite article, "o" (the, masc.) for masculine, "a" (the, fem.) for feminine, before the name. It has to be "Eu sou o Pedro" (I am the Pedro) or "Ela é a Ana" (She is the Ana). Never "Sou Pedro" or "Ela é Ana." The examples show this: "Ele é o Jorge Viegas." (He is the Jorge Viegas.)</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Uau. OK, isto é mesmo diferente. A minha tendência seria tirar o artigo com "ser", como em inglês, "I am John". Porque é que em português se põe esse "o" ou "a"? Qual é a lógica?
                             <span class="translation-text">Wow. OK, this is really different. My tendency would be to drop the article with "ser," like in English, "I am John." Why do you put that "o" or "a" in Portuguese? What's the logic?</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             É uma boa pergunta. Eh, não há uma resposta única, mas uma interpretação possível é que usar "ser" mais o artigo ("Sou a Maria") identifica a pessoa de uma forma mais definida. Quase como se dissesse: "Eu sou *aquela* Maria específica". Individualiza mais.
                             <span class="translation-text">That's a good question. Uh, there isn't a single answer, but one possible interpretation is that using "ser" plus the article ("Sou a Maria" - I am the Maria) identifies the person in a more definite way. Almost as if saying: "I am *that specific* Maria." It individualizes more.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-sart">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Hum.
                             <span class="translation-text">Hm.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Enquanto que "chamar-se" ("Chamo-me Maria") foca-se só no ato de dizer o nome, não tanto em definir quem és perante o outro. É subtil, mas a gramática marca a diferença. Dominar isto, este pequeno artigo, ajuda imenso a não soar a tradução.
                             <span class="translation-text">Whereas "chamar-se" ("Chamo-me Maria" - I am called Maria) focuses only on the act of saying the name, not so much on defining who you are to the other person. It's subtle, but grammar marks the difference. Mastering this, this little article, helps immensely to not sound like a translation.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Percebo. É como se "ser" apontasse para a identidade e "chamar-se" só informasse o nome. Fascinante como uma palavrinha tão pequena faz diferença. E isto leva-nos a como perguntar o nome, que também muda com a formalidade, não é?
                             <span class="translation-text">I see. It's as if "ser" points to identity and "chamar-se" only informs the name. Fascinating how such a small word makes a difference. And this leads us to how to ask the name, which also changes with formality, doesn't it?</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Exatamente. E aqui a formalidade mexe mesmo com o verbo, o que é muito claro em Portugal, de Portugal.
                             <span class="translation-text">Exactly. And here, formality really messes with the verb, which is very clear in Portugal, in Portugal's Portuguese.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Como assim?
                             <span class="translation-text">How so?</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Para um tratamento informal, com amigos, família, usamos a segunda pessoa, o "tu". A pergunta é: "Olá! Como te chamas?" (What's your name? - informal you). O verbo está na segunda pessoa ("chamas") e leva o pronome "te".
                             <span class="translation-text">For an informal address, with friends, family, we use the second person, "tu." The question is: "Olá! Como te chamas?" (Hello! What is your name? - informal you). The verb is in the second person ("chamas") and takes the pronoun "te."</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Certo.
                             <span class="translation-text">Right.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Para um tratamento formal, com pessoas mais velhas, desconhecidos, no trabalho, usamos a terceira pessoa, associada a "você", "o senhor", "a senhora". A pergunta é: "Bom dia. Como se chama?". O verbo vai para a terceira pessoa ("chama") e leva o pronome "se".
                             <span class="translation-text">For a formal address, with older people, strangers, at work, we use the third person, associated with "você" (you), "o senhor" (sir), "a senhora" (madam). The question is: "Bom dia. Como se chama?" (Good morning. What is your name? - formal you). The verb goes to the third person ("chama") and takes the pronoun "se."</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             A terminação do verbo e o pronome mudam. Claríssimo. E para devolver a pergunta, tipo "and you"?
                             <span class="translation-text">The verb ending and the pronoun change. Crystal clear. And to return the question, like "and you?"</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Segue a mesma lógica. Se te trataram por "tu" ("Como te chamas?"), devolves com "E tu?".
                             <span class="translation-text">It follows the same logic. If they addressed you with "tu" ("Como te chamas?"), you reply with "E tu?" (And you? - informal).</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             OK.
                             <span class="translation-text">OK.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Se a pergunta foi formal ("Como se chama?"), tens de devolver de forma igualmente formal. As fontes indicam: "E o senhor?" (para homem), "E a senhora?" (para uma mulher), ou "E você?".
                             <span class="translation-text">If the question was formal ("Como se chama?"), you have to reply in an equally formal way. The sources indicate: "E o senhor?" (And sir?), "E a senhora?" (And madam?), or "E você?" (And you?).</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             E esse "você", usa-se muito?
                             <span class="translation-text">And is that "você" (you) used much?</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Usa-se. Mas em Portugal, atenção, às vezes pode soar um pouco direto demais em situações muito formais, ou até menos respeitoso do que "o senhor" ou "a senhora", especialmente com pessoas mais velhas ou numa hierarquia. Ir por "o senhor" ou "a senhora" é geralmente mais seguro.
                             <span class="translation-text">It is used. But in Portugal, be careful, sometimes it can sound a little too direct in very formal situations, or even less respectful than "o senhor" or "a senhora," especially with older people or in a hierarchy. Going with "o senhor" or "a senhora" is generally safer.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Uau. Isto da formalidade é quase uma arte. Imagino que no início uma pessoa possa cometer umas gafes.
                             <span class="translation-text">Wow. This formality thing is almost an art. I imagine a person might make some blunders at the beginning.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Acontece, claro. Mas as pessoas normalmente percebem. O importante é ter a noção que a língua tem estas ferramentas para marcar respeito e distância, e a conjugação é uma delas. Ah, e outro ponto gramatical que os artigos referem: a ordem das palavras na pergunta.
                             <span class="translation-text">It happens, of course. But people usually understand. The important thing is to be aware that the language has these tools to mark respect and distance, and conjugation is one of them. Ah, and another grammatical point that the articles mention: the word order in the question.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Sim.
                             <span class="translation-text">Yes.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Com palavras como "como", "onde", "quem", o pronome reflexo ("me", "te", "se") costuma vir *antes* do verbo. Por isso é "Como se chama?" e não "Chama-se como?".
                             <span class="translation-text">With words like "como" (how), "onde" (where), "quem" (who), the reflexive pronoun ("me," "te," "se") usually comes *before* the verb. That's why it's "Como se chama?" and not "Chama-se como?".</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Ah, OK. A segunda forma soaria esquisita.
                             <span class="translation-text">Ah, OK. The second form would sound weird.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Soaria menos natural na pergunta direta, sim. A ordem normal é essa: palavra interrogativa + pronome + verbo. E já que falamos de pronomes, reparaste como nos exemplos dos slides muitas vezes não aparece o "eu", o "tu"?
                             <span class="translation-text">It would sound less natural in the direct question, yes. The normal order is that: interrogative word + pronoun + verb. And speaking of pronouns, did you notice how in the slide examples the "eu" (I), the "tu" (you) often doesn't appear?</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Reparei. Diz-se "Chamo-me Pedro", não "Eu chamo-me Pedro". Porquê?
                             <span class="translation-text">I did notice. You say "Chamo-me Pedro" (I am called Pedro), not "Eu chamo-me Pedro." Why?</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Porque a terminação do verbo em português já diz tudo. "Chamo", só pode ser "eu". "Chamas", só "tu". "Chama", "ele", "ela" ou "você". O pronome sujeito acaba por ser redundante na maioria das vezes. Omite-se para a conversa fluir melhor. Só se usa mais para dar ênfase ou evitar confusão.
                             <span class="translation-text">Because the verb ending in Portuguese already says everything. "Chamo" can only be "eu" (I). "Chamas," only "tu" (you). "Chama," "ele" (he), "ela" (she) or "você" (you). The subject pronoun ends up being redundant most of the time. It is omitted for the conversation to flow better. It is only used more to give emphasis or avoid confusion.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Entendido. A informação está no fim do verbo. Bem, vamos mudar de assunto. Vocabulário essencial desta unidade: números de 0 a 20. Temos a lista no slide: 0, 1, 2, 3... 10. E depois: 11, 12, 13, 14, 15, 16, 17, 18, 19, 20.
                             <span class="translation-text">Understood. The information is in the verb ending. Well, let's change the subject. Essential vocabulary for this unit: numbers from 0 to 20. We have the list on the slide: 0, 1, 2, 3... 10. And then: 11, 12, 13, 14, 15, 16, 17, 18, 19, 20.</span>
                         </div>
                     </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Essenciais, claro. E a aplicação prática imediata que os materiais sugerem é para os números de telefone.
+                            <span class="translation-text">Essential, of course. And the immediate practical application that the materials suggest is for phone numbers.</span>
+                        </div>
+                    </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Essenciais, claro. E a aplicação prática imediata que os materiais sugerem é para os números de telefone.
-                            <span class="translation-text">Essential, of course. And the immediate practical application that the materials suggest is for phone numbers.</span>
+                            Como é que se pergunta, mesmo?
+                            <span class="translation-text">How do you ask, exactly?</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Como é que se pergunta, mesmo?
-                            <span class="translation-text">How do you ask, exactly?</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
                             As fontes dizem: "Qual é o teu número de telemóvel?" (What is your mobile phone number?) ou só "Qual é o teu número de telefone?" (What is your phone number?).
                             <span class="translation-text">The sources say: "Qual é o teu número de telemóvel?" (What is your mobile phone number?) or just "Qual é o teu número de telefone?" (What is your phone number?).</span>
                         </div>
@@ -625,9 +627,9 @@
                             <span class="translation-text">Normally yes, it's the simplest. For example, 912 345 678 would be "nove, um, dois, três, quatro, cinco, seis, sete, oito." (nine, one, two, three, four, five, six, seven, eight). Sometimes they are grouped, but one by one works perfectly. Ah, and an important note: in Portugal, the number 6 is indeed read "seis." That form "meia" (half) that you sometimes hear is more from Brazil.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Boa dica. Manter o "seis" em Portugal. Agora, algo que os artigos dizem que é mesmo contra-intuitivo para quem fala inglês: os dias da semana. Tirando sábado e domingo, os outros têm números.
                             <span class="translation-text">Good tip. Keeping "seis" in Portugal. Now, something that the articles say is really counter-intuitive for English speakers: the days of the week. Apart from Saturday and Sunday, the others have numbers.</span>
                         </div>
@@ -646,9 +648,6 @@
                             <span class="translation-text">How does that work?</span>
                         </div>
                     </div>
-                    
-                    <!-- CORREÇÕES A PARTIR DE AQUI -->
-                    
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
@@ -663,16 +662,16 @@
                             <span class="translation-text">Makes sense.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             "Terça-feira", o terceiro dia útil. "Quarta-feira", o quarto. "Quinta-feira", o quinto. "Sexta-feira", o sexto dia útil. E depois temos "Sábado" (vem do Shabat hebraico) e "Domingo".
                             <span class="translation-text">"Terça-feira" (Tuesday), the third working day. "Quarta-feira" (Wednesday), the fourth. "Quinta-feira" (Thursday), the fifth. "Sexta-feira" (Friday), the sixth working day. And then we have "Sábado" (Saturday) (comes from the Hebrew Shabbat) and "Domingo" (Sunday).</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Que lógico, visto assim. Mas tão diferente. E como é que usamos isto? Para perguntar "Que dia é hoje?", a resposta é direta.
                             <span class="translation-text">How logical, seen this way. But so different. And how do we use this? To ask "Que dia é hoje?" (What day is today?), the answer is direct.</span>
                         </div>
@@ -680,15 +679,15 @@
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Direta. Por exemplo, "Hoje é segunda-feira" ou "Hoje é sábado".
-                            <span class="translation-text">Direct. For example, "Hoje é segunda-feira" (Today is Monday) or "Hoje é sábado" (Today is Saturday).</span>
-                        </div>
+                            Direta. Por exemplo, "Hoje é segunda-feira" ou "Hoje é sábado". 
+			    <span class="translation-text">Direct. For example, "Hoje é segunda-feira" (Today is Monday) or "Hoje é sábado" (Today is Saturday).</span>
+			 </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            E para falar de coisas que acontecem regularmente, como no exemplo: "Temos aulas à segunda e à quarta". Notei esse "à" antes dos dias.
-                            <span class="translation-text">And to talk about things that happen regularly, as in the example: "Temos aulas à segunda e à quarta" (We have classes on Monday and Wednesday). I noticed that "à" before the days.</span>
+			E para falar de coisas que acontecem regularmente, como no exemplo: "Temos aulas à segunda e à quarta". Notei esse "à" antes dos dias.
+                         <span class="translation-text">    And to talk about things that happen regularly, as in the example: "Temos aulas à segunda e à quarta" (We have classes on Monday and Wednesday). I noticed that "à" before the days.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
@@ -761,13 +760,39 @@
                             <span class="translation-text">And to finish, perhaps leave an idea hanging that connects to this conversation about "ser" and "chamar-se": identity versus name. We said that "ser" is for permanent, essential things. "Sou a Ana" (I am Ana), "Ele é português" (He is Portuguese). But Portuguese has another fundamental "to be" verb: "estar."</span>
                         </div>
                     </div>
-                    
-                    <!-- CORREÇÃO FINAL: ÚNICO BLOCO DO HOMEM -->
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Exatamente. E o "estar", ao contrário do "ser", usa-se para estados temporários, localizações, condições que mudam. "Estou cansada", "Ele está em Lisboa", "O café está frio". A distinção entre "ser" e "estar" é um dos grandes temas da gramática portuguesa. E, muitas vezes, um desafio. Pensar sobre quando é que algo é visto como permanente ("ser") ou como temporário ("estar") abre toda uma nova dimensão de significado. Fica então a sugestão: explorar um pouco mais esta dupla "ser" versus "estar". Pensar em situações do dia a dia e perguntar: "Isto é algo essencial ou é um estado? Como é que diria isto em português?". Pode ser um bom próximo passo para aprofundar. Sem dúvida, é um caminho fascinante para continuar a descobrir a língua.
-                            <span class="translation-text">Exactly. And "estar" (to be), unlike "ser," is used for temporary states, locations, conditions that change. "Estou cansada", "Ele está em Lisboa", "O café está frio". The distinction between "ser" and "estar" is one of the big topics in Portuguese grammar. And, often, a challenge. Thinking about when something is seen as permanent ("ser") or as temporary ("estar") opens up a whole new dimension of meaning. The suggestion remains, then. To explore this "ser" versus "estar" duality a little more. To think about everyday situations and ask: "Is this something essential or is it a state? How would I say this in Portuguese?". It can be a good next step to delve deeper. No doubt, it's a fascinating path to continue discovering the language.</span>
+                            Exatamente. E o "estar", ao contrário do "ser", usa-se para estados temporários, localizações, condições que mudam. "Estou cansada", "Ele está em Lisboa", "O café está frio".
+                            <span class="translation-text">Exactly. And "estar" (to be), unlike "ser," is used for temporary states, locations, conditions that change. "Estou cansada" (I am tired), "Ele está em Lisboa" (He is in Lisbon), "O café está frio" (The coffee is cold).</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Uhum.
+                            <span class="translation-text">Uh-huh.</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            A distinção entre "ser" e "estar" é um dos grandes temas da gramática portuguesa. E, muitas vezes, um desafio. Pensar sobre quando é que algo é visto como permanente ("ser") ou como temporário ("estar") abre toda uma nova dimensão de significado.
+                            <span class="translation-text">The distinction between "ser" and "estar" is one of the big topics in Portuguese grammar. And, often, a challenge. Thinking about when something is seen as permanent ("ser") or as temporary ("estar") opens up a whole new dimension of meaning.</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Fica então a sugestão. Explorar um pouco mais esta dupla "ser" versus "estar". Pensar em situações do dia a dia e perguntar: "Isto é algo essencial ou é um estado? Como é que diria isto em português?". Pode ser um bom próximo passo para aprofundar.
+                            <span class="translation-text">The suggestion remains, then. To explore this "ser" versus "estar" duality a little more. To think about everyday situations and ask: "Is this something essential or is it a state? How would I say this in Portuguese?". It can be a good next step to delve deeper.</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sem dúvida. É um caminho fascinante para continuar a descobrir a língua.
+                            <span class="translation-text">No doubt. It's a fascinating path to continue discovering the language.</span>
                         </div>
                     </div>
                 </div>
