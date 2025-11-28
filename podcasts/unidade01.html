@@ -47,7 +47,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Cor 1: Mulher (Neutro) */
+        /* Cor 1: Mulher */
         .chat-bubble-mulher {
             background-color: #f5f5f4; /* stone-100 */
             color: #1c1917; /* stone-900 */
@@ -56,7 +56,7 @@
             max-width: 80%;
             align-self: flex-start;
         }
-        /* Cor 2: Homem (Destaque Cinza) */
+        /* Cor 2: Homem */
         .chat-bubble-homem {
             background-color: #e5e7eb; /* gray-200 */
             color: #1f2937; /* gray-800 */
@@ -66,17 +66,15 @@
             align-self: flex-end;
         }
 
-        /* --- CSS ALTERADO --- */
-        .translation-text { /* Re-utilizado para notas E traduções */
-            display: none; /* ESCONDIDO POR DEFEITO */
+        .translation-text { 
+            display: none; 
             margin-top: 0.75rem;
             font-size: 0.9em;
             font-style: italic;
             border-top: 1px dashed rgba(0, 0, 0, 0.1);
             padding-top: 0.75rem;
-            color: #57534e; /* stone-600 */
+            color: #57534e; 
         }
-        /* --- FIM DA ALTERAÇÃO --- */
         
         .quiz-question {
             margin-bottom: 1.5rem;
@@ -143,6 +141,7 @@
                     Mostrar Tradução (Show Translation)
                 </button>
                 <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
+                    <!-- INÍCIO DO DIÁLOGO -->
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
@@ -292,7 +291,7 @@
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                            <span class="font-bold block">homem</span>
                             A questão da formalidade aparece logo aqui. Temos o "adeus", que soa talvez um pouco mais formal ou mais final.
                             <span class="translation-text">The issue of formality appears right here. We have "adeus" (goodbye), which sounds perhaps a little more formal or more final.</span>
                         </div>
@@ -398,7 +397,7 @@
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Com o verbo "chamar-se", nunca se usa artigo definido "o" ou "a" antes do nome. Diz-se "Chamo-me Pedro" ou "Ela chama-se Ana". Nunca, mas nunca, "Chamo-me o Pedro" ou "Ela chama-se a Ana". Os exercícios deixam esse claro.
+                            Com o verbo "chamar-se", nunca se usa artigo definido "o" ou "a" antes do nome. Diz-se "Chamo-me Pedro" ou "Ela chama-se Ana". Nunca, mas nunca, "Chamo-me o Pedro" ou "Ela chama-se a Ana". Os exercícios deixam isso claro.
                             <span class="translation-text">With the verb "chamar-se" (to be called), you never use the definite article "o" or "a" before the name. You say "Chamo-me Pedro" (I am called Pedro) or "Ela chama-se Ana" (She is called Ana). Never, ever, "Chamo-me o Pedro" or "Ela chama-se a Ana." The exercises make that clear.</span>
                         </div>
                     </div>
@@ -412,8 +411,8 @@
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Com "ser", a regra de ouro em português europeu é usar o artigo definido, "o" para masculino, "a" para feminino, antes do nome. Tem de ser "Eu sou o Pedro" ou "Ela é a Ana". Nunca "Sou Pedro" ou "Ela é Ana". Os exemplos mostram isso: "Ele é o Jorge Viegas".
-                            <span class="translation-text">With "ser," the golden rule in European Portuguese is to use the definite article, "o" (the, masc.) for masculine, "a" (the, fem.) for feminine, before the name. It has to be "Eu sou o Pedro" (I am the Pedro) or "Ela é a Ana" (She is the Ana). Never "Sou Pedro" or "Ela é Ana." The examples show this: "Ele é o Jorge Viegas." (He is the Jorge Viegas.)</span>
+                             Com "ser", a regra de ouro em português europeu é usar o artigo definido, "o" para masculino, "a" para feminino, antes do nome. Tem de ser "Eu sou o Pedro" ou "Ela é a Ana". Nunca "Sou Pedro" ou "Ela é Ana". Os exemplos mostram isso: "Ele é o Jorge Viegas".
+                            <span class="translation-text">With "ser," use the definite article, "o" (the, masc.) for masculine, "a" (the, fem.) for feminine, before the name. It has to be "Eu sou o Pedro" (I am the Pedro) or "Ela é a Ana" (She is the Ana). Never "Sou Pedro" or "Ela é Ana." The examples show this: "Ele é o Jorge Viegas." (He is the Jorge Viegas.)</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
@@ -647,6 +646,9 @@
                             <span class="translation-text">How does that work?</span>
                         </div>
                     </div>
+                    
+                    <!-- CORREÇÕES A PARTIR DE AQUI (Homem explica) -->
+                    
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
@@ -675,11 +677,18 @@
                             <span class="translation-text">How logical, seen this way. But so different. And how do we use this? To ask "Que dia é hoje?" (What day is today?), the answer is direct.</span>
                         </div>
                     </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Direta. Por exemplo, "Hoje é segunda-feira" ou "Hoje é sábado".
+                            <span class="translation-text">Direct. For example, "Hoje é segunda-feira" (Today is Monday) or "Hoje é sábado" (Today is Saturday).</span>
+                        </div>
+                    </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Direta. Por exemplo, "Hoje é segunda-feira" ou "Hoje é sábado". E para falar de coisas que acontecem regularmente, como no exemplo: "Temos aulas à segunda e à quarta". Notei esse "à" antes dos dias.
-                            <span class="translation-text">Direct. For example, "Hoje é segunda-feira" (Today is Monday) or "Hoje é sábado" (Today is Saturday). And to talk about things that happen regularly, as in the example: "Temos aulas à segunda e à quarta" (We have classes on Monday and Wednesday). I noticed that "à" before the days.</span>
+                            E para falar de coisas que acontecem regularmente, como no exemplo: "Temos aulas à segunda e à quarta". Notei esse "à" antes dos dias.
+                            <span class="translation-text">And to talk about things that happen regularly, as in the example: "Temos aulas à segunda e à quarta" (We have classes on Monday and Wednesday). I noticed that "à" before the days.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
