@@ -42,13 +42,13 @@
         .tab-content-active {
             display: block;
         }
-        /* ERRO DO PONTO E VÍRGULA CORRIGIDO AQUI */
+        
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* --- ESTILOS DAS LEGENDAS CORRIGIDOS --- */
+        /* --- ESTILOS DAS LEGENDAS --- */
         
         /* Cor 1: Homem (Orador 1) - Neutro, Esquerda */
         .chat-bubble-homem {
@@ -69,8 +69,8 @@
             align-self: flex-end;
         }
 
-        /* --- CSS ALTERADO --- */
-        .translation-text { /* Re-utilizado para notas E traduções */
+        /* --- CSS ALTERADO PARA TRADUÇÃO --- */
+        .translation-text { 
             display: none; /* ESCONDIDO POR DEFEITO */
             margin-top: 0.75rem;
             font-size: 0.9em;
@@ -79,7 +79,6 @@
             padding-top: 0.75rem;
             color: #57534e; /* stone-600 */
         }
-        /* --- FIM DA ALTERAÇÃO --- */
         
         .quiz-question {
             margin-bottom: 1.5rem;
@@ -136,7 +135,7 @@
                 </p>
                 
                 <audio controls class="w-full mb-6">
-                    <source src="unidade05.m4a" type="audio/x-m4a">
+                    <source src="unidade05.m4a" type="audio/mpeg">
                     O seu browser não suporta o elemento de áudio.
                 </audio>
 
@@ -155,8 +154,14 @@
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher"> <span class="font-bold block">Mulher</span>
-                            Exatamente. Estivemos a analisar os apontamentos, os slides, os exercícios todos. E, bem, parece que os pontos chave são mesmo aquele vocabulário do dia-a-dia, não é? Os objetos...
-                            <span class="translation-text">Exactly. We were analyzing all the notes, the slides, the exercises. And, well, it seems that the key points are really that everyday vocabulary, right? The objects...</span>
+                            Exatamente.
+                            <span class="translation-text">Exactly</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem"> <span class="font-bold block">Homem</span>
+                            Estivemos a analisar os apontamentos, os slides, os exercícios todos. E, bem, parece que os pontos chave são mesmo aquele vocabulário do dia-a-dia, não é? Os objetos...
+                            <span class="translation-text">We were analyzing all the notes, the slides, the exercises. And, well, it seems that the key points are really that everyday vocabulary, right? The objects...</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
@@ -169,78 +174,79 @@
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Pois. E depois, como é que dizemos mais de um? Os plurais.
-                            <span class="translation-text">Indeed. And then, how do we say more than one? The plurals.</span>
+                            Pois. Ah ah ah ah.
+                            <span class="translation-text">Right, hahahaha.</span>
                         </div>
                     </div>
+
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
+                            E depois, como é que dizemos mais de um? Os plurais.
+                            <span class="translation-text">Indeed. And then, how do we say more than one? The plurals.</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Aham.
                             <span class="translation-text">Uh-huh.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             A quem pertencem as coisas, com o "de", "do", "da". E, claro, aquele verbo, o "ter", que é central.
                             <span class="translation-text">To whom things belong, with "de," "do," "da." And, of course, that verb, "ter" (to have), which is central.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Essencial mesmo.
                             <span class="translation-text">Essential indeed.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Pronto. Preparados para esta análise focada?
                             <span class="translation-text">Right. Ready for this focused analysis?</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Vamos a isso. O objetivo é mesmo solidificar estas ferramentas, pegar nos exemplos concretos dos materiais, acho que é a melhor forma.
                             <span class="translation-text">Let's do it. The goal is really to solidify these tools, to take the concrete examples from the materials—I think that's the best way.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Sim, tornar a coisa prática.
                             <span class="translation-text">Yes, make it practical.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Exato.
                             <span class="translation-text">Exactly.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Garantir que a aplicação fica clara. Falar dos objetos que temos, ou que perdemos, não é? Às vezes.
                             <span class="translation-text">Ensuring the application is clear. Talking about the objects we have, or that we lose, right? Sometimes.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Quem nunca?
-                            <span class="translation-text">Who hasn't?</span>
-                        </div>
-                    </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Pois. Como os pluralizamos, como dizemos de quem é, para que serve. E, claro, dominar o verbo "ter". Esse é fundamental, não só aqui, mas, pronto, para comunicar em geral.
-                            <span class="translation-text">Indeed. How we pluralize them, how we say whose they are, what they are for. And, of course, mastering the verb "ter" (to have). That is fundamental, not only here, but, well, for communicating in general.</span>
+                            Quem nunca? Pois. Como os pluralizamos, como dizemos de quem é, para que serve. E, claro, dominar o verbo "ter". Esse é fundamental, não só aqui, mas, pronto, para comunicar em geral.
+                            <span class="translation-text">Who hasn't? Indeed. How we pluralize them, how we say whose they are, what they are for. And, of course, mastering the verb "ter" (to have). That is fundamental, not only here, but, well, for communicating in general.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
@@ -267,15 +273,15 @@
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Ótimo. OK.
-                            <span class="translation-text">Great. OK.</span>
+                            Ótimo. 
+                            <span class="translation-text">Great. </span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            A Unidade 5, logo de início, apresenta um monte de objetos, não é? Coisas muito úteis que trazemos connosco. Dos materiais, quais é que saltam logo à vista como, como essenciais? Lembro-me do passaporte, das chaves...
-                            <span class="translation-text">Unit 5, right from the start, presents a bunch of objects, doesn't it? Very useful things that we carry with us. From the materials, which ones immediately stand out as, as essential? I remember the passport, the keys...</span>
+                            Ok. A Unidade 5, logo de início, apresenta um monte de objetos, não é? Coisas muito úteis que trazemos connosco. Dos materiais, quais é que saltam logo à vista como, como essenciais? Lembro-me do passaporte, das chaves...
+                            <span class="translation-text">Ok. Unit 5, right from the start, presents a bunch of objects, doesn't it? Very useful things that we carry with us. From the materials, which ones immediately stand out as, as essential? I remember the passport, the keys...</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
@@ -302,85 +308,85 @@
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            É verdade. Pensa em situações concretas. No aeroporto, pedem o passaporte. Ou estamos num café e o telemóvel toca. "Desculpe, é o meu telemóvel". Saber dizer estas palavras é mesmo o primeiro passo para, para interagir.
-                            <span class="translation-text">It's true. Think of concrete situations. At the airport, they ask for the passport. Or we are at a cafe and the mobile phone rings. "Desculpe, é o meu telemóvel" (Excuse me, it's my mobile phone). Knowing how to say these words is really the first step to, to interact.</span>
+                            É verdade. 
+                            <span class="translation-text">It's true.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
+                            Pensa em situações concretas. No aeroporto, pedem o passaporte. Ou estamos num café e o telemóvel toca. "Desculpe, é o meu telemóvel". Saber dizer estas palavras é mesmo o primeiro passo para, para interagir.
+                            <span class="translation-text"> Think of concrete situations. At the airport, they ask for the passport. Or we are at a cafe and the mobile phone rings. "Desculpe, é o meu telemóvel" (Excuse me, it's my mobile phone). Knowing how to say these words is really the first step to, to interact.</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             E a "mala"? Lembro-me que os materiais faziam aquela distinção, não era? Entre "mala de viagem" (tipo suitcase) e "mala de mão" (handbag)?
                             <span class="translation-text">And the "mala" (bag/suitcase)? I remember the materials made that distinction, didn't they? Between "mala de viagem" (suitcase) and "mala de mão" (handbag)?</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Exato.
                             <span class="translation-text">Exactly.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             E ainda a "mochila" (backpack). Confesso que ao início, para mim, era tudo mala. Qualquer coisa que levasse tralha, era uma mala.
                             <span class="translation-text">And also the "mochila" (backpack). I confess that at the beginning, for me, everything was a mala. Anything that carried stuff was a mala.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             É uma generalização super comum. Mas a distinção, bem, dá jeito, não é? Se perder a sua "mala de mão" no café, é um bocadinho diferente de esquecer a "mala de viagem" no comboio.
                             <span class="translation-text">It's a super common generalization. But the distinction, well, it comes in handy, doesn't it? Losing your "mala de mão" (handbag) in the cafe is a little different from forgetting your "mala de viagem" (suitcase) on the train.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Pois, é verdade.
                             <span class="translation-text">Yes, it's true.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             A lista dos materiais também tinha... hum... a "garrafa de água" (water bottle), super importante, não é? A "caneta" (pen) e o "lápis" (pencil), para tirar notas.
                             <span class="translation-text">The list of materials also had... um... the "garrafa de água" (water bottle), super important, right? The "caneta" (pen) and the "lápis" (pencil), for taking notes.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Uhum.
                             <span class="translation-text">Uh-huh.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             O "livro" (book), o "mapa" (map). Se bem que hoje em dia, com os telemóveis...
                             <span class="translation-text">The "livro" (book), the "mapa" (map). Although nowadays, with mobile phones...</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Pois, já não se usa tanto. Mas ainda pode dar jeito.
-                            <span class="translation-text">Indeed, it's not used as much anymore. But it can still be useful.</span>
-                        </div>
-                    </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            E, claro, "dinheiro" (money) e o "cartão de cidadão" (o Citizen Card português).
-                            <span class="translation-text">And, of course, "dinheiro" (money) and the "cartão de cidadão" (the Portuguese Citizen Card).</span>
+                            Pois, já não se usa tanto.
+                            <span class="translation-text">Indeed, it's not used as much anymore</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Imagino só. "Epá, acho que perdi a minha mochila. Tinha lá a carteira, o dinheiro, o cartão de cidadão, a minha garrafa de água e um livro". É logo uma pequena tragédia que precisa deste vocabulário todo.
-                            <span class="translation-text">Just imagine. "Wow, I think I lost my backpack. It had my wallet, money, citizen card, my water bottle, and a book." That's a whole small tragedy that needs all this vocabulary.</span>
+                            Mas ainda pode dar jeito. E, claro, "dinheiro" (money) e o "cartão de cidadão" (o Citizen Card português).Imagina só. "Epá, acho que perdi a minha mochila. Tinha lá a carteira, o dinheiro, o cartão de cidadão, a minha garrafa de água e um livro". É logo uma pequena tragédia que precisa deste vocabulário todo.
+                            <span class="translation-text"> But it can still be useful. And, of course, "dinheiro" (money) and the "cartão de cidadão" (the Portuguese Citizen Card). "Wow, I think I lost my backpack. It had my wallet, money, citizen card, my water bottle, and a book." That's a whole small tragedy that needs all this vocabulary.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
@@ -393,224 +399,218 @@
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Exato. Pronto. Então, temos a lista de objetos. Mas, quer dizer, raramente temos só uma chave ou só um óculo.
-                            <span class="translation-text">Exactly. Right. So, we have the list of objects. But, I mean, we rarely only have one key or only one lens.</span>
+                            Exatamente.
+                            <span class="translation-text"> Exactly.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
+                            Pronto. Então, temos a lista de objetos. Mas, quer dizer, raramente temos só uma chave ou só um óculo.
+                            <span class="translation-text">Right. So, we have the list of objects. But, I mean, we rarely only have one key or only one lens.</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Pois não.
                             <span class="translation-text">Indeed not.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Como é que falamos de vários? E isso leva-nos direitinhos aos plurais, que era outro ponto importante da unidade.
                             <span class="translation-text">How do we talk about several? And that leads us right to the plurals, which was another important point of the unit.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Certo.
                             <span class="translation-text">Right.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Exato. A unidade pegava logo naquele exemplo: "a garrafa" que passa para "as garrafas" (the bottle, the bottles). Parece simples, não é? É só pôr um "s" no fim, como em inglês.
-                            <span class="translation-text">Exactly. The unit started right with that example: "a garrafa" (the bottle) which becomes "as garrafas" (the bottles). It seems simple, doesn't it? You just put an "s" at the end, like in English.</span>
-                        </div>
-                    </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
+                            Exato. A unidade pegava logo naquele exemplo: "a garrafa" que passa a "as garrafas" (the bottle, the bottles). Parece simples, não é? É só pôr um "s" no fim, como em inglês.
+                            <span class="translation-text">Exactly. The unit started right with that example: "a garrafa" (the bottle) which becomes "as garrafas" (the bottles). It seems simple, doesn't it? You just put an "s" at the end, like in English.</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Bem, em muitos casos, sim, adiciona-se o "s" ao nome. Mas atenção, o passo crucial, e que às vezes falha no início, é também mudar o artigo definido.
                             <span class="translation-text">Well, in many cases, yes, you add the "s" to the noun. But beware, the crucial step, and one that sometimes fails at the beginning, is also changing the definite article.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Ah, o artigo!
                             <span class="translation-text">Ah, the article!</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Sim. O "o" (the, masculino singular) passa a "os" (the, masculino plural). E o "a" (the, feminino singular) passa a "as" (the, feminino plural). É uma mudança dupla: artigo + nome.
                             <span class="translation-text">Yes. "O" (the, masc. sing.) changes to "os" (the, masc. pl.). And "a" (the, fem. sing.) changes to "as" (the, fem. pl.). It's a double change: article + noun.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            OK. Por exemplo, "o livro" (the book) não é "o livros", é "os livros" (the books). E o mesmo para "a caneta" (the pen), fica "as canetas" (the pens).
-                            <span class="translation-text">OK. For example, "o livro" (the book) is not "o livros," it's "os livros" (the books). And the same for "a caneta" (the pen), it becomes "as canetas" (the pens).</span>
-                        </div>
-                    </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
+                            OK. 
+                            <span class="translation-text">OK.</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Por exemplo, "o livro" (the book) não é "o livros", é "os livros" (the books). E o mesmo para "a caneta" (the pen), fica "as canetas" (the pens).
+                            <span class="translation-text"> For example, "o livro" (the book) is not "o livros," it's "os livros" (the books). And the same for "a caneta" (the pen), it becomes "as canetas" (the pens).</span>
                             Esquecer de mudar o artigo é um erro clássico, mas pronto, é fácil de corrigir.
                             <span class="translation-text">Forgetting to change the article is a classic mistake, but well, it's easy to correct.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>         
                             Ah, boa dica. É uma alteração em duas partes. Faz sentido. Faz sentido. Os exemplos dos materiais: "a mala" -> "as malas", "o passaporte" -> "os passaportes", "a chave" -> "as chaves". Seguem todos essa lógica.
                             <span class="translation-text">Ah, good tip. It's a two-part change. Makes sense. Makes sense. The examples in the materials: "a mala" -> "as malas," "o passaporte" -> "os passaportes," "a chave" -> "as chaves." They all follow that logic.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Exatamente.
                             <span class="translation-text">Exactly.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Mas e aquelas palavras que tipo já acabam em "s"? Como "lápis" (pencil), que estava na lista do vocabulário. O que acontece? Fica "os lápises"?
                             <span class="translation-text">But what about those words that already end in "s"? Like "lápis" (pencil), which was on the vocabulary list. What happens? Does it become "os lápises"?</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Ótima pergunta. Porque aí, pronto, a regra geral tem uma exceção interessante. Para nomes masculinos que já acabam em "s" no singular, como "o lápis" ou "o autocarro" (the bus), a forma do nome no plural não muda. Só muda o artigo.
                             <span class="translation-text">Great question. Because there, well, the general rule has an interesting exception. For masculine nouns that already end in "s" in the singular, like "o lápis" (the pencil) or "o autocarro" (the bus), the plural form of the noun does not change. Only the article changes.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Ah!
                             <span class="translation-text">Ah!</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Então é "o lápis" no singular e "os lápis" no plural. "O autocarro", "os autocarros".
                             <span class="translation-text">So it's "o lápis" (the pencil) in the singular and "os lápis" (the pencils) in the plural. "O autocarro" (the bus), "os autocarros" (the buses).</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Ah, OK. Nestes casos é o artigo que marca o plural.
-                            <span class="translation-text">Ah, OK. In these cases, it's the article that marks the plural.</span>
-                        </div>
-                    </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
+                            Ah, OK. 
+                            <span class="translation-text">Ah, OK</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Nestes casos é o artigo que marca o plural.
+                            <span class="translation-text"> In these cases, it's the article that marks the plural.</span>
                             Para nomes femininos que acabam em "s", bem, são mais raros, mas a lógica seria a mesma. O ponto principal é: mudar sempre "o/a" para "os/as" e, na maioria das vezes, adicionar um "s" ao nome. Se já acaba em "s", geralmente só o artigo muda. Parece complicado, mas na prática, a regra do artigo + "s" resolve quase tudo no dia-a-dia.
                             <span class="translation-text">For feminine nouns that end in "s," well, they are rarer, but the logic would be the same. The main point is: always change "o/a" (the, sing.) to "os/as" (the, pl.) and, most of the time, add an "s" to the noun. If it already ends in "s," usually only the article changes. It seems complicated, but in practice, the article + "s" rule solves almost everything in everyday life.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Percebido. O artigo é mesmo importante aqui. Então, já temos os objetos, já sabemos dizer se é um ou vários, mas como é que ligamos isto a pessoas? Ou especificamos o tipo de objeto? Aquela preposição "de", essa parecia fazer muito trabalho nos exemplos, não era?
                             <span class="translation-text">Understood. The article is really important here. So, we already have the objects, we already know how to say if it's one or several, but how do we link this to people? Or specify the type of object? That preposition "de" (of/from), that one seemed to do a lot of work in the examples, didn't it?</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Pois parecia.
                             <span class="translation-text">It certainly seemed to.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Sim. Os materiais tinham exemplos como "os óculos de sol" (sunglasses) e depois coisas como "o passaporte do Raul" (Raul's passport). Esse "de", epá, parece mesmo um canivete suíço.
                             <span class="translation-text">Yes. The materials had examples like "os óculos de sol" (sunglasses) and then things like "o passaporte do Raul" (Raul's passport). That "de," wow, it really seems like a Swiss army knife.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             É verdade.
                             <span class="translation-text">It's true.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Como é que funciona? E especialmente quando vira "do" e "da"? Parece assim, magia.
                             <span class="translation-text">How does it work? And especially when it turns into "do" and "da"? It seems like magic.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Não é magia, não. É só contração. O "de" é super versátil. Muitas vezes é o nosso "of" ou o "s" possessivo do inglês. A magia, como dizes, acontece quando o "de" se encontra com os artigos definidos "o" ou "a".
                             <span class="translation-text">It's not magic, no. It's just contraction. "De" is super versatile. Often it's our "of" or the possessive "s" from English. The magic, as you say, happens when "de" meets the definite articles "o" or "a."</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Uhum.
                             <span class="translation-text">Uh-huh.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             "De" + "o" juntam-se e viram "do". "De" + "a" juntam-se e viram "da".
                             <span class="translation-text">"De" + "o" join and become "do." "De" + "a" join and become "da."</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            E por que é que isto é tão comum com posse?
-                            <span class="translation-text">And why is this so common with possession?</span>
+                            E por que é que isto é tão comum com posse?Porque em português, ao contrário do inglês muitas vezes, usamos o artigo definido antes dos nomes próprios de pessoas. Dizemos "o Raul", "a Mafalda".
+                            <span class="translation-text">And why is this so common with possession?Because in Portuguese, unlike in English many times, we use the definite article before people's proper names. We say "o Raul" (the Raul), "a Mafalda" (the Mafalda).</span>   
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Porque em português, ao contrário do inglês muitas vezes, usamos o artigo definido antes dos nomes próprios de pessoas. Dizemos "o Raul", "a Mafalda".
-                            <span class="translation-text">Because in Portuguese, unlike in English many times, we use the definite article before people's proper names. We say "o Raul" (the Raul), "a Mafalda" (the Mafalda).</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
                             Ah, então é por isso. "O passaporte do Raul" é literalmente "the passport of the Raul".
                             <span class="translation-text">Ah, so that's why. "O passaporte do Raul" (Raul's passport) is literally "the passport of the Raul."</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Exato.
-                            <span class="translation-text">Exactly.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
                             E como "de" e "o" não gostam de ficar ali separados, dão as mãos e viram "do".
                             <span class="translation-text">And since "de" and "o" don't like to be separated there, they join hands and become "do."</span>
                         </div>
                     </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Exatamente. 
+                            <span class="translation-text">Exactly.</span>
+                        </div>
+                    </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Exatamente. E o mesmo para "o computador da Mafalda" (Mafalda's computer), onde "de" + "a" vira "da". Epá, isso desmistifica imenso. Faz todo o sentido agora.
+                            E o mesmo para "o computador da Mafalda" (Mafalda's computer), onde "de" + "a" vira "da". Epá, isso desmistifica imenso. Faz todo o sentido agora.
                             <span class="translation-text">Exactly. And the same for "o computador da Mafalda" (Mafalda's computer), where "de" + "a" becomes "da." Wow, that demystifies it immensely. It makes perfect sense now.</span>
                         </div>
                     </div>
@@ -652,302 +652,273 @@
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Percebo. Compara agora com o exemplo de posse: "a garrafa de água" (the bottle of water), que indica o tipo, versus "a garrafa da Joana" (Joana's bottle), posse. Literalmente "the bottle of the Joana", onde "de" + "a" dá "da". A presença ou ausência do artigo depois do "de" é que faz a diferença.
-                            <span class="translation-text">I see. Compare now with the possession example: "a garrafa de água" (the bottle of water), which indicates the type, versus "a garrafa da Joana" (Joana's bottle), possession. Literally "the bottle of the Joana," where "de" + "a" gives "da." The presence or absence of the article after "de" is what makes the difference.</span>
+                            Percebo.
+                            <span class="translation-text">I see.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Fantástico. "Do/da" para ligar a algo específico que leva artigo, como nomes, e só "de" para tipo, conteúdo, material genérico. Essa distinção é ouro.
-                            <span class="translation-text">Fantastic. "Do/da" to link to something specific that takes an article, like names, and just "de" for type, content, generic material. That distinction is gold.</span>
+                            Compara agora com o exemplo de posse: "a garrafa de água" (the bottle of water), que indica o tipo, versus "a garrafa da Joana" (Joana's bottle), posse. Literalmente "the bottle of the Joana", onde "de" + "a" dá "da". A presença ou ausência do artigo depois do "de" é que faz a diferença.
+                            <span class="translation-text"> Compare now with the possession example: "a garrafa de água" (the bottle of water), which indicates the type, versus "a garrafa da Joana" (Joana's bottle), possession. Literally "the bottle of the Joana," where "de" + "a" gives "da." The presence or absence of the article after "de" is what makes the difference.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            OK. Revimos os objetos, como os pluralizar, como indicar posse ou tipo. Falta a peça central que junta isto tudo, o verbo que até deu nome à unidade: "ter".
-                            <span class="translation-text">OK. We reviewed the objects, how to pluralize them, how to indicate possession or type. The central piece that brings it all together is missing, the verb that even gave the unit its name: "ter" (to have).</span>
+                            Fantástico. "Do/da" para ligar a algo específico que leva artigo, como nomes, e só "de" para tipo, conteúdo, material genérico. Essa distinção é ouro. Ok,revimos os objetos, como os pluralizar, como indicar posse ou tipo. Falta a peça central que junta isto tudo, o verbo que até deu nome à unidade: "ter".                              <span class="translation-text">Fantastic. "Do/da" to link to something specific that takes an article, like names, and just "de" for type, content, generic material. That distinction is gold.OK. We reviewed the objects, how to pluralize them, how to indicate possession or type. The central piece that brings it all together is missing, the verb that even gave the unit its name: "ter" (to have).</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Lá está ele. O título "Tenho carta de condução" (I have a driving license) já diz quase tudo. O verbo "ter" (to have) é, obviamente, crucial. Os materiais avisaram logo: "Cuidado, é irregular."
-                            <span class="translation-text">There it is. The title "Tenho carta de condução" (I have a driving license) already says almost everything. The verb "ter" (to have) is, obviously, crucial. The materials warned right away: "Be careful, it's irregular."</span>
+                            Lá está ele. 
+                            <span class="translation-text">There it is.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
+                            O título "Tenho carta de condução" (I have a driving license) já diz quase tudo. O verbo "ter" (to have) é, obviamente, crucial. Os materiais avisaram logo: "Cuidado, é irregular."
+                            <span class="translation-text"> The title "Tenho carta de condução" (I have a driving license) already says almost everything. The verb "ter" (to have) is, obviously, crucial. The materials warned right away: "Be careful, it's irregular."</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             É mesmo.
                             <span class="translation-text">It is indeed.</span>
                         </div>
                     </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Vamos lá ver isto. Porque é tão importante e o que é que o torna assim tão... especial?
+                            <span class="translation-text">Let's look at this. Why is it so important and what makes it so... special?</span>
+                        </div>
+                    </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Vamos lá ver isto. Porque é tão importante e o que é que o torna assim tão, tão especial?
-                            <span class="translation-text">Let's look at this. Why is it so important and what makes it so, so special?</span>
+                            É fundamental porque "ter" expressa posse ou ter algo connosco, que é básico. Mas faz mais coisas, como havemos de ver. É especial ou irregular porque as formas no presente do indicativo não seguem aquele padrão dos verbos regulares em -er.
+                            <span class="translation-text">It is fundamental because "ter" expresses possession ("tenho um carro" - I have a car) or having something with us, which is basic. But it does more things, as we will see. It is special or irregular because the forms in the present indicative do not follow that pattern of regular -er verbs.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            É fundamental porque "ter" expressa posse ("tenho um carro") ou ter algo connosco, que é básico. Mas faz mais coisas, como havemos de ver. É especial ou irregular porque as formas no presente do indicativo não seguem aquele padrão dos verbos regulares em -er.
-                            <span class="translation-text">It is fundamental because "ter" expresses possession ("tenho um carro" - I have a car) or having something with us, which is basic. But it does more things, as we will see. It is special or irregular because the forms in the present indicative do not follow that pattern of regular -er verbs.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
                             Não dá para adivinhar, pois não?
                             <span class="translation-text">You can't guess, can you?</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Não dá mesmo. Tem de se memorizar. As formas principais que estavam nos materiais são: "Eu tenho" (I have), "Tu tens" (you have, informal), "Você/ele/ela tem" (you have, formal / he/she has). "Nós temos" (we have), "Vocês/eles/elas têm" (you have, plural / they have).
                             <span class="translation-text">You really can't. You have to memorize it. The main forms that were in the materials are: "Eu tenho" (I have), "Tu tens" (you have, informal), "Você/ele/ela tem" (you have, formal / he/she has). "Nós temos" (we have), "Vocês/eles/elas têm" (you have, plural / they have).</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Repara logo que o "eu tenho" é bastante diferente do infinitivo "ter". E a diferença entre "tem" (singular) e "têm" (plural). Quer dizer, na escrita é só um acentozinho circunflexo. Isso nota-se muito na fala? É algo que nos deva preocupar?
-                            <span class="translation-text">Notice right away that "eu tenho" (I have) is quite different from the infinitive "ter" (to have). And the difference between "tem" (singular) and "têm" (plural). I mean, in writing it's just a small circumflex accent. Is that very noticeable in speech? Is that something we should worry about?</span>
-                        </div>
-                    </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
+                            Repara logo que o "eu tenho" é bastante diferente do infinitivo "ter". E a diferença entre "tem" (singular) e "têm" (plural). Quer dizer, na escrita é só um acentozinho circunflexo. Isso nota-se muito na fala. É algo que nos deva preocupar.
+                            <span class="translation-text">Notice right away that "eu tenho" (I have) is quite different from the infinitive "ter" (to have). And the difference between "tem" (singular) and "têm" (plural). I mean, in writing it's just a small circumflex accent. Is that very noticeable in speech. Is that something we should worry about.</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Nota-se imenso. Não é só visual, a pronúncia muda bastante. O "tem" singular (ele, ela, você) é mais curto, mais aberto. O "têm" plural (eles, elas, vocês) tem um som mais longo, mais fechado e nasalado. Os materiais diziam algo tipo "tã-i" ou "tã-nh".
                             <span class="translation-text">It is extremely noticeable. It's not just visual; the pronunciation changes quite a bit. The singular "tem" (he, she, you) is shorter, more open. The plural "têm" (they, you plural) has a longer, more closed, and nasal sound. The materials said something like "tã-i" or "tã-nh."</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Ah, OK.
                             <span class="translation-text">Ah, OK.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Usar um pelo outro pode criar confusão. Se perguntar sobre um grupo: "Eles tem bilhetes?", soa estranho. O correto é: "Eles têm bilhetes?" (Do they have tickets?). É um detalhe de som importante para sermos claros. Apanha-se com a prática e ao ouvir, claro.
                             <span class="translation-text">Using one instead of the other can create confusion. If you ask about a group: "Eles tem bilhetes?" (They has tickets?), it sounds strange. The correct is: "Eles têm bilhetes?" (Do they have tickets?). It's an important sound detail for being clear. You catch on with practice and by listening, of course.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             OK, alerta de pronúncia registado. A unidade tinha aquela atividade de pares, não era? Com a pergunta "Tens...?" (Do you have...?), tipo "Tens uma caneta?" (Do you have a pen?). Isso parece ótimo para, para martelar o verbo e o vocabulário ao mesmo tempo.
                             <span class="translation-text">OK, pronunciation alert registered. The unit had that pair activity, didn't it? With the question "Tens...?" (Do you have... - informal), like "Tens uma caneta?" (Do you have a pen?). That seems great for, for drilling the verb and the vocabulary at the same time.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Sim, é uma estrutura super frequente e útil. "Tens...?" e as respostas "Sim, tenho" (Yes, I have) ou "Não, não tenho" (No, I don't have).
                             <span class="translation-text">Yes, it's a super frequent and useful structure. "Tens...?" and the answers "Sim, tenho" (Yes, I have) or "Não, não tenho" (No, I don't have).</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Simples e direto.
                             <span class="translation-text">Simple and direct.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Exato. Podes substituir "caneta" por outra coisa qualquer. "Tens as chaves?" (Do you have the keys?), "Tens dinheiro?" (Do you have money?), "Tens uma garrafa de água?" (Do you have a water bottle?). Praticar este diálogo ajuda a automatizar o "tens" e o "tenho" e a manter o vocabulário ativo.
                             <span class="translation-text">Exactly. You can replace "caneta" (pen) with anything else. "Tens as chaves?" (Do you have the keys?), "Tens dinheiro?" (Do you have money?), "Tens uma garrafa de água?" (Do you have a water bottle?). Practicing this dialogue helps to automate "tens" and "tenho" and keep the vocabulary active.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Faz sentido.
                             <span class="translation-text">Makes sense.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             E, claro, não esquecer o "nós temos" para quando falamos em grupo. Como naquele exemplo dos materiais: "Nós temos dinheiro, um passaporte, um cartão de cidadão e um mapa." (We have money, a passport, a citizen card and a map). Essencial para planear uma viagem com amigos, por exemplo.
                             <span class="translation-text">And, of course, not forgetting "nós temos" (we have) for when we speak in a group. Like in that example from the materials: "Nós temos dinheiro, um passaporte, um cartão de cidadão e um mapa." (We have money, a passport, a citizen card and a map). Essential for planning a trip with friends, for example.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Resumindo: decorar as formas "tenho", "tens", "tem", "temos", "têm" é mesmo crucial. Uhum. Prestar atenção à diferença de som entre "tem" e "têm" e praticar o padrão "Tens...?", "Tenho". Percebido. E só para reforçar porque é que o "ter" precisa desta atenção toda. A unidade deu uma espreitadela aos verbos regulares em -er, não foi? Só para comparar.
-                            <span class="translation-text">Summarizing: memorizing the forms "tenho," "tens," "tem," "temos," "têm" is really crucial. Uh-huh. Paying attention to the sound difference between "tem" and "têm" and practicing the pattern "Tens...?", "Tenho." Understood. And just to reinforce why "ter" needs all this attention. The unit took a peek at regular -er verbs, didn't it? Just to compare.</span>
-                        </div>
-                    </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
+                            Resumindo: decorar as formas "tenho", "tens", "tem", "temos", "têm" é mesmo crucial. Prestar atenção à diferença de som entre "tem" e "têm" e praticar o padrão "Tens...?", "Tenho". Percebido. E só para reforçar porque é que o "ter" precisa desta atenção toda. A unidade deu uma espreitadela aos verbos regulares em -er, não foi? Só para comparar.
+                            <span class="translation-text">Summarizing: memorizing the forms "tenho," "tens," "tem," "temos," "têm" is really crucial. Paying attention to the sound difference between "tem" and "têm" and practicing the pattern "Tens...?", "Tenho." Understood. And just to reinforce why "ter" needs all this attention. The unit took a peek at regular -er verbs, didn't it? Just to compare.</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Exatamente. Foi uma forma inteligente de mostrar *porque* é que o "ter" é diferente. Apresentaram verbos como "comer" (to eat) e "beber" (to drink).
                             <span class="translation-text">Exactly. It was a clever way to show *why* "ter" is different. They presented verbs like "comer" (to eat) and "beber" (to drink).</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Sim.
                             <span class="translation-text">Yes.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Vamos ver o padrão de "comer": "Eu como", "tu comes", "ele/ela/você come", "nós comemos", "eles/elas/vocês comem". Repara como é previsível. Tiras o -er do infinitivo ("comer") e pões as terminações padrão: -o, -es, -e, -emos, -em.
                             <span class="translation-text">Let's look at the pattern for "comer" (to eat): "Eu como" (I eat), "tu comes" (you eat), "ele/ela/você come" (he/she/you eat), "nós comemos" (we eat), "eles/elas/vocês comem" (they/you-pl eat). Notice how predictable it is. You remove the -er from the infinitive ("comer") and put the standard endings: -o, -es, -e, -emos, -em.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Certo.
                             <span class="translation-text">Right.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             "Beber" segue a mesma lógica: "bebo", "bebes", "bebe", "bebemos", "bebem".
                             <span class="translation-text">"Beber" (to drink) follows the same logic: "bebo," "bebes," "bebe," "bebemos," "bebem."</span>
                         </div>
                     </div>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Certo. Esse é o comportamento normal, digamos assim, dos verbos em -er. Agora, se compararmos "eu como" com "eu tenho", ou "ele come" com "ele tem", eh…
+                            <span class="translation-text">Right. That's the normal behavior, so to speak, of -er verbs.Now, if we compare "eu como" (I eat) with "eu tenho" (I have), or "ele come" (he eats) with "ele tem" (he has), uh...</span>
+                        </div>
+                    </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Certo. Esse é o comportamento normal, digamos assim, dos verbos em -er.
-                            <span class="translation-text">Right. That's the normal behavior, so to speak, of -er verbs.</span>
+                            Exato.
+                            <span class="translation-text">Exactly.</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Agora, se compararmos "eu como" com "eu tenho", ou "ele come" com "ele tem", eh...
-                            <span class="translation-text">Now, if we compare "eu como" (I eat) with "eu tenho" (I have), or "ele come" (he eats) with "ele tem" (he has), uh...</span>
+                            A diferença é óbvia. "Ter" não segue este padrão. Tem as suas formas próprias, especialmente na primeira pessoa ("tenho") e naquela distinção "tem" / "têm".  Isto realmente mostra: "ter" é especial. Aprendam de cor.
+                            <span class="translation-text">The difference is obvious. "Ter" does not follow this pattern. It has its own forms, especially in the first person ("tenho") and that distinction "tem" / "têm." This really shows: "ter" is special. Learn it by heart.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            A diferença é óbvia. "Ter" não segue este padrão. Tem as suas formas próprias, especialmente na primeira pessoa ("tenho") e naquela distinção "tem" / "têm".
-                            <span class="translation-text">The difference is obvious. "Ter" does not follow this pattern. It has its own forms, especially in the first person ("tenho") and that distinction "tem" / "têm."</span>
+                            É precisamente essa a ideia. Ver o padrão regular ajuda a perceber e a valorizar a necessidade de memorizar os irregulares. Não é que a língua seja complicada de propósito, mas verbos muito antigos e muito usados como "ter" ou "ser", "estar", "ir"...
+                            <span class="translation-text">That is precisely the idea. Seeing the regular pattern helps to understand and value the need to memorize the irregular ones.It's not that the language is deliberately complicated, but very old and very used verbs like "ter" (to have) or "ser" (to be), "estar" (to be), "ir" (to go)...</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Isto realmente mostra: "ter" é especial. Aprendam de cor.
-                            <span class="translation-text">This really shows: "ter" is special. Learn it by heart.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            É precisamente essa a ideia. Ver o padrão regular ajuda a perceber e a valorizar a necessidade de memorizar os irregulares.
-                            <span class="translation-text">That is precisely the idea. Seeing the regular pattern helps to understand and value the need to memorize the irregular ones.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Não é que a língua seja complicada de propósito, mas verbos muito antigos e muito usados como "ter" ou "ser", "estar", "ir"...
-                            <span class="translation-text">It's not that the language is deliberately complicated, but very old and very used verbs like "ter" (to have) or "ser" (to be), "estar" (to be), "ir" (to go)...</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
                             Os básicos.
                             <span class="translation-text">The basics.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Sim, os básicos, tendem a manter formas irregulares ao longo do tempo. São tão usados que resistem a ficar "certinhos".
                             <span class="translation-text">Yes, the basics, tend to maintain irregular forms over time. They are so used that they resist becoming "neat."</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Faz sentido. Então, vamos recapitular os pontos chave desta nossa análise da Unidade 5. Vimos o vocabulário essencial dos objetos pessoais, as coisas que andam connosco.
-                            <span class="translation-text">Makes sense. So, let's recap the key points of our analysis of Unit 5. We saw the essential vocabulary for personal objects, the things we carry with us.</span>
-                        </div>
-                    </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Das chaves (keys) e a carteira (wallet)...
-                            <span class="translation-text">From the keys and the wallet...</span>
+                            Faz sentido. Então, vamos recapitular os pontos chave desta nossa análise da Unidade 5. Vimos o vocabulário essencial dos objetos pessoais, as coisas que andam connosco.Desde as chaves (keys) e a carteira (wallet)...
+                            <span class="translation-text">Makes sense. So, let's recap the key points of our analysis of Unit 5. We saw the essential vocabulary for personal objects, the things we carry with us.From the keys and the wallet...</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            ...até ao passaporte (passport) e o telemóvel (mobile phone). Sim.
-                            <span class="translation-text">...to the passport and the mobile phone. Yes.</span>
+                            Há até ao passaporte (passport) e o telemóvel (mobile phone). 
+                            <span class="translation-text">There is also the passport and the mobile phone. </span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Depois, vimos como falar sobre eles. Primeiro, os plurais, lembrando sempre daquela dupla mudança: artigo ("o/a" -> "os/as") e, geralmente, o "s" no nome ("livro" -> "livros").
-                            <span class="translation-text">Then, we saw how to talk about them. First, the plurals, always remembering that double change: article ("o/a" -> "os/as") and, generally, the "s" in the noun ("livro" -> "livros").</span>
+                            <span class="translation-text">Yes! Then, we saw how to talk about them. First, the plurals, always remembering that double change: article ("o/a" -> "os/as") and, generally, the "s" in the noun ("livro" -> "livros").</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Uhum.
-                            <span class="translation-text">Uh-huh.</span>
+                            Uhum. E depois, como indicar posse ou tipo com a preposição "de" e as suas contrações importantes "do" e "da", principalmente com nomes. "O carro do Paulo" (Paulo's car). E contrastar com o "de" sozinho para tipo ou material: "óculos de sol" (sunglasses).
+                            <span class="translation-text">Uh-huh.And then, how to indicate possession or type with the preposition "de" (of/from) and its important contractions "do" and "da," mainly with names. "O carro do Paulo" (Paulo's car). And contrast with "de" alone for type or material: "óculos de sol" (sunglasses).</span>
                         </div>
                     </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            E depois, como indicar posse ou tipo com a preposição "de" e as suas contrações importantes "do" e "da", principalmente com nomes. "O carro do Paulo" (Paulo's car). E contrastar com o "de" sozinho para tipo ou material: "óculos de sol" (sunglasses).
-                            <span class="translation-text">And then, how to indicate possession or type with the preposition "de" (of/from) and its important contractions "do" and "da," mainly with names. "O carro do Paulo" (Paulo's car). And contrast with "de" alone for type or material: "óculos de sol" (sunglasses).</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
                             E, finalmente, a estrela da unidade, o verbo irregular "ter" (to have). Falámos da importância de memorizar as formas: "tenho", "tens", "tem", "temos", "têm".
                             <span class="translation-text">And, finally, the star of the unit, the irregular verb "ter" (to have). We talked about the importance of memorizing the forms: "tenho," "tens," "tem," "temos," "têm."</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Sim.
                             <span class="translation-text">Yes.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            E alertámos para aquela diferença de pronúncia crucial entre "tem" (singular) e "têm" (plural). E vimos como praticar com o padrão "Tens...?", "Tenho". Percebido.
-                            <span class="translation-text">And we warned about that crucial pronunciation difference between "tem" (singular) and "têm" (plural). And we saw how to practice with the pattern "Tens...?", "Tenho." Understood.</span>
-                        </div>
-                    </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            E só para reforçar porque é que o "ter" precisa desta atenção toda. A unidade deu uma espreitadela aos verbos regulares em -er, não foi? Só para comparar.
-                            <span class="translation-text">And just to reinforce why "ter" needs all this attention. The unit took a peek at regular -er verbs, didn't it? Just to compare.</span>
+                            E alertámos para aquela diferença de pronúncia crucial entre "tem" (singular) e "têm" (plural). E vimos como comparar com verbos regulares como "comer" ajuda a perceber porque temos de o memorizar.
+                            <span class="translation-text">And we warned about that crucial pronunciation difference between "tem" (singular) and "têm" (plural). And we saw how to compare it with regulares verbs like to eat helps to understand why we have to memorize them.</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
@@ -960,69 +931,61 @@
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Claro.
-                            <span class="translation-text">Of course.</span>
+                            Claro. O vocabulário dá as palavras, a gramática (plurais, de/do/da, o verbo ter) dá as regras para as juntar. Dominar isto permite construir frases básicas, mas essenciais para o dia-a-dia em português. Os pontos críticos são mesmo esses: a conjugação do "ter", a regra dos plurais e o uso de "de/do/da".
+                            <span class="translation-text">Of course. Vocabulary gives the words, grammar (plurals, de/do/da, the verb ter) gives the rules for joining them. Mastering this allows building basic but essential sentences for everyday Portuguese. The critical points are really those: the conjugation of "ter," the plural rule, and the use of "de/do/da."</span>
                         </div>
                     </div>
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            O vocabulário dá as palavras, a gramática (plurais, de/do/da, o verbo ter) dá as regras para as juntar. Dominar isto permite construir frases básicas, mas essenciais para o dia-a-dia em português. Os pontos críticos são mesmo esses: a conjugação do "ter", a regra dos plurais e o uso de "de/do/da".
-                            <span class="translation-text">Vocabulary gives the words, grammar (plurals, de/do/da, the verb ter) gives the rules for joining them. Mastering this allows building basic but essential sentences for everyday Portuguese. The critical points are really those: the conjugation of "ter," the plural rule, and the use of "de/do/da."</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
                             Exatamente. É construir as fundações para conversas reais.
                             <span class="translation-text">Exactly. It's building the foundations for real conversations.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             E para terminar, aquela nossa provocação habitual, para continuar a explorar. Falámos muito do "ter" para posse: "Tenho um livro" (I have a book). Mas será que este verbo faz mais alguma coisa importante em português?
                             <span class="translation-text">And to finish, that usual provocation of ours, to continue exploring. We talked a lot about "ter" for possession: "Tenho um livro" (I have a book). But does this verb do anything else important in Portuguese?</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Mencionámos a idade.
                             <span class="translation-text">We mentioned age.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Ah, bem visto. Em inglês dizemos "I *am* X years old". Em português, usamos "ser" ou "estar"? Ou será que o nosso amigo "ter" entra aqui também?
-                            <span class="translation-text">Ah, good point. In English we say "I *am* X years old." In Portuguese, do we use "ser" or "estar"? Or does our friend "ter" come in here too?</span>
-                        </div>
-                    </div>
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
+                            Em inglês dizemos "I *am* X years old". Em português, usamos "ser" ou "estar"? Ou será que o nosso amigo "ter" entra aqui também?
+                            <span class="translation-text">In English we say "I *am* X years old." In Portuguese, do we use "ser" or "estar"? Or does our friend "ter" come in here too?</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Boa pergunta.
                             <span class="translation-text">Good question.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Fica no ar. Que outros usos fundamentais tem o verbo "ter" em português que podem ser diferentes do inglês? Uma pequena pista: pensem em sensações físicas. Fica a sugestão para investigar. Até à próxima análise.
                             <span class="translation-text">It remains open. What other fundamental uses does the verb "ter" have in Portuguese that might be different from English? A small clue: think about physical sensations. The suggestion remains for you to investigate. Until the next analysis.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Até à próxima.
                             <span class="translation-text">Until next time.</span>
                         </div>
                     </div>
                 </div>
             </section>
-
             <section id="revisao" class="tab-content">
                 <h2 class="text-3xl font-semibold text-stone-800 mb-4">Revisão Gramatical</h2>
                 <p class="text-lg text-stone-700 leading-relaxed mb-6">
@@ -1092,7 +1055,7 @@
                             <label><input type="radio" name="q2" value="b"> b) A carteira dele.</label>
                             <label><input type="radio" name="q2" value="c"> c) A minha carteira.</label>
                         </div>
-                         <div class="feedback" id="feedback-q2"></div>
+                          <div class="feedback" id="feedback-q2"></div>
                     </div>
 
                     <div class="quiz-question" data-correct="b" name="q3">
@@ -1102,16 +1065,16 @@
                             <label><input type="radio" name="q3" value="b"> b) Carro</label>
                             <label><input type="radio" name="q3" value="c"> c) Obrigado</label>
                         </div>
-                         <div class="feedback" id="feedback-q3"></div>
+                          <div class="feedback" id="feedback-q3"></div>
                     </div>
-                     <div class="quiz-question" data-correct="a" name="q4">
+                      <div class="quiz-question" data-correct="a" name="q4">
                         <p class="font-semibold mb-2">4. Qual é a diferença principal entre "tem" e "têm"?</p>
                         <div class="quiz-options">
                             <label><input type="radio" name="q4" value="a"> a) "tem" é para (he/she), "têm" é para (they).</label>
                             <label><input type="radio" name="q4" value="b"> b) "tem" é para (they), "têm" é para (he/she).</label>
                             <label><input type="radio" name="q4" value="c"> c) Não há diferença, significam o mesmo.</label>
                         </div>
-                         <div class="feedback" id="feedback-q4"></div>
+                          <div class="feedback" id="feedback-q4"></div>
                     </div>
 
                     <button type="button" id="checkQuiz" class="mt-4 px-6 py-2 bg-sky-600 text-white rounded-lg shadow hover:bg-sky-700 transition-all duration-200">
