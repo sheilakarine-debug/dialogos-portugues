@@ -47,8 +47,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Ordem dos Oradores: Homem (1) / Mulher (2) */
-        
         /* Cor 1: Homem (Orador 1) - Neutro, Esquerda */
         .chat-bubble-homem {
             background-color: #f5f5f4; /* stone-100 */
@@ -68,8 +66,7 @@
             align-self: flex-end;
         }
 
-        /* --- CSS ALTERADO --- */
-        .translation-text { /* Re-utilizado para notas E traduções */
+        .translation-text { 
             display: none; /* ESCONDIDO POR DEFEITO */
             margin-top: 0.75rem;
             font-size: 0.9em;
@@ -78,7 +75,6 @@
             padding-top: 0.75rem;
             color: #57534e; /* stone-600 */
         }
-        /* --- FIM DA ALTERAÇÃO --- */
 
         .quiz-question {
             margin-bottom: 1.5rem;
@@ -113,8 +109,8 @@
 
     <div class="container">
         <header class="text-center pb-6 border-b border-stone-200">
-            <h1 class="text-4xl font-bold text-cyan-900">Unidade 7 (Parte 1): Possessivos e Sons</h2>
-            <p class="text-xl text-stone-600 mt-2">Foco em possessivos (seu vs. dele), profissões (médico/a) e os 3 sons do S.</p>
+            <h1 class="text-4xl font-bold text-cyan-900">Unidade 7 (Parte 1): Possessivos e Sons</h1>
+            <p class="text-xl text-stone-600 mt-2">Foco em possessivos (seu vs. dele), profissões e os 3 sons do S.</p>
             <a href="index.html" class="text-sky-600 hover:text-sky-800 mt-4 inline-block">&larr; Voltar ao Menu de Podcasts</a>
         </header>
 
@@ -135,72 +131,99 @@
                 </p>
                 
                 <audio controls class="w-full mb-6">
-                    <source src="unidade07_1.m4a" type="audio/x-m4a">
+                    <!-- Mantive o nome padrão do ficheiro. Se tiver link do drive, substitua aqui no src -->
+                    <source src="unidade07_1.m4a" type="audio/mpeg">
                     O seu browser não suporta o elemento de áudio.
                 </audio>
 
                 <h2 class="text-3xl font-semibold text-stone-800 mb-2 mt-8">Transcrição</h2>
                 
-                <button id="toggle-translation" class="mb-6 px-4 py-2 bg-sky-600 text-white font-semibold rounded-lg hover:bg-sky-700 transition-colors text-sm">
+                <button id="toggle-translation" class="mb-6 px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors text-sm">
                     Mostrar Tradução (Show Translation)
                 </button>
+                
                 <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
+                    
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Olá, bem-vindos a, hum, mais uma análise focada. Hoje temos em mãos materiais do curso A2 de português, a, da CIPLE Master, da professora Sheila Meneses. A nossa missão é destilar o essencial, aquilo que, pronto, que realmente faz a diferença para quem está a aprender.
-                            <span class="translation-text">Hello, welcome to, um, another focused analysis. Today we have materials from the A2 Portuguese course, uh, from CIPLE Master, by professor Sheila Meneses. Our mission is to distill the essential, what, well, what really makes a difference for those who are learning.</span>
+                            <span class="translation-text">Hello, welcome to, um, another focused analysis. Today we have materials from the A2 Portuguese course, uh, from CIPLE Master, by professor Sheila Meneses. Our mission is to distill the essential, that which, well, really makes a difference for those who are learning.</span>
                         </div>
                     </div>
+
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Exatamente. Vamos olhar assim para alguns pontos chave de gramática e vocabulário que surgem nestas lições, sim. A ideia é pegar nos, nos possessivos, nas profissões e até naqueles sons, às vezes tramados do S, e dar-lhes uma volta rápida para ajudar a fixar.
-                            <span class="translation-text">Exactly. We are going to look at some key points of grammar and vocabulary that arise in these lessons, yes. The idea is to take the, the possessives, the professions, and even those sometimes tricky S sounds, and give them a quick overview to help solidify them.</span>
+                            <span class="translation-text">Exactly. We are going to look at some key grammar and vocabulary points that appear in these lessons, yes. The idea is to take the possessives, the professions, and even those sometimes tricky S sounds, and give them a quick review to help fix them.</span>
                         </div>
                     </div>
+
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Boa. Então, vamos lá desmontar isto. Ah, comecemos pelos possessivos, aquelas palavrinhas que usamos para dizer de quem são as coisas, certo? Nos materiais, vimos exemplos como: "Ele é italiano, o apelido dele é Ciancio". Ou seja, em inglês, "He is Italian, his surname is Ciancio".
-                            <span class="translation-text">Good. So, let's break this down. Ah, let's start with the possessives, those little words we use to say whose things are, right? In the materials, we saw examples like: "Ele é italiano, o apelido dele é Ciancio." (He is Italian, his surname is Ciancio.) That is, in English, "He is Italian, his surname is Ciancio."</span>
+                            <span class="translation-text">Good. So, let's break this down. Ah, let's start with possessives, those little words we use to say who things belong to, right? In the materials, we saw examples like: "Ele é italiano, o apelido dele é Ciancio". Meaning, in English, "He is Italian, his surname is Ciancio".</span>
                         </div>
                     </div>
+
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Sim. Parece simples, mas lembro-me que a diferença entre "seu" e "dele", ah, às vezes causa alguma confusão.
-                            <span class="translation-text">Yes. It seems simple, but I remember that the difference between "seu" (your/his/her/their) and "dele" (his), ah, sometimes causes some confusion.</span>
+                            Sim. 
+                            <span class="translation-text">Yes.</span>
                         </div>
                     </div>
+
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
+                            Parece simples, mas lembro-me que a diferença entre "seu" e "dele", ah, às vezes causa alguma confusão.
+                            <span class="translation-text">It seems simple, but I remember that the difference between "seu" and "dele", ah, sometimes causes some confusion.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Pois, causa, é um ponto muito comum. É mesmo crucial distinguir "meu", "minha", "teu", "tua", "seu", "sua", "nosso", "nossa", "vosso", "vossa"...
-                            <span class="translation-text">Yes, it does, it's a very common point. It's really crucial to distinguish "meu" (my, masc.), "minha" (my, fem.), "teu" (your, masc.), "tua" (your, fem.), "seu" (your/his/her/their, masc.), "sua" (fem.), "nosso" (our, masc.), "nossa" (fem.), "vosso" (your-pl, masc.), "vossa" (fem.)...</span>
+                            <span class="translation-text">Yes, it does, it's a very common point. It is really crucial to distinguish "meu", "minha", "teu", "tua", "seu", "sua", "nosso", "nossa", "vosso", "vossa"...</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Uhum.
                             <span class="translation-text">Uh-huh.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             ...daqueles que não variam em género, como "dele", "dela", "deles", "delas". A chave está na concordância, não é?
-                            <span class="translation-text">...from those that do not vary in gender, like "dele" (his), "dela" (hers), "deles" (theirs, masc.), "delas" (theirs, fem.). The key is in the agreement, isn't it?</span>
+                            <span class="translation-text">...from those that do not vary in gender, like "dele", "dela", "deles", "delas". The key is in the agreement, right?</span>
                         </div>
                     </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sim.
+                            <span class="translation-text">Yes.</span>
+                        </div>
+                    </div>
+
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Sim. "Meu carro", "minha casa" concorda com a coisa possuída. Já "dele" ou "dela" não mudam. Vêm de "de plus ele" ou "de plus ela", basicamente. Nos exercícios, tínhamos: "Qual é o nome do seu país?"
-                            <span class="translation-text">Yes. "Meu carro" (my car), "minha casa" (my house) agrees with the thing possessed. Whereas "dele" or "dela" do not change. They come from "de plus ele" (of/from him) or "de plus ela" (of/from her), basically. In the exercises, we had: "Qual é o nome do seu país?" (What is the name of your/his/her country?)</span>
+                            "Meu carro", "minha casa" concorda com a coisa possuída. Já "dele" ou "dela" não mudam. Vêm de "de + ele" ou "de + ela", basicamente. Nos exercícios, tínhamos: "Qual é o nome do seu país?"
+                            <span class="translation-text">"Meu carro", "minha casa" agrees with the thing possessed. Whereas "dele" or "dela" do not change. They come from "de + ele" or "de + ela", basically. In the exercises, we had: "Qual é o nome do seu país?"</span>
                         </div>
                     </div>
+
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
@@ -208,188 +231,231 @@
                             <span class="translation-text">Uh-huh.</span>
                         </div>
                     </div>
+
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Que, pronto, pode ser "your" or "his country", como disseste. E a resposta: "A minha morada é...", "My address is...". Aqui, "minha" concorda com "morada", que é feminino, lá está.
-                            <span class="translation-text">Which, well, can be "your" or "his country", as you said. And the answer: "A minha morada é..." (My address is...). Here, "minha" (my, fem.) agrees with "morada" (address), which is feminine, there it is.</span>
+                            <span class="translation-text">Which, well, can be "your" or "his country", as you said. And the answer: "A minha morada é...", "My address is...". Here, "minha" agrees with "morada", which is feminine, there it is.</span>
                         </div>
                     </div>
+
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E também aquele exemplo: "O último nome da nossa professora", que seria "The last name of our teacher", onde "nossa" concorda com "professora", claro. E, ah, "O primeiro nome dela é Rocio", "Her first name is Rocio".
-                            <span class="translation-text">And also that example: "O último nome da nossa professora" (The last name of our teacher), where "nossa" (our, fem.) agrees with "professora" (teacher), of course. And, ah, "O primeiro nome dela é Rocio" (Her first name is Rocio).</span>
+                            <span class="translation-text">And also that example: "O último nome da nossa professora", which would be "The last name of our teacher", where "nossa" agrees with "professora", of course. And, ah, "O primeiro nome dela é Rocio", "Her first name is Rocio".</span>
                         </div>
                     </div>
+
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Exato. Portanto, a regra de ouro é: "meu", "minha", etc., concordam com o que se possui. "Dele", "dela" não mudam, referem-se a quem possui.
-                            <span class="translation-text">Exactly. Therefore, the golden rule is: "meu," "minha," etc., agree with the thing possessed. "Dele," "dela" do not change; they refer to the possessor.</span>
+                            Exato. 
+                            <span class="translation-text">Exactly.</span>
                         </div>
                     </div>
+
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Percebido.
-                            <span class="translation-text">Understood.</span>
+                            Portanto, a regra de ouro é: "meu", "minha", etc., concordam com o que se possui. "Dele", "dela" não mudam, referem-se a quem possui.Percebido.
+                            <span class="translation-text">Therefore, the golden rule is: "meu", "minha", etc., agree with what is possessed. "Dele", "dela" do not change, they refer to the owner. Understood.</span>
                         </div>
                     </div>
+
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             É isso mesmo. Dominar esta concordância, olha, tira logo muitas dores de cabeça. Acredita.
-                            <span class="translation-text">That's right. Mastering this agreement, look, it immediately saves a lot of headaches. Believe me.</span>
+                            <span class="translation-text">That's it exactly. Mastering this agreement, look, saves a lot of headaches right away. Believe me.</span>
                         </div>
                     </div>
+
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Falando em pessoas e em descrevê-las, a seguir temos as profissões. Isso é super útil para as conversas básicas, não é? O que me saltou à vista nos materiais foi a regra geral: masculino e feminino. Tipo, "médico" vira "médica", "professor" passa a "professora".
-                            <span class="translation-text">Speaking of people and describing them, next we have professions. That's super useful for basic conversations, isn't it? What stood out to me in the materials was the general rule: masculine and feminine. Like, "médico" (doctor, masc.) turns into "médica" (doctor, fem.), "professor" (teacher, masc.) changes to "professora" (teacher, fem.).</span>
+                            <span class="translation-text">Speaking of people and describing them, next we have professions. That is super useful for basic conversations, isn't it? What stood out to me in the materials was the general rule: masculine and feminine. Like, "médico" becomes "médica", "professor" changes to "professora".</span>
                         </div>
                     </div>
+
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Sim. E até há casos como "ator" que muda para "atriz".
-                            <span class="translation-text">Yes. And there are even cases like "ator" (actor) which changes to "atriz" (actress).</span>
+                            Sim. 
+                            <span class="translation-text">Yes.</span>
                         </div>
                     </div>
+
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Correto. Essa é a norma, digamos assim. Mas depois, bem, há aquele grupo que gosta de simplificar as coisas: as profissões que têm uma só forma para os dois géneros. Muitas delas acabam em "-ente" ou "-ista": "estudante", "jornalista", "dentista".
-                            <span class="translation-text">Correct. That's the norm, so to speak. But then, well, there's that group that likes to simplify things: professions that have only one form for both genders. Many of them end in "-ente" or "-ista": "estudante" (student), "jornalista" (journalist), "dentista" (dentist).</span>
+                            E até há casos como "ator" que muda para "atriz".
+                            <span class="translation-text">And there are even cases like "ator" that changes to "atriz".</span>
                         </div>
                     </div>
+
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
+                            Correto. Essa é a norma, digamos assim. Mas depois, bem, há aquele grupo que gosta de simplificar as coisas: as profissões que têm uma só forma para os dois géneros. Muitas delas acabam em "-ente" ou "-ista": "estudante", "jornalista", "dentista".
+                            <span class="translation-text">Correct. That is the norm, so to speak. But then, well, there is that group that likes to simplify things: the professions that have only one form for both genders. Many of them end in "-ente" or "-ista": "estudante", "jornalista", "dentista".</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Gerente?
                             <span class="translation-text">Gerente (Manager)?</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Gerente, exatamente. Nesses casos, é o contexto ou se usarmos um artigo noutra frase, tipo "o estudante" versus "a estudante", que desfaz a dúvida.
-                            <span class="translation-text">Gerente, exactly. In those cases, it's the context or if we use an article in another sentence, like "o estudante" (the male student) versus "a estudante" (the female student), that resolves the ambiguity.</span>
+                            <span class="translation-text">Gerente, exactly. In those cases, it is the context or if we use an article in another sentence, like "o estudante" versus "a estudante", that clears up the doubt.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            E a dica prática que eu adorei e que simplifica imenso é aquela de: quando falamos da nossa *própria* profissão, dizemos só "sou" e o nome da profissão. Sem artigos, sem "um" ou "uma". Lembro-me bem de ter essa dúvida no início.
-                            <span class="translation-text">And the practical tip that I loved and that simplifies things immensely is the one about: when we talk about our *own* profession, we just say "sou" (I am) and the name of the profession. No articles, no "um" or "uma." I clearly remember having this doubt at the beginning.</span>
-                        </div>
-                    </div>
+
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Precisamente. É um atalho muito útil mesmo. Os exemplos eram claros, não eram? "Eu sou professora", "I am a teacher", ou "Sou desenvolvedor de software de engenharia", "I am a software engineering developer".
-                            <span class="translation-text">Precisely. It's a very useful shortcut indeed. The examples were clear, weren't they? "Eu sou professora" (I am a teacher), "I am a teacher", or "Sou desenvolvedor de software de engenharia" (I am a software engineering developer).</span>
+                            E a dica prática que eu adorei e que simplifica imenso é aquela de: quando falamos da nossa *própria* profissão, dizemos só "sou" e o nome da profissão. Sem artigos, sem "um" ou "uma". Lembro-me bem de ter essa dúvida no início.
+                            <span class="translation-text">And the practical tip that I loved and that simplifies things immensely is: when we talk about our *own* profession, we just say "sou" and the name of the profession. Without articles, without "um" or "uma". I remember well having that doubt in the beginning.</span>
                         </div>
                     </div>
+
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
+                            Precisamente. É um atalho muito útil mesmo. Os exemplos eram claros, não eram? "Eu sou professora", "I am a teacher", ou "Sou desenvolvedor de software de engenharia", "I am a software engineering developer".
+                            <span class="translation-text">Precisely. It is a very useful shortcut indeed. The examples were clear, weren't they? "Eu sou professora", "I am a teacher", or "Sou desenvolvedor de software de engenharia", "I am a software engineering developer".</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Uhum.
                             <span class="translation-text">Uh-huh.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             E até "Sou dona de casa", "I am a housewife". É direto, sem complicações. Evita-se aquela tradução muito literal do inglês "I am a teacher".
-                            <span class="translation-text">And even "Sou dona de casa" (I am a housewife). It's direct, no complications. It avoids that very literal translation from English "I am a teacher."</span>
+                            <span class="translation-text">And even "Sou dona de casa", "I am a housewife". It is direct, without complications. It avoids that very literal translation from English "I am a teacher".</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Pronto. Já sabemos de quem são as coisas e o que as pessoas fazem. Mas falta soar bem. E demos uma olhada rápida na pronúncia, especificamente nos sons do S. Confesso que este S português às vezes prega-nos partidas.
-                            <span class="translation-text">Right. We already know whose things are and what people do. But it needs to sound good. And we took a quick look at pronunciation, specifically at the S sounds. I confess that this Portuguese S sometimes plays tricks on us.</span>
-                        </div>
-                    </div>
+
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Ah, o "s" é um clássico. O exercício que vimos destacava três sons principais no português europeu. Vamos lá ver. Primeiro, o som "s", como o nosso "see" em inglês. Aparece no início das palavras ou quando temos SS. "Segunda", "professora".
-                            <span class="translation-text">Ah, the "s" is a classic. The exercise we saw highlighted three main sounds in European Portuguese. Let's see. First, the "s" sound, like our "see" in English. It appears at the beginning of words or when we have SS. "Segunda" (Second), "professora" (teacher).</span>
+                            Pronto. Já sabemos de quem são as coisas e o que as pessoas fazem. Mas falta soar bem. E demos uma olhada rápida na pronúncia, especificamente nos sons do S. Confesso que este S português às vezes prega-nos partidas.
+                            <span class="translation-text">Right. We already know who things belong to and what people do. But it needs to sound good. And we took a quick look at pronunciation, specifically the S sounds. I confess that this Portuguese S sometimes plays tricks on us.</span>
                         </div>
                     </div>
+
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
+                            Ah, o "s" é um clássico. O exercício que vimos destacava três sons principais no português europeu. Vamos lá ver. Primeiro, o som "s", como o nosso "see" em inglês. Aparece no início das palavras ou quando temos SS. "Segunda", "professora".
+                            <span class="translation-text">Ah, the "s" is a classic. The exercise we saw highlighted three main sounds in European Portuguese. Let's see. First, the "s" sound, like our "see" in English. It appears at the beginning of words or when we have SS. "Segunda", "professora".</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             OK, esse é familiar. E os outros?
                             <span class="translation-text">OK, that one is familiar. And the others?</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
                             Depois temos o som "ch", que é o nosso "sh" em "shoe". Este é muito, muito comum em português. Surge antes de consoantes como t, c, p, f, ou então no final das palavras. "Espanha", "pasta", "nós", "português".
-                            <span class="translation-text">Then we have the "sh" sound, which is our "sh" in "shoe." This one is very, very common in Portuguese. It appears before consonants like t, c, p, f, or at the end of words. "Espanha" (Spain), "pasta" (folder/paste), "nós" (we/us), "português" (Portuguese).</span>
+                            <span class="translation-text">Then we have the "ch" sound, which is our "sh" in "shoe". This is very, very common in Portuguese. It appears before consonants like t, c, p, f, or at the end of words. "Espanha", "pasta", "nós", "português".</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Ah, OK. O "ch". Sim.
-                            <span class="translation-text">Ah, OK. The "sh." Yes.</span>
-                        </div>
-                    </div>
+
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            E finally, o som "z", como o "z" em "zoo". Que acontece tipicamente quando o S está entre duas vogais. "Mesa", "casado", "portuguesa".
-                            <span class="translation-text">And finally, the "z" sound, like the "z" in "zoo." Which typically happens when the S is between two vowels. "Mesa" (table), "casado" (married, masc.), "portuguesa" (Portuguese, fem.).</span>
+                            Ah, OK. O "ch".
+                            <span class="translation-text">Ah, OK. The "sh".</span>
                         </div>
                     </div>
+
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
+                             Sim. E finalmente, o som "z", como o "z" em "zoo". Que acontece tipicamente quando o S está entre duas vogais. "Mesa", "casado", "portuguesa".
+                            <span class="translation-text">Yes. And finally, the "z" sound, like the "z" in "zoo". Which typically happens when the S is between two vowels. "Mesa", "casado", "portuguesa".</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
                             Fascinante como a mesma letra muda tanto dependendo, pronto, dos vizinhos. Ou seja, a posição na palavra é mesmo tudo. Ouvir com atenção parece ser o segredo, então.
-                            <span class="translation-text">Fascinating how the same letter changes so much depending on, well, its neighbors. That is, the position in the word really is everything. Listening carefully seems to be the secret, then.</span>
+                            <span class="translation-text">Fascinating how the same letter changes so much depending, well, on the neighbors. That is, the position in the word is really everything. Listening carefully seems to be the secret, then.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Sem dúvida. Não há como fugir. É preciso treinar o ouvido e, claro, praticar a leitura em voz alta, prestando atenção a essas, a essas nuances.
-                            <span class="translation-text">No doubt. There's no escaping it. You need to train your ear and, of course, practice reading aloud, paying attention to those, those nuances.</span>
-                        </div>
-                    </div>
+
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            OK. Então, resumindo a nossa análise rápida de hoje. Atenção à concordância dos possessivos: quem possui versus o que é possuído. Depois, saber quando mudar o género das profissões e quando não mudar. E usar o simples "sou [profissão]".
-                            <span class="translation-text">OK. So, summarizing our quick analysis today. Pay attention to the agreement of possessives: who possesses versus what is possessed. Then, knowing when to change the gender of professions and when not to change. And using the simple "sou [profession]" (I am [profession]).</span>
+                            Sem dúvida. Não há como fugir. É preciso treinar o ouvido e, claro, praticar a leitura em voz alta, prestando atenção a essas, a essas nuances.
+                            <span class="translation-text">No doubt. There's no escape. You need to train your ear and, of course, practice reading aloud, paying attention to those, those nuances.</span>
                         </div>
                     </div>
+
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Exato. E, claro, apurar o ouvido para os diferentes sotaques, digamos assim, dos S.
-                            <span class="translation-text">Exactly. And, of course, tuning your ear to the different accents, so to speak, of the S's.</span>
+                            OK. Então, resumindo a nossa análise rápida de hoje. Atenção à concordância dos possessivos: quem possui versus o que é possuído. Depois, saber quando mudar o género das profissões e quando não mudar. E usar o simples "sou [profissão]".
+                            <span class="translation-text">OK. So, summarizing our quick analysis today. Pay attention to the agreement of possessives: who owns versus what is owned. Then, know when to change the gender of professions and when not to change. And use the simple "sou [profession]".</span>
                         </div>
                     </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Exato. 
+                            <span class="translation-text">Exactly.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E, claro, apurar o ouvido para os diferentes sotaques, digamos assim, dos S.
+                            <span class="translation-text">And, of course, tune the ear to the different accents, so to speak, of the S.</span>
+                        </div>
+                    </div>
+
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             É isso. São elementos que, embora pareçam básicos, são fundamentais para construir frases corretas e, bem, para soar mais natural. O interessante é mesmo ver como estas peças – gramática, vocabulário, fonética – se encaixam todas para permitir a comunicação real, no dia a dia.
-                            <span class="translation-text">That's it. These are elements that, although they seem basic, are fundamental for constructing correct sentences and, well, for sounding more natural. What's interesting is precisely seeing how these pieces – grammar, vocabulary, phonetics – all fit together to allow real, day-to-day communication.</span>
+                            <span class="translation-text">That's it. These are elements that, although they seem basic, are fundamental to build correct sentences and, well, to sound more natural. The interesting thing is really to see how these pieces – grammar, vocabulary, phonetics – all fit together to allow real communication, in everyday life.</span>
                         </div>
                     </div>
+
                     <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Fica então a sugestão. Da próxima vez que estiverem a ouvir português, tentem caçar estas regras em ação. Será que notam a diferença entre "seu" e "dele"? Conseguem identificar os diferentes sons do S numa conversa? Pode ser um exercício, ah, interessante. Bem, até à próxima.
-                            <span class="translation-text">So, the suggestion remains. Next time you are listening to Portuguese, try to spot these rules in action. Do you notice the difference between "seu" and "dele"? Can you identify the different S sounds in a conversation? It can be an, ah, interesting exercise. Well, until next time.</span>
+                            <span class="translation-text">So here is the suggestion. Next time you are listening to Portuguese, try to hunt these rules in action. Do you notice the difference between "seu" and "dele"? Can you identify the different S sounds in a conversation? It can be an interesting exercise. Well, until next time.</span>
                         </div>
                     </div>
+
                     <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
@@ -397,6 +463,7 @@
                             <span class="translation-text">Until next time.</span>
                         </div>
                     </div>
+
                 </div>
             </section>
 
@@ -447,7 +514,7 @@
                 </div>
             </section>
 
-             <section id="quiz" class="tab-content">
+            <section id="quiz" class="tab-content">
                 <h2 class="text-3xl font-semibold text-stone-800 mb-4">Quick Quiz</h2>
                 <p class="text-lg text-stone-700 leading-relaxed mb-6">
                     Test your understanding of the lesson. Choose the best answer for each question.
