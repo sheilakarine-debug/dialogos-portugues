@@ -47,8 +47,13 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Cor 1: Mulher (Oradora 1) - Neutro, Esquerda */
-        .chat-bubble-mulher {
+        /* CORREÇÃO DE CORES (Invertido conforme pedido):
+           Homem -> Neutro (Cinzento), Esquerda
+           Mulher -> Destaque (Rosa), Direita
+        */
+        
+        /* Cor 1: Homem (Neutro, Esquerda) */
+        .chat-bubble-homem {
             background-color: #f5f5f4; /* stone-100 */
             color: #1c1917; /* stone-900 */
             padding: 0.75rem 1rem;
@@ -56,10 +61,11 @@
             max-width: 80%;
             align-self: flex-start;
         }
-        /* Cor 2: Homem (Orador 2) - Destaque Rosa, Direita */
-        .chat-bubble-homem {
+
+        /* Cor 2: Mulher (Destaque Rosa, Direita) */
+        .chat-bubble-mulher {
             background-color: #fce7f3; /* pink-100 */
-            color: #be185d; /* pink-700 */
+            color: #9d174d; /* pink-900 */
             padding: 0.75rem 1rem;
             border-radius: 1.25rem 1.25rem 0.25rem 1.25rem;
             max-width: 80%;
@@ -111,7 +117,7 @@
         <header class="text-center pb-6 border-b border-stone-200">
             <h1 class="text-4xl font-bold text-cyan-900">Unidade 7 (Parte 2): Concordância e Expressões</h1>
             <p class="text-xl text-stone-600 mt-2">Revisão de adjetivos, "quanto/s" e expressões idiomáticas.</p>
-            <a href="../index.html" class="text-sky-600 hover:text-sky-800 mt-4 inline-block">&larr; Voltar ao Menu de Podcasts</a>
+            <a href="index.html" class="text-sky-600 hover:text-sky-800 mt-4 inline-block">&larr; Voltar ao Menu de Podcasts</a>
         </header>
 
         <nav class="mt-6 border-b border-stone-200">
@@ -144,7 +150,7 @@
                 
                 <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
                     
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Olá e bem-vindos a esta nossa conversa.
@@ -152,7 +158,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Olá.
@@ -160,7 +166,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Hoje vamos, ah, revisitar uns materiais de uma aula de português A2. É a unidade sete, "Gosto da minha cidade".
@@ -168,7 +174,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ah, sim.
@@ -176,7 +182,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Temos aqui os diapositivos, alguns resumos. A ideia é, pronto, extrair o essencial de forma clara e útil. Vamos lá espreitar isto.
@@ -184,7 +190,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Claro.
@@ -192,7 +198,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             O foco dessa unidade, hum, parece ser mesmo a descrição de lugares e, claro, expressar gostos, preferências.
@@ -200,23 +206,23 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Exato. E para isso há um ponto-chave em português que estes materiais destacam bem: a concordância.
+                            Exato. E para isso há um ponto-chave em português que estes materiais destacam bem: a concordância. 
                             <span class="translation-text">Exactly. And for that, there is a key point in Portuguese that these materials highlight well: agreement.</span>
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                             As palavras têm de, digamos, combinar umas com as outras.
+                            As palavras têm de, digamos, combinar umas com as outras.
                             <span class="translation-text">The words have to, let's say, match each other.</span>
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah, a famosa concordância.
@@ -224,7 +230,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Precisamente. Podemos começar talvez pelos adjetivos.
@@ -232,7 +238,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sim, boa ideia. Os adjetivos em português, bem, para quem vem do inglês, às vezes é uma dor de cabeça.
@@ -240,7 +246,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Pois é.
@@ -248,7 +254,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                              Porque mudam tanto.
@@ -256,7 +262,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             A regra base, que os materiais destacam bem, é que têm de concordar em género (masculino, feminino) e número (singular, plural) com o nome. Exatamente. Com o nome que se escrevem.
@@ -264,7 +270,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E atenção, normalmente vêm *depois* do nome. Por exemplo, "uma casa bonita".
@@ -272,7 +278,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Isso. E em inglês...a ordem é outra.
@@ -280,7 +286,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sim, seria "a beautiful house". Totalmente diferente a posição.
@@ -288,7 +294,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exato. E essa concordância, ah, segue alguns padrões. Muitos adjetivos acabam em "o" no masculino, tipo "bonito",
@@ -296,7 +302,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E mudam para "a" no feminino, "bonita".
@@ -304,7 +310,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Certo. E no plural, é só juntar um "s": "bonitos", "bonitas". Mas, claro, há exceções.
@@ -312,7 +318,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sim. Lembro-me de ver isso. 
@@ -320,7 +326,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Os materiais mostram bem o adjetivo "grande", por exemplo.
@@ -328,7 +334,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah, sim. "Grande" (big).
@@ -336,7 +342,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Esse não muda no feminino singular. Dizemos "um prédio grande" (masculino)
@@ -344,7 +350,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E "uma casa grande" (feminino). Fica igual.
@@ -352,7 +358,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Fica igual. E também vimos aqueles pares de opostos muito úteis: "novo" e "velho"
@@ -360,7 +366,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                              new, old.
@@ -368,7 +374,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sim. "Caro" e "barato".
@@ -376,7 +382,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             (Expensive, cheap).
@@ -384,7 +390,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sim. E "perto", "longe".
@@ -392,7 +398,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             (Near, far).
@@ -400,7 +406,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. Úteis para descrever cidades, casas, etc.
@@ -408,7 +414,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E olha, essa coisa da concordância não pára nos adjetivos, pois não?
@@ -416,7 +422,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Não, não. 
@@ -424,7 +430,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Vi nos materiais que até para perguntar "quanto" ou "quantos", a palavra muda.
@@ -432,7 +438,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             É verdade. A palavra "quanto" também tem de concordar com o nome que vem a seguir.
@@ -440,7 +446,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Lembro-me do exemplo dos exercícios: "Quantos anos tens?".
@@ -448,7 +454,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Isso. Que literalmente seria "How many years do you have?".
@@ -456,7 +462,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Exato. E usa-se "quantos" porque "anos" é masculino e plural. Faz sentido.
@@ -464,7 +470,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             É fundamental perceber bem as quatro formas que apareceram lá: "quanto", "quanta", "quantos", "quantas". Os exemplos dos materiais ajudam. "Quanto dinheiro?" (money, masculino singular).
@@ -472,7 +478,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             "How much money?" OK.
@@ -480,7 +486,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Depois, "quanta água?" (water, feminino singular).
@@ -488,7 +494,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             "How much water?" Certo.
@@ -496,7 +502,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E no plural: "quantos carros?" (cars, masculino plural).
@@ -504,7 +510,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             "How many cars?"
@@ -512,7 +518,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E "quantas malas?" (bags, feminino plural).
@@ -520,7 +526,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             "How many bags?" Pronto, percebido. É sempre a mesma lógica, então.
@@ -528,7 +534,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             É, eh, a lógica da concordância, o género e o número do nome é que mandam.
@@ -536,7 +542,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E depois, para dar assim um toque mais divertido, os materiais tinham as expressões idiomáticas.
@@ -544,7 +550,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ah, sim, a parte mais colorida da língua.
@@ -552,7 +558,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Adoro essas partes. São aquelas frases que não dá para traduzir palavra por palavra, certo?
@@ -560,7 +566,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. Perdem o sentido se fizermos isso.
@@ -568,7 +574,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Aquela que me ficou mesmo na cabeça foi "estar com a pulga atrás da orelha".
@@ -576,7 +582,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ah, essa é clássica.
@@ -584,7 +590,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Literalmente, "to be with the flea behind the ear". Que estranho.
@@ -592,7 +598,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Pois é. Mas significa o quê?
@@ -600,7 +606,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Estar desconfiado de alguma coisa.
@@ -608,7 +614,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Hum, em inglês, se calhar, "to smell a rat".
@@ -616,7 +622,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Aproxima-se.
@@ -624,7 +630,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sim, é uma boa equivalência, transmite a mesma ideia de suspeita.
@@ -632,7 +638,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E havia outra: "fazer das tripas coração".
@@ -640,7 +646,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Essa também é muito visual. "To make heart out of guts".
@@ -648,7 +654,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Wow!
@@ -656,7 +662,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Significa fazer um esforço muito grande, superar-se perante uma dificuldade.
@@ -664,7 +670,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Dar o litro, como também dizemos.
@@ -672,7 +678,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. Em inglês talvez "to give it your all" ou "to bend over backwards".
@@ -680,7 +686,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Mostra bem como a linguagem figurada é rica, não é?
@@ -688,7 +694,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sem dúvida. Carrega muita cultura e emoção.
@@ -696,7 +702,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Bom, então, resumindo aqui a nossa passagem pela unidade sete. A concordância é mesmo, mesmo central em português.
@@ -704,7 +710,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             É a rainha, pode-se dizer.
@@ -712,7 +718,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Adjetivos, a palavra "quanto", tudo tem de se alinhar com o género e o número dos nomes.
@@ -720,7 +726,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Certo.
@@ -728,7 +734,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E as expressões idiomáticas, bem, são aquela pitada de sal que torna a língua viva.
@@ -736,7 +742,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente.
@@ -744,7 +750,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             OK. Parece que demos aqui uma boa vista de olhos ao essencial disto.
@@ -752,7 +758,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sim, acho que sim. Fica talvez só uma pequena reflexão final.
@@ -760,7 +766,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Força.
@@ -768,7 +774,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Esta necessidade tão forte de concordância em português, que não existe da mesma forma em inglês, por exemplo.
@@ -776,7 +782,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Aham.
@@ -784,7 +790,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Levanta uma questão interessante, não? Será que esta característica da gramática influencia de alguma maneira como é que os falantes nativos pensam sobre as ligações entre as palavras, entre as ideias de uma frase?
@@ -792,7 +798,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-start">
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Hum, boa pergunta. Como é que a estrutura da língua molda a perceção?
@@ -800,7 +806,7 @@
                         </div>
                     </div>
 
-                    <div class="flex justify-end">
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Pois. Fica a pergunta no ar para pensarmos um bocadinho.
