@@ -47,10 +47,10 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Ordem dos Oradores: Mulher (1) / Homem (2) */
+        /* --- CORES CORRIGIDAS --- */
         
-        /* Cor 1: Mulher (Oradora 1) - Neutro, Esquerda */
-        .chat-bubble-mulher {
+        /* Homem (Neutro, Esquerda) */
+        .chat-bubble-homem {
             background-color: #f5f5f4; /* stone-100 */
             color: #1c1917; /* stone-900 */
             padding: 0.75rem 1rem;
@@ -58,8 +58,9 @@
             max-width: 80%;
             align-self: flex-start;
         }
-        /* Cor 2: Homem (Orador 2) - Destaque Rosa, Direita */
-        .chat-bubble-homem {
+
+        /* Mulher (Destaque Rosa, Direita) */
+        .chat-bubble-mulher {
             background-color: #fce7f3; /* pink-100 */
             color: #9d174d; /* pink-900 */
             padding: 0.75rem 1rem;
@@ -68,8 +69,7 @@
             align-self: flex-end;
         }
 
-        /* --- CSS ALTERADO --- */
-        .translation-text { /* Re-utilizado para notas E traduções */
+        .translation-text { 
             display: none; /* ESCONDIDO POR DEFEITO */
             margin-top: 0.75rem;
             font-size: 0.9em;
@@ -78,8 +78,7 @@
             padding-top: 0.75rem;
             color: #57534e; /* stone-600 */
         }
-        /* --- FIM DA ALTERAÇÃO --- */
-
+        
         .quiz-question {
             margin-bottom: 1.5rem;
             padding: 1rem;
@@ -114,8 +113,8 @@
     <div class="container">
         <header class="text-center pb-6 border-b border-stone-200">
             <h1 class="text-4xl font-bold text-cyan-900">Unidade 7 (Parte 3): Adjetivos e "Gostar de"</h1>
-            <p class="text-xl text-stone-600 mt-2">Revisão de "muito/s", a regra do "gostar de" e contrações (disto, nisto, daqui).</p>
-            <a href="index.html" class="text-sky-600 hover:text-sky-800 mt-4 inline-block">&larr; Voltar ao Menu de Podcasts</a>
+            <p class="text-xl text-stone-600 mt-2">Revisão de "muito/s", a regra do "gostar de" e contrações.</p>
+            <a href="../index.html" class="text-sky-600 hover:text-sky-800 mt-4 inline-block">&larr; Voltar ao Menu de Podcasts</a>
         </header>
 
         <nav class="mt-6 border-b border-stone-200">
@@ -135,787 +134,929 @@
                 </p>
                 
                 <audio controls class="w-full mb-6">
-                    <source src="unidade07_3.m4a" type="audio/x-m4a">
+                    <!-- Nome do ficheiro de áudio corrigido para 7_3 -->
+                    <source src="unidade07_3.m4a" type="audio/mpeg">
                     O seu browser não suporta o elemento de áudio.
                 </audio>
 
                 <h2 class="text-3xl font-semibold text-stone-800 mb-2 mt-8">Transcrição</h2>
                 
-                <button id="toggle-translation" class="mb-6 px-4 py-2 bg-sky-600 text-white font-semibold rounded-lg hover:bg-sky-700 transition-colors text-sm">
+                <button id="toggle-translation" class="mb-6 px-4 py-2 bg-pink-600 text-white font-semibold rounded-lg hover:bg-pink-700 transition-colors text-sm">
                     Mostrar Tradução (Show Translation)
                 </button>
+                
                 <div class="space-y-4 p-4 bg-stone-50 rounded-lg max-h-[500px] overflow-y-auto">
-                    <div class="flex justify-start">
+                    
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Bem-vindos a mais uma análise. Hoje vamos, ah, mergulhar nuns materiais do curso de português A2 da Simple Master. Mais especificamente, a aula 14 e uns guias gramaticais.
-                            <span class="translation-text">Welcome to another analysis. Today we are going to, ah, dive into some materials from the A2 Portuguese course by Simple Master. More specifically, class 14 and some grammar guides.</span>
+                            Bem-vindos a mais uma análise. Hoje vamos, ah, mergulhar nuns materiais do curso de português A2 da Ciple Master. Mais especificamente, a aula 14 e uns guias gramaticais.
+                            <span class="translation-text">Welcome to another analysis. Today we are going to, ah, dive into some materials from the A2 Portuguese course by Ciple Master. More specifically, class 14 and some grammar guides.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exato.
                             <span class="translation-text">Exactly.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             A ideia é simples: tirar daqui o sumo, saber quais são as ferramentas chave que estes materiais nos dão. Um guia rápido, por assim dizer.
                             <span class="translation-text">The idea is simple: to extract the essence from this, to know what the key tools these materials give us are. A quick guide, so to speak.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             É isso mesmo. Vamos focar-nos em como, pronto, como descrever coisas, pessoas, como dizer o que gostamos ou não. E alguns detalhes que fazem, epá, toda a diferença.
                             <span class="translation-text">That's right. We're going to focus on how, well, how to describe things, people, how to say what we like or don't like. And some details that, wow, make all the difference.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Como adjetivos, advérbios?
-                            <span class="translation-text">Like adjectives, adverbs?</span>
+                            Como adjetivos, advérbios...
+                            <span class="translation-text">Like adjectives, adverbs...</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Essas coisas. Precisamente. Adjetivos, advérbios como muito, pouco, o verbo gostar, que é essencial, não é? E umas contrações, aquelas palavras que se juntam. E até um bocadinho de pronúncia. Tudo baseado no que está nestes materiais.
-                            <span class="translation-text">Those things. Precisely. Adjectives, adverbs like muito (much/many), pouco (little/few), the verb gostar (to like), which is essential, right? And some contractions, those words that join together. And even a little bit of pronunciation. Everything based on what's in these materials.</span>
+                            Essas coisas.
+                            <span class="translation-text">Those things.</span>
                         </div>
                     </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Precisamente.
+                            <span class="translation-text">Precisely.</span>
+                        </div>
+                    </div>
+
                     <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Adjetivos, advérbios como muito, pouco, o verbo gostar, que é essencial, não é? E umas contrações, aquelas palavras que se juntam. E até um bocadinho de pronúncia. Tudo baseado no que está nestes materiais.
+                            <span class="translation-text">Adjectives, adverbs like muito (much/many), pouco (little/few), the verb gostar (to like), which is essential, right? And some contractions, those words that join together. And even a little bit of pronunciation. Everything based on what's in these materials.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             OK. Parece um bom plano. Vamos lá então desconstruir isto, a ver se saímos daqui com umas ideias mais claras. Quem sabe, uns momentos "ahá!" na gramática, aqueles que simplificam tudo. Vamos a isso.
                             <span class="translation-text">OK. Sounds like a good plan. Let's deconstruct this then, to see if we leave here with clearer ideas. Who knows, some "aha!" moments in grammar, the ones that simplify everything. Let's do it.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Vamos.
                             <span class="translation-text">Let's.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Então, para começar. Como é que damos cor às frases? Para descrever, precisamos de...
                             <span class="translation-text">So, to start. How do we give color to sentences? To describe, we need...</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Adjetivos, claro. São eles que dizem como é que as coisas são. Tipo bom ou mau, grande, pequeno. Os textos que temos dão imensos exemplos.
                             <span class="translation-text">Adjectives, of course. They're the ones that say what things are like. Like good or bad, big, small. The texts we have give tons of examples.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Sim, sim.
                             <span class="translation-text">Yes, yes.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E logo aqui, uma coisa muito típica do português, que as fontes até destacam: a concordância, o género. Muitos adjetivos mudam a terminação.
                             <span class="translation-text">And right here, something very typical of Portuguese, which the sources even highlight: agreement, gender. Many adjectives change their ending.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Uhum.
                             <span class="translation-text">Uh-huh.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Se a palavra for masculina, o adjetivo fica no masculino, como "moderno". Se for feminina, muda para "moderna". Tipo "um carro moderno", mas "uma casa moderna".
                             <span class="translation-text">If the word is masculine, the adjective stays masculine, like "moderno." If it's feminine, it changes to "moderna." Like "um carro moderno" (a modern car), but "uma casa moderna" (a modern house).</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Mas espera, nem todos são assim, pois não? Acho que vi lá uns exemplos.
                             <span class="translation-text">But wait, not all of them are like that, are they? I think I saw some examples there.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. Bem visto. Há adjetivos que são, digamos, mais estáveis, não mudam. As fontes mencionam "grande", por exemplo.
                             <span class="translation-text">Exactly. Good point. There are adjectives that are, let's say, more stable, they don't change. The sources mention "grande" (big), for example.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E "pobre"?
                             <span class="translation-text">And "pobre" (poor)?</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Ah, OK. Dizemos "um rapaz grande" e "uma rapariga grande". O "grande" fica igual. O mesmo com "pobre". É uma questão de hábito, de ir aprendendo quais mudam e quais não. ...moderna e grande.
-                            <span class="translation-text">Ah, OK. We say "um rapaz grande" (a big boy) and "uma rapariga grande" (a big girl). "Grande" stays the same. The same with "pobre" (poor). It's a matter of habit, of learning which ones change and which ones don't. ...moderna e grande (modern and big).</span>
+                            Ah, OK. Dizemos "um rapaz grande" e "uma rapariga grande". O "grande" fica igual. O mesmo com "pobre". É uma questão de hábito, de ir aprendendo quais mudam e quais não.
+                            <span class="translation-text">Ah, OK. We say "um rapaz grande" (a big boy) and "uma rapariga grande" (a big girl). "Grande" stays the same. The same with "pobre" (poor). It's a matter of habit, of learning which ones change and which ones don't.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Certo. Como "cidade" é feminino, temos "bonita" e "moderna", mas "grande" fica na mesma. Depois, Ouro Preto: antiga, pequena e também bonita. Outra vez, "antiga" e "pequena" no feminino porque "cidade" é feminino.
-                            <span class="translation-text">Right. Since "cidade" (city) is feminine, we have "bonita" and "moderna," but "grande" stays the same. Then, Ouro Preto: antiga, pequena e também bonita (old, small, and also beautiful). Again, "antiga" and "pequena" in the feminine because "cidade" is feminine.</span>
+                            ...moderna e grande.
+                            <span class="translation-text">...modern and big.</span>
                         </div>
                     </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Certo.
+                            <span class="translation-text">Right.</span>
+                        </div>
+                    </div>
+
                     <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Como "cidade" é feminino, temos "bonita" e "moderna", mas "grande" fica na mesma. Depois, Ouro Preto: antiga, pequena e também bonita. Outra vez, "antiga" e "pequena" no feminino porque "cidade" é feminino.
+                            <span class="translation-text">Since "cidade" (city) is feminine, we have "bonita" and "moderna," but "grande" stays the same. Then, Ouro Preto: antiga, pequena e também bonita (old, small, and also beautiful). Again, "antiga" and "pequena" in the feminine because "cidade" is feminine.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E não é só com cidades. Lembras-te do texto do quarto do Luís? Ele descreve-o como "grande e bonito".
                             <span class="translation-text">And it's not just with cities. Do you remember the text about Luís' room? He describes it as "grande e bonito" (big and beautiful).</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah, pois é.
                             <span class="translation-text">Ah, that's right.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             "Grande" não muda, mas "bonito" está no masculino, a concordar com o "quarto", que é masculino. As fontes dão até uma lista útil: "regularica" [sic], "novo/nova", "velho/velha", "simpático/simpática", "feio/feia", "pobre" (que não muda), "tradicional" (também não muda), "caro/cara". Pronto, são as ferramentas básicas para começar a descrever.
                             <span class="translation-text">"Grande" doesn't change, but "bonito" is in the masculine, agreeing with "quarto" (room), which is masculine. The sources even give a useful list: "regularica" [sic], "novo/nova" (new), "velho/velha" (old), "simpático/simpática" (nice/friendly), "feio/feia" (ugly), "pobre" (poor) (which doesn't change), "tradicional" (traditional) (also doesn't change), "caro/cara" (expensive). There, those are the basic tools to start describing.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             OK, percebido. Já conseguimos dizer se algo é bonito ou feio. Mas, e se for *muito* bonito? Ou talvez *pouco* interessante? Às vezes falta ali uma força extra, não é?
                             <span class="translation-text">OK, understood. We can now say if something is beautiful or ugly. But what if it's *very* beautiful? Or perhaps *not very* interesting? Sometimes a little extra force is missing, right?</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. E é aí que entram os advérbios de intensidade. Os materiais focam-se em três muito comuns: "muito", "pouco" e "bastante". Servem para isso mesmo, para graduar a descrição ou a intensidade de uma ação, claro.
                             <span class="translation-text">Exactly. And that's where adverbs of intensity come in. The materials focus on three very common ones: "muito" (very/much), "pouco" (little), and "bastante" (quite). They serve precisely for that, to grade the description or the intensity of an action, of course.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E onde é que os colocamos? Parece que há aqui uma regra, uma ordem específica.
                             <span class="translation-text">And where do we place them? It seems there's a rule here, a specific order.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Ah, há uma regra bastante clara, sim. Os guias explicam bem. Quando queremos dar intensidade a um adjetivo, o advérbio ("muito", "pouco", "bastante") vem *antes* desse adjetivo. Pensa em inglês: "very good". O "very" vem antes. Em português é igual: "muito bom".
                             <span class="translation-text">Ah, there's quite a clear rule, yes. The guides explain it well. When we want to intensify an adjective, the adverb ("muito," "pouco," "bastante") comes *before* that adjective. Think of English: "very good." "Very" comes before. It's the same in Portuguese: "muito bom" (very good).</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah, OK, percebi. Como nos exemplos: "Os restaurantes são muito bons". O "muito" vem antes de "bons". Faz sentido. E aquele de Segóvia: "Segóvia é uma cidade bastante pequena". "Bastante" antes de "pequena".
                             <span class="translation-text">Ah, OK, I see. Like in the examples: "Os restaurantes são muito bons" (The restaurants are very good). "Muito" comes before "bons." Makes sense. And the one about Segovia: "Segóvia é uma cidade bastante pequena" (Segovia is quite a small city). "Bastante" before "pequena."</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Exato. E o hotel do Sung, que era "velho e bastante feio". Também.
-                            <span class="translation-text">Exactly. And Sung's hotel, which was "velho e bastante feio" (old and quite ugly). Also.</span>
-                        </div>
-                    </div>
+
                     <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            OK. Antes do adjetivo. Mas...
-                            <span class="translation-text">OK. Before the adjective. But...</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Atenção, há um "mas". Se o advérbio não está a modificar o adjetivo, mas sim a intensidade do verbo, da ação, aí a posição muda. Vem *depois* do verbo.
-                            <span class="translation-text">Attention, there is a "but." If the adverb is not modifying the adjective, but rather the intensity of the verb, of the action, then the position changes. It comes *after* the verb.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Ah, como no exemplo: "Gosto muito do meu hotel".
-                            <span class="translation-text">Ah, like in the example: "Gosto muito do meu hotel" (I like my hotel very much).</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Certo. Precisamente. Aqui, o "muito" não descreve o hotel, descreve o *quanto* eu gosto. Intensifica o verbo "gostar", por isso vem depois.
-                            <span class="translation-text">Right. Precisely. Here, "muito" doesn't describe the hotel, it describes *how much* I like it. It intensifies the verb "gostar" (to like), so it comes after.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            OK. Acho que percebi a diferença. Antes do adjetivo, mas depois do verbo.
-                            <span class="translation-text">OK. I think I understand the difference. Before the adjective, but after the verb.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Exatamente. E agora, epá, agora vem uma daquelas partes do português que às vezes baralha um bocado, mas que as fontes explicam bem: a questão da concordância do "muito" e do "pouco".
-                            <span class="translation-text">Exactly. And now, wow, now comes one of those parts of Portuguese that sometimes gets a bit confusing, but which the sources explain well: the issue of agreement for "muito" and "pouco."</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Ui, concordância outra vez? Mas os advérbios não eram invariáveis?
-                            <span class="translation-text">Oh dear, agreement again? But weren't adverbs invariable?</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            E são. Quer dizer, quando funcionam como advérbios de intensidade, a modificar um verbo, aí sim, são invariáveis. Não mudam. Como nos exemplos que temos: "A Rita trabalha muito" ou "Estudo pouco". Aqui, "muito" e "pouco" indicam a intensidade da ação de trabalhar ou estudar. É sempre "muito" ou "pouco", independentemente de quem faz a ação.
-                            <span class="translation-text">They are. I mean, when they function as adverbs of intensity, modifying a verb, then yes, they are invariable. They don't change. Like in the examples we have: "A Rita trabalha muito" (Rita works hard) or "Estudo pouco" (I study little). Here, "muito" and "pouco" indicate the intensity of the action of working or studying. It's always "muito" or "pouco," regardless of who performs the action.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Certo, até aqui tudo bem. Então, onde é que a coisa muda?
-                            <span class="translation-text">Right, so far so good. So, where does the thing change?</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Muda, ou melhor, complica um bocadinho, quando "muito" e "pouco" não falam da intensidade da ação, mas sim da *quantidade* de alguma coisa, de um nome, de um substantivo.
-                            <span class="translation-text">It changes, or rather, it gets a little complicated, when "muito" and "pouco" don't refer to the intensity of the action, but rather to the *quantity* of something, of a noun, of a substantive.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Hum.
-                            <span class="translation-text">Hm.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Aí, deixam de ser advérbios e passam a ser, pronto, quantificadores.
-                            <span class="translation-text">There, they stop being adverbs and become, well, quantifiers.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Ah, como quando dizemos "many books" ou "little water" em inglês? Essa é a ideia?
-                            <span class="translation-text">Ah, like when we say "many books" or "little water" in English? Is that the idea?</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Exatamente essa. E nesse caso, têm de concordar. Têm de concordar em género e número com o nome a que se referem. Ou seja, já não é só "muito" e "pouco". Passa a ser "muito", "muita", "muitos", "muitas", ou "pouco", "poca", "poucos", "poucas". A concordância volta em força.
-                            <span class="translation-text">Exactly that. And in that case, they have to agree. They have to agree in gender and number with the noun they refer to. That is, it's no longer just "muito" and "pouco." It becomes "muito" (much/many, masc. sing.), "muita" (fem. sing.), "muitos" (masc. pl.), "muitas" (fem. pl.), or "pouco," "poca," "poucos," "poucas." Agreement returns strongly.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            OK. Preciso de exemplos para isto ficar claro. Os materiais devem ter.
-                            <span class="translation-text">OK. I need examples for this to be clear. The materials must have some.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Têm, têm, e são bons. Repara: "Tenho muitos livros". "Livros" é masculino plural, por isso "muitos". Significa "many books".
-                            <span class="translation-text">They do, they do, and they're good ones. Notice: "Tenho muitos livros" (I have many books). "Livros" (books) is masculine plural, so "muitos." It means "many books."</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Certo.
-                            <span class="translation-text">Right.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Outro: "Ela trabalha muitas horas". "Horas" é feminino plural, logo "muitas", "many hours".
-                            <span class="translation-text">Another one: "Ela trabalha muitas horas" (She works many hours). "Horas" (hours) is feminine plural, so "muitas," "many hours."</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Uhum.
-                            <span class="translation-text">Uh-huh.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Com "pouco": "A nossa cidade tem poucos carros". "Carros" masculino plural, então "poucos", "few cars". E no singular: "Ainda tens muita água?". "Água" feminino singular, usamos "muita", "much water", digamos.
-                            <span class="translation-text">With "pouco" (little/few): "A nossa cidade tem poucos carros" (Our city has few cars). "Carros" (cars) is masculine plural, so "poucos," "few cars." And in the singular: "Ainda tens muita água?" (Do you still have much water?). "Água" (water) is feminine singular, we use "muita," "much water," let's say.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Percebido. Então o truque é perguntar: estou a intensificar a ação (o verbo) ou a contar as coisas (os nomes)? Se for a ação, uso "muito" "pouco" e não mudo. Se for a contar coisas, tenho de fazer a concordância: "muitos", "muitas" ou "poucos", "poucas". É mesmo um ponto chave isto. Errar aqui muda o sentido.
-                            <span class="translation-text">Understood. So the trick is to ask: am I intensifying the action (the verb) or counting the things (the nouns)? If it's the action, I use "muito" "pouco" and don't change. If I'm counting things, I have to make the agreement: "muitos," "muitas," or "poucos," "poucas." This really is a key point. Making a mistake here changes the meaning.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            É daqueles pontos que vale mesmo a pena praticar. Distinguir o uso como advérbio, que é invariável, do uso como quantificador, que é variável. Até ficar automático.
-                            <span class="translation-text">It's one of those points that's really worth practicing. Distinguishing the use as an adverb, which is invariable, from the use as a quantifier, which is variable. Until it becomes automatic.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Falando em coisas essenciais, e que às vezes também dão nós na cabeça: o verbo "gostar". Usamo-lo imenso, não é? Mas tem aquela regrinha.
-                            <span class="translation-text">Speaking of essential things, which sometimes also cause headaches: the verb "gostar" (to like). We use it immensely, don't we? But it has that little rule.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            A regra de ouro. Um dos guias chama-lhe mesmo assim. É simples, mas não pode falhar nunca: o verbo "gostar" pede sempre, mas *sempre* mesmo, a preposição "de" a seguir.
-                            <span class="translation-text">The golden rule. One of the guides even calls it that. It's simple, but it can never fail: the verb "gostar" always, but *always* really, requires the preposition "de" afterwards.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Sempre?
-                            <span class="translation-text">Always?</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Sempre. Não interessa o tempo verbal, a pessoa. É "gostar de". Pensa nisso como um bloco: "gostar de".
-                            <span class="translation-text">Always. The verb tense doesn't matter, nor the person. It's "gostar de." Think of it as a block: "gostar de."</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            As fontes até mostram a conjugação no presente com o "de" entre parênteses para reforçar. "Eu gosto de", "tu gostas de", "ele gosta de", "nós gostamos de", "eles gostam de". É quase como se o "de" fizesse parte do verbo.
-                            <span class="translation-text">The sources even show the conjugation in the present tense with "de" in parentheses to reinforce it. "Eu gosto de," "tu gostas de," "ele gosta de," "nós gostamos de," "eles gostam de." It's almost as if "de" is part of the verb.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            É isso. A forma mais básica é como no exemplo: "Gosto de Portugal". Simples. Mas claro, a língua é viva, gosta de fluidez. Então, muitas vezes esse "de" junta-se à palavra que vem a seguir.
-                            <span class="translation-text">That's it. The most basic form is like in the example: "Gosto de Portugal" (I like Portugal). Simple. But of course, the language is alive, it likes fluidity. So, often that "de" joins the word that follows.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Ah, as contrações outra vez. Como naquela pergunta: "Gostas da minha casa?". Esse "da" é o quê? É "de" mais "a", certo? O "a" por causa de "casa".
-                            <span class="translation-text">Ah, contractions again. Like in that question: "Gostas da minha casa?" (Do you like my house?). What is that "da"? It's "de" plus "a," right? The "a" because of "casa."</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Perfeito. Continua a ser "gostar de", mas está ali, disfarçado na contração.
-                            <span class="translation-text">Perfect. It's still "gostar de," but it's there, disguised in the contraction.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Uhum.
-                            <span class="translation-text">Uh-huh.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Ou naquele outro exemplo: "O Vasco gosta muito de Segóvia". Mesmo com o "muito" ali no meio, entre o "gosta" e o "de", a preposição continua lá. Porque a regra é "gostar de algo". O "de" é obrigatório.
-                            <span class="translation-text">Or in that other example: "O Vasco gosta muito de Segóvia" (Vasco likes Segovia very much). Even with "muito" (very) there in the middle, between "gosta" (likes) and "de" (of/from), the preposition is still there. Because the rule is "gostar de algo" (to like something). The "de" is obligatory.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            É um bom lembrete, sem dúvida. Mesmo com palavras no meio, o "de" tem de estar lá depois do "gostar". OK, este fica. E já que falamos de palavras que se juntam, as contrações parecem complicadas, mas na verdade tornam tudo mais natural, não é?
-                            <span class="translation-text">It's a good reminder, no doubt. Even with words in the middle, the "de" has to be there after "gostar." OK, this one stays. And since we're talking about words that join, contractions seem complicated, but in fact, they make everything more natural, don't they?</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Tornam, tornam. Facilitam a pronúncia, dão fluidez à conversa. As fontes destacam umas contrações muito úteis, especialmente com as preposições "de" e "em" quando se juntam aos demonstrativos invariáveis.
-                            <span class="translation-text">They do, they do. They facilitate pronunciation, they give fluidity to the conversation. The sources highlight some very useful contractions, especially with the prepositions "de" (of/from) and "em" (in/on/at) when they join the invariable demonstratives.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            ...sem nome específico e que não mudam nem género nem número.
-                            <span class="translation-text">...with no specific noun and which do not change gender or number.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            Essas mesmas. E quando juntamos a preposição "de" com elas, o que é que temos? "De" mais "isto" igual a "disto". "De" mais "isso" igual a "disso". "De" mais "aquilo" igual a "daquilo".
-                            <span class="translation-text">Those very ones. And when we join the preposition "de" with them, what do we get? "De" (of/from) plus "isto" (this) equals "disto." "De" plus "isso" (that) equals "disso." "De" plus "aquilo" (that over there) equals "daquilo."</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            OK.
-                            <span class="translation-text">OK.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
-                        <div class="chat-bubble-homem">
-                            <span class="font-bold block">Homem</span>
-                            E com a preposição "em"? "Em" mais "isto" igual a "nisto". "Em" mais "isso" igual a "nisso". "Em" mais "aquilo" igual a "naquilo".
-                            <span class="translation-text">And with the preposition "em" (in/on/at)? "Em" plus "isto" equals "nisto." "Em" plus "isso" equals "nisso." "Em" plus "aquilo" equals "naquilo."</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-start">
-                        <div class="chat-bubble-mulher">
-                            <span class="font-bold block">Mulher</span>
-                            Os exemplos ajudam a ver como se usa. "Eles não gostam disto". Em vez de dizer "não gostam de isto", que soa, pronto, soa esquisito.
-                            <span class="translation-text">The examples help to see how it's used. "Eles não gostam disto" (They don't like this). Instead of saying "não gostam de isto," which sounds, well, it sounds weird.</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-end">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exato.
                             <span class="translation-text">Exactly.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Ou a pergunta: "Gostas disso?". Usa-se "disso" porque "isso" é algo que está aí perto de quem ouve, não é? Fica mais natural assim.
-                            <span class="translation-text">Or the question: "Gostas disso?" (Do you like that?). "Disso" is used because "isso" is something that's close to the listener, right? It sounds more natural this way.</span>
+                            E o hotel do Sung, que era "velho e bastante feio". Também. OK. Antes do adjetivo. 
+                            <span class="translation-text">And Sung's hotel, which was "velho e bastante feio" (old and quite ugly). Also. OK. Before the adjective.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Fica muito mais natural com a prática, sim. E o mesmo acontece com o "de" e com três advérbios de lugar muito usados: "aqui", "aí", "ali". As contrações são: "daqui", "daí", "dali".
-                            <span class="translation-text">It becomes much more natural with practice, yes. And the same thing happens with "de" and three very common adverbs of place: "aqui" (here), "aí" (there/near you), "ali" (there/far away). The contractions are: "daqui," "daí," "dali."</span>
+                            Mas… Atenção, há um "mas". Se o advérbio não está a modificar o adjetivo, mas sim a intensidade do verbo, da ação, aí a posição muda. Vem *depois* do verbo.
+                            <span class="translation-text">But... Attention, there is a "but." If the adverb is not modifying the adjective, but rather the intensity of the verb, of the action, then the position changes. It comes *after* the verb.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Como na frase que está nos materiais: "O centro da cidade é longe daqui". Ou seja, longe "de aqui". Realmente, estas palavras coladas, como disseste, fazem uma diferença enorme na naturalidade da fala. Deixamos de parecer tão robóticos, talvez.
-                            <span class="translation-text">Like in the sentence that's in the materials: "O centro da cidade é longe daqui" (The city center is far from here). That is, far "de aqui" (from here). Really, these glued words, as you said, make a huge difference in the naturalness of speech. We stop sounding so robotic, perhaps.</span>
+                            Ah, como no exemplo: "Gosto muito do meu hotel".
+                            <span class="translation-text">Ah, like in the example: "Gosto muito do meu hotel" (I like my hotel very much).</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Exatamente. São pequenos atalhos que os falantes nativos usam o tempo todo. Percebê-los e usá-los ajuda imenso.
-                            <span class="translation-text">Exactly. They are small shortcuts that native speakers use all the time. Understanding and using them helps immensely.</span>
+                            Certo.
+                            <span class="translation-text">Right.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Pronto. Além da gramática e das contrações, os materiais da aula 14 também falam de pronúncia. Têm lá exercícios, que não vamos fazer aqui, claro, mas podemos destacar os pontos que eles acham importantes treinar nesta fase A2.
-                            <span class="translation-text">Right. Besides the grammar and contractions, the materials from class 14 also talk about pronunciation. They have exercises there, which we won't do here, of course, but we can highlight the points they think are important to practice at this A2 stage.</span>
+                            Precisamente. Aqui, o "muito" não descreve o hotel, descreve o *quanto* eu gosto. Intensifica o verbo "gostar", por isso vem depois. OK. Acho que percebi a diferença. Antes do adjetivo, mas depois do verbo.
+                            <span class="translation-text">Precisely. Here, "muito" doesn't describe the hotel, it describes *how much* I like it. It intensifies the verb "gostar" (to like), so it comes after. OK. I think I understand the difference. Before the adjective, but after the verb.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Sim, são aspetos importantes para, para limpar a pronúncia, evitar erros comuns. As fontes focam-se em alguns sons chave. Primeiro, o som do Z.
-                            <span class="translation-text">Yes, these are important aspects for, for cleaning up pronunciation, avoiding common mistakes. The sources focus on some key sounds. First, the Z sound.</span>
+                            Exatamente. E agora, epá, agora vem uma daquelas partes do português que às vezes baralha um bocado, mas que as fontes explicam bem: a questão da concordância do "muito" e do "pouco".
+                            <span class="translation-text">Exactly. And now, wow, now comes one of those parts of Portuguese that sometimes gets a bit confusing, but which the sources explain well: the issue of agreement for "muito" and "pouco."</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Uhum.
-                            <span class="translation-text">Uh-huh.</span>
+                            Ui, concordância outra vez? Mas os advérbios não eram invariáveis?
+                            <span class="translation-text">Oh dear, agreement again? But weren't adverbs invariable?</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Em Portugal de Portugal, muitas vezes o Z no fim da sílaba ou da palavra soa como um S chiado, um som tipo "ch". Exemplos: "azul", "dez", "atriz". Esse som "ch".
-                            <span class="translation-text">In Portuguese from Portugal, often the Z at the end of the syllable or word sounds like a sibilant S, a "sh" sound. Examples: "azul" (blue), "dez" (ten), "atriz" (actress). That "sh" sound.</span>
+                            E são. Quer dizer, quando funcionam como advérbios de intensidade, a modificar um verbo, aí sim, são invariáveis. Não mudam. Como nos exemplos que temos: "A Rita trabalha muito" ou "Estudo pouco". Aqui, "muito" e "pouco" indicam a intensidade da ação de trabalhar ou estudar. É sempre "muito" ou "pouco", independentemente de quem faz a ação.
+                            <span class="translation-text">They are. I mean, when they function as adverbs of intensity, modifying a verb, then yes, they are invariable. They don't change. Like in the examples we have: "A Rita trabalha muito" (Rita works hard) or "Estudo pouco" (I study little). Here, "muito" and "pouco" indicate the intensity of the action of working or studying. It's always "muito" or "pouco," regardless of who performs the action.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            O tal chiado português.
-                            <span class="translation-text">The infamous Portuguese sibilant sound.</span>
+                            Certo, até aqui tudo bem. Então, onde é que a coisa muda?
+                            <span class="translation-text">Right, so far so good. So, where does the thing change?</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Exatamente. E o som do S também pode ter esse mesmo som S chiado em várias situações. Antes de consoantes, no fim da palavra. Exemplos: "gosto", "pessoa", "prazer". É um som muito, muito característico nosso.
-                            <span class="translation-text">Exactly. And the S sound can also have that same sibilant S sound in various situations. Before consonants, at the end of the word. Examples: "gosto" (I like), "pessoa" (person), "prazer" (pleasure). It's a very, very characteristic sound of ours.</span>
+                            Muda, ou melhor, complica um bocadinho, quando "muito" e "pouco" não falam da intensidade da ação, mas sim da *quantidade* de alguma coisa, de um nome, de um substantivo.
+                            <span class="translation-text">It changes, or rather, it gets a little complicated, when "muito" and "pouco" don't refer to the intensity of the action, but rather to the *quantity* of something, of a noun, of a substantive.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            OK. O chiado do Z e do S. Que mais?
-                            <span class="translation-text">OK. The sibilant sound of Z and S. What else?</span>
+                            Hum.
+                            <span class="translation-text">Hm.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Depois, o som do CH, que é geralmente consistente, também soa como "ch". Por exemplo: "chama", "China", "chá".
-                            <span class="translation-text">Then, the CH sound, which is generally consistent, also sounds like "sh." For example: "chama" (call/flame), "China" (China), "chá" (tea).</span>
+                            Aí, deixam de ser advérbios e passam a ser, pronto, quantificadores.
+                            <span class="translation-text">There, they stop being adverbs and become, well, quantifiers.</span>
                         </div>
                     </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ah, como quando dizemos "many books" ou "little water" em inglês? Essa é a ideia?
+                            <span class="translation-text">Ah, like when we say "many books" or "little water" in English? Is that the idea?</span>
+                        </div>
+                    </div>
+
                     <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente essa. E nesse caso, têm de concordar. Têm de concordar em género e número com o nome a que se referem. Ou seja, já não é só "muito" e "pouco". Passa a ser "muito", "muita", "muitos", "muitas", ou "pouco", "pouca", "poucos", "poucas". A concordância volta em força.
+                            <span class="translation-text">Exactly that. And in that case, they have to agree. They have to agree in gender and number with the noun they refer to. That is, it's no longer just "muito" and "pouco." It becomes "muito" (much/many, masc. sing.), "muita" (fem. sing.), "muitos" (masc. pl.), "muitas" (fem. pl.), or "pouco," "pouca," "poucos," "poucas." Agreement returns strongly.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            OK. Preciso de exemplos para isto ficar claro. Os materiais devem ter.
+                            <span class="translation-text">OK. I need examples for this to be clear. The materials must have some.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Têm, têm, e são bons. Repara: "Tenho muitos livros". "Livros" é masculino plural, por isso "muitos". Significa "many books".
+                            <span class="translation-text">They do, they do, and they're good ones. Notice: "Tenho muitos livros" (I have many books). "Livros" (books) is masculine plural, so "muitos." It means "many books."</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Certo.
                             <span class="translation-text">Right.</span>
                         </div>
                     </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Outro: "Ela trabalha muitas horas". "Horas" é feminino plural, logo "muitas", "many hours".
+                            <span class="translation-text">Another one: "Ela trabalha muitas horas" (She works many hours). "Horas" (hours) is feminine plural, so "muitas," "many hours."</span>
+                        </div>
+                    </div>
+
                     <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Uhum.
+                            <span class="translation-text">Uh-huh.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Com "pouco": "A nossa cidade tem poucos carros". "Carros" masculino plural, então "poucos", "few cars". E no singular: "Ainda tens muita água?". "Água" feminino singular, usamos "muita", "much water", digamos.
+                            <span class="translation-text">With "pouco" (little/few): "A nossa cidade tem poucos carros" (Our city has few cars). "Carros" (cars) is masculine plural, so "poucos," "few cars." And in the singular: "Ainda tens muita água?" (Do you still have much water?). "Água" (water) is feminine singular, we use "muita," "much water," let's say.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Percebido. Então o truque é perguntar: estou a intensificar a ação (o verbo) ou a contar as coisas (os nomes)? Se for a ação, uso "muito" "pouco" e não mudo. Se for a contar coisas, tenho de fazer a concordância: "muitos", "muitas" ou "poucos", "poucas". É mesmo um ponto chave isto. Errar aqui muda o sentido.
+                            <span class="translation-text">Understood. So the trick is to ask: am I intensifying the action (the verb) or counting the things (the nouns)? If it's the action, I use "muito" "pouco" and don't change. If I'm counting things, I have to make the agreement: "muitos," "muitas," or "poucos," "poucas." This really is a key point. Making a mistake here changes the meaning.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            É daqueles pontos que vale mesmo a pena praticar. Distinguir o uso como advérbio, que é invariável, do uso como quantificador, que é variável. Até ficar automático.
+                            <span class="translation-text">It's one of those points that's really worth practicing. Distinguishing the use as an adverb, which is invariable, from the use as a quantifier, which is variable. Until it becomes automatic.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Falando em coisas essenciais, e que às vezes também dão nós na cabeça: o verbo "gostar". Usamo-lo imenso, não é? Mas tem aquela regrinha.
+                            <span class="translation-text">Speaking of essential things, which sometimes also cause headaches: the verb "gostar" (to like). We use it immensely, don't we? But it has that little rule.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            A regra de ouro. Um dos guias chama-lhe mesmo assim. É simples, mas não pode falhar nunca: o verbo "gostar" pede sempre, mas *sempre* mesmo, a preposição "de" a seguir.
+                            <span class="translation-text">The golden rule. One of the guides even calls it that. It's simple, but it can never fail: the verb "gostar" always, but *always* really, requires the preposition "de" afterwards.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Sempre?
+                            <span class="translation-text">Always?</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sempre. Não interessa o tempo verbal, a pessoa. É "gostar de". Pensa nisso como um bloco: "gostar de".
+                            <span class="translation-text">Always. The verb tense doesn't matter, nor the person. It's "gostar de." Think of it as a block: "gostar de."</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            As fontes até mostram a conjugação no presente com o "de" entre parênteses para reforçar. "Eu gosto de", "tu gostas de", "ele gosta de", "nós gostamos de", "eles gostam de". É quase como se o "de" fizesse parte do verbo.
+                            <span class="translation-text">The sources even show the conjugation in the present tense with "de" in parentheses to reinforce it. "Eu gosto de," "tu gostas de," "ele gosta de," "nós gostamos de," "eles gostam de." It's almost as if "de" is part of the verb.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            É isso. A forma mais básica é como no exemplo: "Gosto de Portugal". Simples. Mas claro, a língua é viva, gosta de fluidez. Então, muitas vezes esse "de" junta-se à palavra que vem a seguir.
+                            <span class="translation-text">That's it. The most basic form is like in the example: "Gosto de Portugal" (I like Portugal). Simple. But of course, the language is alive, it likes fluidity. So, often that "de" joins the word that follows.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ah, as contrações outra vez. Como naquela pergunta: "Gostas da minha casa?". Esse "da" é o quê? É "de" mais "a", certo? O "a" por causa de "casa".
+                            <span class="translation-text">Ah, contractions again. Like in that question: "Gostas da minha casa?" (Do you like my house?). What is that "da"? It's "de" plus "a," right? The "a" because of "casa."</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Perfeito. Continua a ser "gostar de", mas está ali, disfarçado na contração.
+                            <span class="translation-text">Perfect. It's still "gostar de," but it's there, disguised in the contraction.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Uhum.
+                            <span class="translation-text">Uh-huh.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Ou naquele outro exemplo: "O Vasco gosta muito de Segóvia". Mesmo com o "muito" ali no meio, entre o "gosta" e o "de", a preposição continua lá. Porque a regra é "gostar de algo". O "de" é obrigatório.
+                            <span class="translation-text">Or in that other example: "O Vasco gosta muito de Segóvia" (Vasco likes Segovia very much). Even with "muito" (very) there in the middle, between "gosta" (likes) and "de" (of/from), the preposition is still there. Because the rule is "gostar de algo" (to like something). The "de" is obligatory.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            É um bom lembrete, sem dúvida. Mesmo com palavras no meio, o "de" tem de estar lá depois do "gostar". OK, este fica. E já que falamos de palavras que se juntam, as contrações parecem complicadas, mas na verdade tornam tudo mais natural, não é?
+                            <span class="translation-text">It's a good reminder, no doubt. Even with words in the middle, the "de" has to be there after "gostar." OK, this one stays. And since we're talking about words that join, contractions seem complicated, but in fact, they make everything more natural, don't they?</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Tornam, tornam. Facilitam a pronúncia, dão fluidez à conversa. As fontes destacam umas contrações muito úteis, especialmente com as preposições "de" e "em" quando se juntam aos demonstrativos invariáveis.
+                            <span class="translation-text">They do, they do. They facilitate pronunciation, they give fluidity to the conversation. The sources highlight some very useful contractions, especially with the prepositions "de" (of/from) and "em" (in/on/at) when they join the invariable demonstratives.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            ...sem nome específico e que não mudam nem género nem número.
+                            <span class="translation-text">...with no specific noun and which do not change gender or number.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Essas mesmas. E quando juntamos a preposição "de" com elas, o que é que temos? "De" mais "isto" igual a "disto". "De" mais "isso" igual a "disso". "De" mais "aquilo" igual a "daquilo".
+                            <span class="translation-text">Those very ones. And when we join the preposition "de" with them, what do we get? "De" (of/from) plus "isto" (this) equals "disto." "De" plus "isso" (that) equals "disso." "De" plus "aquilo" (that over there) equals "daquilo."</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            OK.
+                            <span class="translation-text">OK.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            E com a preposição "em"? "Em" mais "isto" igual a "nisto". "Em" mais "isso" igual a "nisso". "Em" mais "aquilo" igual a "naquilo".
+                            <span class="translation-text">And with the preposition "em" (in/on/at)? "Em" plus "isto" equals "nisto." "Em" plus "isso" equals "nisso." "Em" plus "aquilo" equals "naquilo."</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Os exemplos ajudam a ver como se usa. "Eles não gostam disto". Em vez de dizer "não gostam de isto", que soa, pronto, soa esquisito.
+                            <span class="translation-text">The examples help to see how it's used. "Eles não gostam disto" (They don't like this). Instead of saying "não gostam de isto," which sounds, well, it sounds weird.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exato.
+                            <span class="translation-text">Exactly.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Ou a pergunta: "Gostas disso?". Usa-se "disso" porque "isso" é algo que está aí perto de quem ouve, não é? Fica mais natural assim.
+                            <span class="translation-text">Or the question: "Gostas disso?" (Do you like that?). "Disso" is used because "isso" is something that's close to the listener, right? It sounds more natural this way.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Fica muito mais natural com a prática, sim. E o mesmo acontece com o "de" e com três advérbios de lugar muito usados: "aqui", "aí", "ali". As contrações são: "daqui", "daí", "dali".
+                            <span class="translation-text">It becomes much more natural with practice, yes. And the same thing happens with "de" and three very common adverbs of place: "aqui" (here), "aí" (there/near you), "ali" (there/far away). The contractions are: "daqui," "daí," "dali."</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Como na frase que está nos materiais: "O centro da cidade é longe daqui". Ou seja, longe "de aqui". Realmente, estas palavras coladas, como disseste, fazem uma diferença enorme na naturalidade da fala. Deixamos de parecer tão robóticos, talvez.
+                            <span class="translation-text">Like in the sentence that's in the materials: "O centro da cidade é longe daqui" (The city center is far from here). That is, far "de aqui" (from here). Really, these glued words, as you said, make a huge difference in the naturalness of speech. We stop sounding so robotic, perhaps.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente. São pequenos atalhos que os falantes nativos usam o tempo todo. Percebê-los e usá-los ajuda imenso.
+                            <span class="translation-text">Exactly. They are small shortcuts that native speakers use all the time. Understanding and using them helps immensely.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Pronto. Além da gramática e das contrações, os materiais da aula 14 também falam de pronúncia. Têm lá exercícios, que não vamos fazer aqui, claro, mas podemos destacar os pontos que eles acham importantes treinar nesta fase A2.
+                            <span class="translation-text">Right. Besides the grammar and contractions, the materials from class 14 also talk about pronunciation. They have exercises there, which we won't do here, of course, but we can highlight the points they think are important to practice at this A2 stage.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Sim, são aspetos importantes para, para limpar a pronúncia, evitar erros comuns. As fontes focam-se em alguns sons chave. Primeiro, o som do Z.
+                            <span class="translation-text">Yes, these are important aspects for, for cleaning up pronunciation, avoiding common mistakes. The sources focus on some key sounds. First, the Z sound.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Uhum.
+                            <span class="translation-text">Uh-huh.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Em Portugal de Portugal, muitas vezes o Z no fim da sílaba ou da palavra soa como um S chiado, um som tipo "ch". Exemplos: "azul", "dez", "atriz". Esse som "ch".
+                            <span class="translation-text">In Portuguese from Portugal, often the Z at the end of the syllable or word sounds like a sibilant S, a "sh" sound. Examples: "azul" (blue), "dez" (ten), "atriz" (actress). That "sh" sound.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            O tal chiado português.
+                            <span class="translation-text">The infamous Portuguese sibilant sound.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Exatamente. E o som do S também pode ter esse mesmo som S chiado em várias situações. Antes de consoantes, no fim da palavra. Exemplos: "gosto", "pessoa", "prazer". É um som muito, muito característico nosso.
+                            <span class="translation-text">Exactly. And the S sound can also have that same sibilant S sound in various situations. Before consonants, at the end of the word. Examples: "gosto" (I like), "pessoa" (person), "prazer" (pleasure). It's a very, very characteristic sound of ours.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            OK. O chiado do Z e do S. Que mais?
+                            <span class="translation-text">OK. The sibilant sound of Z and S. What else?</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
+                        <div class="chat-bubble-homem">
+                            <span class="font-bold block">Homem</span>
+                            Depois temos o som do CH, que é geralmente consistente, também soa como "ch". Por exemplo: "chama", "China", "chá".
+                            <span class="translation-text">Then we have the "ch" sound, which is generally consistent, also sounds like "sh." For example: "chama" (call/flame), "China" (China), "chá" (tea).</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end">
+                        <div class="chat-bubble-mulher">
+                            <span class="font-bold block">Mulher</span>
+                            Certo.
+                            <span class="translation-text">Right.</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             E por fim, um ponto muito importante, mesmo distintivo do português: a diferença entre as vogais orais e as nasais.
                             <span class="translation-text">And finally, a very important point, really distinctive of Portuguese: the difference between oral and nasal vowels.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Ah, as nasais. Aquelas com o til, ou que têm um M ou N a seguir, e que parece que o som sai pelo nariz.
                             <span class="translation-text">Ah, the nasal ones. Those with the tilde, or that have an M or N following, and it seems like the sound comes out through the nose.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Essas mesmas. As fontes até dão exemplos para comparar: "pá" (oral) versus "pão" (nasal), ou "má" (oral) versus "mão" (nasal). O "a" e o "ão" são os mais óbvios. Dominar esta nasalidade é fundamental.
                             <span class="translation-text">Those very ones. The sources even give examples to compare: "pá" (oral) versus "pão" (nasal), or "má" (oral) versus "mão" (nasal). The "a" and "ão" are the most obvious. Mastering this nasality is fundamental.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E a recomendação é clara: ouvir, ouvir, ouvir. Os exercícios de áudio A35 e A36 são para isso mesmo: treinar o ouvido e tentar imitar. Não basta saber a teoria, não é?
                             <span class="translation-text">And the recommendation is clear: listen, listen, listen. Audio exercises A35 and A36 are for just that: training the ear and trying to imitate. Knowing the theory isn't enough, right?</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Sem dúvida. Ouvir e repetir é a chave para a pronúncia.
                             <span class="translation-text">No doubt. Listening and repeating is the key to pronunciation.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Muito bem. Já falámos de adjetivos, advérbios, o "gostar de", as contrações, a pronúncia... Ufa. Se tivéssemos que resumir isto tudo, tirar daqui só o essencial desta aula 14 e dos guias, o que é que seria? As duas ou três ideias-chave?
                             <span class="translation-text">Very well. We've talked about adjectives, adverbs, "gostar de," contractions, pronunciation... Phew. If we had to summarize all this, to take only the essential from this class 14 and the guides, what would it be? The two or three key ideas?</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Olha, os próprios guias de resumo que vêm com a aula destacam três pontos como sendo, vá lá, críticos. As regras de ouro, digamos.
                             <span class="translation-text">Look, the summary guides themselves that come with the class highlight three points as being, let's say, critical. The golden rules, let's say.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             OK, quais são?
                             <span class="translation-text">OK, what are they?</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Primeiro: "gostar" mais "de". Esta é a lei. Nunca, mas nunca, separar o "gostar" do seu "de". Mesmo que apareçam outras palavras pelo meio. "Gosto de", "gosto muito de". O "de" tem de lá estar. É quase um mantra.
                             <span class="translation-text">First: "gostar" plus "de." This is the law. Never, ever separate "gostar" from its "de." Even if other words appear in the middle. "Gosto de," "gosto muito de." The "de" must be there. It's almost a mantra.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Certo. Um mantra, gosto disso. Qual é a segunda?
                             <span class="translation-text">Right. A mantra, I like that. What's the second one?</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Segundo: a posição do advérbio ("muito", "bastante"). Lembrar-se daquela dualidade: se modificam o verbo, vêm depois (exemplo: "trabalho muito"). Se modificam o adjetivo, vêm antes (exemplo: "é muito interessante").
                             <span class="translation-text">Second: the position of the adverb ("muito," "bastante"). Remembering that duality: if they modify the verb, they come after (example: "trabalho muito"). If they modify the adjective, they come before (example: "é muito interessante").</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Depois do verbo, antes do adjetivo. OK. E a terceira?
                             <span class="translation-text">After the verb, before the adjective. OK. And the third?</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Terceiro: a concordância de "muito" "pouco". A grande armadilha. São invariáveis (sempre "muito", "pouco") quando intensificam um verbo, uma ação. Mas são variáveis ("muitos", "muitas", "poucos", "poucas") quando estão a quantificar nomes, coisas. Saber quando mudar e quando não mudar, epá, isto é essencial.
                             <span class="translation-text">Third: the agreement of "muito" "pouco." The big trap. They are invariable (always "muito," "pouco") when they intensify a verb, an action. But they are variable ("muitos," "muitas," "poucos," "poucas") when they are quantifying nouns, things. Knowing when to change and when not to change, wow, this is essential.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Excelente resumo. Três pontos chave que, se a pessoa os interiorizar e praticar, já fazem uma diferença brutal na forma como se expressa em português neste nível, não é?
                             <span class="translation-text">Excellent summary. Three key points that, if a person internalizes and practices them, already make a brutal difference in how they express themselves in Portuguese at this level, right?</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Exatamente. São ferramentas que permitem sair das frases muito básicas e começar a expressar, pronto, nuances, preferências, descrições mais detalhadas.
                             <span class="translation-text">Exactly. They are tools that allow you to move away from very basic sentences and start expressing, well, nuances, preferences, more detailed descriptions.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             E com isto, acho que chegamos ao fim desta nossa exploração dos materiais da aula 14 e dos guias de apoio do Português A2. Espero que esta conversa tenha ajudado a consolidar estas ideias.
                             <span class="translation-text">And with this, I think we come to the end of our exploration of the materials from class 14 and the supporting guides for Portuguese A2. I hope this conversation has helped to consolidate these ideas.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Fica, se calhar, uma, uma reflexão final. À medida que ganhamos estas ferramentas, mais palavras para descrever, formas de expressar gostos e intensidade, como é que isso muda a nossa própria experiência? A nossa experiência de estar num país onde se fala português, ou de interagir com a cultura?
                             <span class="translation-text">Maybe there's a, a final reflection. As we gain these tools, more words to describe, ways to express tastes and intensity, how does that change our own experience? Our experience of being in a country where Portuguese is spoken, or of interacting with the culture?</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
-                            Hum...
-                            <span class="translation-text">Hm...</span>
+                            Hum...Interessante.
+                            <span class="translation-text">Hm...Interesting.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
-                            Interessante. Será que começamos a reparar em coisas que antes nos passavam ao lado, só porque agora temos as palavras para lhes dar nome, para pensar nelas? Que novas cores, por assim dizer, começamos a ver no mundo quando temos mais cores na nossa paleta de palavras?
-                            <span class="translation-text">Interesting. Do we start noticing things that we previously overlooked, just because now we have the words to name them, to think about them? What new colors, so to speak, do we start seeing in the world when we have more colors in our word palette?</span>
+                            Será que começamos a reparar em coisas que antes nos passavam ao lado, só porque agora temos as palavras para lhes dar nome, para pensar nelas? Que novas cores, por assim dizer, começamos a ver no mundo quando temos mais cores na nossa paleta de palavras?
+                            <span class="translation-text">Do we start noticing things that we previously overlooked, just because now we have the words to name them, to think about them? What new colors, so to speak, do we start seeing in the world when we have more colors in our word palette?</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             É uma excelente questão para ficarmos a pensar. Que novas portas se abrem quando temos mais chaves na nossa mão linguística? Fica a reflexão. Muito obrigada por nos acompanhar nesta análise.
                             <span class="translation-text">That's an excellent question to be left thinking about. What new doors open when we have more keys in our linguistic hand? The reflection remains. Thank you very much for joining us in this analysis.</span>
                         </div>
                     </div>
-                    <div class="flex justify-end">
+
+                    <div class="flex justify-start">
                         <div class="chat-bubble-homem">
                             <span class="font-bold block">Homem</span>
                             Obrigado.
                             <span class="translation-text">Thank you.</span>
                         </div>
                     </div>
-                    <div class="flex justify-start">
+
+                    <div class="flex justify-end">
                         <div class="chat-bubble-mulher">
                             <span class="font-bold block">Mulher</span>
                             Até à próxima.
                             <span class="translation-text">Until next time.</span>
                         </div>
                     </div>
+
                 </div>
             </section>
 
             <section id="revisao" class="tab-content">
                 <h2 class="text-3xl font-semibold text-stone-800 mb-4">Revisão Gramatical</h2>
                 <p class="text-lg text-stone-700 leading-relaxed mb-6">
-                    Review the key grammar points from the podcast, focusing on "muito" vs "muitos" and "gostar de".
+                    Review the key grammar points from the podcast, focusing on adjectives and "quanto/quantos".
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-stone-50 p-6 rounded-lg shadow-sm border border-stone-200">
-                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: Advérbio vs. Quantificador</h3>
-                        <p class="text-stone-700 mb-3">A palavra "muito" pode ser duas coisas:</p>
+                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: Concordância de Adjetivos</h3>
+                        <p class="text-stone-700 mb-3">Os adjetivos concordam com o nome (em género e número) e vêm <span class="font-bold">DEPOIS</span>.</p>
 
-                        <h4 class="font-bold text-lg text-stone-800">1. Advérbio (Não muda)</h4>
-                        <p class="text-stone-700 mb-4">Intensifica um verbo ou adjetivo. É **invariável** (sempre **muito**).</p>
+                        <h4 class="font-bold text-lg text-stone-800">1. Adjetivos Variáveis (mudam com o género)</h4>
                         <ul class="list-disc list-inside ml-2 space-y-1">
-                            <li>A Rita trabalha <strong>muito</strong>. (intensifica o verbo)</li>
-                            <li>Os restaurantes são <strong>muito</strong> bons. (intensifica o adjetivo)</li>
+                            <li>Um carro <strong>bonito</strong> (masc.)</li>
+                            <li>Uma casa <strong>bonita</strong> (fem.)</li>
+                            <li>Carros <strong>bonitos</strong> (masc. pl.)</li>
+                            <li>Casas <strong>bonitas</strong> (fem. pl.)</li>
                         </ul>
-                        <p class="mt-4 font-bold text-sm text-pink-700">Regra: Advérbio vem antes do adjetivo, mas depois do verbo.</p>
 
-
-                        <h4 class="font-bold text-lg text-stone-800 mt-6">2. Quantificador (Muda)</h4>
-                        <p class="text-stone-700 mb-4">Indica a quantidade de um nome. **Concorda** com o nome (muito/muita/muitos/muitas).</p>
+                        <h4 class="font-bold text-lg text-stone-800 mt-6">2. Adjetivos Uniformes (não mudam)</h4>
+                        <p class="text-stone-700 mb-3">Estes têm a mesma forma para o masculino e feminino.</p>
                         <ul class="list-disc list-inside ml-2 space-y-1">
-                            <li>Tenho <strong>muitos</strong> livros. (masc. pl.)</li>
-                            <li>Ela trabalha <strong>muitas</strong> horas. (fem. pl.)</li>
-                            <li>Tens <strong>muita</strong> água? (fem. sing.)</li>
+                            <li>Um prédio <strong>grande</strong> (masc.)</li>
+                            <li>Uma casa <strong>grande</strong> (fem.)</li>
+                            <li>Um homem <strong>pobre</strong> (masc.)</li>
+                            <li>Uma mulher <strong>pobre</strong> (fem.)</li>
                         </ul>
                     </div>
 
                     <div class="bg-stone-50 p-6 rounded-lg shadow-sm border border-stone-200">
-                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: Regra de Ouro "Gostar de"</h3>
-                        <p class="text-stone-700 mb-4">O verbo "gostar" pede **sempre** a preposição "**de**" a seguir.</p>
+                        <h3 class="text-2xl font-semibold text-cyan-900 mb-4">Foco: 'Quanto' e Expressões</h3>
                         
-                        <h4 class="font-bold text-lg text-stone-800">Estrutura e Contrações</h4>
-                        <p class="text-stone-700 italic mb-2">**Gostar (conjugado) + de + (o quê/quem)**</p>
-                        <ul class="list-disc list-inside ml-2 space-y-3 text-stone-800 mb-6">
-                            <li>Eu **gosto de** Portugal.</li>
-                            <li>**Gostas da** minha casa? (da = de + a)</li>
-                            <li>Eles não **gostam disto**. (disto = de + isto)</li>
-                            <li>O Vasco **gosta muito de** Segóvia. (O advérbio vai no meio, mas o **de** fica!)</li>
+                        <h4 class="font-bold text-lg text-stone-800">Quanto/s (Concorda!)</h4>
+                        <p class="text-stone-700 mb-4">A palavra para "How much/many" também concorda com o nome em género e número.</p>
+                        
+                        <h4 class="font-bold text-lg text-stone-800">Singular (How much)</h4>
+                        <ul class="list-disc list-inside ml-2 space-y-1 mb-4">
+                            <li><strong>Quanto</strong> dinheiro? (masc. sing.)</li>
+                            <li><strong>Quanta</strong> água? (fem. sing.)</li>
                         </ul>
 
-                        <h4 class="font-bold text-lg text-stone-800">Outras Contrações Úteis</h4>
-                        <ul class="list-disc list-inside ml-2 space-y-3 text-stone-800">
-                            <li>de + aqui = **daqui** (Ex: Longe daqui)</li>
-                            <li>em + isto = **nisto** (Ex: Penso nisto)</li>
-                            <li>em + aquilo = **naquilo** (Ex: Reparou naquilo)</li>
+                        <h4 class="font-bold text-lg text-stone-800">Plural (How many)</h4>
+                        <ul class="list-disc list-inside ml-2 space-y-1 mb-4">
+                            <li><strong>Quantos</strong> carros? (masc. pl.)</li>
+                            <li><strong>Quantas</strong> malas? (fem. pl.)</li>
+                        </ul>
+
+                        <h4 class="font-bold text-lg text-stone-800 mt-6">Expressões Idiomáticas</h4>
+                        <ul class="list-disc list-inside ml-2 space-y-1">
+                            <li>**Estar com a pulga atrás da orelha** (To be suspicious)</li>
+                            <li>**Fazer das tripas coração** (To overcome a difficulty with great effort)</li>
                         </ul>
                     </div>
                 </div>
@@ -928,41 +1069,41 @@
                 </p>
 
                 <form id="quizForm">
-                    <div class="quiz-question" data-correct="c">
-                        <p class="font-semibold mb-2">1. Qual é a frase correta?</p>
+                    <div class="quiz-question" data-correct="c" name="q1">
+                        <p class="font-semibold mb-2">1. Qual é a forma correta de dizer "a beautiful house" em português?</p>
                         <div class="quiz-options">
-                            <label><input type="radio" name="q1" value="a"> a) Gosto muito o meu hotel.</label>
-                            <label><input type="radio" name="q1" value="b"> b) Gosto o meu hotel muito.</label>
-                            <label><input type="radio" name="q1" value="c"> c) Gosto muito do meu hotel.</label>
+                            <label><input type="radio" name="q1" value="a"> a) Uma bonita casa.</label>
+                            <label><input type="radio" name="q1" value="b"> b) Uma casa bonito.</label>
+                            <label><input type="radio" name="q1" value="c"> c) Uma casa bonita.</label>
                         </div>
                         <div class="feedback" id="feedback-q1"></div>
                     </div>
 
-                    <div class="quiz-question" data-correct="a">
-                        <p class="font-semibold mb-2">2. Qual é a frase correta?</p>
+                    <div class="quiz-question" data-correct="b" name="q2">
+                        <p class="font-semibold mb-2">2. Como se pergunta "How many cars?"</p>
                         <div class="quiz-options">
-                            <label><input type="radio" name="q2" value="a"> a) Tenho muitos livros.</label>
-                            <label><input type="radio" name="q2" value="b"> b) Tenho muito livros.</label>
-                            <label><input type="radio" name="q2" value="c"> c) Tenho muitas livros.</label>
+                            <label><input type="radio" name="q2" value="a"> a) Quanto carros?</label>
+                            <label><input type="radio" name="q2" value="b"> b) Quantos carros?</label>
+                            <label><input type="radio" name="q2" value="c"> c) Quanta carros?</label>
                         </div>
                          <div class="feedback" id="feedback-q2"></div>
                     </div>
 
-                    <div class="quiz-question" data-correct="a">
-                        <p class="font-semibold mb-2">3. "Os restaurantes são ____ bons."</p>
+                    <div class="quiz-question" data-correct="b" name="q3">
+                        <p class="font-semibold mb-2">3. Qual adjetivo NÃO muda de forma para masculino ou feminino?</p>
                         <div class="quiz-options">
-                            <label><input type="radio" name="q3" value="a"> a) muito</label>
-                            <label><input type="radio" name="q3" value="b"> b) muitos</label>
-                            <label><input type="radio" name="q3" value="c"> c) muitas</label>
+                            <label><input type="radio" name="q3" value="a"> a) Novo</label>
+                            <label><input type="radio" name="q3" value="b"> b) Grande</label>
+                            <label><input type="radio" name="q3" value="c"> c) Barato</label>
                         </div>
                          <div class="feedback" id="feedback-q3"></div>
                     </div>
-                     <div class="quiz-question" data-correct="c">
-                        <p class="font-semibold mb-2">4. Como se diz "far from here" (longe de aqui)?</p>
+                      <div class="quiz-question" data-correct="a" name="q4">
+                        <p class="font-semibold mb-2">4. O que significa "estar com a pulga atrás da orelha"?</p>
                         <div class="quiz-options">
-                            <label><input type="radio" name="q4" value="a"> a) Longe de aqui.</label>
-                            <label><input type="radio" name="q4" value="b"> b) Longe disto.</label>
-                            <label><input type="radio" name="q4" value="c"> c) Longe daqui.</label>
+                            <label><input type="radio" name="q4" value="a"> a) Estar desconfiado de algo.</label>
+                            <label><input type="radio" name="q4" value="b"> b) Fazer um grande esforço.</label>
+                            <label><input type="radio" name="q4" value="c"> c) Ter uma dor de cabeça.</label>
                         </div>
                          <div class="feedback" id="feedback-q4"></div>
                     </div>
@@ -1047,10 +1188,10 @@
             const quizScoreDisplay = document.getElementById('quizScore');
 
             const correctAnswers = {
-                q1: 'c', // Gosto muito do (de + o)
-                q2: 'a', // Quantificador = muitos livros
-                q3: 'a', // Advérbio = muito bons (invariável)
-                q4: 'c'  // de + aqui = daqui
+                q1: 'c', // Uma casa bonita
+                q2: 'b', // Quantos carros
+                q3: 'b', // grande
+                q4: 'a'  // Estar desconfiado
             };
 
             checkQuizButton.addEventListener('click', () => {
@@ -1060,9 +1201,8 @@
 
                 for (const question in correctAnswers) {
                     const feedbackEl = document.getElementById(`feedback-${question}`);
-                    // Usar o atributo data-correct definido no HTML
-                    const correctAnswer = document.querySelector(`.quiz-question[data-correct][name="${question}"]`) ? document.querySelector(`.quiz-question[data-correct][name="${question}"]`).getAttribute('data-correct') : correctAnswers[question];
-
+                    // Apanhar a resposta correta diretamente do objeto
+                    const correctAnswer = correctAnswers[question];
                     const selectedOptionInput = quizForm.querySelector(`input[name="${question}"]:checked`); 
 
                     if (selectedOptionInput) {
@@ -1072,7 +1212,7 @@
                             feedbackEl.className = 'feedback correct';
                             score++;
                         } else {
-                            feedbackEl.textContent = 'Incorreto.';
+                            feedbackEl.textContent = `Incorreto. A resposta certa era a (${correctAnswer}).`;
                             feedbackEl.className = 'feedback incorrect';
                         }
                     } else {
