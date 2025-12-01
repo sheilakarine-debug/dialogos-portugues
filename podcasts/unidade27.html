@@ -1151,10 +1151,29 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
-            // --- CÓDIGO PARA ESCONDER O MENU (se ?modo=aula) ---
+            // --- CÓDIGO ROBUSTO PARA ESCONDER O MENU (se ?modo=aula) ---
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('modo') === 'aula') {
-                const backButton = document.querySelector('header a[href="index.html"]');
+                // 1. Tenta pelo ID
+                let backButton = document.getElementById('back-btn');
+                
+                // 2. Se não der, tenta o primeiro link do cabeçalho
+                if (!backButton) {
+                    backButton = document.querySelector('header a');
+                }
+
+                // 3. Se ainda não der, procura qualquer link que diga "Voltar"
+                if (!backButton) {
+                    const links = document.querySelectorAll('a');
+                    for (const link of links) {
+                        if (link.textContent.includes('Voltar')) {
+                            backButton = link;
+                            break;
+                        }
+                    }
+                }
+
+                // Esconde o botão se o encontrou
                 if (backButton) {
                     backButton.style.display = 'none';
                 }
