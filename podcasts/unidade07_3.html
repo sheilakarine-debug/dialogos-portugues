@@ -1124,7 +1124,8 @@
             // --- CÓDIGO PARA ESCONDER O MENU (se ?modo=aula) ---
             const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('modo') === 'aula') {
-                const backButton = document.querySelector('header a[href="index.html"]');
+                // Seleciona o botão de voltar (o link dentro do header)
+                const backButton = document.querySelector('header a');
                 if (backButton) {
                     backButton.style.display = 'none';
                 }
